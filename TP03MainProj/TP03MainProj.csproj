@@ -148,12 +148,20 @@
     <Compile Include="Migrations\202403191317491_InitialCreate.designer.cs">
       <DependentUpon>202403191317491_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403191326515_InitialCreate1.cs" />
+    <Compile Include="Migrations\202403191326515_InitialCreate1.designer.cs">
+      <DependentUpon>202403191326515_InitialCreate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyApplicationContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MyApplicationDB.mdf" />
+    <Content Include="App_Data\MyApplicationDB_log.ldf">
+      <DependentUpon>MyApplicationDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -205,9 +213,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
@@ -238,6 +244,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202403191317491_InitialCreate.resx">
       <DependentUpon>202403191317491_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403191326515_InitialCreate1.resx">
+      <DependentUpon>202403191326515_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
