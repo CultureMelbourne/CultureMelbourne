@@ -20,11 +20,22 @@ namespace TP03MainProj
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/Customer/plugins.js",
+                      "~/Scripts/Customer/designesia.js",
+                      "~/Scripts/Customer/swiper.js",
+                      "~/Scripts/Customer/custom-marquee.js",
+                      "~/Scripts/Customer/custom-swiper-1.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/Customer/css/plugins.css",
+                      "~/Content/Customer/css/colors/scheme-01.css",
+                      "~/Content/Customer/css/swiper.css",
+                      "~/Content/Customer/css/style.css",
+                      "~/Content/Customer/css/coloring.css"
+                      ));
         }
     }
 }

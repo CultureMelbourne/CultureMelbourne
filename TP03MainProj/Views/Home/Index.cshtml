@@ -3,31 +3,416 @@
 }
 
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+    <!-- content begin -->
+    <div class="no-bottom no-top" id="content">
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div id="top"></div>
+
+        <section class="text-light no-top no-bottom position-relative z-1000">
+            <div class="v-center">
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide" data-jarallax-element="150">
+                            <div class="swiper-inner" data-bgimage="@Url.Content("~/Content/Customer/images/slider/1.webp")">
+                                <div class="sw-caption">
+                                    <div class="container">
+                                        <div class="row gx-5 align-items-center">
+                                            <div class="col-lg-8 mb-sm-20">
+                                                <div class="subtitle s2 mb-4">Trusted IT Solutions</div>
+                                                <h1 class="slider-title">who <span class="underline">we</span> are</h1>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <p class="slider-teaser">We are team of tech enthusiasts dedicated to taking your technology aspirations to new heights.</p>
+                                                <hr class="s2">
+                                                <div class="spacer-10"></div>
+                                                <a class="btn-main mb10" href="services.html">Our Services</a>&nbsp;
+                                                <a class="btn-line mb10" href="contact.html">Free Consultation</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sw-overlay s2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slides -->
+                        <div class="swiper-slide" data-jarallax-element="150">
+                            <div class="swiper-inner" data-bgimage="@Url.Content("~/Content/Customer/images/slider/2.webp")">
+                                <div class="sw-caption">
+                                    <div class="container">
+                                        <div class="row gx-5 align-items-center">
+                                            <div class="col-lg-8 mb-sm-20">
+                                                <div class="subtitle s2 mb-4">Trusted IT Solutions</div>
+                                                <h1 class="slider-title">what we <span class="underline">do</span></h1>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <p class="slider-teaser">We are driven by innovation, excellence, and a commitment to delivering cutting-edge IT solutions.</p>
+                                                <hr class="s2">
+                                                <div class="spacer-10"></div>
+                                                <a class="btn-main mb10" href="services.html">Our Services</a>&nbsp;
+                                                <a class="btn-line mb10" href="contact.html">Free Consultation</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sw-overlay s2"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
         </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+        <section class="no-top">
+            <div class="container">
+                <div class="row g-4 mt-100 sm-mt-0 z-1000">
+                    <div class="spacer-single d-lg-none d-sm-block"></div>
+                    <div class="col-lg-3 col-md-6">
+                        <div>
+                            <img src="@Url.Content("~/Content/Customer/images/services/1.webp")" class="img-fullwidth rounded-20 mb20" alt="">
+                            <h4>Custom Software</h4>
+                            <hr class="s2">
+                            <p>Provide management and maintenance of IT infrastructure, including servers, networks, and software.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div>
+                            <img src="@Url.Content("~/Content/Customer/images/services/2.webp")" class="img-fullwidth rounded-20 mb20" alt="">
+                            <h4>Web Application</h4>
+                            <hr class="s2">
+                            <p>Creating and maintaining functional and efficient software applications that address a multitude of tasks.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div>
+                            <img src="@Url.Content("~/Content/Customer/images/services/3.webp")" class="img-fullwidth rounded-20 mb20" alt="">
+                            <h4>Mobile App</h4>
+                            <hr class="s2">
+                            <p>Protecting digital assets by providing services like firewall management and vulnerability assessments.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div>
+                            <img src="@Url.Content("~/Content/Customer/images/services/4.webp")" class="img-fullwidth rounded-20 mb20" alt="">
+                            <h4>Full-Stack</h4>
+                            <hr class="s2">
+                            <p>Designing, implementing, and managing databases, including SQL and NoSQL databases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+        <section class="jarallax text-light">
+            <img src="@Url.Content("~/Content/Customer/images/background/2.webp")" class="jarallax-img" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="subtitle s2 wow fadeInUp mb-3">Our Vision</div>
+                        <h2 class="mb20 wow fadeInUp" data-wow-delay=".2s">We aspire to create a digital landscape where technology seamlessly enhances productivity, connectivity, and sustainability, fostering a brighter, more efficient, and inclusive future for all.</h2>
+                        <a class="btn-main" href="contact.html">Let's Work Together</a>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="subtitle s2 wow fadeInUp mb-3">Our team</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">We're a group of IT passionate</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center mb-sm-20">
+                        <div class="bg-color-2 rounded-30 mb20">
+                            <img src="@Url.Content("~/Content/Customer/images/team/1.webp")" class="img-fluid" alt="">
+                        </div>
+                        <h4 class="mb-0">Fynley Wilkinson</h4>
+                        <div>CEO</div>
+                        <div class="social-icons s2">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center mb-sm-20">
+                        <div class="bg-color-2 rounded-30 mb20">
+                            <img src="@Url.Content("~/Content/Customer/images/team/2.webp")" class="img-fluid" alt="">
+                        </div>
+                        <h4 class="mb-0">Myra Welsh</h4>
+                        <div>CEO</div>
+                        <div class="social-icons s2">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center mb-sm-20">
+                        <div class="bg-color-2 rounded-30 mb20">
+                            <img src="@Url.Content("~/Content/Customer/images/team/3.webp")" class="img-fluid" alt="">
+                        </div>
+                        <h4 class="mb-0">Aysha Shepard</h4>
+                        <div>CCO</div>
+                        <div class="social-icons s2">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center mb-sm-20">
+                        <div class="bg-color-2 rounded-30 mb20">
+                            <img src="@Url.Content("~/Content/Customer/images/team/4.webp")" class="img-fluid" alt="">
+                        </div>
+                        <h4 class="mb-0">Robyn Peel</h4>
+                        <div>CTO</div>
+                        <div class="social-icons s2">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark-1 text-light">
+            <div class="container">
+                <div class="row align-items-center gx-5">
+
+                    <div class="col-lg-6 mb-sm-20">
+                        <div class="subtitle wow fadeInUp mb-3">Trusted IT Solution</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Delivering outstanding IT services since 2008</h2>
+                        <p class="wow fadeInUp">We are a dynamic and forward-thinking IT company dedicated to transforming your digital world. With a passion for cutting-edge solutions and a commitment to exceptional service, we are your trusted partner in navigating the ever-evolving landscape of IT. Our team of skilled professionals is here to harness the power of technology, providing tailor-made solutions that drive your success. </p>
+                        <hr class="s2">
+                        <div class="spacer-10"></div>
+                        <a class="btn-line mb10" href="services.html">Our Services</a>
+                    </div>
+
+                    <div class="col-lg-6 position-relative">
+                        <div class="images-deco-1">
+                            <img src="@Url.Content("~/Content/Customer/images/misc/1.webp")" class="d-img-1 wow zoomIn" data-wow-delay="0s" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/misc/2.webp")" class="d-img-2 wow zoomIn" data-wow-delay=".5s" alt="">
+                            <div class="d-img-3 bg-color wow zoomIn" data-wow-delay=".6s"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-color">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-light">
+                        <div class="subtitle s2 mb20">Customer reviews</div>
+                        <h2 class="wow fadeInUp">4.85 out of 5</h2>
+                        <div class="spacer-20"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="owl-carousel owl-theme wow fadeInUp" id="testimonial-carousel">
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/1.jpg")"> <div>Michael S.<span>developer</span></div>
+                                    </div>
+                                    <p>
+                                        "We've entrusted our IT needs to UpTech for several years, and they've consistently exceeded our expectations. Their proactive approach to managing our IT infrastructure has eliminated downtime and ensured a secure, efficient environment.
+                                    </p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/2.jpg")"> <div>Robert L.<span>developer</span></div>
+                                    </div>
+                                    <p>"UpTech's IT support services have been instrumental in keeping our systems running smoothly. Their team is quick to respond, expertly resolving any issues we encounter. Knowing that they have our IT needs covered allows us to focus on our core business with confidence."</p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/3.jpg")"> <div>Jake M.<span>developer</span></div>
+                                    </div>
+                                    <p>"UpTech's cybersecurity solutions have transformed our security posture. Their comprehensive services have protected us from cyber threats and data breaches. We trust their expertise and diligence in monitoring and safeguarding our digital assets."</p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/4.jpg")"> <div>Alex P.<span>developer</span></div>
+                                    </div>
+                                    <p>"UpTech helped us seamlessly transition to the cloud. Their cloud services have reduced our IT infrastructure costs while providing flexibility and scalability. The accessibility and security of their cloud solutions have been a game-changer for our growing business."</p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/5.jpg")"> <div>Carlos R.<span>developer</span></div>
+                                    </div>
+                                    <p>"UpTech's data backup and recovery services have been a lifesaver for our critical data. Their solutions ensure our data's protection and quick recovery in the event of unforeseen events. Knowing our data is safe with UpTech is a source of great comfort."</p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/6.jpg")"> <div>Edward B.<span>developer</span></div>
+                                    </div>
+                                    <p>"UpTech's IT consulting services have provided us with invaluable insights and strategies to optimize our IT infrastructure. Their expert advice has been instrumental in aligning our technology with our business goals and staying competitive."</p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/7.jpg")"> <div>Daniel H.<span>developer</span></div>
+                                    </div>
+                                    <p>"UpTech's project management services have been essential for us. Their team efficiently oversees and coordinates complex IT projects, ensuring they are delivered on time and within budget. We appreciate their attention to detail and dedication to our success."</p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="de_testi s2">
+                                <blockquote>
+                                    <div class="de_testi_by">
+                                        <img alt="" src="@Url.Content("~/Content/Customer/images/testimonial/8.jpg")"> <div>Bryan G.<span>developer</span></div>
+                                    </div>
+                                    <p>"UpTech's network infrastructure services have transformed our connectivity. Their expertise in designing, implementing, and maintaining our network has improved our operational efficiency and communication. Their responsive support is always just a call away."</p>
+                                    <div class="de-rating-ext">
+                                        <span class="d-stars">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="pt60 pb60">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-12">
+                        <div id="owl-logo" class="logo-carousel no-alpha owl-carousel owl-theme">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/1.png")" class="img-fluid" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/2.png")" class="img-fluid" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/3.png")" class="img-fluid" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/4.png")" class="img-fluid" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/5.png")" class="img-fluid" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/6.png")" class="img-fluid" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/7.png")" class="img-fluid" alt="">
+                            <img src="@Url.Content("~/Content/Customer/images/logo-clients/8.png")" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
+    <!-- content close -->
 </main>

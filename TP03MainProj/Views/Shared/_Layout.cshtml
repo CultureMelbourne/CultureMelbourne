@@ -6,34 +6,184 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="icon" href="~/Content/Customer/images/icon.png" type="image/gif" sizes="16x16">
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+
+    <div id="wrapper">
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-full transparent">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <div class="de-flex-col">
+                                    <!-- logo begin -->
+                                    <div id="logo">
+                                        <a href="index.html">
+                                            <img class="logo-main" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
+                                            <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
+                                        </a>
+                                    </div>
+                                    <!-- logo close -->
+                                </div>
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li>
+                                        <a class="menu-item" href="index.html">Home</a>
+                                        <ul>
+                                            <li><a class="menu-item" href="index.html">Homepage One</a></li>
+                                            <li><a class="menu-item" href="homepage-2.html">Homepage Two</a></li>
+                                            <li><a class="menu-item" href="homepage-3.html">Homepage Three</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="menu-item" href="#">Study Case</a>
+                                        <ul>
+                                            <li><a class="menu-item" href="study-case.html">Study Case</a></li>
+                                            <li><a class="menu-item" href="study-case-single.html">Single Study Case</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="services.html">Services</a></li>
+                                    <li><a class="menu-item" href="about.html">About Us</a></li>
+                                    <li><a class="menu-item" href="news.html">News</a></li>
+                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <div class="h-phone md-hide">
+                                        <span>Need Help?</span>+123-234-3456
+                                    </div>
+                                    <a href="contact.html" class="btn-line">Contact us</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            @RenderBody()
+
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
+        <!-- content close -->
+        <!-- footer begin -->
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
+                        <img src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
+                        <div class="spacer-20"></div>
+                        <p>We aspire to create a digital landscape where technology seamlessly enhances productivity, connectivity, and sustainability, fostering a brighter, more efficient, and inclusive future for all.</p>
+
+                        <div class="widget">
+                            <h5>Follow Us on</h5>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="services.html">Our Services</a></li>
+                                        <li><a href="study-case.html">Study Case</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="widget">
+                                    <h5>Our Services</h5>
+                                    <ul>
+                                        <li><a href="#">Managed IT Services</a></li>
+                                        <li><a href="#">Software Development</a></li>
+                                        <li><a href="#">Cybersecurity Services</a></li>
+                                        <li><a href="#">Database Management</a></li>
+                                        <li><a href="#">Network Services</a></li>
+                                        <li><a href="#">Help Desk Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <h5>Get In Touch</h5>
+                            <div class="de-icon-text mb20">
+                                <img src="@Url.Content("~/Content/Customer/images/svg/phone-svgrepo-com-white.svg")" class="" alt="">
+                                <div class="d-text">
+                                    <h4>Phone</h4>
+                                    +123-234-3456
+                                </div>
+                            </div>
+
+                            <div class="de-icon-text mb20">
+                                <img src="@Url.Content("~/Content/Customer/images/svg/email-address-svgrepo-com-white.svg")" class="" alt="">
+
+                                <div class="d-text">
+                                    <h4>Email</h4>
+                                    hallo@madebydesignesia.com
+                                </div>
+                            </div>
+
+                            <div class="de-icon-text">
+                                <img src="@Url.Content("~/Content/Customer/images/svg/map-pin-svgrepo-com-white.svg")" class="" alt="">
+
+                                <div class="d-text">
+                                    <h4>Address</h4>
+                                    100 S Main St, Los Angeles, CA
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    Copyright 2023 - UpTech by Designesia
+                                </div>
+                                <ul class="menu-simple">
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
+        <!-- footer close -->
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
