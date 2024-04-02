@@ -1308,9 +1308,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-<<<<<<< HEAD
-=======
-    <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Events\Create.cshtml" />
     <Content Include="Views\Events\Delete.cshtml" />
     <Content Include="Views\Events\Details.cshtml" />
@@ -1318,7 +1315,6 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Scripts\moment.min.js.map" />
     <Content Include="Scripts\moment-with-locales.min.js.map" />
->>>>>>> 3933cb1f2f676e6b65c76aa88abed7b256464004
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Customer\vendor\FormGuide\PHPFormValidator\tests\" />
