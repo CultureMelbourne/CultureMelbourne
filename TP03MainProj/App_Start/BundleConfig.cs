@@ -41,7 +41,7 @@ namespace TP03MainProj
                       "~/Scripts/lib/jquery-3.7.1.min.js",
                       "~/Scripts/lib/moment.min.js",
                       "~/Scripts/fullcalendar.js",
-                      "~/Scripts/calendar.js"
+                      "~/Scripts/calender.js"
                       ));
         }
     }
