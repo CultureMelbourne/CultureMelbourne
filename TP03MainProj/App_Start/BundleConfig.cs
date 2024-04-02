@@ -36,6 +36,13 @@ namespace TP03MainProj
                       "~/Content/Customer/css/style.css",
                       "~/Content/Customer/css/coloring.css"
                       ));
+
+            bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
+                      "~/Scripts/lib/jquery-3.7.1.min.js",
+                      "~/Scripts/lib/moment.min.js",
+                      "~/Scripts/fullcalendar.js",
+                      "~/Scripts/calendar.js"
+                      ));
         }
     }
 }
