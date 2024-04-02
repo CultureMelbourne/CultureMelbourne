@@ -56,6 +56,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -140,6 +142,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -152,7 +155,25 @@
     <Compile Include="Migrations\202403191326515_InitialCreate1.designer.cs">
       <DependentUpon>202403191326515_InitialCreate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404020810014_AddCalendarDateForeignKeyToEvents.cs" />
+    <Compile Include="Migrations\202404020810014_AddCalendarDateForeignKeyToEvents.Designer.cs">
+      <DependentUpon>202404020810014_AddCalendarDateForeignKeyToEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404020812066_AddCalendarDateForeignKeyToEvents1.cs" />
+    <Compile Include="Migrations\202404020812066_AddCalendarDateForeignKeyToEvents1.Designer.cs">
+      <DependentUpon>202404020812066_AddCalendarDateForeignKeyToEvents1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404020818280_AddCalendarDateAndEventsTables.cs" />
+    <Compile Include="Migrations\202404020818280_AddCalendarDateAndEventsTables.Designer.cs">
+      <DependentUpon>202404020818280_AddCalendarDateAndEventsTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404020828331_ReverseProductTable.cs" />
+    <Compile Include="Migrations\202404020828331_ReverseProductTable.Designer.cs">
+      <DependentUpon>202404020828331_ReverseProductTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CalenderDate.cs" />
+    <Compile Include="Models\Events.cs" />
     <Compile Include="Models\MyApplicationContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -985,6 +1006,10 @@
     <Content Include="Content\Customer\vendor\FormGuide\PHPFormValidator\.gitignore" />
     <Content Include="Content\Customer\vendor\FormGuide\PHPFormValidator\phpunit.xml" />
     <Content Include="Content\Customer\vendor\gregwar\captcha\.gitignore" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\fullcalendar.print.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -1149,7 +1174,7 @@
     <Content Include="Content\Customer\vendor\phpmailer\phpmailer\LICENSE" />
     <Content Include="Content\Customer\vendor\phpmailer\phpmailer\PHPMailerAutoload.php" />
     <Content Include="Content\Customer\vendor\phpmailer\phpmailer\VERSION" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\calender.js" />
     <Content Include="Scripts\Customer\countdown-custom.js" />
     <Content Include="Scripts\Customer\custom-marquee.js" />
     <Content Include="Scripts\Customer\custom-swiper-1.js" />
@@ -1159,16 +1184,116 @@
     <Content Include="Scripts\Customer\plugins.js" />
     <Content Include="Scripts\Customer\recaptcha.js" />
     <Content Include="Scripts\Customer\swiper.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\gcal.js" />
+    <Content Include="Scripts\gcal.min.js" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\jquery-ui.min.css" />
+    <Content Include="Scripts\lib\jquery-ui.min.js" />
+    <Content Include="Scripts\lib\jquery.min.js" />
+    <Content Include="Scripts\lib\moment.min.js" />
+    <Content Include="Scripts\locale-all.js" />
+    <Content Include="Scripts\locale\af.js" />
+    <Content Include="Scripts\locale\ar-dz.js" />
+    <Content Include="Scripts\locale\ar-kw.js" />
+    <Content Include="Scripts\locale\ar-ly.js" />
+    <Content Include="Scripts\locale\ar-ma.js" />
+    <Content Include="Scripts\locale\ar-sa.js" />
+    <Content Include="Scripts\locale\ar-tn.js" />
+    <Content Include="Scripts\locale\ar.js" />
+    <Content Include="Scripts\locale\bg.js" />
+    <Content Include="Scripts\locale\bs.js" />
+    <Content Include="Scripts\locale\ca.js" />
+    <Content Include="Scripts\locale\cs.js" />
+    <Content Include="Scripts\locale\da.js" />
+    <Content Include="Scripts\locale\de-at.js" />
+    <Content Include="Scripts\locale\de-ch.js" />
+    <Content Include="Scripts\locale\de.js" />
+    <Content Include="Scripts\locale\el.js" />
+    <Content Include="Scripts\locale\en-au.js" />
+    <Content Include="Scripts\locale\en-ca.js" />
+    <Content Include="Scripts\locale\en-gb.js" />
+    <Content Include="Scripts\locale\en-ie.js" />
+    <Content Include="Scripts\locale\en-nz.js" />
+    <Content Include="Scripts\locale\es-do.js" />
+    <Content Include="Scripts\locale\es-us.js" />
+    <Content Include="Scripts\locale\es.js" />
+    <Content Include="Scripts\locale\et.js" />
+    <Content Include="Scripts\locale\eu.js" />
+    <Content Include="Scripts\locale\fa.js" />
+    <Content Include="Scripts\locale\fi.js" />
+    <Content Include="Scripts\locale\fr-ca.js" />
+    <Content Include="Scripts\locale\fr-ch.js" />
+    <Content Include="Scripts\locale\fr.js" />
+    <Content Include="Scripts\locale\gl.js" />
+    <Content Include="Scripts\locale\he.js" />
+    <Content Include="Scripts\locale\hi.js" />
+    <Content Include="Scripts\locale\hr.js" />
+    <Content Include="Scripts\locale\hu.js" />
+    <Content Include="Scripts\locale\id.js" />
+    <Content Include="Scripts\locale\is.js" />
+    <Content Include="Scripts\locale\it.js" />
+    <Content Include="Scripts\locale\ja.js" />
+    <Content Include="Scripts\locale\ka.js" />
+    <Content Include="Scripts\locale\kk.js" />
+    <Content Include="Scripts\locale\ko.js" />
+    <Content Include="Scripts\locale\lb.js" />
+    <Content Include="Scripts\locale\lt.js" />
+    <Content Include="Scripts\locale\lv.js" />
+    <Content Include="Scripts\locale\mk.js" />
+    <Content Include="Scripts\locale\ms-my.js" />
+    <Content Include="Scripts\locale\ms.js" />
+    <Content Include="Scripts\locale\nb.js" />
+    <Content Include="Scripts\locale\nl-be.js" />
+    <Content Include="Scripts\locale\nl.js" />
+    <Content Include="Scripts\locale\nn.js" />
+    <Content Include="Scripts\locale\pl.js" />
+    <Content Include="Scripts\locale\pt-br.js" />
+    <Content Include="Scripts\locale\pt.js" />
+    <Content Include="Scripts\locale\ro.js" />
+    <Content Include="Scripts\locale\ru.js" />
+    <Content Include="Scripts\locale\sk.js" />
+    <Content Include="Scripts\locale\sl.js" />
+    <Content Include="Scripts\locale\sq.js" />
+    <Content Include="Scripts\locale\sr-cyrl.js" />
+    <Content Include="Scripts\locale\sr.js" />
+    <Content Include="Scripts\locale\sv.js" />
+    <Content Include="Scripts\locale\th.js" />
+    <Content Include="Scripts\locale\tr.js" />
+    <Content Include="Scripts\locale\uk.js" />
+    <Content Include="Scripts\locale\vi.js" />
+    <Content Include="Scripts\locale\zh-cn.js" />
+    <Content Include="Scripts\locale\zh-tw.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1184,6 +1309,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Scripts\moment.min.js.map" />
+    <Content Include="Scripts\moment-with-locales.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Customer\vendor\FormGuide\PHPFormValidator\tests\" />
@@ -1214,8 +1346,6 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202403191317491_InitialCreate.resx">
@@ -1223,6 +1353,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403191326515_InitialCreate1.resx">
       <DependentUpon>202403191326515_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404020810014_AddCalendarDateForeignKeyToEvents.resx">
+      <DependentUpon>202404020810014_AddCalendarDateForeignKeyToEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404020812066_AddCalendarDateForeignKeyToEvents1.resx">
+      <DependentUpon>202404020812066_AddCalendarDateForeignKeyToEvents1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404020818280_AddCalendarDateAndEventsTables.resx">
+      <DependentUpon>202404020818280_AddCalendarDateAndEventsTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404020828331_ReverseProductTable.resx">
+      <DependentUpon>202404020828331_ReverseProductTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
