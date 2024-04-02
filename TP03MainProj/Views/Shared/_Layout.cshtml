@@ -17,7 +17,7 @@
         <div id="de-loader"></div>
         <!-- page preloader close -->
         <!-- header begin -->
-        <header class="header-full transparent">
+        <header class="header-full transparent bg-warning">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -26,7 +26,7 @@
                                 <div class="de-flex-col">
                                     <!-- logo begin -->
                                     <div id="logo">
-                                        <a href="index.html">
+                                        <a href="@Url.Action("Index", "Home")">
                                             <img class="logo-main" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
                                             <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
                                         </a>
@@ -34,27 +34,27 @@
                                     <!-- logo close -->
                                 </div>
                             </div>
-                            <div class="de-flex-col header-col-mid">
-                                <ul id="mainmenu">
-                                    <li>
-                                        <a class="menu-item" href="index.html">Home</a>
+                            <div class="de-flex-col header-col-mid ">
+                                <ul id="mainmenu" class="">
+                                    <li class=" text-white">
+                                        <a class="menu-item " href="@Url.Action("Index", "Home")">Home</a>
                                         <ul>
-                                            <li><a class="menu-item" href="index.html">Homepage One</a></li>
-                                            <li><a class="menu-item" href="homepage-2.html">Homepage Two</a></li>
-                                            <li><a class="menu-item" href="homepage-3.html">Homepage Three</a></li>
+                                            <li><a class="menu-item" href="@Url.Action("Index", "Home")">Homepage One</a></li>
+                                            <li><a class="menu-item" href="@Url.Action("HomepageTwo", "Home")">Homepage Two</a></li>
+                                            <li><a class="menu-item" href="@Url.Action("HomepageThree", "Home")">Homepage Three</a></li>
                                         </ul>
                                     </li>
-                                    <li>
+                                    <li class=" text-white">
                                         <a class="menu-item" href="#">Study Case</a>
                                         <ul>
-                                            <li><a class="menu-item" href="study-case.html">Study Case</a></li>
-                                            <li><a class="menu-item" href="study-case-single.html">Single Study Case</a></li>
+                                            <li><a class="menu-item" href="@Url.Action("StudyCase", "Cases")">Study Case</a></li>
+                                            <li><a class="menu-item" href="@Url.Action("SingleStudyCase", "Cases")">Single Study Case</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="services.html">Services</a></li>
-                                    <li><a class="menu-item" href="about.html">About Us</a></li>
-                                    <li><a class="menu-item" href="news.html">News</a></li>
-                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                                    <li class=" text-white"><a class="menu-item" href="@Url.Action("Services", "Home")">Services</a></li>
+                                    <li class=" text-white"><a class="menu-item" href="@Url.Action("About", "Home")">About Us</a></li>
+                                    <li class=" text-white"><a class="menu-item" href="@Url.Action("News", "Home")">News</a></li>
+                                    <li class=" text-white"><a class="menu-item" href="@Url.Action("Contact", "Home")">Contact</a></li>
                                 </ul>
                             </div>
                             <div class="de-flex-col">
@@ -62,7 +62,7 @@
                                     <div class="h-phone md-hide">
                                         <span>Need Help?</span>+123-234-3456
                                     </div>
-                                    <a href="contact.html" class="btn-line">Contact us</a>
+                                    <a href="@Url.Action("Contact", "Home")" class="btn-line">Contact us</a>
                                     <span id="menu-btn"></span>
                                 </div>
                             </div>
@@ -71,6 +71,7 @@
                 </div>
             </div>
         </header>
+
         <!-- header close -->
         <!-- content begin -->
         <div class="no-bottom no-top" id="content">
@@ -79,8 +80,8 @@
         </div>
         <!-- content close -->
         <!-- footer begin -->
-        <footer>
-            <div class="container">
+        <footer class="bg-warning">
+            <div class="container ">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-sm-6">
                         <img src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
