@@ -1369,12 +1369,9 @@
     <EmbeddedResource Include="Migrations\202404020828331_ReverseProductTable.resx">
       <DependentUpon>202404020828331_ReverseProductTable.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="Migrations\202404021322456_CalenderModify.resx">
       <DependentUpon>202404021322456_CalenderModify.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> master
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
