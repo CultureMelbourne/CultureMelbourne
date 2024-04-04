@@ -17,7 +17,7 @@ $(document).ready(function () {
 	$("#calendar").fullCalendar({
 		locale: 'au',  // Set locale to Australian (for example)
 		events: events,  // Pass the events array to the calendar
-	
+
 		//Modify according to the event configuration (the url section to page section)
 		// Define a function for the 'dayClick' event
 		/*dayClick: function (date, allDay, jsEvent, view) {
@@ -28,3 +28,4 @@ $(document).ready(function () {
 			$(location).attr('href', uri);  // Redirect to the event creation page
 		}*/
 	});
+});

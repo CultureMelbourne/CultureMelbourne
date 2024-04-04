@@ -1312,10 +1312,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-<<<<<<< HEAD
-=======
     <Content Include="Views\Home\Home.cshtml" />
->>>>>>> master
     <Content Include="Views\Events\Create.cshtml" />
     <Content Include="Views\Events\Delete.cshtml" />
     <Content Include="Views\Events\Details.cshtml" />
@@ -1373,12 +1370,9 @@
     <EmbeddedResource Include="Migrations\202404020828331_ReverseProductTable.resx">
       <DependentUpon>202404020828331_ReverseProductTable.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="Migrations\202404021322456_CalenderModify.resx">
       <DependentUpon>202404021322456_CalenderModify.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> master
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
