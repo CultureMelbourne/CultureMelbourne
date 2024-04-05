@@ -162,58 +162,28 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="subtitle s2 wow fadeInUp mb-3">Cultures</div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Cultures</h2>
+                        <div class="subtitle s2 wow fadeInUp mb-3">Explore Cultures</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Select your Jam</h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center mb-sm-20 ">
-                        <div class="bg-color-2 rounded-30 mb20 bg-warning">
-                            <img src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="img-fluid" alt="">
+                    @* Repeat this structure for each culture *@
+                    @foreach (var culture in new[] { "Chinese", "Japanese", "Korean", "Filipino", "Vietnamese" })
+                    {
+                        <div class="col-lg-3 col-md-6 text-center mb-sm-20">
+                            <a href="@Url.Action("Index", "Events", new { culture = culture })" class="culture-btn">
+                                <div class="bg-color-2 rounded-30 mb20 bg-warning">
+                                    <img src="@Url.Content($"~/Content/Customer/images/team/{culture}.jpg")" class="img-fluid" alt="@culture Culture">
+                                </div>
+                                <h4 class="mb-0">@culture</h4>
+                            </a>
+                            <div class="social-icons s2">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
                         </div>
-                        <h4 class="mb-0">China</h4>
-                        <div class="social-icons s2">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-discord"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 text-center mb-sm-20">
-                        <div class="bg-color-2 rounded-30 mb20 bg-warning">
-                            <img src="@Url.Content("~/Content/Customer/images/team/2.jpg")" class="img-fluid" alt="">
-                        </div>
-                        <h4 class="mb-0">Japan</h4>
-                        <div class="social-icons s2">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 text-center mb-sm-20">
-                        <div class="bg-color-2 rounded-30 mb20 bg-warning">
-                            <img src="@Url.Content("~/Content/Customer/images/team/3.jpg")" class="img-fluid" alt="">
-                        </div>
-                        <h4 class="mb-0">Mongolia</h4>
-                        <div class="social-icons s2">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 text-center mb-sm-20">
-                        <div class="bg-color-2 rounded-30 mb20 bg-warning">
-                            <img src="@Url.Content("~/Content/Customer/images/team/4.jpg")" class="img-fluid" alt="">
-                        </div>
-                        <h4 class="mb-0">Korea</h4>
-                        <div class="social-icons s2">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </section>

@@ -17,6 +17,7 @@ namespace TP03MainProj.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime CulturalDate { get; set; }
 
+        //There might be a festival name for the date or might not be
         public string Name { get; set; }
 
 
