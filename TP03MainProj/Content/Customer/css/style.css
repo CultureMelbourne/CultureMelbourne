@@ -6639,14 +6639,11 @@ ol.ol-style-1 li::before {
   display: block;
   width: 100%;
 }
-* p::selection {
+* p::selection, h4::selection, h1::selection, h2::selection, h3::selection, strong::selection {
     background-color: #2c91ff68; /* 选取后的背景颜色 */
     color: #fff; /* 选取后的文本颜色 */
 }
-* h4::selection {
-    background-color: #2c91ff68; /* 选取后的背景颜色 */
-    color: #fff; /* 选取后的文本颜色 */
-}
+
 .text-light .pricing-table .action {
   border-top: none;
 }
@@ -8631,7 +8628,7 @@ a.btn-right {
   background: var(--primary-color);
 }
 .de-timeline-article.even .site-center-line {
-  background: var(--secondary-color);
+  background: #FECE58;
 }
 .de-timeline-article {
   width: 100%;
@@ -8683,7 +8680,7 @@ h4.de-timeline-year {
   float: right;
 }
 .de-timeline-article.even h4.de-timeline-year {
-  background: var(--secondary-color);
+    background: #FECE58;
 }
 .de-timeline-article .d-line {
   position: absolute;
@@ -8697,8 +8694,8 @@ h4.de-timeline-year {
   background: var(--primary-color);
 }
 .de-timeline-article.even .d-line {
-  right: 50%;
-  background: var(--secondary-color);
+    right: 50%;
+    background: #FECE58;
 }
 .de-timeline-article .owl-carousel {
   position: relative;
@@ -8721,7 +8718,7 @@ h4.de-timeline-year {
   background: var(--primary-color);
 }
 .de-timeline-article.even .meta-dot {
-  background: var(--secondary-color);
+    background: #FECE58;
 }
 @media only screen and (max-width: 830px) {
   .de-timeline-article .site-center-line {
