@@ -15,6 +15,9 @@ namespace TP03MainProj.Models
         public int Id { get; set; }
 
         [Required]
+        public string Culture { get; set; }
+
+        [Required]
         public string Title { get; set; }
 
         //[Required]
@@ -23,19 +26,18 @@ namespace TP03MainProj.Models
 
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
-        public DateTime StartTime { get; set; }
+        public string StartDate { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
-        public DateTime EndTime { get; set; }
+        public string EndDate { get; set; }
+
+        [Required]
+        public string Url { get; set; }
 
         // Link to CalenderDate
         public int CalenderDateId { get; set; } // Foreign Key
 
         [ForeignKey("CalenderDateId")]
-        public virtual CalenderDate CalenderDate { get; set; } // Navigation Property
+        public virtual CalenderDate Start_Date { get; set; } // Navigation Property
     }
 }

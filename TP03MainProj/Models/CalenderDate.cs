@@ -13,12 +13,19 @@ namespace TP03MainProj.Models
         public int CalenderDateId { get; set; }
 
         [Required]
+        public string Culture { get; set; }
+
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime CulturalDate { get; set; }
+        public DateTime Start_Date { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        public DateTime End_Date { get; set; }
 
         //There might be a festival name for the date or might not be
-        public string Name { get; set; }
+        public string Title { get; set; }
 
 
     }
