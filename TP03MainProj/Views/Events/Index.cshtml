@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <h2>Cultural Events</h2>
@@ -13,81 +15,86 @@
     -->
 
 <div>
-    <table class="table">
-        <tr>
-            <!--<th>
-    Html.DisplayNameFor(model => model.CalenderDate.Name)
-    </th>-->
-            <th>
-                @Html.DisplayNameFor(model => model.Culture)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Url)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr class="events">
-                <!--<td>
-    Html.DisplayFor(modelItem => item.CalenderDate.Name)
-    </td>-->
-                <td class="title">
-                    @Html.DisplayFor(modelItem => item.Culture)
-                </td>
-                <td class="title">
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td class="description">
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td class="starttime">
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td class="endtime">
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td class="url">
-                    @Html.DisplayFor(modelItem => item.Url)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
+    @*<table class="table">
+            <tr>
+                <th>
+        Html.DisplayNameFor(model => model.CalenderDate.Name)
+        </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Culture)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Url)
+                </th>
+                <th></th>
             </tr>
-        }
 
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr class="events">
+                    <td>
+        Html.DisplayFor(modelItem => item.CalenderDate.Name)
+        </td>
+                    <td class="title">
+                        @Html.DisplayFor(modelItem => item.Culture)
+                    </td>
+                    <td class="title">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td class="description">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td class="starttime">
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td class="endtime">
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td class="url">
+                        @Html.DisplayFor(modelItem => item.Url)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>*@
 </div>
 
 <div id="calendar"></div>
 <div id="events-list"></div>
 
 @section Scripts {
-    <script src="~/Scripts/fullcalendar.js"></script>
-    <script src="~/Scripts/jquery-3.7.1.js"></script>
-    <script src="~/Scripts/moment.js"></script>
-    <!-- The Custom Calender Script-->
-    <script src="~/Scripts/calendar.js"></script>
+
+    @Scripts.Render("~/bundles/fullcalendar")
+
     <!-- Global Variables for passing data to custom calender script -->
     <script>
         var getCulturalDatesUrl = '@Url.Action("GetCulturalDates", "Events")';
         var getEventsFromEventbriteUrl = '@Url.Action("GetEventsFromEventbrite", "Events")';
     </script>
 
+    <style>
 
+
+        #calendar {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    </style>
 }

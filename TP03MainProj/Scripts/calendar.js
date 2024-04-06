@@ -1,4 +1,4 @@
-// To Do - 
+// To Do -
 // Replace 'api/getCulturalDates' with the actual API endpoint that serves cultural date data.
 // Replace 'api/getEventsFromEventbrite' with the actual API endpoint that serves Eventbrite data.
 document.addEventListener('DOMContentLoaded', function () {
