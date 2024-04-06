@@ -2,99 +2,52 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
-<h2>Cultural Events</h2>
 
 <!--
 <p>
     Html.ActionLink("Create New", "Create")
 </p>
     -->
-
-<div>
-    @*<table class="table">
-            <tr>
-                <th>
-        Html.DisplayNameFor(model => model.CalenderDate.Name)
-        </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Culture)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.StartDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EndDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Url)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr class="events">
-                    <td>
-        Html.DisplayFor(modelItem => item.CalenderDate.Name)
-        </td>
-                    <td class="title">
-                        @Html.DisplayFor(modelItem => item.Culture)
-                    </td>
-                    <td class="title">
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td class="description">
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td class="starttime">
-                        @Html.DisplayFor(modelItem => item.StartDate)
-                    </td>
-                    <td class="endtime">
-                        @Html.DisplayFor(modelItem => item.EndDate)
-                    </td>
-                    <td class="url">
-                        @Html.DisplayFor(modelItem => item.Url)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                    </td>
-                </tr>
-            }
-
-        </table>*@
+<div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
+<div id="calendar">
 </div>
-
-<div id="calendar"></div>
 <div id="events-list"></div>
 
+
+
+    <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+        <div class="row align-items-center gx-5" style="background-size: cover; background-repeat: no-repeat;">
+
+            <div class="col-lg-6 mb-sm-20" style="background-size: cover; background-repeat: no-repeat;">
+                <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
+                <div id="calendar"></div>
+                <div id="events-list"></div>
+            </div>
+
+        </div>
+    </div>
 @section Scripts {
-
-    @Scripts.Render("~/bundles/fullcalendar")
-
     <!-- Global Variables for passing data to custom calender script -->
     <script>
         var getCulturalDatesUrl = '@Url.Action("GetCulturalDates", "Events")';
         var getEventsFromEventbriteUrl = '@Url.Action("GetEventsFromEventbrite", "Events")';
     </script>
+    @Scripts.Render("~/bundles/fullcalendar")
+
+
 
     <style>
 
 
         #calendar {
-            max-width: 1100px;
+            width:50%;
+            height:50%;
             margin: 0 auto;
+            margin-top:5%;
         }
     </style>
 }

@@ -4,7 +4,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
 
-    var culture = '@ViewBag.Culture'; // For retreiving the culture name from the server-side ViewBag
+    //var culture = '@ViewBag.Culture'; // For retreiving the culture name from the server-side ViewBag
+
+
+    var culture = document.getElementById('culture').getAttribute('data-culture');
+    console.log(culture);
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
         headerToolbar: {
@@ -12,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             right: 'dayGridMonth,dayGridweek,dayGridDay'
         },
-        intialDate: '2024-01-01',
+        initialDate: '2024-01-01',
         navLinks: true,
         editable: false, // User cannot move the calender event
         dayMaxEvents: true,
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 data: {
                     culture: culture,
                     start: fetchInfo.startStr,
-                    end: fetchInfo.startStr// Assuming the cultural date is as a string
+                    end: fetchInfo.endStr// Assuming the cultural date is as a string
                 },
                 success: function (data) {
                     successCallback(data); // 'data' should be an array of event objects
