@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "DiverseCultures";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*choose part*@
+<section class="">
+    <div class="container justify-content-center align-content-center" >
+        <div class="row">
+            <div class="col-lg-8">
+                <ul class="crumb mb-3" id="">
+                    <li style="font-size: large; color: rgba(0, 0, 0, 0.5)"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li style="font-size: large;" class="active"><a href="@Url.Action("Index", "Education")">Education Center</a></li>
+                    <li style="font-size: large; color: #d48810 " class="active">Diverse Cultures</li>
+                </ul>
+                <h2 class="wow fadeInUp mt-3 mb-2" data-wow-delay=".2s">Please Choose</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="china">
+                    <img src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">China</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="japan">
+                    <img src="@Url.Content("~/Content/Customer/images/team/2.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Japan</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="korea">
+                    <img src="@Url.Content("~/Content/Customer/images/team/3.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Korea</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="philipines">
+                    <img src="@Url.Content("~/Content/Customer/images/team/4.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Philippines</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="vietnam">
+                    <img src="@Url.Content("~/Content/Customer/images/team/5.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Vietnam</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@*story part*@
+    <div id="china-story" class="story-item" style="display:none;">
+        @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
+
+    </div>
+
+    <div id="japan-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
+
+    </div>
+
+    <div id="korea-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
+
+    </div>
+
+    <div id="philipines-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
+
+    </div>
+
+    <div id="vietnam-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
+
+    </div>
+
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            // Explicitly show the China story part and add highlight class on page load
+            $('#china-story').show();
+            $('.choose-item[data-target="china"]').addClass('highlight');
+
+            $('.choose-item').click(function () {
+                var target = $(this).data('target');
+                $('.story-item').hide(); // Hide all story items
+                $('#' + target + '-story').show(); // Show the selected story item
+
+                $('.choose-item').removeClass('highlight'); // Remove highlight from all items
+                $(this).addClass('highlight'); // Highlight the selected item
+            });
+        });
+
+
+    </script>
+
+    <style>
+
+        .choose-item.highlight {
+            border: 2px solid #FECE58;
+            box-shadow: 0 0 20px 5px #FECE58;
+        }
+
+        .choose-item:hover {
+            border: 2px solid #FECE58;
+            box-shadow: 0 0 20px 5px #FECE58;
+        }
+    </style>
+
+}
