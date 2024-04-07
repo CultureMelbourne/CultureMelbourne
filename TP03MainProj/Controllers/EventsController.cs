@@ -134,17 +134,15 @@ namespace TP03MainProj.Controllers
 
         public JsonResult GetCulturalDates(string culture, DateTime start, DateTime end)
         {
-            /* POTENTIAL CODE FOR INTERNAL FILE READ
-             string filePath = Server.MapPath("~/Content/yourfile.csv"); // Adjust 'yourfile.csv' to your file's name
-
-             var culturalDates = new List<CalenderDate>();
-
-             // Read all lines from the CSV file
-             var lines = System.IO.File.ReadAllLines(filePath);
-
-             // Skip the header line if your CSV has one
-             foreach (var line in lines.Skip(1))
-             {
+            string filePath = Server.MapPath("~/Content/DataSource/calendar_data.csv");
+            
+            var culturalDates = new List<CalenderDate>();
+            // Read all lines from the CSV file
+            var lines = System.IO.File.ReadAllLines(filePath);
+            
+            // Skip the header line if your CSV has one
+            foreach (var line in lines.Skip(1))
+            {
                 var columns = line.Split(',');
 
                 // Parse each column into the CalenderDate object, adjust indices as per your CSV structure
@@ -157,13 +155,13 @@ namespace TP03MainProj.Controllers
                 };
 
                 culturalDates.Add(calenderDate);
-             }
+            }
 
             // Filter and select as before
             var filteredDates = culturalDates
-                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) && 
-                            ((d.Start_Date >= start && d.Start_Date <= end) || 
-                            (d.End_Date >= start && d.End_Date <= end)))
+                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase)) //&& 
+                            //((d.Start_Date >= start && d.Start_Date <= end) || 
+                            //(d.End_Date >= start && d.End_Date <= end)))
                 .Select(d => new
                 {
                     title = d.Title,
@@ -173,23 +171,23 @@ namespace TP03MainProj.Controllers
 
             return Json(filteredDates, JsonRequestBehavior.AllowGet);
         
-             */
-            var culturalDates = new List<CalenderDate>
-            {
-                new CalenderDate { Culture = "Japanese", Title = "Tanabata", Start_Date = new DateTime(2024, 7, 7), End_Date = new DateTime(2024, 7, 7)},
-                new CalenderDate { Culture = "Chinese", Title = "Mid-Autumn Festival", Start_Date = new DateTime(2024, 9, 15), End_Date = new DateTime(2024, 9, 15)},
-            };
+             
+            //var culturalDates = new List<CalenderDate>
+            //{
+            //    new CalenderDate { Culture = "Japanese", Title = "Tanabata", Start_Date = new DateTime(2024, 7, 7), End_Date = new DateTime(2024, 7, 7)},
+            //    new CalenderDate { Culture = "Chinese", Title = "Mid-Autumn Festival", Start_Date = new DateTime(2024, 9, 15), End_Date = new DateTime(2024, 9, 15)},
+            //};
 
-            var filteredDates = culturalDates
-                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase))
-                .Select(d => new
-                {
-                    title = d.Title,
-                    start = d.Start_Date.ToString("yyyy-MM-dd"),
-                    end = d.End_Date.ToString("yyyy-MM-dd"),
-                }).ToList();
+            //var filteredDates = culturalDates
+            //    .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase))
+            //    .Select(d => new
+            //    {
+            //        title = d.Title,
+            //        start = d.Start_Date.ToString("yyyy-MM-dd"),
+            //        end = d.End_Date.ToString("yyyy-MM-dd"),
+            //    }).ToList();
 
-            return Json(filteredDates, JsonRequestBehavior.AllowGet);
+            //return Json(filteredDates, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetEventsFromEventbrite(string culture, DateTime date)
         {
