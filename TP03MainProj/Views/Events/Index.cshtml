@@ -13,23 +13,12 @@
 </p>
     -->
 <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
-<div id="calendar">
+<div id="calendar"></div>
+<div id="events-list">
+
 </div>
-<div id="events-list"></div>
 
 
-
-    <div class="container" style="background-size: cover; background-repeat: no-repeat;">
-        <div class="row align-items-center gx-5" style="background-size: cover; background-repeat: no-repeat;">
-
-            <div class="col-lg-6 mb-sm-20" style="background-size: cover; background-repeat: no-repeat;">
-                <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
-                <div id="calendar"></div>
-                <div id="events-list"></div>
-            </div>
-
-        </div>
-    </div>
 @section Scripts {
     <!-- Global Variables for passing data to custom calender script -->
     <script>
@@ -49,5 +38,16 @@
             margin: 0 auto;
             margin-top:5%;
         }
+        .event-detail {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+            .event-detail h3 {
+                margin-top: 0;
+            }
+
     </style>
 }

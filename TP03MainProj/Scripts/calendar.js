@@ -35,9 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         },
-
-        dayClick: function (date, allDay, jsEvent, view) {
-            var clickedDate = date.toISOString();
+        dateClick: function (info) {
+            var clickedDate = info.dateStr;
             $.ajax({
                 url: getEventsFromEventbriteUrl,
                 type: 'GET',
@@ -46,14 +45,35 @@ document.addEventListener('DOMContentLoaded', function () {
                     date: clickedDate
                 },
                 success: function (events) {
-                    // Assuming 'events' is an array of strings
                     var eventsHtml = events.map(function (event) {
-                        return '<li>' + event + '</li>';
+                        return '<div class="event-detail">' +
+                            '<h3>' + event.title + '</h3>' +
+                            '<p>' + event.description + '</p>' +
+                            '<p><a href="' + event.url + '" target="_blank">More Info</a></p>' +
+                            '</div>';
                     }).join('');
-                    $('#events-list').html('<ul>' + eventsHtml + '</ul>');
+                    $('#events-list').html(eventsHtml);
                 }
             });
         }
+        //dayClick: function (date, allDay, jsEvent, view) {
+        //    var clickedDate = date.toISOString();
+        //    $.ajax({
+        //        url: getEventsFromEventbriteUrl,
+        //        type: 'GET',
+        //        data: {
+        //            culture: culture,
+        //            date: clickedDate
+        //        },
+        //        success: function (events) {
+        //            // Assuming 'events' is an array of strings
+        //            var eventsHtml = events.map(function (event) {
+        //                return '<li>' + event + '</li>';
+        //            }).join('');
+        //            $('#events-list').html('<ul>' + eventsHtml + '</ul>');
+        //        }
+        //    });
+        //}
     });
 
     calendar.render();
