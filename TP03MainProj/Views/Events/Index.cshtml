@@ -12,9 +12,26 @@
     Html.ActionLink("Create New", "Create")
 </p>
     -->
-<div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
-<div id="calendar"></div>
-<div id="events-list"></div>
+
+
+<section>
+    <div class="container">
+        <!--calendar-->
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 col-md-10 text-center">
+                <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
+                <div id="calendar" class="mx-auto"></div>
+            </div>
+        </div>
+        <!--events list-->
+
+        <div class="row justify-content-center align-items-center mt-3">
+            <div class="col-lg-8 col-md-10 text-center">
+                <div id="events-list"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 @section Scripts {
@@ -31,11 +48,12 @@
 
 
         #calendar {
-            width:50%;
-            height:50%;
+            width: 100%;
+            max-width: 900px;
             margin: 0 auto;
-            margin-top:5%;
+            margin-top: 5%;
         }
+
         .event-detail {
             margin-bottom: 20px;
             padding: 10px;
@@ -43,13 +61,15 @@
             border-radius: 5px;
         }
 
-        .event-detail h3 {
+            .event-detail h3 {
                 margin-top: 0;
-        }
+            }
+
         .fc-day:hover {
-            background-color: #eee; 
-            cursor: pointer; 
+            background-color: #eee;
+            cursor: pointer;
         }
+
         .highlighted {
             background-color: #ff0;
             border: 2px solid #f00;
