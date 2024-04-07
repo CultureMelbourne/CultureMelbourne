@@ -19,6 +19,32 @@
         <!--calendar-->
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-8 col-md-10 text-center">
+                @{
+                    var cultureColour = "";
+                    switch (ViewBag.Culture as string)
+                    {
+                        case "Japanese":
+                            cultureColour = "red";
+                            break;
+                        case "Chinese":
+                            cultureColour = "green";
+                            break;
+                        case "Korean":
+                            cultureColour = "blue";
+                            break;
+                        case "Filipino":
+                            cultureColour = "yellow";
+                            break;
+                        case "Vietnamese":
+                            cultureColour = "orange";
+                            break;
+                        default:
+                            cultureColour = "black"; // Default colour
+                            break;
+                    }
+                }
+
+                <h2>Explore <span style="color: @cultureColour;">@ViewBag.Culture</span> Events!</h2>
                 <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
                 <div id="calendar" class="mx-auto"></div>
             </div>
