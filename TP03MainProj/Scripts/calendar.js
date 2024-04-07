@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             right: 'dayGridMonth,dayGridweek,dayGridDay'
         },
-        initialDate: '2024-01-01',
+        timeZone: 'local',
+        initialDate: new Date().toISOString().split('T')[0], // Converts current date to YYYY-MM-DD format
         navLinks: true,
         editable: false, // User cannot move the calender event
         dayMaxEvents: true,
@@ -51,14 +52,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     date: clickedDate
                 },
                 success: function (events) {
+                    var eventsHeading = '<h3 style="text-decoration: underline;">Events for the date: ' + clickedDate + '</h3>';
                     var eventsHtml = events.map(function (event) {
                         return '<div class="event-detail">' +
                             '<h3>' + event.title + '</h3>' +
                             '<p>' + event.description + '</p>' +
-                            '<p><a href="' + event.url + '" target="_blank">More Info</a></p>' +
+                            '<p style="color:blue;"><a href="' + event.url + '" target="_blank">More Info</a></p>' +
                             '</div>';
                     }).join('');
-                    $('#events-list').html(eventsHtml);
+                    $('#events-list').html(eventsHeading + eventsHtml);
                 }
             });
         }

@@ -155,6 +155,7 @@ namespace TP03MainProj.Controllers
         {
             var allEvents = new List<Events> {
                 new Events { Culture = "Japanese", Title = "Tanabata Festival", StartDate = "2024-07-07", EndDate = "2024-07-07", Description = "Star Festival in Japan.", Url = "http://example.com/tanabata" },
+                new Events { Culture = "Japanese", Title = "AfterParty @ Tanabata", StartDate = "2024-07-07", EndDate = "2024-07-07", Description = "After party of the festival with DJ and snacks. ;)", Url = "http://example.com/after-tanabata" },
                 new Events { Culture = "Chinese", Title = "Mid-Autumn Festival", StartDate = "2024-09-15", EndDate = "2024-09-15", Description = "Mooncake Festival.", Url = "http://example.com/mid-autumn" }
             };
 
