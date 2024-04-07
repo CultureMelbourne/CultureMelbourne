@@ -3,8 +3,7 @@
 // Replace 'api/getEventsFromEventbrite' with the actual API endpoint that serves Eventbrite data.
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
-
-    //var culture = '@ViewBag.Culture'; // For retreiving the culture name from the server-side ViewBag
+    var lastHighlighted;
 
 
     var culture = document.getElementById('culture').getAttribute('data-culture');
@@ -37,6 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         dateClick: function (info) {
             var clickedDate = info.dateStr;
+
+            if (lastHighlighted) {
+                lastHighlighted.classList.remove('highlighted');
+            }
+            info.dayEl.classList.add('highlighted');
+
+            lastHighlighted = info.dayEl;
             $.ajax({
                 url: getEventsFromEventbriteUrl,
                 type: 'GET',
@@ -56,24 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
-        //dayClick: function (date, allDay, jsEvent, view) {
-        //    var clickedDate = date.toISOString();
-        //    $.ajax({
-        //        url: getEventsFromEventbriteUrl,
-        //        type: 'GET',
-        //        data: {
-        //            culture: culture,
-        //            date: clickedDate
-        //        },
-        //        success: function (events) {
-        //            // Assuming 'events' is an array of strings
-        //            var eventsHtml = events.map(function (event) {
-        //                return '<li>' + event + '</li>';
-        //            }).join('');
-        //            $('#events-list').html('<ul>' + eventsHtml + '</ul>');
-        //        }
-        //    });
-        //}
     });
 
     calendar.render();

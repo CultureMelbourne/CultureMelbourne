@@ -14,9 +14,7 @@
     -->
 <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
 <div id="calendar"></div>
-<div id="events-list">
-
-</div>
+<div id="events-list"></div>
 
 
 @section Scripts {
@@ -45,9 +43,16 @@
             border-radius: 5px;
         }
 
-            .event-detail h3 {
+        .event-detail h3 {
                 margin-top: 0;
-            }
-
+        }
+        .fc-day:hover {
+            background-color: #eee; 
+            cursor: pointer; 
+        }
+        .highlighted {
+            background-color: #ff0;
+            border: 2px solid #f00;
+        }
     </style>
 }
