@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(culture);
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
+        //themeSystem: 'bootstrap', //Anything for FontAwesome?
         headerToolbar: {
             left: 'prevYear,prev,next,nextYear today',
             center: 'title',

@@ -39,6 +39,7 @@ namespace TP03MainProj
 
             bundles.Add(new Bundle("~/bundles/fullcalendar").Include(
                       "~/Scripts/index.global.js",
+                      //"~/Scripts/bootstrap.js",
                       "~/Scripts/calendar.js"
                       ));
         }
