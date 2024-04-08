@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <link rel="icon" href="~/Content/Customer/images/icon.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="@Url.Content("~/Content/Customer/images/logo-mobile.jpg")" type="image/gif" sizes="16x16">
 
 </head>
 <body>
@@ -28,7 +28,7 @@
                                     <div id="logo">
                                         <a href="@Url.Action("Index", "Home")">
                                             <img class="logo-main" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
-                                            <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
+                                            <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.jpg")" alt="">
                                         </a>
                                     </div>
                                     <!-- logo close -->
@@ -47,18 +47,13 @@
                                         </ul>
                                     </li>
                                     <li class=" text-white">
-                                        <a class="menu-item" href="@Url.Action("Index", "Events")">Culture Events</a>
+                                        <a class="menu-item" href="#cultural-events">Culture Events</a>
                                     </li>
 
                                 </ul>
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                    @*<div class="h-phone md-hide">
-                                        <span>Need Help?</span>+123-234-3456
-                                    </div>
-                                    <a href="@Url.Action("Contact", "Home")" class="btn-line">Contact us</a>
-                                    <span id="menu-btn"></span>*@
                                 </div>
                             </div>
                         </div>
@@ -79,19 +74,9 @@
             <div class="container ">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-sm-6">
-                        <img src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
+                        <img class="logo-footer" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
                         <div class="spacer-20"></div>
                         <p>Committed to celebrating Melbourne's multicultural legacy, we aim to educate and unite, combating discrimination and nurturing cultural connections.</p>
-                        @*<div class="widget">
-            <h5>Follow Us on</h5>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>*@
                     </div>
                     <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
                         <div class="row">
@@ -101,10 +86,8 @@
                                     <ul>
                                         <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                                         <li><a href="@Url.Action("Index", "Education")">Education</a></li>
-                                        <li><a href="@Url.Action("Index", "Events")">Culture Events</a></li>
-                                        @*<li><a href="about.html">About Us</a></li>
-                                        <li><a href="news.html">News</a></li>
-                                        <li><a href="contact.html">Contact</a></li>*@
+                                        <li><a href="#cultural-events">Culture Events</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -116,8 +99,7 @@
                                         <li><a href="#">Discover East Asia</a></li>
                                         <li><a href="#">Voices of East Asia</a></li>
                                         <li><a href="#">Cultural Insights</a></li>
-                                        @*<li><a href="#">Network Services</a></li>
-                                        <li><a href="#">Help Desk Support</a></li>*@
+
                                     </ul>
                                 </div>
                             </div>
@@ -144,7 +126,7 @@
                             </div>
 
                             <div class="de-icon-text">
-                                <img src="@Url.Content("~/Content/Customer/images/svg/map-pin-svgrepo-com-white.svg")" class="" alt="">
+                                <img  src="@Url.Content("~/Content/Customer/images/svg/map-pin-svgrepo-com-white.svg")" class="" alt="">
 
                                 <div class="d-text">
                                     <h4>Address</h4>
@@ -163,10 +145,6 @@
                                 <div class="de-flex-col">
                                     Monash University FIT5120-S1 TP03
                                 </div>
-                                @*<ul class="menu-simple">
-                                    <li><a href="#">Terms &amp; Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>*@
                             </div>
                         </div>
                     </div>
