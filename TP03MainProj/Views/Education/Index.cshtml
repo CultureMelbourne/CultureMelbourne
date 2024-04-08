@@ -27,10 +27,13 @@
                 <section id="subheader">
                     <div class="container">
                         <div class="row text-center">
-                            <div class="col-lg-8 offset-lg-2">
+                            <div class="col-lg-8 offset-lg-2 ">
                                 <h2 class="wow fadeInUp mb20" data-wow-delay=".2s">Embark on a Journey of Cultural Discovery</h2>
                                 <ul class="crumb" id="education-nav">
-                                    <li style="font-size: large; color: rgba(0, 0, 0, 0.5)"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                    <li style="font-size: large;" class="text-dark">
+                                        <a href="@Url.Action("Index", "Home")">Home</a>
+                                    </li>
+                                    <li style="font-size: large;" class="text-dark ms-2 me-2">></li>
                                     <li style="font-size: large; color: #d48810 " class="active">Education Center</li>
                                 </ul>
                             </div>
@@ -48,7 +51,7 @@
                                         <div class="d-text">
                                             <h4>Embracing Diversity in Education</h4>
                                             <p class="">Interactive resources for lessons on Melbourne’s East Asian heritage.</p>
-                                            <a class="btn-main btn-fullwidth btn-white" href="@Url.Action("DiverseCultures", "Education")">Access Resources</a>
+                                            <a class="btn-main btn-fullwidth btn-white text-primary" href="@Url.Action("DiverseCultures", "Education")">Access Resources</a>
                                         </div>
                                     </div>
                                     <img src="@Url.Content("~/Content/Customer/images/study-case/1.webp")" class="img-fluid" alt="">
@@ -62,7 +65,7 @@
                                             <h4>Stories of Migration: Melbourne's Tapestry</h4>
                                             <p class=""> Explore the rich migration stories shaping our city.</p>
 
-                                            <a class="btn-main btn-fullwidth btn-white" href="@Url.Action("MigrationStories", "Education")">View Stories</a>
+                                            <a class="btn-main btn-fullwidth btn-white text-primary" href="@Url.Action("MigrationStories", "Education")">View Stories</a>
                                         </div>
                                     </div>
                                     <img src="@Url.Content("~/Content/Customer/images/study-case/2.webp")" class="img-fluid" alt="">

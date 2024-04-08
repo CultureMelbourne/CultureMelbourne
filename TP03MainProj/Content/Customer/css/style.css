@@ -3398,13 +3398,13 @@ address span strong {
   letter-spacing: 0;
 }
 
-.crumb li:after {
+/*.crumb li:after {
   font-family: "FontAwesome";
   content: "\f054";
   font-size: 10px;
   margin: 0 10px 0 10px;
   opacity: .5;
-}
+}*/
 
 .crumb li:last-child:after {
   display: none;
