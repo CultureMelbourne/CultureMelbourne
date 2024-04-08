@@ -12443,11 +12443,11 @@ i.bg-color-secondary {
 
 .de-icon-text{
   position: relative;
-  font-
 }
 .de-icon-text img{
   width: 48px;
   position: absolute;
+  fill:white;
 }
 
 .de-icon-text .d-text{
@@ -19529,14 +19529,21 @@ img {
   }
 
 }
-
+.logo-main {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+.logo-footer {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
 /* -------------------------------------------------- 
     custom for 320px & 480px 
     /* -------------------------------------------------- */
-
 @media only screen and (max-width: 767px) {
-
-   header .logo-main {
+    header .logo-main {
     display: none;
   }
 
