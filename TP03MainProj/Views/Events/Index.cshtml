@@ -13,8 +13,10 @@
 </p>
     -->
 
+
 <section class="vh-100 d-flex align-items-center">
     <div class="container">
+        <!--calendar-->
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10 text-center">
                 @{
@@ -45,12 +47,13 @@
                 <h2>Explore <span style="color: @cultureColour;">@ViewBag.Culture</span> Events!</h2>
                 <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
                 <div id="calendar" class="mx-auto"></div>
-                <h6 style="background-color:powderblue;"><i>Click around the Calendar to find Events for the Festivals above...</i></h6>
+                <h6 style="background-color:powderblue;"><i>Click around the Calender to find Events for the Festivals above...</i></h6>
             </div>
         </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-lg-8 col-md-10">
-                <div id="events-list"></div>
+        <!--events list-->
+        <div class="row justify-content-center align-items-center mt-3">
+            <div class="col-lg-8 col-md-10 text-center">
+                <div class="" id="events-list"></div>
             </div>
         </div>
     </div>
@@ -69,30 +72,35 @@
 
     <style>
 
+        #events-list {
+            margin-bottom: 100px;
+        }
+        #calendar {
+            width: 150%;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 5%;
+        }
 
-#calendar {
-    /* Adjustments to ensure the calendar fits within its container */
-    width: 100%; /* Instead of 150% to ensure it stays within the column */
-    max-width: 900px; /* Keeps your original max-width */
-    margin: 0 auto;
-}
+        .event-detail {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 3px solid @cultureColour;
+            border-radius: 5px;
+        }
 
-.event-detail {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    /* The border-color needs to be inline or dynamically added via script since CSS doesn't parse Razor syntax */
-}
+            .event-detail h3 {
+                margin-top: 0;
+            }
 
-.fc-day:hover {
-    background-color: #eee;
-    cursor: pointer;
-}
+        .fc-day:hover {
+            background-color: #eee;
+            cursor: pointer;
+        }
 
-.highlighted {
-    background-color: #ff0;
-    border: 2px solid #f00;
-}
-
+        .highlighted {
+            background-color: #ff0;
+            border: 2px solid #f00;
+        }
     </style>
 }

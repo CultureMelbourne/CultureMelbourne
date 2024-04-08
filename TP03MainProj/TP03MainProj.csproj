@@ -991,7 +991,6 @@
     <Content Include="Content\Customer\fonts\fontawesome6\css\v4-shims.min.css" />
     <Content Include="Content\Customer\fonts\fontawesome6\css\v5-font-face.css" />
     <Content Include="Content\Customer\fonts\fontawesome6\css\v5-font-face.min.css" />
-    <Content Include="Content\Customer\images\icon.png" />
     <Content Include="Content\Customer\images\logo-clients\1.png" />
     <Content Include="Content\Customer\images\logo-clients\2.png" />
     <Content Include="Content\Customer\images\logo-clients\3.png" />
@@ -1022,6 +1021,11 @@
     <Content Include="Content\Customer\images\svg\phone-svgrepo-com-white.svg" />
     <Content Include="Content\Customer\images\svg\phone-svgrepo-com.svg" />
     <Content Include="Content\Customer\images\svg\users-svgrepo-com.svg" />
+    <Content Include="Content\Customer\images\team\Chinese.jpg" />
+    <Content Include="Content\Customer\images\team\Filipino.jpg" />
+    <Content Include="Content\Customer\images\team\Japanese.jpg" />
+    <Content Include="Content\Customer\images\team\Korean.jpg" />
+    <Content Include="Content\Customer\images\team\Vietnamese.jpg" />
     <Content Include="Content\Customer\images\testimonial\1.jpg" />
     <Content Include="Content\Customer\images\testimonial\2.jpg" />
     <Content Include="Content\Customer\images\testimonial\3.jpg" />
@@ -1133,10 +1137,6 @@
     <Content Include="Content\Customer\images\study-case\4.webp" />
     <Content Include="Content\Customer\images\study-case\5.webp" />
     <Content Include="Content\Customer\images\study-case\6.webp" />
-    <Content Include="Content\Customer\images\team\1.webp" />
-    <Content Include="Content\Customer\images\team\2.webp" />
-    <Content Include="Content\Customer\images\team\3.webp" />
-    <Content Include="Content\Customer\images\team\4.webp" />
     <Content Include="Content\Customer\images\timeline\1.webp" />
     <Content Include="Content\Customer\images\timeline\2.webp" />
     <Content Include="Content\Customer\images\timeline\3.webp" />
