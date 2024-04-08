@@ -1199,6 +1199,7 @@
     <Content Include="Scripts\gcal.js" />
     <Content Include="Scripts\gcal.min.js" />
     <Content Include="Content\DataSource\calendar_data.csv" />
+    <Content Include="Content\Customer\images\mig\p2.webp" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\index.global.js" />
     <Content Include="Scripts\index.global.min.js" />

@@ -4,25 +4,76 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="no-bottom no-top" id="content" style="background-size: cover; background-repeat: no-repeat;">
-    <div id="top" style="background-size: cover; background-repeat: no-repeat;"></div>
-    <!-- section begin -->
-    <section id="subheader" style="background-size: cover; background-repeat: no-repeat;">
-        <div class="container" style="background-size: cover; background-repeat: no-repeat;">
-            <div class="row text-center" style="background-size: cover; background-repeat: no-repeat;">
-                <div class="col-lg-8 offset-lg-2" style="background-size: cover; background-repeat: no-repeat;">
-                    <div class="subtitle s2 wow fadeInUp mb-3 animated" style="background-size: cover; background-repeat: no-repeat; visibility: visible; animation-name: fadeInUp;">Explore</div>
-                    <h2 class="wow fadeInUp mb20 animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"> Migration Stories</h2>
-                    <ul class="crumb" id="">
-                        <li style="font-size: large; color: rgba(0, 0, 0, 0.5)"><a href="@Url.Action("Index", "Home")">Home</a></li>
-                        <li style="font-size: large;" class="active"><a href="@Url.Action("Index", "Education")">Education Center</a></li>
-                        <li style="font-size: large; color: #d48810 " class="active">Migration Stories</li>
-                    </ul>
-                </div>
+
+
+
+
+
+
+
+
+
+
+
+@*choose part*@
+<section class="">
+    <div class="container justify-content-center align-content-center">
+        <div class="row">
+            <div class="col-lg-8">
+                <ul class="crumb mb-3" id="">
+                    <li style="font-size: large; color: rgba(0, 0, 0, 0.5)"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li style="font-size: large;" class="active"><a href="@Url.Action("Index", "Education")">Education Center</a></li>
+                    <li style="font-size: large; color: #d48810 " class="active">MigrationStories</li>
+                </ul>
+                <h2 class="wow fadeInUp mt-3 mb-2" data-wow-delay=".2s">Please Choose</h2>
             </div>
         </div>
-    </section>
-    <!-- section close -->
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="china">
+                    <img src="@Url.Content("~/Content/Customer/images/team/Chinese.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">China</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="japan">
+                    <img src="@Url.Content("~/Content/Customer/images/team/Japanese.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Japan</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="korea">
+                    <img src="@Url.Content("~/Content/Customer/images/team/Korean.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Korea</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="philipines">
+                    <img src="@Url.Content("~/Content/Customer/images/team/Filipino.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Philippines</h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
+                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="vietnam">
+                    <img src="@Url.Content("~/Content/Customer/images/team/Vietnamese.jpg")" class="img-fluid" alt="">
+                </div>
+                <h4 class="mb-0">Vietnam</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="no-bottom no-top bg-black text-light" id="content" style="background-size: cover; background-repeat: no-repeat;">
+    <div id="top" style="background-size: cover; background-repeat: no-repeat;" class="text-center pb-5  pt-5">
+        <h1>Migration Stories</h1>
+    </div>
+    @*story part*@
+<div id="china-story" class="story-item" style="display:none;">
+
 
     <section class="no-top" style="background-size: cover; background-repeat: no-repeat;">
         <div class="container" style="background-size: cover; background-repeat: no-repeat;">
@@ -33,109 +84,226 @@
                             <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
                                 <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
                                 </div>
-                                <img alt="" src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="lazy">
+                                <img alt="Chinese migrant Wei Liao loves living in Melbourne. Picture: Hamish Blair" src="https://content.api.news/v3/images/bin/88836317e3e3bb88a988d2140b506ca3" srcset="https://content.api.news/v3/images/bin/88836317e3e3bb88a988d2140b506ca3?width=150 128w, https://content.api.news/v3/images/bin/88836317e3e3bb88a988d2140b506ca3?width=150 150w, https://content.api.news/v3/images/bin/88836317e3e3bb88a988d2140b506ca3?width=320 320w, https://content.api.news/v3/images/bin/88836317e3e3bb88a988d2140b506ca3?width=650 650w, https://content.api.news/v3/images/bin/88836317e3e3bb88a988d2140b506ca3?width=1024 1024w" sizes="648px" loading="eager">
                             </div>
                             <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
                                 <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
-                                <h4><a href="news-single.html">A Glimpse into the Future of Technology</a></h4>
-                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
+                                <h4><a class="text-light" href="https://www.heraldsun.com.au/news/victoria/future-melbourne/melbourne-is-a-city-defined-by-its-immigrant-story/news-story/a95ffde76d702d6591caea6af4087347 ">Wei Liao's New Chapter in Melbourne</a></h4>
+                                <p class="text-light">Wei Liao's migration to Melbourne showcases a personal journey of embracing a slower pace of life, with her work at a migrant support agency underlining the city's allure for providing comfort, opportunity, and a better lifestyle for her family. Her story reflects the broader narrative of Melbourne's transformation into a multicultural hub, emphasizing the city's ability to offer growth, connection, and a sense of belonging to its diverse inhabitants.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
                     <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
                         <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
                             <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
                                 <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
-
                                 </div>
-                                <img alt="" src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="lazy">
+                                <img sizes="(min-width: 1520px) 1008px, (min-width: 960px) calc(61.11vw + 91px), 100vw" src="https://liveinmelbourne.vic.gov.au/__data/assets/image/0005/1482692/Migrant-Lv-Changyun-and-family-walking-at-Williamstown-beach.jpg">
                             </div>
                             <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
                                 <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
-                                <h4><a href="news-single.html">How AI is Transforming Industries</a></h4>
-                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
+                                <h4><a class="text-light" href="https://liveinmelbourne.vic.gov.au/discover/migrant-stories/lv-changyun">LV Changyun's Entrepreneurial Journey</a></h4>
+                                <p class="text-light">Seeking a serene lifestyle away from the hustle of China, LV Changyun found both personal satisfaction and professional fulfillment in Melbourne, establishing a successful quilt manufacturing business. Motivated by providing his child with superior education and a multicultural upbringing, LV's journey highlights the transformative impact of Melbourne on migrants seeking a blend of entrepreneurial success and quality living..</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
-                    <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
-                        <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
-                            <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
-
-                                </div>
-                                <img alt="" src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="lazy">
-                            </div>
-                            <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
-                                <h4><a href="news-single.html">How Technology is Reshaping Our Lives</a></h4>
-                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
-                    <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
-                        <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
-                            <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
-
-                                </div>
-                                <img alt="" src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="lazy">
-                            </div>
-                            <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
-                                <h4><a href="news-single.html">Cybersecurity in the Digital Age</a></h4>
-                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
-                    <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
-                        <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
-                            <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
-
-                                </div>
-                                <img alt="" src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="lazy">
-                            </div>
-                            <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
-                                <h4><a href="news-single.html">Balancing Progress and Responsibility</a></h4>
-                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
-                    <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
-                        <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
-                            <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
-
-                                </div>
-                                <img alt="" src="@Url.Content("~/Content/Customer/images/team/1.jpg")" class="lazy">
-                            </div>
-                            <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
-                                <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
-                                <h4><a href="news-single.html">The Next Generation for the Digital Age</a></h4>
-                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </section>
+
+
+
+
 </div>
+
+    <div id="japan-story" class=" story-item" style="display: none;">
+        <section class="no-top" style="background-size: cover; background-repeat: no-repeat;">
+            <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="row g-4" style="background-size: cover; background-repeat: no-repeat;">
+                    <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
+                        <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
+                            <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
+                                <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <img srcset="https://images.sbs.com.au/dims4/default/cb62a50/2147483647/strip/true/crop/3510x1974+0+508/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2Fa2%2Fbf%2Fa2efd20c4893a4af3aa85042460c%2Femma-sullivan-japanese-school-of-melbourne-4.jpg&amp;">
+                                </div>
+                                <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
+                                    <h4><a class="text-light" href="https://www.sbs.com.au/language/japanese/en/podcast-episode/i-went-to-a-japanese-primary-school-in-melbourne-and-moved-between-two-worlds/8vuyh5r0x">Between Worlds: Emma Sullivan's Journey of Cultural Harmony</a></h4>
+                                    <p class="text-light">Emma Sullivan's story unfolds as a journey of cultural duality, where her years at the Japanese School of Melbourne instilled in her a deep connection to her Japanese heritage, shaping a unique identity enriched by the traditions of her ancestral roots and her Australian upbringing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
+                        <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
+                            <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
+                                <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <img sizes="(min-width: 1520px) 1008px, (min-width: 960px) calc(61.11vw + 91px), 100vw" srcset="https://images.sbs.com.au/dims4/default/545ae5a/2147483647/strip/true/crop/1200x675+0+0/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2F7b%2Fb4%2F006f8c0d4688a6cd127e1fa5a147%2Fsquare-4x4.jpg&amp;imwidth=320 320w, https://images.sbs.com.au/dims4/default/545ae5a/2147483647/strip/true/crop/1200x675+0+0/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2F7b%2Fb4%2F006f8c0d4688a6cd127e1fa5a147%2Fsquare-4x4.jpg&amp;imwidth=360 360w, https://images.sbs.com.au/dims4/default/545ae5a/2147483647/strip/true/crop/1200x675+0+0/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2F7b%2Fb4%2F006f8c0d4688a6cd127e1fa5a147%2Fsquare-4x4.jpg&amp;imwidth=600 600w, https://images.sbs.com.au/dims4/default/545ae5a/2147483647/strip/true/crop/1200x675+0+0/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2F7b%2Fb4%2F006f8c0d4688a6cd127e1fa5a147%2Fsquare-4x4.jpg&amp;imwidth=960 960w, https://images.sbs.com.au/dims4/default/545ae5a/2147483647/strip/true/crop/1200x675+0+0/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2F7b%2Fb4%2F006f8c0d4688a6cd127e1fa5a147%2Fsquare-4x4.jpg&amp;imwidth=1280 1280w" src="https://images.sbs.com.au/dims4/default/545ae5a/2147483647/strip/true/crop/1200x675+0+0/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2F7b%2Fb4%2F006f8c0d4688a6cd127e1fa5a147%2Fsquare-4x4.jpg&amp;imwidth=1280">
+                                </div>
+                                <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
+                                    <h4><a class="text-light" href="https://www.sbs.com.au/language/japanese/en/podcast-episode/there-are-more-things-i-can-do-by-myself-here-a-japanese-student-in-a-wheelchair-enjoys-her-independence-in-melbourne/gad0sinok">Uncharted Paths: Mina Mori's Journey of Independence and Inclusivity</a></h4>
+                                    <p class="text-light">Facing the challenges of disability, Mina Mori left Japan for Australia, seeking independence and embracing Melbourne's inclusive environment. Her journey, marked by a resolve to overcome accessibility barriers before her 30th birthday, turns into a mission to advocate for enhanced accessibility in Japan, inspired by the kindness and inclusivity she experienced.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="korea-story" class=" story-item" style="display: none;">
+        <section class="no-top" style="background-size: cover; background-repeat: no-repeat;">
+            <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="row g-4" style="background-size: cover; background-repeat: no-repeat;">
+                    <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
+                        <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
+                            <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
+                                <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <img alt="" src="https://www.studymelbourne.vic.gov.au/__data/assets/image/0023/60935/Millie-Lee_4_resized.jpg" class="lazy">
+                                </div>
+                                <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
+                                    <h4><a class="text-light" href="https://www.studymelbourne.vic.gov.au/case-studies-and-student-stories/alumni-stories/millie-sinyoung-lee">Millie Sinyoung Lee: A Culinary Journey from Seoul to Melbourne</a></h4>
+                                    <p class="text-light">Millie Lee's transition from South Korea to Melbourne is a testament to her passion for cooking, leading to a successful career pivot as a food stylist. Educated at William Angliss Institute, her skills were refined and her vision expanded, influenced by Melbourne's culinary diversity and culture. Now, aiming to make her mark in Korea's food styling scene, Millie's story is one of resilience, adaptability, and the pursuit of passion, with Melbourne playing a key role in her inspiring journey</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="philipines-story" class=" story-item" style="display: none;">
+        <section class="no-top" style="background-size: cover; background-repeat: no-repeat;">
+            <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="row g-4" style="background-size: cover; background-repeat: no-repeat;">
+                    <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
+                        <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
+                            <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
+                                <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <img alt="" src="https://liveinmelbourne.vic.gov.au/__data/assets/image/0003/1482681/Migrant-Jojo-Francisco-and-family-at-home.jpg" class="lazy">
+                                </div>
+                                <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
+                                    <h4><a class="text-light" href="https://liveinmelbourne.vic.gov.au/discover/migrant-stories/jojo-francisco">Jojo Francisco</a></h4>
+                                    <p class="text-light">Discover Francisco's inspiring journey to Melbourne, where multiculturalism, opportunity, and a balanced lifestyle weave the story of a family's pursuit of happiness and contribution to a vibrant community...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
+                        <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
+                            <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
+                                <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <img alt="" src="@Url.Content("~/Content/Customer/images/mig/p2.webp")" class="lazy">
+                                </div>
+                                <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
+                                    <h4><a class="text-light" href="https://liveinmelbourne.vic.gov.au/discover/migrant-stories/jojo-francisco">How a Filipino lime is driving inclusion in Australia</a></h4>
+                                    <p class="text-light">Driven by their personal journey of cultural discovery, Fides Mae Santos and Grace Guinto transform challenges into a mission with The Entree.Pinays, celebrating Filipino heritage and promoting cultural unity in Australia through The Calamansi Story.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="vietnam-story" class=" story-item" style="display: none;">
+        <section class="no-top" style="background-size: cover; background-repeat: no-repeat;">
+            <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="row g-4" style="background-size: cover; background-repeat: no-repeat;">
+                    <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
+                        <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
+                            <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
+                                <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <img alt="" src="https://insiderguides.com.au/wp-content/uploads/2020/03/Phoebe-Nguyen-3-1024x575.jpg" class="lazy">
+                              </div>
+                                <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
+                                    <h4><a class="text-light" href="https://insiderguides.com.au/la-trobe-college-student-story/ ">Phoebe Nguyen's Transformative Path</a></h4>
+                                    <p class="text-light">From a linguist and artist in Ho Chi Minh City to a passionate nursing student in Melbourne, Phoebe Nguyen's migration story is a testament to pursuing passion and providing a brighter future for her child. Her journey underscores the supportive educational environment in Melbourne, facilitating not just academic success but also personal growth within a multicultural setting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb10" style="background-size: cover; background-repeat: no-repeat;">
+                        <div class="bloglist item" style="background-size: cover; background-repeat: no-repeat;">
+                            <div class="post-content" style="background-size: cover; background-repeat: no-repeat;">
+                                <div class="post-image" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-tagline" style="background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <img alt="" src="https://study.unimelb.edu.au/__data/assets/image/0036/354897/Nhat-Duy-Dao-photo-1-1.jpg" class="lazy">
+                                </div>
+                                <div class="post-text" style="background-size: cover; background-repeat: no-repeat;">
+                                    <div class="d-date" style="background-size: cover; background-repeat: no-repeat;"></div>
+                                    <h4><a class="text-light" href="https://study.unimelb.edu.au/student-life/meet-our-students/meet-nhat-bachelor-of-commerce-student">Nhat Duy Do: From Vietnam to Academic Excellence in Melbourne</a></h4>
+                                    <p class="text-light"> Nhat Duy Do's pursuit of a Bachelor of Commerce at The University of Melbourne illustrates his quest for knowledge in entrepreneurship and marketing. Awarded the Melbourne International Undergraduate Scholarship, Nhat's aspirations to contribute positively to society through sustainable business practices embody the spirit of innovation and multiculturalism that Melbourne fosters.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            // Explicitly show the China story part and add highlight class on page load
+            $('#china-story').show();
+            $('.choose-item[data-target="china"]').addClass('highlight');
+
+            $('.choose-item').click(function () {
+                var target = $(this).data('target');
+                $('.story-item').hide(); // Hide all story items
+                $('#' + target + '-story').show(); // Show the selected story item
+
+                $('.choose-item').removeClass('highlight'); // Remove highlight from all items
+                $(this).addClass('highlight'); // Highlight the selected item
+            });
+        });
+
+
+    </script>
+
+    <style>
+
+        .choose-item.highlight {
+            border: 2px solid #FECE58;
+            box-shadow: 0 0 20px 5px #FECE58;
+        }
+
+        .choose-item:hover {
+            border: 2px solid #FECE58;
+            box-shadow: 0 0 20px 5px #FECE58;
+        }
+
+        .story-item {
+        }
+    </style>
+
+}
