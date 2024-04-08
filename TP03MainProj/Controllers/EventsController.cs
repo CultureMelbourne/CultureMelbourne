@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Globalization;
 using TP03MainProj.Models;
+using CsvHelper;
+using CsvHelper.Configuration;
+using System.IO;
 
 namespace TP03MainProj.Controllers
 {
@@ -19,8 +22,7 @@ namespace TP03MainProj.Controllers
         public ActionResult Index(string culture)
         {
             ViewBag.Culture = culture;
-            //var events = db.Events.Include(e => e.CalenderDate);
-            return View();                //View(events.ToList());
+            return View();               
         }
 
         // GET: Events/Details/5
@@ -160,9 +162,7 @@ namespace TP03MainProj.Controllers
 
             // Filter and select as before
             var filteredDates = culturalDates
-                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase)) //&& 
-                            //((d.Start_Date >= start && d.Start_Date <= end) || 
-                            //(d.End_Date >= start && d.End_Date <= end)))
+                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase)) 
                 .Select(d => new
                 {
                     title = d.Title,
@@ -171,91 +171,56 @@ namespace TP03MainProj.Controllers
                 }).ToList();
 
             return Json(filteredDates, JsonRequestBehavior.AllowGet);
-        
-             
-            //var culturalDates = new List<CalenderDate>
-            //{
-            //    new CalenderDate { Culture = "Japanese", Title = "Tanabata", Start_Date = new DateTime(2024, 7, 7), End_Date = new DateTime(2024, 7, 7)},
-            //    new CalenderDate { Culture = "Chinese", Title = "Mid-Autumn Festival", Start_Date = new DateTime(2024, 9, 15), End_Date = new DateTime(2024, 9, 15)},
-            //};
 
-            //var filteredDates = culturalDates
-            //    .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase))
-            //    .Select(d => new
-            //    {
-            //        title = d.Title,
-            //        start = d.Start_Date.ToString("yyyy-MM-dd"),
-            //        end = d.End_Date.ToString("yyyy-MM-dd"),
-            //    }).ToList();
-
-            //return Json(filteredDates, JsonRequestBehavior.AllowGet);
         }
+
+        // To retrieve data from API (using static DB for the time being)
         public JsonResult GetEventsFromEventbrite(string culture, DateTime date)
         {
-            /* POTENTIAL CODE FOR INTERNAL FILE READ
-            string filePath = Server.MapPath("~/Content/events.csv"); // Adjust 'events.csv' to your CSV file name
-            var allEvents = new List<Events>();
+            string filePath = Server.MapPath("~/Content/DataSource/melbourne_events.csv");
 
-            // Read all lines from the CSV file
-            var lines = System.IO.File.ReadAllLines(filePath);
-
-            // Assume the first line is a header so skip it
-            foreach (var line in lines.Skip(1))
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
-                var columns = line.Split(',');
-
-                // Parse each column into an Events object, adjust indices based on your CSV structure
-                var eventItem = new Events
-                {
-                    Culture = columns[0],
-                    Title = columns[1],
-                    StartDate = columns[2],
-                    EndDate = columns[3],
-                    Description = columns[4],
-                    Url = columns[5],
-                };
-
-                allEvents.Add(eventItem);
-            }
-
-            var filteredEvents = allEvents
-                .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) && e.StartDate == date.ToString("yyyy-MM-dd"))
-                .Select(e => new
-                {
-                    title = e.Title,
-                    start = e.StartDate,
-                    end = e.EndDate,
-                    description = e.Description,
-                    url = e.Url
-                }).ToList();
-
-            return Json(filteredEvents, JsonRequestBehavior.AllowGet);
-            */
-
-            var allEvents = new List<Events> {
-                new Events { Culture = "Japanese", Title = "Tanabata Festival", StartDate = "2024-07-07", EndDate = "2024-07-07", Description = "Star Festival in Japan.", Url = "http://example.com/tanabata" },
-                new Events { Culture = "Japanese", Title = "AfterParty @ Tanabata", StartDate = "2024-07-07", EndDate = "2024-07-08", Description = "After party of the festival with DJ and snacks. ;)", Url = "http://example.com/after-tanabata" },
-                new Events { Culture = "Chinese", Title = "Mid-Autumn Festival", StartDate = "2024-09-15", EndDate = "2024-09-15", Description = "Mooncake Festival.", Url = "http://example.com/mid-autumn" }
+                HasHeaderRecord = true,
+                Delimiter = ",",
+                BadDataFound = null,
             };
 
-            var filteredEvents = allEvents
-                .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) &&
-                    date >= DateTime.ParseExact(e.StartDate, "yyyy-MM-dd", CultureInfo.InvariantCulture) && // Not taking culture bounds for DateTime Format
-                    date <= DateTime.ParseExact(e.EndDate, "yyyy-MM-dd", CultureInfo.InvariantCulture))
-                .Select(e => new
-                {
-                    title = e.Title,
-                    start = e.StartDate,
-                    end = e.EndDate,
-                    description = e.Description,
-                    url = e.Url
-                }).ToList();
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvReader(reader, config))
+            {
+                csv.Context.RegisterClassMap<EventMap>();
+                var records = csv.GetRecords<Events>().ToList();
 
-            return Json(filteredEvents, JsonRequestBehavior.AllowGet);
+                var filteredEvents = records
+                    .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) &&
+                                date >= e.StartDate &&
+                                date <= e.EndDate)
+                    .Select(e => new
+                    {
+                        title = e.Title,
+                        start = e.StartDate.ToString("yyyy-MM-dd"),
+                        end = e.EndDate.ToString("yyyy-MM-dd"),
+                        description = e.Description,
+                        url = e.Url
+                    }).ToList();
+
+                return Json(filteredEvents, JsonRequestBehavior.AllowGet);
+            }
         }
 
-
-
-
+        // For Mapping the CSV columns to the Events class properties
+        public sealed class EventMap : ClassMap<Events>
+        {
+            public EventMap()
+            {
+                Map(m => m.Culture).Index(0);
+                Map(m => m.Title).Index(1);
+                Map(m => m.StartDate).Index(2).TypeConverterOption.Format("d/MM/yyyy");
+                Map(m => m.EndDate).Index(3).TypeConverterOption.Format("d/MM/yyyy");
+                Map(m => m.Description).Index(4);
+                Map(m => m.Url).Index(5);
+            }
+        }
     }
 }

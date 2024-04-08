@@ -26,10 +26,14 @@ namespace TP03MainProj.Models
 
 
         [Required]
-        public string StartDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        public DateTime StartDate { get; set; }
 
         [Required]
-        public string EndDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        public DateTime EndDate { get; set; }
 
         [Required]
         public string Url { get; set; }
