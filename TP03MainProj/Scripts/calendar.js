@@ -52,16 +52,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     culture: culture,
                     date: clickedDate
                 },
+                // Port the whole code as it is for the file read modification
                 success: function (events) {
-                    var eventsHeading = '<h3 style="text-decoration: underline;">Events for the date: ' + clickedDate + '</h3>';
-                    var eventsHtml = events.map(function (event) {
-                        return '<div class="event-detail">' +
-                            '<h3>' + event.title + '</h3>' +
-                            '<p>' + event.description + '</p>' +
-                            '<p style="color:blue;"><a href="' + event.url + '" target="_blank">More Info</a></p>' +
-                            '</div>';
-                    }).join('');
-                    $('#events-list').html(eventsHeading + eventsHtml);
+                    var formattedDate = moment(clickedDate).format('DD-MM-YYYY'); //Formatted date for display
+                    var eventsHeading = '<h3 style="text-decoration: underline;">Events for the date: ' + formattedDate + '</h3>';
+                    // Check if there are any events on the date
+                    if (events.length > 0) {
+                        var eventsHtml = events.map(function (event) {
+                            return '<div class="event-detail">' +
+                                '<h3>' + event.title + '</h3>' +
+                                '<p>' + event.description + '</p>' +
+                                '<p style="color:blue;"><a href="' + event.url + '" target="_blank">More Info</a></p>' +
+                                '</div>';
+                        }).join('');
+                        $('#events-list').html(eventsHeading + eventsHtml);
+                    } else {
+                        $('#events-list').html(eventsHeading + '<p><b>Sorry, no events found for this date.</b></p>');
+                    }
+                    
+                    
                 }
             });
         }

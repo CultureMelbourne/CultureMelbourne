@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
 using TP03MainProj.Models;
 
 namespace TP03MainProj.Controllers
@@ -233,12 +234,14 @@ namespace TP03MainProj.Controllers
 
             var allEvents = new List<Events> {
                 new Events { Culture = "Japanese", Title = "Tanabata Festival", StartDate = "2024-07-07", EndDate = "2024-07-07", Description = "Star Festival in Japan.", Url = "http://example.com/tanabata" },
-                new Events { Culture = "Japanese", Title = "AfterParty @ Tanabata", StartDate = "2024-07-07", EndDate = "2024-07-07", Description = "After party of the festival with DJ and snacks. ;)", Url = "http://example.com/after-tanabata" },
+                new Events { Culture = "Japanese", Title = "AfterParty @ Tanabata", StartDate = "2024-07-07", EndDate = "2024-07-08", Description = "After party of the festival with DJ and snacks. ;)", Url = "http://example.com/after-tanabata" },
                 new Events { Culture = "Chinese", Title = "Mid-Autumn Festival", StartDate = "2024-09-15", EndDate = "2024-09-15", Description = "Mooncake Festival.", Url = "http://example.com/mid-autumn" }
             };
 
             var filteredEvents = allEvents
-                .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase))
+                .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) &&
+                    date >= DateTime.ParseExact(e.StartDate, "yyyy-MM-dd", CultureInfo.InvariantCulture) && // Not taking culture bounds for DateTime Format
+                    date <= DateTime.ParseExact(e.EndDate, "yyyy-MM-dd", CultureInfo.InvariantCulture))
                 .Select(e => new
                 {
                     title = e.Title,
