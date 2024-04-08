@@ -11,6 +11,7 @@ using TP03MainProj.Models;
 using CsvHelper;
 using CsvHelper.Configuration;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace TP03MainProj.Controllers
 {
@@ -138,31 +139,42 @@ namespace TP03MainProj.Controllers
         public JsonResult GetCulturalDates(string culture, DateTime start, DateTime end)
         {
             string filePath = Server.MapPath("~/Content/DataSource/calendar_data.csv");
-            
+
             var culturalDates = new List<CalenderDate>();
             // Read all lines from the CSV file
             var lines = System.IO.File.ReadAllLines(filePath);
-            
+
+            // Define an array of expected date formats
+            var dateFormats = new[] { "dd/MM/yyyy", "MM/dd/yyyy", "yyyy-MM-dd", "yyyy/MM/dd" };
+            // Specify the CultureInfo; InvariantCulture is a good choice for a neutral culture
+            var cultureInfo = CultureInfo.InvariantCulture;
+
             // Skip the header line if your CSV has one
             foreach (var line in lines.Skip(1))
             {
                 var columns = line.Split(',');
 
-                // Parse each column into the CalenderDate object, adjust indices as per your CSV structure
-                var calenderDate = new CalenderDate
-                {
-                    Culture = columns[0],
-                    Title = columns[1],
-                    Start_Date = DateTime.Parse(columns[2]),
-                    End_Date = DateTime.Parse(columns[3]),
-                };
+                DateTime startDate, endDate;
+                bool isStartValid = DateTime.TryParseExact(columns[2], dateFormats, cultureInfo, DateTimeStyles.None, out startDate);
+                bool isEndValid = DateTime.TryParseExact(columns[3], dateFormats, cultureInfo, DateTimeStyles.None, out endDate);
 
-                culturalDates.Add(calenderDate);
+                if (isStartValid && isEndValid)
+                {
+                    var calendarDate = new CalenderDate
+                    {
+                        Culture = columns[0],
+                        Title = columns[1],
+                        Start_Date = startDate,
+                        End_Date = endDate,
+                    };
+
+                    culturalDates.Add(calendarDate);
+                }
             }
 
-            // Filter and select as before
+            // Filter and select dates as before
             var filteredDates = culturalDates
-                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase)) 
+                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase))
                 .Select(d => new
                 {
                     title = d.Title,
@@ -171,7 +183,6 @@ namespace TP03MainProj.Controllers
                 }).ToList();
 
             return Json(filteredDates, JsonRequestBehavior.AllowGet);
-
         }
 
         // To retrieve data from API (using static DB for the time being)
