@@ -189,10 +189,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MyApplicationDB.mdf" />
-    <Content Include="App_Data\MyApplicationDB_log.ldf">
-      <DependentUpon>MyApplicationDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1339,6 +1335,7 @@
     <Content Include="Views\Education\CountryStory\Vietnam.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Content\Customer\vendor\FormGuide\PHPFormValidator\tests\" />
     <Folder Include="Content\Customer\vendor\phpmailer\phpmailer\examples\" />
     <Folder Include="Content\Customer\vendor\phpmailer\phpmailer\language\" />
