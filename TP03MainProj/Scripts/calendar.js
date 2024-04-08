@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
         headerToolbar: {
             left: 'prevYear,prev,next,nextYear today',
             center: 'title',
-            right: 'dayGridMonth,dayGridweek,dayGridDay'
+            right: 'dayGridMonth,dayGridDay'
+        },
+        validRange: {
+            start: '2023-01-01',
+            end: '2026-01-01'
         },
         timeZone: 'local',
         initialDate: new Date().toISOString().split('T')[0], // Converts current date to YYYY-MM-DD format
