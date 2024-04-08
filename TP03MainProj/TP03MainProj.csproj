@@ -1221,6 +1221,7 @@
     <Content Include="Scripts\gcal.min.js" />
     <Content Include="Content\DataSource\calendar_data.csv" />
     <Content Include="Content\DataSource\melbourne_events.csv" />
+    <Content Include="Content\Customer\images\mig\p2.webp" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\index.global.js" />
     <Content Include="Scripts\index.global.min.js" />
@@ -1411,9 +1412,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404021322456_CalenderModify.resx">
       <DependentUpon>202404021322456_CalenderModify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202404061112471_Events_And_CultureDate_Model_Modified.resx">
-      <DependentUpon>202404061112471_Events_And_CultureDate_Model_Modified.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
