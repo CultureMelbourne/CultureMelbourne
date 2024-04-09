@@ -34,7 +34,9 @@ namespace TP03MainProj
                       "~/Content/Customer/css/colors/scheme-01.css",
                       "~/Content/Customer/css/swiper.css",
                       "~/Content/Customer/css/style.css",
-                      "~/Content/Customer/css/coloring.css"
+                      "~/Content/Customer/css/coloring.css",
+                      "~/Content/Customer/css/jquery.countdown.css",
+                      "~/Content/Customer/css/mdb.min.css"
                       ));
 
             bundles.Add(new Bundle("~/bundles/fullcalendar").Include(
@@ -42,6 +44,12 @@ namespace TP03MainProj
                       "~/Scripts/moment.js",
                       "~/Scripts/calendar.js"
                       ));
+
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
+                              "~/Content/Mycss/mycss.css"));
+
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

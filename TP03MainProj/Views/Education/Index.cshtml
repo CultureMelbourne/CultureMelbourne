@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Education";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -30,7 +30,7 @@
                             <div class="col-lg-8 offset-lg-2 ">
                                 <h2 class="wow fadeInUp mb20" data-wow-delay=".2s">Embark on a Journey of Cultural Discovery</h2>
                                 <ul class="crumb" id="education-nav">
-                                    <li style="font-size: large;" >
+                                    <li style="font-size: large;">
                                         <a class="text-dark" href="@Url.Action("Index", "Home")">Home</a>
                                     </li>
                                     <li style="font-size: large;" class="text-dark ms-2 me-2">></li>
@@ -42,10 +42,10 @@
                 </section>
 
 
-                <section class="no-top align-items-center justify-content-center">
+                <section id="second-education" class="no-top align-items-center justify-content-center">
                     <div class="container">
                         <div class="row g-4 sequence justify-content-center">
-                            <div class="col-lg-4 col-sm-6 gallery-item">
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 gallery-item">
                                 <div class="de-item wow">
                                     <div class="d-overlay">
                                         <div class="d-text">
@@ -58,7 +58,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-sm-6 gallery-item">
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 gallery-item">
                                 <div class="de-item wow">
                                     <div class="d-overlay">
                                         <div class="d-text">
@@ -84,7 +84,10 @@
 
 
 @section Scripts{
+    @Styles.Render("~/bundles/css")
+
     <style>
+
         .btn-capsule {
             word-spacing: 0.25em;
             background-color: #d48810;

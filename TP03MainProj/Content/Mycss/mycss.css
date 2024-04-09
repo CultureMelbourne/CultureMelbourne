@@ -1,0 +1,38 @@
+﻿/* 默认字体大小 */
+.gallery-item h4, .gallery-item p {
+    font-size: 14px; /* 较小的字体大小，适用于小屏幕 */
+}
+
+
+/* 中等屏幕 (≥768px) */
+@media (min-width: 768px) {
+    .gallery-item h4 {
+        font-size: 18px; /* 较大字体大小 */
+    }
+
+    .gallery-item p {
+        font-size: 16px; /* 默认字体大小 */
+    }
+}
+
+/* 大屏幕 (≥992px) */
+@media (min-width: 992px) {
+    .gallery-item h4 {
+        font-size: 20px; /* 更大字体大小 */
+    }
+
+    .gallery-item p {
+        font-size: 18px; /* 较大字体大小 */
+    }
+}
+
+/* 超大屏幕 (≥1200px) */
+@media (min-width: 1200px) {
+    .gallery-item h4 {
+        font-size: 22px; /* 最大字体大小 */
+    }
+
+    .gallery-item p {
+        font-size: 20px; /* 更大字体大小 */
+    }
+}

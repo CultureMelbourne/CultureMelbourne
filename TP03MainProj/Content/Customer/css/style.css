@@ -50,9 +50,9 @@ Table of content:
 
 /* ================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
+*/
 /* ================================================== */
 
 
@@ -61,12 +61,12 @@ Table of content:
 
 /* ================================================== */
 
-@import url("../fonts/fontawesome4/css/font-awesome.css");
+/*@import url("../fonts/fontawesome4/css/font-awesome.css");
 @import url("../fonts/fontawesome6/css/fontawesome.css");
 @import url("../fonts/fontawesome6/css/brands.css");
 @import url("../fonts/fontawesome6/css/solid.css");
 @import url("../fonts/elegant_font/HTML_CSS/style.css");
-@import url("../fonts/et-line-font/style.css");
+@import url("../fonts/et-line-font/style.css");*/
 
 * {
   --title-font: "Plus Jakarta Sans", Helvetica, Arial, sans-serif;
@@ -12582,16 +12582,18 @@ p.slider-teaser {
   animation-delay: 1.4s;
   animation: fadeInUp 1.5s;
 }
-
-.swiper-pagination{
-  width: 100px;
-  font-size: 20px;
-  text-align: right;
-  position: absolute;
-  left: auto;
-  right: 40px;
-  bottom: 40px;
-  font-weight: 400;
+.swiper-slide-active .btn-main {
+    background-color:cornflowerblue;
+}
+.swiper-pagination {
+    width: 100px;
+    font-size: 20px;
+    text-align: right;
+    position: absolute;
+    left: auto;
+    right: 40px;
+    bottom: 40px;
+    font-weight: 400;
 }
 
 .swiper-pagination-total{
