@@ -1,10 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "Education";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section id="welcome-section" class="mt-5">
+<section id="welcome-section" class="">
     <div class="background-images">
         <div class="img1"></div>
         <div class="img2"></div>
@@ -13,11 +13,12 @@
         <div class="img5"></div>
 
     </div>
-    <div class="full-width-container" style="height:50%;">
-        <div class="text-center" id="welcome-education-text">
+    <div class="container">
+        <div class="text-center pb-5" id="welcome-education-text">
             <h1>Discover  the  Wonders  of  Multicultural  Education</h1>
-            <button id="explore-button" class="btn btn-capsule">Explore</button>
+            <button id="explore-button" class="btn btn-capsule">Discover More</button>
         </div>
+
         <div id="education-content" class="justify-content-center align-items-center" style="">
             <button id="exit-button" class="btn btn-secondary"></button>
 
@@ -26,10 +27,10 @@
 
                 <section id="subheader">
                     <div class="container">
-                        <div class="row text-center">
+                        <div class="row text-center ">
                             <div class="col-lg-8 offset-lg-2 ">
                                 <h2 class="wow fadeInUp mb20" data-wow-delay=".2s">Embark on a Journey of Cultural Discovery</h2>
-                                <ul class="crumb" id="education-nav">
+                                <ul class="crumb mb-5" id="education-nav">
                                     <li style="font-size: large;">
                                         <a class="text-dark" href="@Url.Action("Index", "Home")">Home</a>
                                     </li>
@@ -38,13 +39,8 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-
-                <section id="second-education" class="no-top align-items-center justify-content-center">
-                    <div class="container">
-                        <div class="row g-4 sequence justify-content-center">
+                        <div class="row g-4 sequence justify-content-center mt-5">
                             <div class="col-lg-4 col-md-6 col-sm-12 col-12 gallery-item">
                                 <div class="de-item wow">
                                     <div class="d-overlay">
@@ -73,7 +69,6 @@
                             </div>
 
                         </div>
-
                     </div>
                 </section>
             </div>
@@ -172,7 +167,7 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-            padding-bottom:15%;
+            padding-bottom: 15%;
         }
             #welcome-section::after {
                 content: "";
@@ -211,7 +206,10 @@
             border-radius: 10px;
             background-color: #ffffffb2;
             z-index: 1000;
+            height:80%;
+            
         }
+
 
             #exit-button {
                 position: absolute;
@@ -250,6 +248,13 @@
                 #exit-button:after {
                     transform: rotate(-45deg);
                 }
+
+        .img-fluid {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+        }
+
 
     </style>
 

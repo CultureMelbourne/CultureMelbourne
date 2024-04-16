@@ -741,7 +741,7 @@ header .header-col.mid .social-icons {
   counter-increment: my-awesome-counter;
 }
 
-#mainmenu>li::before {
+/*#mainmenu>li::before {
   content: counter(my-awesome-counter) ' —';
   right: 8px;
   top: 5px;
@@ -749,7 +749,7 @@ header .header-col.mid .social-icons {
   margin-right: 5px;
   font-weight: 500;
   font-family: var(--title-font);
-}
+}*/
 
 header.smaller #mainmenu>li::before{
   transform: scale(0);
@@ -787,7 +787,6 @@ header.smaller #mainmenu>li::before{
 }
 
 #mainmenu a {
-  opacity: .75;
   position: relative;
   display: inline-block;
   padding-top: 25px;
@@ -895,9 +894,19 @@ header.header-light #mainmenu a {
   color: #fff;
 }
 
-#mainmenu li a.active{
-  color:var(--primary-color) !important;
+/*#mainmenu li a.active{
+  color:#111;
+}*/
+
+#mainmenu li a.active {
+    font-size:1.2em;
+    text-decoration: underline;
 }
+
+#mainmenu .menu-item:hover {
+    color: #111;
+}
+
 
 #mainmenu li ul {
   width: 190px;

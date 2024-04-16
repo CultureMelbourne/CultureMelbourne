@@ -173,6 +173,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\NavigationHelper.cs" />
     <Compile Include="Migrations\202403191317491_InitialCreate.cs" />
     <Compile Include="Migrations\202403191317491_InitialCreate.designer.cs">
       <DependentUpon>202403191317491_InitialCreate.cs</DependentUpon>

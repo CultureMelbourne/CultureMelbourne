@@ -31,41 +31,52 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="de-flex sm-pt10">
-                            <div class="de-flex-col">
-                                <div class="de-flex-col">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="">
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="@Url.Action("Index", "Home")">
                                             <img class="logo-main" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
                                             <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
                                         </a>
+
                                     </div>
                                     <!-- logo close -->
                                 </div>
                             </div>
-                            <div class="de-flex-col header-col-mid ">
-                                <ul id="mainmenu" class="">
-                                    <li class=" text-white">
-                                        <a class="menu-item " href="@Url.Action("Index", "Home")">Home</a>
-                                    </li>
-                                    <li class=" text-white">
-                                        <a class="menu-item" href="@Url.Action("Index", "Education")">Culture Education</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a></li>
-                                            <li><a class="menu-item" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=" text-white">
-                                        <a class="menu-item" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="de-flex-col">
-                                <div class="menu_side_area">
+                            <div class="col-2 text-center justify-content-center align-content-center ">
+                                <div class="mainmenu">
+                                    <h4 class="tagline text-white menu-item pt-2 pb-2 mt-2 mb-2" style="font-style: italic; text-decoration: underline;">
+                                        Melbourne's Gateway to East Asian Wonders
+                                    </h4>
                                 </div>
                             </div>
+
+                            <div class="col-8">
+                                @using TP03MainProj.Helper
+                                <ul id="mainmenu" class="ps-5 ms-5 m-1 p-1">
+                                    <li class="text-white">
+                                        <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a>
+                                    </li>
+                                    <li class="text-white">
+                                        <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Education", "Index")" href="@Url.Action("Index", "Education")">Culture Education</a>
+                                        <ul>
+                                            <li>
+                                                <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Education", "DiverseCultures")" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a>
+                                            </li>
+                                            <li>
+                                                <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Education", "MigrationStories")" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="text-white">
+                                        <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -115,36 +126,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
-                        <div class="widget">
-                            <h5>Get In Touch</h5>
-                            <div class="de-icon-text mb20">
-                                <img src="@Url.Content("~/Content/Customer/images/svg/phone-svgrepo-com-white.svg")" class="" alt="">
-                                <div class="d-text">
-                                    <h4>Phone</h4>
-                                    +61-1234567
-                                </div>
-                            </div>
-
-                            <div class="de-icon-text mb20">
-                                <img src="@Url.Content("~/Content/Customer/images/svg/email-address-svgrepo-com-white.svg")" class="" alt="">
-
-                                <div class="d-text">
-                                    <h4>Email</h4>
-                                    hello@cultmelbourne.com
-                                </div>
-                            </div>
-
-                            <div class="de-icon-text">
-                                <img  src="@Url.Content("~/Content/Customer/images/svg/map-pin-svgrepo-com-white.svg")" class="" alt="">
-
-                                <div class="d-text">
-                                    <h4>Address</h4>
-                                    21 Chancellor's Walk, Monash University, Clayton Victoria 3800
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="subfooter">
@@ -153,19 +134,21 @@
                         <div class="col-md-12">
                             <div class="de-flex">
                                 <div class="de-flex-col">
-                                    Monash University FIT5120-S1 TP03
+                                    © 2024 Monash University FIT5120-S1 TP03. All rights reserved.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </footer>
         <!-- footer close -->
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
 
     @RenderSection("scripts", required: false)
 

@@ -24,19 +24,19 @@
                     switch (ViewBag.Culture as string)
                     {
                         case "Japanese":
-                            cultureColour = "red";
+                            cultureColour = "text-warning";
                             break;
                         case "Chinese":
-                            cultureColour = "green";
+                            cultureColour = "text-danger";
                             break;
                         case "Korean":
-                            cultureColour = "blue";
+                            cultureColour = "text-primary";
                             break;
                         case "Filipino":
-                            cultureColour = "yellow";
+                            cultureColour = "text-info";
                             break;
                         case "Vietnamese":
-                            cultureColour = "orange";
+                            cultureColour = "text-success";
                             break;
                         default:
                             cultureColour = "black"; // Default colour
@@ -44,7 +44,7 @@
                     }
                 }
 
-                <h2>Explore <span style="color: @cultureColour;">@ViewBag.Culture</span> Events!</h2>
+                <h2>Explore <span class="@cultureColour">@ViewBag.Culture</span> Events!</h2>
                 <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
                 <div id="calendar" class="mx-auto"></div>
                 <h6 style="background-color:powderblue;"><i>Click around the Calender to find Events for the Festivals above...</i></h6>
