@@ -903,7 +903,7 @@ header.header-light #mainmenu a {
     text-decoration: underline;
 }
 
-#mainmenu .menu-item:hover {
+#mainmenu .nav-link:hover {
     color: #111;
 }
 
