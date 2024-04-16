@@ -55,25 +55,27 @@
 
                             <div class="col-8">
                                 @using TP03MainProj.Helper
-                                <ul id="mainmenu" class="ps-5 ms-5 m-1 p-1">
-                                    <li class="text-white">
-                                        <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a>
+                                <ul id="mainmenu" class="nav ps-5 ms-5 m-1 p-1">
+                                    <li class="nav-item">
+                                        <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a>
                                     </li>
-                                    <li class="text-white">
-                                        <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Education", "Index")" href="@Url.Action("Index", "Education")">Culture Education</a>
+                                    <li class="nav-item">
+                                        <!-- Use the helper to check if either the main Education page or one of its sub-pages is active -->
+                                        <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a>
                                         <ul>
                                             <li>
-                                                <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Education", "DiverseCultures")" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a>
+                                                <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "DiverseCultures")" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a>
                                             </li>
                                             <li>
-                                                <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Education", "MigrationStories")" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a>
+                                                <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "MigrationStories")" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="text-white">
-                                        <a class="menu-item @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>
                                     </li>
                                 </ul>
+
                             </div>
 
 

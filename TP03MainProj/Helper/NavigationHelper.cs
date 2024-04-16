@@ -8,18 +8,17 @@ namespace TP03MainProj.Helper
 {
     public static class NavigationHelper
     {
-        public static string IsActive(ViewContext viewContext, string controller, string action)
+        public static string IsActive(ViewContext viewContext, string controller, string action, string parentController = null, string parentAction = null)
         {
-            string active = "";
-            var routeData = viewContext.RouteData;
+            var currentController = viewContext.RouteData.Values["controller"].ToString();
+            var currentAction = viewContext.RouteData.Values["action"].ToString();
 
-            string currentAction = (string)routeData.Values["action"];
-            string currentController = (string)routeData.Values["controller"];
+            // Check if the current controller/action matches, or if a parent menu item should be active
+            bool isActive = (controller == currentController && action == currentAction) ||
+                            (parentController == currentController && parentAction == currentAction);
 
-            if (controller == currentController && action == currentAction)
-                active = "active";
-
-            return active;
+            return isActive ? "active" : "";
         }
+
     }
 }
