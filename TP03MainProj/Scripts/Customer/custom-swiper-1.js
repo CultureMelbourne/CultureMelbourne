@@ -8,7 +8,7 @@ const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  speed: 3000,
+  speed: 6000,
   watchSlidesProgress: true,
   parallax: true,
 

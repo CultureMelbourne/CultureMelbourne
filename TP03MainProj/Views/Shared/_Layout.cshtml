@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - CultMelbourne</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @*@Styles.Render("~/bundles/customerFontsAndStyles")*@
 
     <link rel="icon" href="@Url.Content("~/Content/Customer/images/logo-mobile.png")" type="image/gif" sizes="16x16">
 
@@ -27,40 +26,28 @@
         <div id="de-loader"></div>
         <!-- page preloader close -->
         <!-- header begin -->
-        <header class="header-full transparent bg-warning">
+        <header class="w-100">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row bg-warning ps-2 pe-2 p-1">
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-2">
-                                <div class="">
+                            <div class="col-2 align-content-center justify-content-center">
                                     <!-- logo begin -->
-                                    <div id="logo">
+                                    <div id="logo" class="" >
                                         <a href="@Url.Action("Index", "Home")">
-                                            <img class="logo-main" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
+                                            <img class="logo-main  p-auto pt-1" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
                                             <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
                                         </a>
-
                                     </div>
                                     <!-- logo close -->
-                                </div>
                             </div>
-                            <div class="col-2 text-center justify-content-center align-content-center ">
-                                <div class="mainmenu">
-                                    <h4 class="tagline text-white menu-item pt-2 pb-2 mt-2 mb-2" style="font-style: italic; text-decoration: underline;">
-                                        Melbourne's Gateway to East Asian Wonders
-                                    </h4>
-                                </div>
-                            </div>
-
                             <div class="col-8">
                                 @using TP03MainProj.Helper
-                                <ul id="mainmenu" class="nav ps-5 ms-5 m-1 p-1">
+                                <ul id="mainmenu" class="nav  ms-5 m-1 p-1 text-center align-content-center justify-content-center">
                                     <li class="nav-item">
                                         <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <!-- Use the helper to check if either the main Education page or one of its sub-pages is active -->
                                         <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a>
                                         <ul>
                                             <li>
@@ -75,15 +62,22 @@
                                         <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>
                                     </li>
                                 </ul>
-
                             </div>
-
-
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center align-content-center justify-content-center" style="background-color: white; color: yellow;">
+                    <div class="col-12">
+                        <div class="mainmenu">
+                            <h5 class="tagline text-warning menu-item" style="font-style: italic; text-decoration: underline;">
+                                Melbourne's Gateway to East Asian Wonders
+                            </h5>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+
 
         <!-- header close -->
         <!-- content begin -->
@@ -94,27 +88,29 @@
         <!-- content close -->
         <!-- footer begin -->
         <footer class="bg-warning">
-            <div class="container ">
+            <div class="container">
                 <div class="row gx-5">
-                    <div class="col-lg-4 col-sm-6">
+                    <!-- Logo and Description -->
+                    <div class="col-lg-4">
                         <img class="logo-footer" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
                         <div class="spacer-20"></div>
                         <p>Committed to celebrating Melbourne's multicultural legacy, we aim to educate and unite, combating discrimination and nurturing cultural connections.</p>
                     </div>
-                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
+
+                    <!-- CultMelbourne and Our Services, adjacent on the right -->
+                    <div class="col-lg-8">
+                        <div class="row align-items-start justify-content-end">
+                            <div class="col-lg-6 " style=" text-align: right; ">
+                                <div class="widget pe-4">
                                     <h5>CultMelbourne</h5>
                                     <ul>
                                         <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                                         <li><a href="@Url.Action("Index", "Education")">Education</a></li>
                                         <li><a href="#cultural-events">Culture Events</a></li>
-
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-sm-6">
+                            <div class="col-lg-6">
                                 <div class="widget">
                                     <h5>Our Services</h5>
                                     <ul>
@@ -122,29 +118,31 @@
                                         <li><a href="#">Discover East Asia</a></li>
                                         <li><a href="#">Voices of East Asia</a></li>
                                         <li><a href="#">Cultural Insights</a></li>
-
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="subfooter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="de-flex">
-                                <div class="de-flex-col">
-                                    © 2024 Monash University FIT5120-S1 TP03. All rights reserved.
+                <!-- Subfooter -->
+                <div class="subfooter">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="de-flex">
+                                    <div class="de-flex-col">
+                                        © 2024 The Quad. All rights reserved.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </footer>
+
+
+
         <!-- footer close -->
     </div>
 
