@@ -1,14 +1,14 @@
 const swiper = new Swiper('.swiper', {
 
   autoplay: {
-     delay: 3000,
+     delay: 6000,
      disableOnInteraction: false
    },
 
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  speed: 10000,
+  speed: 1200,
   watchSlidesProgress: true,
   parallax: true,
 
