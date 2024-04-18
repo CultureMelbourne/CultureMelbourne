@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = "~/Views/Shared/WebGateLayout.cshtml";
+}
+
+<div class="vh-100 d-flex align-items-center justify-content-center bg-warning">
+    <div class="container ">
+        <div class="row justify-content-center ">
+            <div class="col-md-4 ">
+
+                <div class="">
+                    <div class="row bg-info rounded-top     ">
+                        <div class="col-2 col-md-4 bg-opacity-100 pt-3 text-start align-items-start justify-content-start ">
+                            <h2 class="">Web Gate</h2>
+
+                        </div>
+
+                    </div>
+                    <div class="row bg-white rounded-bottom pb-3 ">
+                        <div class="col-12">
+                            @using (Html.BeginForm("VerifyPassword", "Home", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" class="form-control" />
+                                <input type="submit" value="Submit" class="btn btn-primary mt-3" />
+
+                                if (TempData["Error"] != null)
+                                {
+                                    <div class="alert alert-danger m-2 mt-2">@TempData["Error"]</div>
+
+                                }
+                            }
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

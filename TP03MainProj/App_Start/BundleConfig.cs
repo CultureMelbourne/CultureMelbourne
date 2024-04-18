@@ -49,6 +49,8 @@ namespace TP03MainProj
                               "~/Content/Mycss/mycss.css"));
 
 
+
+
             BundleTable.EnableOptimizations = true;
         }
     }

@@ -12,9 +12,12 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using System.IO;
 using System.Web.UI.WebControls;
+using TP03MainProj.Helper;
 
 namespace TP03MainProj.Controllers
 {
+    [AuthenticateFilter]
+
     public class EventsController : Controller
     {
         private MyApplicationContext db = new MyApplicationContext();
