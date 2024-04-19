@@ -40,35 +40,26 @@
                             </div>
                         </div>
 
-                        <div class="row g-4 sequence justify-content-center mt-5">
-                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 gallery-item">
-                                <div class="de-item wow">
-                                    <div class="d-overlay">
-                                        <div class="d-text">
-                                            <h4>Embracing Diversity in Education</h4>
-                                            <p class="">Interactive resources for lessons on Melbourne’s East Asian heritage.</p>
-                                            <a class="btn-main btn-fullwidth btn-white text-primary" href="@Url.Action("DiverseCultures", "Education")">Access Resources</a>
-                                        </div>
-                                    </div>
-                                    <img src="@Url.Content("~/Content/Customer/images/study-case/1.webp")" class="img-fluid" alt="">
 
-                                </div>
+                        <div class="row g-4 justify-content-center mt-5">
+                            <div class="col-2 bg-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Chinese.jpg")');" id="china-img">
+                                <a class="btn-main overlay-btn" href="@Url.Action("DiverseCultures", "Education", new { country = "china" })">China</a>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 gallery-item">
-                                <div class="de-item wow">
-                                    <div class="d-overlay">
-                                        <div class="d-text">
-                                            <h4>Stories of Migration: Melbourne's Tapestry</h4>
-                                            <p class=""> Explore the rich migration stories shaping our city.</p>
-
-                                            <a class="btn-main btn-fullwidth btn-white text-primary" href="@Url.Action("MigrationStories", "Education")">View Stories</a>
-                                        </div>
-                                    </div>
-                                    <img src="@Url.Content("~/Content/Customer/images/study-case/2.webp")" class="img-fluid" alt="">
-                                </div>
+                            <div class="col-2 bg-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Japanese.jpg")');" id="japan-img">
+                                <a class="btn-main overlay-btn" href="@Url.Action("DiverseCultures", "Education", new { country = "japan" })">Japan</a>
                             </div>
-
+                            <div class="col-2 bg-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Korean.jpg")');" id="korea-img">
+                                <a class="btn-main overlay-btn" href="@Url.Action("DiverseCultures", "Education", new { country = "korea" })">Korea</a>
+                            </div>
+                            <div class="col-2 bg-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Filipino.jpg")');" id="philippines-img">
+                                <a class="btn-main overlay-btn" href="@Url.Action("DiverseCultures", "Education", new { country = "philippines" })">Philippines</a>
+                            </div>
+                            <div class="col-2 bg-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Vietnamese.jpg")');" id="vietnam-img">
+                                <a class="btn-main overlay-btn" href="@Url.Action("DiverseCultures", "Education", new { country = "vietnam" })">Vietnam</a>
+                            </div>
                         </div>
+
+
                     </div>
                 </section>
             </div>
@@ -81,7 +72,7 @@
 @section Scripts{
     @Styles.Render("~/bundles/css")
 
-    <style>
+<style>
 
         .btn-capsule {
             word-spacing: 0.25em;
@@ -207,7 +198,7 @@
             background-color: #ffffffb2;
             z-index: 1000;
             height:80%;
-            
+
         }
 
 
@@ -255,8 +246,32 @@
             height: auto;
         }
 
+    .bg-img {
+        position: relative;
+        background-size: cover;
+        height: 200px; /* Adjust the height as needed */
+        width: 20%; /* Or adjust width based on your layout requirements */
+    }
 
-    </style>
+    .overlay-btn {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.5); /* Light white overlay to enhance text visibility */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000; /* Text color */
+        text-decoration: none;
+        font-size: 20px; /* Text size */
+    }
+
+
+
+
+</style>
 
     <script>
         $(document).ready(function () {

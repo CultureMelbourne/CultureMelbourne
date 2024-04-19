@@ -49,14 +49,14 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a>
-                                        <ul>
+                                        @*<ul>
                                             <li>
                                                 <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "DiverseCultures")" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a>
                                             </li>
                                             <li>
                                                 <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "MigrationStories")" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a>
                                             </li>
-                                        </ul>
+                                        </ul>*@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>

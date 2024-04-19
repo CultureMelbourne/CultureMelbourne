@@ -6,7 +6,7 @@
 
 @*choose part*@
 <section class="">
-    <div class="container justify-content-center align-content-center" >
+    <div class="container justify-content-center align-content-center">
         <div class="row">
             <div class="col-lg-8">
                 <ul class="crumb mb-3" id="">
@@ -60,52 +60,51 @@
 
 
 @*story part*@
-    <div id="china-story" class="story-item" style="display:none;">
-        @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
+<div id="china-story" class="story-item" style="display:none;">
+    @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
 
-    </div>
+</div>
 
-    <div id="japan-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
+<div id="japan-story" class=" story-item" style="display: none;">
+    @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
 
-    </div>
+</div>
 
-    <div id="korea-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
+<div id="korea-story" class=" story-item" style="display: none;">
+    @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
 
-    </div>
+</div>
 
-    <div id="philipines-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
+<div id="philipines-story" class=" story-item" style="display: none;">
+    @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
 
-    </div>
+</div>
 
-    <div id="vietnam-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
+<div id="vietnam-story" class=" story-item" style="display: none;">
+    @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
 
-    </div>
+</div>
 
 
 @section Scripts{
 
     <script>
         $(document).ready(function () {
-            // Explicitly show the China story part and add highlight class on page load
-            $('#china-story').show();
-            $('.choose-item[data-target="china"]').addClass('highlight');
-
-            $('.choose-item').click(function () {
-                var target = $(this).data('target');
-                $('.story-item').hide(); // Hide all story items
-                $('#' + target + '-story').show(); // Show the selected story item
-
-                $('.choose-item').removeClass('highlight'); // Remove highlight from all items
-                $(this).addClass('highlight'); // Highlight the selected item
-            });
+            var urlParams = new URLSearchParams(window.location.search);
+            var country = urlParams.get('country');
+            if (country) {
+                $('.story-item').hide();
+                $('#' + country + '-story').show();
+                $('.choose-item').removeClass('highlight');
+                $('.choose-item[data-target="' + country + '"]').addClass('highlight');
+            } else {
+                
+                $('#china-story').show();
+                $('.choose-item[data-target="china"]').addClass('highlight');
+            }
         });
-
-
     </script>
+
 
     <style>
 
@@ -118,19 +117,20 @@
             border: 2px solid #FECE58;
             box-shadow: 0 0 20px 5px #FECE58;
         }
+
         .timeline-image {
-            max-width: 100%; 
-            max-height: 5%; 
-            object-fit: cover; 
-            width: 100%; 
-            height: auto; 
+            max-width: 100%;
+            max-height: 5%;
+            object-fit: cover;
+            width: 100%;
+            height: auto;
         }
+
         .img-resize {
             max-width: 75%;
             max-height: auto;
             object-fit: contain;
         }
-
     </style>
 
 }
