@@ -93,17 +93,25 @@
             var urlParams = new URLSearchParams(window.location.search);
             var country = urlParams.get('country');
             if (country) {
-                $('.story-item').hide();
+                $('.story-item').hide(); 
                 $('#' + country + '-story').show();
-                $('.choose-item').removeClass('highlight');
-                $('.choose-item[data-target="' + country + '"]').addClass('highlight');
+                $('.choose-item').removeClass('highlight'); 
+                $('.choose-item[data-target="' + country + '"]').addClass('highlight'); 
             } else {
-                
                 $('#china-story').show();
                 $('.choose-item[data-target="china"]').addClass('highlight');
             }
+
+            $('.choose-item').click(function () {
+                var target = $(this).attr('data-target');
+                $('.story-item').hide();
+                $('#' + target + '-story').show();
+                $('.choose-item').removeClass('highlight');
+                $(this).addClass('highlight');
+            });
         });
     </script>
+
 
 
     <style>
