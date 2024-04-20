@@ -40,8 +40,8 @@ namespace TP03MainProj.Controllers
             base.Dispose(disposing);
         }
 
-
-
+        //Redundant method for Cultural Dates mapping
+        /*
         public JsonResult GetCulturalDates(string culture, DateTime start, DateTime end)
         {
             string filePath = Server.MapPath("~/Content/DataSource/calendar_data.csv");
@@ -90,6 +90,40 @@ namespace TP03MainProj.Controllers
 
             return Json(filteredDates, JsonRequestBehavior.AllowGet);
         }
+        */
+
+        // Modified method to map the events data to the calendar
+        public JsonResult GetCulturalDates(string culture, DateTime start, DateTime end)
+        {
+            string filePath = Server.MapPath("~/Content/DataSource/melbourne_events.csv");
+
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = true,
+                Delimiter = ",",
+                BadDataFound = null,
+            };
+
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvReader(reader, config))
+            {
+                csv.Context.RegisterClassMap<EventMap>();  // Using the same mapping as GetEventsFromEventbrite
+                var records = csv.GetRecords<Events>().ToList();
+
+                var filteredDates = records
+                    .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) &&
+                                ((e.StartDate >= start && e.StartDate <= end) || (e.EndDate >= start && e.EndDate <= end)))
+                    .Select(e => new
+                    {
+                        title = e.Title,
+                        start = e.StartDate.ToString("yyyy-MM-dd"),
+                        end = e.EndDate.ToString("yyyy-MM-dd")
+                    }).ToList();
+
+                return Json(filteredDates, JsonRequestBehavior.AllowGet);
+            }
+        }
+
 
         // To retrieve data from API (using static DB for the time being)
         public JsonResult GetEventsFromEventbrite(string culture, DateTime date)
