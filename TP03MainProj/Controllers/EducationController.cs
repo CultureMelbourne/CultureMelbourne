@@ -7,7 +7,7 @@ using TP03MainProj.Helper;
 
 namespace TP03MainProj.Controllers
 {
-    [AuthenticateFilter]
+    //[AuthenticateFilter]
 
     public class EducationController : Controller
     {
