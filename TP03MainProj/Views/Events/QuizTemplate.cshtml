@@ -1,0 +1,16 @@
+﻿@model string
+
+<div class="col me-5">
+    <img src="@Url.Content("~/Content/Customer/images/services/44.webp")" class="img-fluid" alt="Quiz Image">
+</div>
+<div class="col ms-5">
+    <h4>Quiz Question Title</h4>
+    <p>Here is the question for the quiz? Choose one of the following answers:</p>
+    <ul class="list-unstyled">
+        <li><input type="radio" name="quiz" id="answer1"> <label for="answer1">Answer 1</label></li>
+        <li><input type="radio" name="quiz" id="answer2"> <label for="answer2">Answer 2</label></li>
+        <li><input type="radio" name="quiz" id="answer3"> <label for="answer3">Answer 3</label></li>
+        <li><input type="radio" name="quiz" id="answer4"> <label for="answer4">Answer 4</label></li>
+    </ul>
+    <button class="btn btn-primary">Submit Answer</button>
+</div>

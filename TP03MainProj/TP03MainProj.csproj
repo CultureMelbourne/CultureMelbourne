@@ -1342,6 +1342,7 @@
     <Content Include="Views\Education\CountryStory\Vietnam.cshtml" />
     <Content Include="Views\Shared\WebGateLayout.cshtml" />
     <Content Include="Views\Home\WebGate.cshtml" />
+    <Content Include="Views\Events\QuizTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

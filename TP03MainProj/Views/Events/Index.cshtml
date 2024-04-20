@@ -10,7 +10,7 @@
 
 <section>
     <div class="container-fluid">
-        <div class="row justify-content-center text-center section-row" >
+        <div class="row justify-content-center text-center section-row">
             <div class="col">
                 @{
                     var cultureColour = "";
@@ -42,18 +42,14 @@
             </div>
 
         </div>
-        <div class="row row-cols-3 justify-content-start m-auto section-row bg-grey border-2  border-bottom" id="button-section">
-            <div class="col justify-content-center  align-content-center">
-                <a class="btn btn-primary w-25" href="">Events</a>
-                <a class="btn btn-primary w-25" href="">Quiz</a>
-                <a class="btn btn-primary w-25" href="">Attraction</a>
-
-
+        <div class="row row-cols-3 justify-content-center m-auto section-row bg-grey border-2  border-bottom" id="button-section">
+            <div class="col "></div>
+            <div class="col text-center">
+                <a class="btn culture-btn btn-primary  w-25" href="">Events</a>
+                <a class="btn culture-btn btn-primary w-25" href="">Quiz</a>
+                <a class="btn culture-btn btn-primary w-25" href="">Attraction</a>
             </div>
-            <div class="col">
-            </div>
-            <div class="col">
-            </div>
+            <div class="col"></div>
         </div>
 
 
@@ -76,54 +72,34 @@
 
 
         </div>
-        <div class="row section-row">
+        <!-- quiz-->
+        <div class="row justify-content-center m-auto section-row bg-warning">
+            <div class="row mb-3">
+                <h1>Quiz</h1>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                    <div class="row mb-lg-5">
+                        @Html.Partial("~/Views/Events/QuizTemplate.cshtml")
 
+
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
         </div>
+        <!-- quiz-->
+
+
         <div class="row section-row">
 
         </div>
     </div>
 
 </section>
-*@
 
-<section>
-    <div class="container-fluid">
-        <div class="row m-1 p-1 mb-3 mt-3 justify-content-center text-center" style="">
-            <div class="col">
-                @{
-                    var cultureColour = "";
-                    switch (ViewBag.Culture as string)
-                    {
-                        case "Japanese":
-                            cultureColour = "text-warning";
-                            break;
-                        case "Chinese":
-                            cultureColour = "text-danger";
-                            break;
-                        case "Korean":
-                            cultureColour = "text-primary";
-                            break;
-                        case "Filipino":
-                            cultureColour = "text-info";
-                            break;
-                        case "Vietnamese":
-                            cultureColour = "text-success";
-                            break;
-                        default:
-                            cultureColour = "black"; // Default colour
-                            break;
-                    }
-                }
 
-                <h2>Explore <span class="@cultureColour">@ViewBag.Culture</span> Events!</h2>
-                <div id="culture" data-culture="@ViewBag.Culture" style="display: none;"></div>
-            </div>
-
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-4">
 
 @section Scripts {
     <!-- Global Variables for passing data to custom calender script -->
@@ -136,13 +112,9 @@
     <!-- Modified the width of the calender to see if it fits -->
 
     <style>
-
-
-        #calendar {
-            width: 150%;
-            max-width: 900px;
-            margin: 0 auto;
-            margin-top: 5%;
+        .section-row {
+            margin:2%;
+            padding:1%;
         }
 
         .event-detail {
@@ -165,6 +137,12 @@
             background-color: #ff0;
             border: 2px solid #f00;
         }
+
+        .culture-btn {
+            height: 40px;
+        }
+
+
 
     </style>
 }
