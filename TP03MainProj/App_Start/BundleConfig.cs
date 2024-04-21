@@ -46,8 +46,8 @@ namespace TP03MainProj
                       ));
 
             bundles.Add(new StyleBundle("~/bundles/css").Include(
-                              "~/Content/Mycss/mycss.css"));
-
+                              "~/Content/Mycss/mycss.css",
+                              "~/Content/Mycss/Education.css"));
 
 
 

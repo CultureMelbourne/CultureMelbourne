@@ -239,6 +239,7 @@
     <Content Include="Content\Customer\css\jquery.countdown.css" />
     <Content Include="Content\Customer\css\mdb.min.css" />
     <Content Include="Content\Customer\css\mdb.rtl.min.css" />
+    <Content Include="Content\Mycss\Education.css" />
     <Content Include="Content\Customer\css\plugins.css" />
     <Content Include="Content\Customer\css\style.css" />
     <Content Include="Content\Customer\css\swiper.css" />
@@ -1044,8 +1045,8 @@
     <Content Include="Content\Customer\images\svg\users-svgrepo-com.svg" />
     <Content Include="Content\Customer\images\team\Chinese.jpg" />
     <Content Include="Content\Customer\images\team\Filipino.jpg" />
-    <Content Include="Content\Customer\images\team\Japanese.jpg" />
-    <Content Include="Content\Customer\images\team\Korean.jpg" />
+    <Content Include="Content\Customer\images\team\Japanese.png" />
+    <Content Include="Content\Customer\images\team\Korean.png" />
     <Content Include="Content\Customer\images\team\Vietnamese.jpg" />
     <Content Include="Content\Customer\images\testimonial\1.jpg" />
     <Content Include="Content\Customer\images\testimonial\2.jpg" />
@@ -1203,10 +1204,6 @@
     <Content Include="Content\Customer\images\timeline\Chinese\2.webp" />
     <Content Include="Content\Customer\images\timeline\Chinese\2024.webp" />
     <Content Include="Content\Customer\images\timeline\vietna\1975.webp" />
-    <Content Include="Content\Customer\images\services\11.webp" />
-    <Content Include="Content\Customer\images\services\22.webp" />
-    <Content Include="Content\Customer\images\services\33.webp" />
-    <Content Include="Content\Customer\images\services\44.webp" />
     <Content Include="Content\Customer\images\mig\jp1.avif" />
     <None Include="Properties\PublishProfiles\cultmelboune - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
