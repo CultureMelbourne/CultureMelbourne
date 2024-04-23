@@ -25,7 +25,9 @@ namespace TP03MainProj.Controllers
         // GET: Events (Accepting culture for CalenderDate from Home Index view)
         public ActionResult Index(string culture)
         {
-            ViewBag.Culture = culture;
+            var cultureName = System.IO.Path.GetFileNameWithoutExtension(culture);
+
+            ViewBag.Culture = cultureName;
             return View();               
         }
 

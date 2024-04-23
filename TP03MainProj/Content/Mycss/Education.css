@@ -62,174 +62,178 @@
 }
 
 
-        .btn-capsule {
-            word-spacing: 0.25em;
-            background-color: #d48810;
-            color: black;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
-        }
+.btn-capsule {
+    word-spacing: 0.25em;
+    background-color: #d48810;
+    color: black;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-            .btn-capsule:hover {
-                background-color: #ffd700;
-                color: #000;
-            }
-        .full-width-container {
-            width: 100vw;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0 15px;
-            box-sizing: border-box;
-        }
-        #welcome-education-text h1 {
-            word-spacing: 0.25em;
-        }
-
-
-
-        .background-images {
-            display: flex;
-            justify-content: space-around;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        #welcome-education-text{
-            z-index: 3;
-            position: relative;
-        }
-        #welcome-education-text h1 {
-            color:white;
-        }
-
-            .background-images div {
-                flex: 1;
-                background-size: cover;
-                background-position: center;
-            }
-
-
-
-            #welcome-section.dark-overlay {
-                position: relative;
-            }
-
-        #welcome-section {
-            height: 100vh;
-            background-size: cover;
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            padding-bottom: 15%;
-        }
-            #welcome-section::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 10%, transparent 100%);
-                z-index: 2;
-            }
-
-
-            #welcome-education-text {
-                text-align: center;
-            }
-
-            #welcome-section.dark-overlay::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-            }
-
-            /* Centered content */
-        #education-content {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #ffffffb2;
-            z-index: 1000;
-            height:80%;
-
-        }
-
-
-            #exit-button {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                font-size: 20px;
-            }
-
-            #exit-button {
-                width: 50px;
-                height: 50px;
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                padding: 0;
-                border: none;
-                background-color: transparent;
-            }
-
-                #exit-button:before,
-                #exit-button:after {
-                    content: '';
-                    position: absolute;
-                    width: 3px;
-                    height: 30px;
-                    background-color: #000000;
-                    top: 10px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-
-                #exit-button:before {
-                    transform: rotate(45deg);
-                }
-
-                #exit-button:after {
-                    transform: rotate(-45deg);
-                }
-
-        .img-fluid {
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-        }
-
-    .bg-img {
-        position: relative;
-        background-size: cover;
-        height: 200px; /* Adjust the height as needed */
-        width: 20%; /* Or adjust width based on your layout requirements */
+    .btn-capsule:hover {
+        background-color: #ffd700;
+        color: #000;
     }
 
-    .bookshelf {
-        display: flex;
-        justify-content: center; /* 居中书架 */
-        overflow: hidden;
-        padding: 20px 0; /* 添加上下的填充 */
+.full-width-container {
+    width: 100vw;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+#welcome-education-text h1 {
+    word-spacing: 0.25em;
+}
+
+
+
+.background-images {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#welcome-education-text {
+    z-index: 3;
+    position: relative;
+}
+
+    #welcome-education-text h1 {
+        color: white;
     }
+
+.background-images div {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+#welcome-section.dark-overlay {
+    position: relative;
+}
+
+#welcome-section {
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15%;
+}
+
+    #welcome-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 10%, transparent 100%);
+        z-index: 2;
+    }
+
+
+#welcome-education-text {
+    text-align: center;
+}
+
+#welcome-section.dark-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Centered content */
+#education-content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffffb2;
+    z-index: 1000;
+    height: 80%;
+}
+
+
+#exit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+#exit-button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+    #exit-button:before,
+    #exit-button:after {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 30px;
+        background-color: #000000;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #exit-button:before {
+        transform: rotate(45deg);
+    }
+
+    #exit-button:after {
+        transform: rotate(-45deg);
+    }
+
+.img-fluid {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.bg-img {
+    position: relative;
+    background-size: cover;
+    height: 200px; /* Adjust the height as needed */
+    width: 20%; /* Or adjust width based on your layout requirements */
+}
+
+.bookshelf {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px 0;
+}
 
 .book {
     transition: transform 0.3s ease;

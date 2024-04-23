@@ -187,49 +187,6 @@
             </div>
         </section>
 
-        @*<section class="no-top" id="epics">
-            <div class="container">
-                <div class="row g-4 mt-100 sm-mt-0 z-1000">
-                    <div class="spacer-single d-lg-none d-sm-block"></div>
-                    <div class="col-lg-3 col-md-6">
-                        <div>
-                            <img src="@Url.Content("~/Content/Customer/images/services/11.webp")" class="img-fullwidth rounded-20 mb20" alt="">
-                            <h4>East Asian Melodies</h4>
-                            <hr class="s2">
-                            <p>Experience the vibrant celebrations of East Asian cultures right here in Melbourne. Join us in festivals that tell tales of heritage and unity, connecting the East with the West.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div>
-                            <img src="@Url.Content("~/Content/Customer/images/services/22.webp")" class="img-fullwidth rounded-20 mb20" alt="">
-                            <h4>Discover East Asia</h4>
-                            <hr class="s2">
-                            <p>Dive into the rich history and traditions of East Asia through educational workshops and events. Gain insights, understand values, and break down cultural barriers.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div>
-                            <img src="@Url.Content("~/Content/Customer/images/services/33.webp")" class="img-fullwidth rounded-20 mb20" alt="">
-                            <h4>Voices of East Asia</h4>
-                            <hr class="s2">
-                            <p>Listen to the authentic stories of East Asian immigrants in Melbourne. This anonymous space allows for the sharing of personal journeys, cultural memories, and the creation of a shared understanding.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div>
-                            <img src="@Url.Content("~/Content/Customer/images/services/44.webp")" class="img-fullwidth rounded-20 mb20" alt="">
-                            <h4>Cultural Insights              </h4>
-                            <hr class="s2">
-                            <p>Explore data-driven insights into the lives of East Asian communities in Melbourne. Understand the patterns, challenges, and successes of integration, aiming for a society free from discrimination.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>*@
-
         <section class="jarallax text-light">
             <img src="@Url.Content("~/Content/Customer/images/background/2.webp")" class="jarallax-img" alt="">
             <div class="container">
@@ -249,19 +206,20 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="subtitle s2 wow fadeInUp mb-3">Explore Cultures</div>
-                        <h2 class="wow fadeInUp" style="word-spacing: 0.25em;" data-wow-delay=".2s">Select Culture to Explore</h2>
+                        <h2 class="wow fadeInUp" style="word-spacing: 0.25em;" data-wow-delay=".2s">Select Culture to Explore</h2>
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
-                    @foreach (var culture in new[] { "Chinese", "Japanese", "Korean", "Filipino", "Vietnamese" })
+                    @foreach (var culture in new[] { "Chinese.jpg", "Japanese.png", "Korean.png", "Filipino.jpg", "Vietnamese.jpg" })
                     {
+                        var cultureName = System.IO.Path.GetFileNameWithoutExtension(culture); // Remove file extension
                         <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20 culture-item">
                             <a href="@Url.Action("Index", "Events", new { culture = culture })" class="culture-btn">
-                                <div class="bg-color-2 rounded-30 mb20 bg-warning">
-                                    <img src="@Url.Content($"~/Content/Customer/images/team/{culture}.jpg")" class="img-fluid" alt="@culture Culture">
+                                <div class="bg-color-2 rounded-30 mb-20 bg-warning">
+                                    <img src="@Url.Content($"~/Content/Customer/images/team/{culture}")" class="img-fluid" alt="@cultureName Culture" style="height: 150px; width: auto;">
                                 </div>
-                                <h4 class="mb-0">@culture</h4>
+                                <h4 class="mb-0">@cultureName</h4> <!-- Display culture name without extension -->
                             </a>
                         </div>
                     }
@@ -270,49 +228,59 @@
         </section>
 
 
+
+
     </div>
     <!-- content close -->
 </main>
 
 
-
-@section Scripts{
+@section Styles{
     <style>
+        .culture-item img {
+            height: 150px; /* Fixed height for all images */
+            width: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Cover the frame fully, might crop some parts */
+        }
 
         .culture-item {
-    padding-right: 5px;
-    padding-left: 5px;
-}
+            padding-right: 5px;
+            padding-left: 5px;
+        }
 
-.culture-btn {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-.culture-item .culture-btn {
-    overflow: hidden;
-    position: relative;
-    border-radius: 30px;
-    display: inline-block;
-}
+        .culture-btn {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
 
-.culture-item .culture-btn img {
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    display: block;
-}
+        .culture-item .culture-btn {
+            overflow: hidden;
+            position: relative;
+            border-radius: 30px;
+            display: inline-block;
+        }
 
-.culture-item .culture-btn:hover img {
-    transform: scale(1.05);
-    opacity: 0.7;
-}
+            .culture-item .culture-btn img {
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                display: block;
+            }
 
-.culture-item h4 {
-    transition: color 0.3s ease-in-out;
-}
+            .culture-item .culture-btn:hover img {
+                transform: scale(1.05);
+                opacity: 0.7;
+            }
 
-.culture-item:hover h4 {
-    color: #d48810;
-}
+        .culture-item h4 {
+            transition: color 0.3s ease-in-out;
+        }
 
+        .culture-item:hover h4 {
+            color: #d48810;
+        }
     </style>
-    }
+}
+
+@section Scripts{
+
+}
