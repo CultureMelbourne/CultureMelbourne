@@ -3,7 +3,56 @@
     ViewBag.Title = "DiverseCultures";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- Side Navigation -->
+<div class="sidebar">
+    <nav>
+        <ul class="country-nav flex-column">
+            <li class="nav-item">
+                <a href="#china-story" class="country-link  toggle-link">China</a>
+                <ul class="sub-nav">
+                    <li><a href="#china-story" class="country-link">Overview</a></li>
+                    <li><a href="#china-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#china-migration" class="country-link">Migration Stories</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#japan-story" class="country-link toggle-link">Japan</a>
+                <ul class="sub-nav" style="display: none;">
+                    <li><a href="#japan-story" class="country-link">Overview</a></li>
+                    <li><a href="#japan-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#japan-migration" class="country-link">Migration Stories</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#korea-story" class="country-link toggle-link">Korea</a>
+                <ul class="sub-nav" style="display: none;">
+                    <li><a href="#korea-story" class="country-link">Overview</a></li>
+                    <li><a href="#korea-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#korea-migration" class="country-link">Migration Stories</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#philipines-story" class="country-link toggle-link">Philippines</a>
+                <ul class="sub-nav" style="display: none;">
+                    <li><a href="#philipines-story" class="country-link">Overview</a></li>
+                    <li><a href="#philipines-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#philipines-migration" class="country-link">Migration Stories</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#vietnam-story" class="country-link toggle-link">Vietnam</a>
+                <ul class="sub-nav" style="display: none;">
+                    <li><a href="#vietnam-story" class="country-link">Overview</a></li>
+                    <li><a href="#vietnam-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#vietnam-migration" class="country-link">Migration Stories</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
 
+
+<!-- Side Navigation -->
 @*choose part*@
 <section class="mt-4">
     <div class="container justify-content-center align-content-center">
@@ -16,101 +65,86 @@
                     <li style="font-size: large;" class="text-dark ms-2 me-2">></li>
                     <li style="font-size: large; color: #d48810 " class="active">Diverse Cultures</li>
                 </ul>
-                <h2 class="wow fadeInUp mt-3 mb-2" data-wow-delay=".2s">Please Choose</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
-                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="china">
-                    <img src="@Url.Content("~/Content/Customer/images/team/Chinese.jpg")" class="img-fluid edu-img" alt="" style="height: 150px; width: auto;">
-                </div>
-                <h4 class="mb-0">China</h4>
-            </div>
+    </div>
+    @*story part*@
+    <div id="china-story" class="story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
 
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
-                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="japan">
-                    <img src="@Url.Content("~/Content/Customer/images/team/Japanese.png")" class="img-fluid edu-img" alt="" style="height: 150px; width: auto;">
-                </div>
-                <h4 class="mb-0">Japan</h4>
-            </div>
+    </div>
 
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
-                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="korea">
-                    <img src="@Url.Content("~/Content/Customer/images/team/Korean.png")" class="img-fluid edu-img" alt="" style="height: 150px; width: auto;">
-                </div>
-                <h4 class="mb-0">Korea</h4>
-            </div>
+    <div id="japan-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
 
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
-                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="philipines">
-                    <img src="@Url.Content("~/Content/Customer/images/team/Filipino.jpg")" class="img-fluid edu-img" alt="" style="height: 150px; width: auto;">
-                </div>
-                <h4 class="mb-0">Philippines</h4>
-            </div>
+    </div>
 
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20">
-                <div class="bg-color-2 rounded-30 mb20 bg-warning choose-item" data-target="vietnam">
-                    <img src="@Url.Content("~/Content/Customer/images/team/Vietnamese.jpg")" class="img-fluid edu-img" alt="" style="height: 150px; width: auto;">
-                </div>
-                <h4 class="mb-0">Vietnam</h4>
-            </div>
-        </div>
+    <div id="korea-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
+
+    </div>
+
+    <div id="philipines-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
+
+    </div>
+
+    <div id="vietnam-story" class=" story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
+
     </div>
 </section>
 
 
-@*story part*@
-<div id="china-story" class="story-item" style="display:none;">
-    @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
 
-</div>
-
-<div id="japan-story" class=" story-item" style="display: none;">
-    @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
-
-</div>
-
-<div id="korea-story" class=" story-item" style="display: none;">
-    @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
-
-</div>
-
-<div id="philipines-story" class=" story-item" style="display: none;">
-    @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
-
-</div>
-
-<div id="vietnam-story" class=" story-item" style="display: none;">
-    @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
-
-</div>
 
 
 @section Scripts{
 
+
     <script>
         $(document).ready(function () {
+            function navigateToSection(sectionId) {
+                $('.story-item').hide();
+                $(sectionId).show();
+                var targetSection = $(sectionId);
+                if (targetSection.length) {
+                    $('html, body').animate({
+                        scrollTop: targetSection.offset().top - 50
+                    }, 500);
+                    window.history.pushState(null, null, '?country=' + sectionId.replace('#', '').replace('-story', ''));
+                } else {
+                    console.error("Section not found:", sectionId);
+                }
+            }
+
+            $('.toggle-link').click(function (e) {
+                e.preventDefault();
+                $(this).siblings('.sub-nav').slideToggle();
+                $('.sub-nav').not($(this).siblings('.sub-nav')).slideUp();
+                var sectionId = $(this).attr('href');
+                navigateToSection(sectionId);
+
+            });
+
             var urlParams = new URLSearchParams(window.location.search);
             var country = urlParams.get('country');
             if (country) {
-                $('.story-item').hide(); 
-                $('#' + country + '-story').show();
-                $('.choose-item').removeClass('highlight'); 
-                $('.choose-item[data-target="' + country + '"]').addClass('highlight'); 
+                navigateToSection('#' + country + "-story");
+                $('a[href="#' + country + '"]').next('.sub-nav').slideDown();
             } else {
-                $('#china-story').show();
-                $('.choose-item[data-target="china"]').addClass('highlight');
+                $('.sub-nav').first().slideDown();
+                navigateToSection($('.toggle-link').first().attr('href'));
             }
-
-            $('.choose-item').click(function () {
-                var target = $(this).attr('data-target');
-                $('.story-item').hide();
-                $('#' + target + '-story').show();
-                $('.choose-item').removeClass('highlight');
-                $(this).addClass('highlight');
-            });
         });
+
     </script>
+
+}
+
+
+
+@section Styles{
 
 
 
@@ -120,6 +154,7 @@
             width: auto; /* Maintain aspect ratio */
             object-fit: cover; /* Cover the frame fully, might crop some parts */
         }
+
         .choose-item.highlight {
             border: 2px solid #FECE58;
             box-shadow: 0 0 20px 5px #FECE58;
@@ -143,6 +178,66 @@
             max-height: auto;
             object-fit: contain;
         }
-    </style>
 
+        .sidebar {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 200px;
+            height: 50%;
+            background-color: #FECE58;
+            overflow-x: hidden;
+            overflow-y: auto;
+            z-index: 1000;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+           
+        }
+
+        .country-nav {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .country-link {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 0;
+            border-bottom: 1px solid #000;
+        }
+
+            .country-link:hover {
+                background-color: #ccc;
+            }
+
+        .sub-nav {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+            .sub-nav a {
+                display: block;
+                color: white;
+                font-size: 0.9em;
+            }
+
+                .sub-nav a:hover {
+                    background-color: #e6e6e6;
+                }
+
+        .country-link:hover,
+        .country-link:focus {
+            background-color: #ccc;
+        }
+    </style>
 }
