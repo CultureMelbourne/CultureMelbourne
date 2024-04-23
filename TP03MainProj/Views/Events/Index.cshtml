@@ -73,24 +73,41 @@
 
         </div>
         <!-- quiz-->
+        <!-- Please add and adjust the CSS according to page (but please keep the messages same as the ones below)-->
         <div class="row justify-content-center m-auto section-row bg-warning">
             <div class="row mb-3">
-                <h1>Quiz</h1>
+                <h1>Common Phrases and Cultural Etiquette Quiz</h1>
             </div>
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-6">
-                    <div class="row mb-lg-5">
-                        @Html.Partial("~/Views/Events/QuizTemplate.cshtml")
-
-
+            <div class = "row">
+                <div class="col-lg-8 col-md-10 text-center">
+                    <h4 id="startMessage">"Want to learn about this culture in depth? Try this quiz!"</h4>
+                    <button id="loadQuiz" class="btn btn-primary">Learn About @ViewBag.Culture</button>
+                    <p id="startMessage">Click the button to start the quiz!</p>
+                    <div id="quizFrame" style="display:none;"></div> <!-- Placeholder for the iFrame -->
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--
+    <div class="row justify-content-center m-auto section-row bg-warning">
+        <div class="row mb-3">
+            <h1>Common Phrases and Cultural Etiquette Quiz</h1>
         </div>
         <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+                <div class="row mb-lg-5">
+                    @Html.Partial("~/Views/Events/QuizTemplate.cshtml")
 
 
-        <div class="row section-row">
+    </div>
+    <div class="row">
 
-        </div>
+
+    <div class="row section-row">
+
+    </div>
+        -->
     </div>
 
 </section>
