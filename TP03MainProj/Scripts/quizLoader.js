@@ -13,7 +13,7 @@
         // Below are temporary embed links (Real ones from Tally.so after Siqi modifies)
         switch (cultureName) {
             case 'Japanese':
-                iframeSrc = 'https://tally.so/embed/wxyz123?hideTitle=1&align=center';
+                iframeSrc = 'https://tally.so/embed/wdY0Dr?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
                 break;
             case 'Chinese':
                 iframeSrc = 'https://tally.so/embed/wvNDOg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
@@ -22,7 +22,7 @@
                 iframeSrc = 'https://tally.so/embed/3EPlbl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
                 break;
             case 'Filipino':
-                iframeSrc = 'https://tally.so/embed/ijkl101?hideTitle=1&align=center';
+                iframeSrc = 'https://tally.so/embed/nWARpk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
                 break;
             case 'Vietnamese':
                 iframeSrc = 'https://tally.so/embed/mRzoYK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
