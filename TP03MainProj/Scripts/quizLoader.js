@@ -16,16 +16,16 @@
                 iframeSrc = 'https://tally.so/embed/wxyz123?hideTitle=1&align=center';
                 break;
             case 'Chinese':
-                iframeSrc = 'https://tally.so/embed/abcd456?hideTitle=1&align=center';
+                iframeSrc = 'https://tally.so/embed/wvNDOg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
                 break;
             case 'Korean':
-                iframeSrc = 'https://tally.so/embed/efgh789?hideTitle=1&align=center';
+                iframeSrc = 'https://tally.so/embed/3EPlbl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
                 break;
             case 'Filipino':
                 iframeSrc = 'https://tally.so/embed/ijkl101?hideTitle=1&align=center';
                 break;
             case 'Vietnamese':
-                iframeSrc = 'https://tally.so/embed/mnop112?hideTitle=1&align=center';
+                iframeSrc = 'https://tally.so/embed/mRzoYK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
                 break;
             default:
                 iframeSrc = '';
