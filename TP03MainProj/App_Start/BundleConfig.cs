@@ -49,7 +49,9 @@ namespace TP03MainProj
                               "~/Content/Mycss/mycss.css",
                               "~/Content/Mycss/Education.css"));
 
-
+            bundles.Add(new ScriptBundle("~/bundles/educationJS").Include(
+            "~/Scripts/edu.js"
+            ));
 
             BundleTable.EnableOptimizations = true;
         }

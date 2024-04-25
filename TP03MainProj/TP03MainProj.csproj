@@ -170,6 +170,7 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataHandle\AgeDistribution.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1184,6 +1185,7 @@
     <Content Include="Content\Customer\images\study-case\2.webp" />
     <Content Include="Content\Customer\images\study-case\3.webp" />
     <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\charts.js" />
     <Content Include="Scripts\Customer\countdown-custom.js" />
     <Content Include="Scripts\Customer\custom-marquee.js" />
     <Content Include="Scripts\Customer\custom-swiper-1.js" />
@@ -1193,6 +1195,7 @@
     <Content Include="Scripts\Customer\plugins.js" />
     <Content Include="Scripts\Customer\recaptcha.js" />
     <Content Include="Scripts\Customer\swiper.js" />
+    <Content Include="Scripts\edu.js" />
     <Content Include="Scripts\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar.min.js" />
     <Content Include="Scripts\gcal.js" />
@@ -1205,6 +1208,25 @@
     <Content Include="Content\Customer\images\timeline\Chinese\2024.webp" />
     <Content Include="Content\Customer\images\timeline\vietna\1975.webp" />
     <Content Include="Content\Customer\images\mig\jp1.avif" />
+    <Content Include="DataHandle\China\age_distrbution.json" />
+    <Content Include="DataHandle\China\china_occupation.json" />
+    <Content Include="DataHandle\China\china_population.json" />
+    <Content Include="DataHandle\China\china_religion.json" />
+    <Content Include="DataHandle\Japan\age_distrbution.json" />
+    <Content Include="DataHandle\Japan\japan_occupation.json" />
+    <Content Include="DataHandle\Japan\japan_population.json" />
+    <Content Include="DataHandle\Korea\age_distrbution.json" />
+    <Content Include="DataHandle\Korea\korea_occupation.json" />
+    <Content Include="DataHandle\Korea\korea_population.json" />
+    <Content Include="DataHandle\Korea\korea_religion.json" />
+    <Content Include="DataHandle\Philipines\age_distrbution.json" />
+    <Content Include="DataHandle\Philipines\philipines_occupation.json" />
+    <Content Include="DataHandle\Philipines\philipines_population.json" />
+    <Content Include="DataHandle\Philipines\philipines_religion.json" />
+    <Content Include="DataHandle\Vietnam\vietname_religion.json" />
+    <Content Include="DataHandle\Vietnam\age_distrbution.json" />
+    <Content Include="DataHandle\Vietnam\vietnam_occupation.json" />
+    <Content Include="DataHandle\Vietnam\vietnam_population.json" />
     <None Include="Properties\PublishProfiles\cultmelboune - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\index.global.js" />
@@ -1332,7 +1354,6 @@
     <Content Include="Scripts\moment-with-locales.min.js.map" />
     <Content Include="Views\Education\Index.cshtml" />
     <Content Include="Views\Education\DiverseCultures.cshtml" />
-    <Content Include="Views\Education\MigrationStories.cshtml" />
     <Content Include="Views\Education\CountryStory\China.cshtml" />
     <Content Include="Views\Education\CountryStory\Japan.cshtml" />
     <Content Include="Views\Education\CountryStory\Korea.cshtml" />
@@ -1341,6 +1362,17 @@
     <Content Include="Views\Shared\WebGateLayout.cshtml" />
     <Content Include="Views\Home\WebGate.cshtml" />
     <Content Include="Views\Events\QuizTemplate.cshtml" />
+    <Content Include="Views\Education\MigrationStories\ChinaStory.cshtml" />
+    <Content Include="Views\Education\MigrationStories\JapanStory.cshtml" />
+    <Content Include="Views\Education\MigrationStories\VietnamStory.cshtml" />
+    <Content Include="Views\Education\MigrationStories\PhilipinesStory.cshtml" />
+    <Content Include="Views\Education\MigrationStories\KoreaStory.cshtml" />
+    <Content Include="Views\Education\DataInsight\ChinaData.cshtml" />
+    <Content Include="Views\Education\DataInsight\VietnamData.cshtml" />
+    <Content Include="Views\Education\DataInsight\JapanData.cshtml" />
+    <Content Include="Views\Education\DataInsight\KoreaData.cshtml" />
+    <Content Include="Views\Education\DataInsight\PhilipinesData.cshtml" />
+    <Content Include="Views\Education\ChartPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

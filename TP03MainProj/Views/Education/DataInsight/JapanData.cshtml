@@ -1,0 +1,17 @@
+﻿@model Dictionary<string, dynamic>
+
+@*@model Dictionary<string, dynamic>
+
+    <section class="bg-grey text-dark" id="@Model.Keys.First().ToLower() + '-data'" style="background-size: cover; background-repeat: no-repeat;">
+        <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+            <div class="row gx-5 align-items-center" style="background-size: cover; background-repeat: no-repeat;">
+                <h1>@Model.Keys.First() Data</h1>
+                <div id="@Model.Keys.First().ToLower() + '-chart'"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Call the initializeChart function with the country name and data
+        initializeChart("@Model.Keys.First()", @Html.Raw(Json.Encode(Model.Values.First())));
+    </script>*@

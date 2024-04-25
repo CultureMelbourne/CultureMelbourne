@@ -1,7 +1,7 @@
-﻿
+﻿@*@model TP03MainProj.DataHandle.CountryDataViewModel*@
 @{
     ViewBag.Title = "DiverseCultures";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 <!-- Side Navigation -->
 <div class="sidebar">
@@ -12,6 +12,7 @@
                 <ul class="sub-nav">
                     <li><a href="#china-story" class="country-link">Overview</a></li>
                     <li><a href="#china-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#china-data" class="country-link">Data Insight</a></li>
                     <li><a href="#china-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
@@ -20,6 +21,8 @@
                 <ul class="sub-nav" style="display: none;">
                     <li><a href="#japan-story" class="country-link">Overview</a></li>
                     <li><a href="#japan-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#japan-data" class="country-link">Data Insight</a></li>
+
                     <li><a href="#japan-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
@@ -28,6 +31,8 @@
                 <ul class="sub-nav" style="display: none;">
                     <li><a href="#korea-story" class="country-link">Overview</a></li>
                     <li><a href="#korea-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#korea-data" class="country-link">Data Insight</a></li>
+
                     <li><a href="#korea-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
@@ -36,6 +41,8 @@
                 <ul class="sub-nav" style="display: none;">
                     <li><a href="#philipines-story" class="country-link">Overview</a></li>
                     <li><a href="#philipines-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#philipines-data" class="country-link">Data Insight</a></li>
+
                     <li><a href="#philipines-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
@@ -44,6 +51,8 @@
                 <ul class="sub-nav" style="display: none;">
                     <li><a href="#vietnam-story" class="country-link">Overview</a></li>
                     <li><a href="#vietnam-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#vietnam-data" class="country-link">Data Insight</a></li>
+
                     <li><a href="#vietnam-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
@@ -68,29 +77,114 @@
             </div>
         </div>
     </div>
+
     @*story part*@
     <div id="china-story" class="story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
+        <div class="no-bottom no-top" id="content" style="background-size: cover; background-repeat: no-repeat;">
+            @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
+
+            <section class="bg-grey text-dark" id="china-data" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+
+                    <div class="row gx-5 align-items-center" style="background-size: cover; background-repeat: no-repeat;">
+                        <h1>China data</h1>
+
+                        <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+
+
+                        <div id="china-chart" style="height: 300px; width: 100%;"></div>
+
+                    </div>
+                </div>
+            </section>
+            @Html.Partial("~/Views/Education/MigrationStories/ChinaStory.cshtml", "China")
+        </div>
 
     </div>
 
     <div id="japan-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
+        <div class="no-bottom no-top" id="content" style="background-size: cover; background-repeat: no-repeat;">
 
+            @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
+
+            <section class="bg-grey text-dark" id="japan-data" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+
+                    <div class="row gx-5 align-items-center" style="background-size: cover; background-repeat: no-repeat;">
+                        <h1>Japan data</h1>
+                        <div id="japan-chart" style="height: 300px; width: 100%;"></div>
+
+                    </div>
+                </div>
+            </section>
+
+            @Html.Partial("~/Views/Education/MigrationStories/JapanStory.cshtml", "Japan")
+
+        </div>
     </div>
 
     <div id="korea-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
+        <div class="no-bottom no-top" id="content" style="background-size: cover; background-repeat: no-repeat;">
+
+            @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
+
+            <section class="bg-grey text-dark" id="korea-data" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+
+                    <div class="row gx-5 align-items-center" style="background-size: cover; background-repeat: no-repeat;">
+                        <h1>Korea data</h1>
+                        <div id="korea-chart" style="height: 300px; width: 100%;"></div>
+
+                    </div>
+                </div>
+            </section>
+
+            @Html.Partial("~/Views/Education/MigrationStories/KoreaStory.cshtml", "Korea")
+
+        </div>
 
     </div>
 
     <div id="philipines-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
+        <div class="no-bottom no-top" id="content" style="background-size: cover; background-repeat: no-repeat;">
+
+            @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
+
+            <section class="bg-grey text-dark" id="philipines-data" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+
+                    <div class="row gx-5 align-items-center" style="background-size: cover; background-repeat: no-repeat;">
+                        <h1>Philipines data</h1>
+                        <div id="philipines-chart" style="height: 300px; width: 100%;"></div>
+
+                    </div>
+                </div>
+            </section>
+
+            @Html.Partial("~/Views/Education/MigrationStories/PhilipinesStory.cshtml", "Philipines")
+
+        </div>
 
     </div>
 
     <div id="vietnam-story" class=" story-item" style="display: none;">
-        @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
+        <div class="no-bottom no-top" id="content" style="background-size: cover; background-repeat: no-repeat;">
+
+            @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
+
+            <section class="bg-grey text-dark" id="vietnam-data" style="background-size: cover; background-repeat: no-repeat;">
+                <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+
+                    <div class="row gx-5 align-items-center" style="background-size: cover; background-repeat: no-repeat;">
+                        <h1>Vietnam data</h1>
+                        <div id="vietnam-chart" style="height: 300px; width: 100%;"></div>
+
+                    </div>
+                </div>
+            </section>
+
+            @Html.Partial("~/Views/Education/MigrationStories/VietnamStory.cshtml", "Vietnam")
+        </div>
 
     </div>
 </section>
@@ -100,44 +194,64 @@
 
 
 @section Scripts{
+    @*@Scripts.Render("~/bundles/educationJS")*@
+
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
 
 
     <script>
         $(document).ready(function () {
-            function navigateToSection(sectionId) {
-                $('.story-item').hide();
-                $(sectionId).show();
-                var targetSection = $(sectionId);
-                if (targetSection.length) {
-                    $('html, body').animate({
-                        scrollTop: targetSection.offset().top - 50
-                    }, 500);
-                    window.history.pushState(null, null, '?country=' + sectionId.replace('#', '').replace('-story', ''));
-                } else {
-                    console.error("Section not found:", sectionId);
+
+
+                function navigateToSection(sectionId) {
+                    $('.story-item').hide();
+                    $(sectionId).show();
+                    var targetSection = $(sectionId);
+                    if (targetSection.length) {
+                        $('html, body').animate({
+                            scrollTop: targetSection.offset().top - 50
+                        }, 500);
+                        window.history.pushState(null, null, '?country=' + sectionId.replace('#', '').replace('-story', ''));
+                    } else {
+                        console.error("Section not found:", sectionId);
+                    }
+
                 }
+                $('.toggle-link').click(function (e) {
+                    e.preventDefault();
+                    $(this).siblings('.sub-nav').slideToggle();
+                    $('.sub-nav').not($(this).siblings('.sub-nav')).slideUp();
+                    var sectionId = $(this).attr('href');
+                    navigateToSection(sectionId);
+
+                });
+
+                var urlParams = new URLSearchParams(window.location.search);
+                var country = urlParams.get('country');
+                if (country) {
+                    navigateToSection('#' + country + "-story");
+                    $('a[href="#' + country + '"]').next('.sub-nav').slideDown();
+                } else {
+                    $('.sub-nav').first().slideDown();
+                    navigateToSection($('.toggle-link').first().attr('href'));
             }
 
-            $('.toggle-link').click(function (e) {
-                e.preventDefault();
-                $(this).siblings('.sub-nav').slideToggle();
-                $('.sub-nav').not($(this).siblings('.sub-nav')).slideUp();
-                var sectionId = $(this).attr('href');
-                navigateToSection(sectionId);
-
+    var chinaData = @Html.Raw(Json.Encode(ViewBag.ChinaData));
+    var chart = new CanvasJS.Chart("china-chart", {
+        title: {
+            text: "China Chart"
+        },
+        data: [{
+            type: "column",
+            dataPoints: chinaData.map(function(data) {
+                var sum = Object.values(data.AgeGroups).reduce((a, b) => a + b, 0);
+                return { label: data.CensusId.toString(), y: sum };
+            })
+        }]
+    });
+    chart.render();
             });
-
-            var urlParams = new URLSearchParams(window.location.search);
-            var country = urlParams.get('country');
-            if (country) {
-                navigateToSection('#' + country + "-story");
-                $('a[href="#' + country + '"]').next('.sub-nav').slideDown();
-            } else {
-                $('.sub-nav').first().slideDown();
-                navigateToSection($('.toggle-link').first().attr('href'));
-            }
-        });
-
     </script>
 
 }
@@ -194,7 +308,6 @@
             padding-bottom: 20px;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
             border-radius: 10px;
-           
         }
 
         .country-nav {
@@ -209,7 +322,7 @@
         .country-link {
             display: block;
             text-decoration: none;
-            color: white;
+            color: black;
             font-weight: bold;
             padding: 10px 0;
             border-bottom: 1px solid #000;
@@ -227,7 +340,7 @@
 
             .sub-nav a {
                 display: block;
-                color: white;
+                color: black;
                 font-size: 0.9em;
             }
 

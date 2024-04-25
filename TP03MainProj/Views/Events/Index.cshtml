@@ -74,18 +74,17 @@
         </div>
         <!-- quiz-->
         <!-- Please add and adjust the CSS according to page (but please keep the messages same as the ones below)-->
-        <div class="row justify-content-center section-row bg-warning pt-5 mt-5">
+        <div class="row justify-content-center section-row bg-warning pt-5 mt-5" id="quiz-section">
             <div class="col-lg-8 col-md-10 text-center">
                 <div class="row mb-3">
-                    <h1  style="word-spacing: 8 px;">Common Phrases and Cultural Etiquette Quiz</h1>
+                    <h1  style="word-spacing: 8px;" >Common Phrases and Cultural Etiquette Quiz</h1>
                 </div>
-                <div class="row justify-content-center">
-                    <h4 id="startMessage">"Want to learn about this culture in depth? Try this quiz!"</h4>
+                <div class="row justify-content-center ">
+                    <h4 id="startMessage" >"Want to learn about this culture in depth? Try this quiz!"</h4>
 
-                    <button id="loadQuiz" class="btn btn-primary culture-btn w-25">Learn About @ViewBag.Culture  </button>
-                    <p id="startMessage">Click the button to start the quiz!</p>
+                    <button id="loadQuiz" class="btn btn-primary text-white culture-btn w-25">Learn About @ViewBag.Culture  </button>
                 </div>
-                <div id="quizFrame" style="display:none;"></div> <!-- Placeholder for the iFrame if needed -->
+                <div id="quizFrame" class="text-white" style="display:none;"></div> <!-- Placeholder for the iFrame if needed -->
             </div>
         </div>
      </div>
@@ -107,9 +106,13 @@
 
     <style>
 
+        #quizFrame {
+            height: 1000px;
+        }
+
         .culture-btn {
             min-height: 40px;
-            height:40px;
+            height: 40px;
         }
         .event-detail {
             margin-bottom: 20px;

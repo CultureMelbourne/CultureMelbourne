@@ -35,11 +35,12 @@
         var iframe = document.createElement('iframe');
         iframe.src = iframeSrc;
         iframe.width = '100%';
-        iframe.height = '500';
+        iframe.height = '100%';
         iframe.frameBorder = '0';
         iframe.marginHeight = '0';
         iframe.marginWidth = '0';
         iframe.title = 'Cultural Quiz';
+        
 
         quizFrameDiv.appendChild(iframe);
         quizFrameDiv.style.display = 'block';
