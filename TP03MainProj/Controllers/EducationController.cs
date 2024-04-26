@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,18 +21,40 @@ namespace TP03MainProj.Controllers
         {
             return View();
         }
-        public List<AgeDistribution> DeserializeAgeData(string jsonData)
-        {
-
-            var Data = JsonConvert.DeserializeObject<List<AgeDistribution>>(jsonData);
-            return Data;
-        }
         public ActionResult DiverseCultures()
         {
 
-          
 
-            return View();
+            var dataList = new List<AgeDistribution>();
+            string[] folders = { "China", "Japan", "Korea", "Philipines", "Vietnam" };
+
+            foreach (var folder in folders)
+            {
+                var path = Server.MapPath($"~/DataHandle/{folder}/age_distrbution.json");
+                var jsonData = System.IO.File.ReadAllText(path);
+                var jsonArray = JArray.Parse(jsonData);
+
+                foreach (var item in jsonArray)
+                {
+                    var censusData = new AgeDistribution
+                    {
+                        CensusId = (int)item["CensusId"],
+                        CensusYear = (int)item["CensusYear"],
+                        CountryName = (string)item["CountryName"],
+                        AgeDistributions = new List<int>()
+                    };
+
+                    string[] ageKeys = { "0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85-89", "90-94", "95-99", "100-104", "105-109", "110-114" };
+                    foreach (var key in ageKeys)
+                    {
+                        censusData.AgeDistributions.Add((int)item[key]);
+                    }
+
+                    dataList.Add(censusData);
+                }
+            }
+
+            return View(dataList);
 
 
         }

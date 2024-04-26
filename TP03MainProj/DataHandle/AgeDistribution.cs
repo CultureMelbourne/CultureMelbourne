@@ -9,15 +9,12 @@ namespace TP03MainProj.DataHandle
 {
     public class AgeDistribution
     {
-        public AgeDistribution()
-        {
-            AgeGroups = new Dictionary<string, int>(); 
-        }
 
         public int CensusId { get; set; }
         public int CensusYear { get; set; }
         public string CountryName { get; set; }
-        public Dictionary<string, int> AgeGroups { get; set; }
+        public List<int> AgeDistributions { get; set; }
+
 
 
 

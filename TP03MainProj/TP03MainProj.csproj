@@ -1181,10 +1181,8 @@
     <Content Include="Content\Customer\images\study-case-single\2.webp" />
     <Content Include="Content\Customer\images\study-case-single\3.webp" />
     <Content Include="Content\Customer\images\study-case-single\4.webp" />
-    <Content Include="Content\Customer\images\study-case\1.webp" />
-    <Content Include="Content\Customer\images\study-case\2.webp" />
-    <Content Include="Content\Customer\images\study-case\3.webp" />
     <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\chartRender.js" />
     <Content Include="Scripts\charts.js" />
     <Content Include="Scripts\Customer\countdown-custom.js" />
     <Content Include="Scripts\Customer\custom-marquee.js" />

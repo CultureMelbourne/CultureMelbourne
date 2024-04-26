@@ -22,6 +22,7 @@
 
     });
 
+
     var urlParams = new URLSearchParams(window.location.search);
     var country = urlParams.get('country');
     if (country) {
@@ -30,5 +31,6 @@
     } else {
         $('.sub-nav').first().slideDown();
         navigateToSection($('.toggle-link').first().attr('href'));
+
     }
 });

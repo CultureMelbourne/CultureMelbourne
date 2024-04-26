@@ -1,24 +1,32 @@
-﻿// charts.js
+﻿function createChart(countryName, containerId, dataList) {
+    var countryData = dataList.filter(d => d.CountryName === countryName);
+    var dataPoints = countryData.map(d => {
+        var totalPopulation = d.AgeDistributions.reduce((a, b) => a + b, 0);
+        return { label: d.CensusYear.toString(), y: totalPopulation };
+    });
 
-function initializeChart(country, data) {
-    var chartContainerId = country.toLowerCase() + "-chart";
-    var chartContainer = $("#" + chartContainerId);
-
-    var chart = new CanvasJS.Chart(chartContainerId, {
-        // Chart options
+    var chart = new CanvasJS.Chart(containerId, {
+        theme: "light2",
+        animationEnabled: true,
         title: {
-            text: country + " Data Chart"
+            text: "Population distribution - " + countryName
+        },
+        axisY: {
+            title: "Population (million)"
         },
         data: [{
             type: "column",
-            dataPoints: [
-                { label: "Age Distribution", y: data["age_distribution"] },
-                { label: "Occupation", y: data["occupation"] },
-                { label: "Population", y: data["population"] },
-                { label: "Religion", y: data["religion"] }
-            ]
-        }]
+            dataPoints: dataPoints
+        }],
     });
 
     chart.render();
+
+    handleResize(chart);
+}
+
+function handleResize(chart) {
+    window.addEventListener('resize', function () {
+        chart.render();
+    });
 }

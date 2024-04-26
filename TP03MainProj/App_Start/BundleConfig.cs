@@ -50,7 +50,8 @@ namespace TP03MainProj
                               "~/Content/Mycss/Education.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/educationJS").Include(
-            "~/Scripts/edu.js"
+            "~/Scripts/edu.js",
+            "~/Scripts/charts.js"
             ));
 
             BundleTable.EnableOptimizations = true;
