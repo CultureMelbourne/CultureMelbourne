@@ -11,15 +11,16 @@ namespace TP03MainProj.DataHandle
     {
         public AgeDistribution()
         {
-            AgeGroups = new Dictionary<string, double>(); // Initialise the AgeGroups property
-            CensusId = 0; 
-            CensusYear = 0;
-            CountryName = "";
+            AgeGroups = new Dictionary<string, int>(); 
         }
+
         public int CensusId { get; set; }
         public int CensusYear { get; set; }
         public string CountryName { get; set; }
-        public Dictionary<string, double> AgeGroups { get; set; }
+        public Dictionary<string, int> AgeGroups { get; set; }
+
+
+
     }
 
     public class CountryDataViewModel
@@ -39,23 +40,6 @@ namespace TP03MainProj.DataHandle
         public List<AgeDistribution> VietnamData { get; set; }
     }
 
-
-    public class AgeDistributionService
-    {
-        public List<AgeDistribution> DeserializeAgeData(string json)
-        {
-            var ageDistributions = JsonConvert.DeserializeObject<List<AgeDistribution>>(json);
-            foreach (var ageDistribution in ageDistributions)
-            {
-                if (ageDistribution.AgeGroups == null)
-                {
-                    ageDistribution.AgeGroups = new Dictionary<string, double>(); // Create an empty AgeGroups dictionary.
-                }
-            }
-
-            return ageDistributions;
-        }
-    }
 
 
 }
