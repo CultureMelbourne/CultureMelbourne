@@ -16,27 +16,38 @@ namespace TP03MainProj.DataHandle
         public List<int> AgeDistributions { get; set; }
 
 
-
-
     }
 
-    public class CountryDataViewModel
+    public class OccupationData
     {
-        public CountryDataViewModel()
-        {// Initialise the list properties
-            ChinaData = new List<AgeDistribution>();
-            JapanData = new List<AgeDistribution>();
-            KoreaData = new List<AgeDistribution>();
-            PhilippinesData = new List<AgeDistribution>();
-            VietnamData = new List<AgeDistribution>();
-        }
-        public List<AgeDistribution> ChinaData { get; set; }
-        public List<AgeDistribution> JapanData { get; set; }
-        public List<AgeDistribution> KoreaData { get; set; }
-        public List<AgeDistribution> PhilippinesData { get; set; }
-        public List<AgeDistribution> VietnamData { get; set; }
+        public int Year { get; set; }
+        public string Occupation { get; set; }
+        public int Total { get; set; }
     }
 
+    public class Population {
+        public int CensusYear { get; set; }
+        public string CountryName { get; set; }
+        public int Total_Population { get; set; }
+    }
 
+    public class Religion { 
+        public int Year { get; set;}
+        public string Religion_Name { get; set; }
+        public int Total { get; set; }
+    }
+
+    public class DiverseCulturesViewModel { 
+        public List<CountryData>  countryDatas { get; set; } = new List<CountryData>();
+
+    }
+
+    public class CountryData {
+        public string CountryName { get; set; }
+        public List<AgeDistribution> ageDistributions { get; set; } = new List<AgeDistribution>();
+        public List<OccupationData> occupation { get; set; } = new List<OccupationData>();
+        public List<Population> populations { get; set; } = new List<Population>();
+        public List<Religion> religions { get; set; } = new List<Religion>();
+    }
 
 }

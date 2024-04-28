@@ -1,7 +1,11 @@
-﻿@{
+﻿@model TP03MainProj.DataHandle.DiverseCulturesViewModel
+@{
     ViewBag.Title = "DiverseCultures";
 
 }
+
+
+
 <!-- Side Navigation -->
 <div class="sidebar">
     <nav>
@@ -78,149 +82,215 @@
     </div>
 
     @*story part*@
-<div id="china-story" class="story-item" style="display: none;">
-    @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
+    <div id="china-story" class="story-item" style="display: none;">
+        @Html.Partial("~/Views/Education/CountryStory/China.cshtml", "China")
 
-    <div class="bg-grey text-dark pb-5" id="china-data">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 p-3"style="height:100px;">
-                    <h1 class="mb-4" >China data</h1>
+        <div class="bg-grey text-dark pb-5" id="china-data">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 p-3" style="height:100px;">
+                        <h1 class="mb-4">China data</h1>
+                    </div>
                 </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-3">
-                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <!-- Reduced from col-md-3 -->
+                    </div>
 
-                <div class="col-md-6 p-1 mt-5">
-                    <div id="china-chart" class="canvasjs-chart-container"></div>
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="china-age" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                        <!-- Reduced from col-md-3 -->
+                    </div>
                 </div>
-                <div class="col-md-3">
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <!-- Reduced from col-md-3 -->
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="china-occupa" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                        <!-- Reduced from col-md-3 -->
+                    </div>
                 </div>
             </div>
-            </div>
+        </div>
+
+        @Html.Partial("~/Views/Education/MigrationStories/ChinaStory.cshtml", "China")
+
     </div>
-
-    @Html.Partial("~/Views/Education/MigrationStories/ChinaStory.cshtml", "China")
-
-</div>
 
     <div id="japan-story" class=" story-item" style="display: none;">
 
-            @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
+        @Html.Partial("~/Views/Education/CountryStory/Japan.cshtml", "Japan")
 
 
-            <div class="bg-grey text-dark pb-5" id="japan-data">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 p-3" style="height:100px;">
-                            <h1 class="mb-4">Japan data</h1>
-                        </div>
+        <div class="bg-grey text-dark pb-5" id="japan-data">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 p-3" style="height:100px;">
+                        <h1 class="mb-4">Japan data</h1>
                     </div>
-                    <div class="row align-items-center">
-                        <div class="col-md-3">
-                        </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
 
-                        <div class="col-md-6 p-1 mt-5">
-                            <div id="japan-chart" class="canvasjs-chart-container"></div>
-                        </div>
-                        <div class="col-md-3">
-                        </div>
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="japan-age" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="japan-occupa" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
                     </div>
                 </div>
             </div>
+        </div>
 
-            @Html.Partial("~/Views/Education/MigrationStories/JapanStory.cshtml", "Japan")
+        @Html.Partial("~/Views/Education/MigrationStories/JapanStory.cshtml", "Japan")
 
     </div>
 
     <div id="korea-story" class=" story-item" style="display: none;">
 
-            @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
+        @Html.Partial("~/Views/Education/CountryStory/Korea.cshtml", "Korea")
 
 
-            <div class="bg-grey text-dark pb-5" id="korea-data">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 p-3" style="height:100px;">
-                            <h1 class="mb-4">Korea data</h1>
-                        </div>
+        <div class="bg-grey text-dark pb-5" id="korea-data">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 p-3" style="height:100px;">
+                        <h1 class="mb-4">Korea data</h1>
                     </div>
-                    <div class="row align-items-center">
-                        <div class="col-md-3">
-                        </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
 
-                        <div class="col-md-6 p-1 mt-5">
-                            <div id="korea-chart" class="canvasjs-chart-container"></div>
-                        </div>
-                        <div class="col-md-3">
-                        </div>
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="korea-age" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="korea-occupa" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
                     </div>
                 </div>
             </div>
+        </div>
 
-            @Html.Partial("~/Views/Education/MigrationStories/KoreaStory.cshtml", "Korea")
+        @Html.Partial("~/Views/Education/MigrationStories/KoreaStory.cshtml", "Korea")
 
 
     </div>
 
     <div id="philipines-story" class=" story-item" style="display: none;">
 
-            @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
+        @Html.Partial("~/Views/Education/CountryStory/Philipines.cshtml", "Philipines")
 
 
-            <div class="bg-grey text-dark pb-5" id="philipines-data">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 p-3" style="height:100px;">
-                            <h1 class="mb-4">Philipines data</h1>
-                        </div>
+        <div class="bg-grey text-dark pb-5" id="philipines-data">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 p-3" style="height:100px;">
+                        <h1 class="mb-4">Philipines data</h1>
                     </div>
-                    <div class="row align-items-center">
-                        <div class="col-md-3">
-                        </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
 
-                        <div class="col-md-6 p-1 mt-5">
-                            <div id="philipines-chart" class="canvasjs-chart-container"></div>
-                        </div>
-                        <div class="col-md-3">
-                        </div>
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="philipines-age" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="philipines-occupa" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
                     </div>
                 </div>
             </div>
+        </div>
 
-            @Html.Partial("~/Views/Education/MigrationStories/PhilipinesStory.cshtml", "Philipines")
+        @Html.Partial("~/Views/Education/MigrationStories/PhilipinesStory.cshtml", "Philipines")
 
 
     </div>
 
     <div id="vietnam-story" class=" story-item" style="display: none;">
 
-            @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
+        @Html.Partial("~/Views/Education/CountryStory/Vietnam.cshtml", "Vietnam")
 
 
-            <div class="bg-grey text-dark pb-5" id="vietnam-data">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 p-3" style="height:100px;">
-                            <h1 class="mb-4">Vietnam data</h1>
-                        </div>
+        <div class="bg-grey text-dark pb-5" id="vietnam-data">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 p-3" style="height:100px;">
+                        <h1 class="mb-4">Vietnam data</h1>
                     </div>
-                    <div class="row align-items-center">
-                        <div class="col-md-3">
-                        </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
 
-                        <div class="col-md-6 p-1 mt-5">
-                            <div id="vietnam-chart" class="canvasjs-chart-container"></div>
-                        </div>
-                        <div class="col-md-3">
-                        </div>
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="vietnam-age" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="vietnam-occupa" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
                     </div>
                 </div>
             </div>
-
-            @Html.Partial("~/Views/Education/MigrationStories/VietnamStory.cshtml", "Vietnam")
         </div>
+
+        @Html.Partial("~/Views/Education/MigrationStories/VietnamStory.cshtml", "Vietnam")
+    </div>
 
 </section>
 
@@ -231,19 +301,6 @@
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     @Scripts.Render("~/bundles/educationJS")
 
-
-
-
-
-<script>
-    var dataList = @Html.Raw(Json.Encode(Model));
-
-    createChart("China", "china-chart", dataList);
-    createChart("Japan", "japan-chart", dataList);
-    createChart("Korea", "korea-chart", dataList);
-    createChart("Philipines", "philipines-chart", dataList);
-    createChart("Vietnam", "vietnam-chart", dataList);
-</script>
 
 
 
@@ -259,7 +316,7 @@
         .canvasjs-chart-container {
             max-width: 100%;
             width: 100%;
-            min-height: 300px;
+            min-height: 500px;
             max-height: 600px;
             height: auto;
             overflow: visible;
