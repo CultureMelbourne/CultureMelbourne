@@ -1369,6 +1369,7 @@
     <Content Include="Views\Education\DataInsight\JapanData.cshtml" />
     <Content Include="Views\Education\DataInsight\KoreaData.cshtml" />
     <Content Include="Views\Education\DataInsight\PhilipinesData.cshtml" />
+    <Content Include="Views\Events\_EventsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -94,6 +94,7 @@ namespace TP03MainProj.Controllers
         }
         */
 
+
         // Modified method to map the events data to the calendar
         public JsonResult GetCulturalDates(string culture, DateTime start, DateTime end)
         {
@@ -128,10 +129,43 @@ namespace TP03MainProj.Controllers
 
 
         // To retrieve data from API (using static DB for the time being)
-        public JsonResult GetEventsFromEventbrite(string culture, DateTime date)
+        //public JsonResult GetEventsFromEventbrite(string culture, DateTime date)
+        //{
+        //    string filePath = Server.MapPath("~/Content/DataSource/melbourne_events.csv");
+
+        //    var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+        //    {
+        //        HasHeaderRecord = true,
+        //        Delimiter = ",",
+        //        BadDataFound = null,
+        //    };
+
+        //    using (var reader = new StreamReader(filePath))
+        //    using (var csv = new CsvReader(reader, config))
+        //    {
+        //        csv.Context.RegisterClassMap<EventMap>();
+        //        var records = csv.GetRecords<Events>().ToList();
+
+        //        var filteredEvents = records
+        //            .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) &&
+        //                        date >= e.StartDate &&
+        //                        date <= e.EndDate)
+        //            .Select(e => new
+        //            {
+        //                title = e.Title,
+        //                start = e.StartDate.ToString("yyyy-MM-dd"),
+        //                end = e.EndDate.ToString("yyyy-MM-dd"),
+        //                description = e.Description,
+        //                url = e.Url
+        //            }).ToList();
+
+        //        return Json(filteredEvents, JsonRequestBehavior.AllowGet);
+        //    }
+        //}
+
+        public ActionResult GetEventsFromEventbrite(string culture, DateTime date)
         {
             string filePath = Server.MapPath("~/Content/DataSource/melbourne_events.csv");
-
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = true,
@@ -149,18 +183,13 @@ namespace TP03MainProj.Controllers
                     .Where(e => e.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase) &&
                                 date >= e.StartDate &&
                                 date <= e.EndDate)
-                    .Select(e => new
-                    {
-                        title = e.Title,
-                        start = e.StartDate.ToString("yyyy-MM-dd"),
-                        end = e.EndDate.ToString("yyyy-MM-dd"),
-                        description = e.Description,
-                        url = e.Url
-                    }).ToList();
+                    .ToList();
 
-                return Json(filteredEvents, JsonRequestBehavior.AllowGet);
+                ViewBag.FormattedDate = date.ToString("dd-MM-yyyy"); // Formatting date for display in the view
+                return PartialView("_EventsList", filteredEvents);
             }
         }
+
 
         // For Mapping the CSV columns to the Events class properties
         public sealed class EventMap : ClassMap<Events>
