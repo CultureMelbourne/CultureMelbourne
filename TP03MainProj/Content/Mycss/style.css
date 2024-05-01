@@ -1,0 +1,18 @@
+﻿.btn {
+    width: 150px;
+    height:45px;
+    display: inline-block;
+    text-align: center;
+    padding: 2%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        width: 100%;
+    }
+}
+
+

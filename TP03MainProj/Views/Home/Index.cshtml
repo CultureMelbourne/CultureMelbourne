@@ -3,284 +3,410 @@
 }
 
 <main>
-    <!-- content begin -->
-    <div class="no-bottom no-top" id="content">
-
-        <div id="top"></div>
-
-        <section class="text-light no-top no-bottom position-relative z-1000">
-            <div class="v-center">
-                <div class="swiper">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide" data-jarallax-element="150">
-                            <div class="swiper-inner">
-                                <img src="@Url.Content("~/Content/Customer/images/slider/4.jpg")" alt="Slide Image" style="width: 100%; height: auto;">
-                                <div class="sw-caption">
-                                    <div class="container">
-                                        <div class="row gx-5 align-items-center">
-                                            <div class="col-lg-8 mb-sm-20">
-                                                <div class="subtitle s2 mb-4">Embracing Diversity</div>
-                                                <h1 class="slider-title">Explore <span class="underline">East Asian</span> Culture</h1>
-
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <p class="slider-teaser">Dive into the rich history, arts, and traditions of East Asia and experience its unique charm.</p>
-                                                <hr class="s2">
-                                                <div class="spacer-10"></div>
-                                                <a class="btn-main mb10" href="@Url.Action("DiverseCultures", "Education")">Explore Culture</a>&nbsp;
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sw-overlay s2"></div>
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-touch="false" data-bs-pause="false" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="@Url.Content("~/Content/Customer/images/slider/2.jpg")" class="d-block w-100 img-fluid" alt="...">
+                    <div class="slides-overlay"></div>
+                    <div class="container carousel-caption d-none d-md-block left-text">
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-lg-8 mb-sm-20">
+                                <div class="mb-4 rounded text-warning diversity-highlight">Embracing Diversity</div>
+                                <h1 class="display-1">Explore <span class="text-warning">East Asian</span> Culture</h1>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="slider-teaser">Dive into the rich history, arts, and traditions of East Asia and experience its unique charm.</p>
+                                <hr>
+                                <div class="spacer-10"></div>
+                                <a class="btn btn-primary mb10" href="@Url.Action("DiverseCultures", "Education")">Explore Culture</a>
                             </div>
                         </div>
-
-                        <!-- Slides -->
-                        <div class="swiper-slide" data-jarallax-element="150">
-                            <div class="swiper-inner">
-                                <img src="@Url.Content("~/Content/Customer/images/slider/2.jpg")" alt="Slide Image" style="width: 100%; height: auto;">
-                                <div class="sw-caption">
-                                    <div class="container">
-                                        <div class="row gx-5 align-items-center">
-                                            <div class="col-lg-8 mb-sm-20">
-                                                <div class="subtitle s2 mb-4">Celebrating Traditions</div>
-                                                <h1 class="slider-title">Our Stories</h1>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <p class="slider-teaser">Hear the stories of East Asian immigrants who have made their mark in Melbourne, adding color and diversity to our city.</p>
-                                                <hr class="s2">
-                                                <div class="spacer-10"></div>
-                                                <a class="btn-main mb10" href="@Url.Action("Index", "Events")">Join Festivities</a>&nbsp;
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sw-overlay s2"></div>
-                            </div>
-                        </div>
-                        <!-- Slides -->
-                        <div class="swiper-slide" data-jarallax-element="150">
-                            <div class="swiper-inner">
-                                <img src="@Url.Content("~/Content/Customer/images/slider/3.jpg")" alt="Slide Image" style="width: 100%; height: auto;">
-                                <div class="sw-caption">
-                                    <div class="container">
-                                        <div class="row gx-5 align-items-center">
-                                            <div class="col-lg-8 mb-sm-20">
-                                                <div class="subtitle s2 mb-4">Preserving Heritage</div>
-                                                <h1 class="slider-title">Building an Inclusive Community</h1>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <p class="slider-teaser">Learn how to recognize and oppose discrimination, striving together to create a more inclusive and understanding environment for East Asian immigrants.</p>
-                                                <hr class="s2">
-                                                <div class="spacer-10"></div>
-                                                <a class="btn-main mb10" href="@Url.Action("Index", "Education")">Support Culture</a>&nbsp;
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sw-overlay s2"></div>
-                            </div>
-                        </div>
-
-
                     </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="@Url.Content("~/Content/Customer/images/slider/3.jpg")" class="d-block w-100 img-fluid" alt="...">
+                    <div class="slides-overlay"></div>
+                    <div class="container carousel-caption d-none d-md-block left-text">
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-lg-8 mb-sm-20">
+                                <div class="mb-4 rounded text-warning diversity-highlight">Celebrating Traditions</div>
+                                <h1 class="display-1">Our Stories</h1>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="slider-teaser">Hear the stories of East Asian immigrants who have made their mark in Melbourne, adding color and diversity to our city.</p>
+                                <hr>
+                                <div class="spacer-10"></div>
+                                <a class="btn btn-primary mb10" href="@Url.Action("Index", "Events")">Join Festivities</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="@Url.Content("~/Content/Customer/images/slider/4.jpg")" class="d-block w-100 img-fluid" alt="...">
+                    <div class="slides-overlay"></div>
+                    <div class="container carousel-caption d-none d-md-block left-text">
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-lg-8 mb-sm-20">
+                                <div class="mb-4 rounded text-warning diversity-highlight">Preserving Heritage</div>
+                                <h1 class="display-1">Building an Inclusive Community</h1>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="slider-teaser">Learn how to recognize and oppose discrimination, striving together to create a more inclusive and understanding environment for East Asian immigrants.</p>
+                                <hr>
+                                <div class="spacer-10"></div>
+                                <a class="btn btn-primary mb10" href="@Url.Action("Index", "Education")">Support Culture</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="no-top bg-warning" id="epics">
-            <div class="container bg-white pt-5 g-4 mt-100 sm-mt-0 z-1000 " style="border-radius: 15px;">
-                <div class="row justify-content-center mb-lg-5 ">
-                    <div class="col-12 text-center ">
-                        <div class="subtitle s2 wow fadeInUp mb-3">Our Features</div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
 
-                        <h2 style="word-spacing: 0.35em;">Exploring East Asian Culture</h2>
+    <section>
+        <div class="overlay-content rounded-4">
+            <div class="container home-container bg-white pt-5 g-4" style="border-radius: 15px;">
+                <div class="row justify-content-center mb-lg-5">
+                    <div class="col-12 text-center">
+                        <!-- Custom class for tight background -->
+                        <div class="d-inline-block  px-3 py-1 border" style="border-radius: .25rem;background-color:#e2e2e2">
+                            <span class="text-dark">Our Features</span>
+                        </div>
+
+                        <h2 class="mt-3" style="word-spacing: 0.35em;"><strong>Exploring East Asian Culture</strong></h2>
                     </div>
                 </div>
 
                 <div class="row justify-content-center pb-5">
                     <div class="col-12 col-lg-10 col-xl-8">
-                        <!-- Adjust the column sizes as needed -->
-                        <div class="row">
-                            <!-- Left side: Image -->
+                        <div class="row justify-content-center pb-5">
                             <div class="col-12 col-md-6 col-lg-5 p-auto">
-                                <img src="@Url.Content("~/Content/Customer/images/services/1.webp")" class="img-fullwidth rounded-20 mb20" alt="">
+                                <img src="@Url.Content("~/Content/Customer/images/services/1.webp")" class="img-fluid home-feature-img" alt="Description of Image">
                             </div>
-
-                            <!-- Right side: Text -->
-                            <div class="col-12 col-md-6 col-lg-7">
+                            <div class="col-12 col-md-6 col-lg-7 text-start">
                                 <h3>East Asian Melodies</h3>
-                                <hr class="s2">
+                                <hr class="">
                                 <p>Experience the vibrant celebrations of East Asian cultures right here in Melbourne. Join us in festivals that tell tales of heritage and unity, connecting the East with the West.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center pb-5">
-                    <div class="col-12 col-lg-10 col-xl-8">
-                        <!-- Adjust the column sizes as needed -->
-                        <div class="row">
-                            <!-- Left side: Image -->
-                            <div class="col-12 col-md-6 col-lg-7">
+
+                        <div class="row justify-content-center pb-5">
+                            <div class="col-12 col-md-6 col-lg-7 text-start">
                                 <h3>Discover East Asia</h3>
-                                <hr class="s2">
+                                <hr>
                                 <p>Dive into the rich history and traditions of East Asia through educational workshops and events. Gain insights, understand values, and break down cultural barriers.</p>
                             </div>
-
-                            <!-- Right side: Text -->
-
                             <div class="col-12 col-md-6 col-lg-5 p-auto">
-                                <img src="@Url.Content("~/Content/Customer/images/services/2.webp")" class="img-fullwidth rounded-20 mb20" alt="">
+                                <img src="@Url.Content("~/Content/Customer/images/services/2.webp")" class="img-fluid home-feature-img" alt="">
                             </div>
+
                         </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center pb-5">
-                    <div class="col-12 col-lg-10 col-xl-8">
-                        <!-- Adjust the column sizes as needed -->
-                        <div class="row">
-                            <!-- Left side: Image -->
-                            <div class="col-12 col-md-6 col-lg-5 p-auto">
-                                <img src="@Url.Content("~/Content/Customer/images/services/3.webp")" class="img-fullwidth rounded-20 mb20" alt="">
-                            </div>
 
-                            <!-- Right side: Text -->
-                            <div class="col-12 col-md-6 col-lg-7">
+                        <div class="row justify-content-center pb-5">
+                            <div class="col-12 col-md-6 col-lg-5 p-auto">
+                                <img src="@Url.Content("~/Content/Customer/images/services/3.webp")" class="img-fluid home-feature-img" alt="">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-7 text-start">
                                 <h3>Voices of East Asia</h3>
-                                <hr class="s2">
+                                <hr>
                                 <p>Listen to the authentic stories of East Asian immigrants in Melbourne. This anonymous space allows for the sharing of personal journeys, cultural memories, and the creation of a shared understanding.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center pb-5">
-                    <div class="col-12 col-lg-10 col-xl-8">
-                        <!-- Adjust the column sizes as needed -->
-                        <div class="row">
-                            <!-- Left side: Image -->
-                            <div class="col-12 col-md-6 col-lg-7">
+
+                        <div class="row justify-content-center pb-5">
+                            <div class="col-12 col-md-6 col-lg-7 text-start">
                                 <h3>Cultural Insights              </h3>
-                                <hr class="s2">
+                                <hr>
                                 <p>Explore data-driven insights into the lives of East Asian communities in Melbourne. Understand the patterns, challenges, and successes of integration, aiming for a society free from discrimination.</p>
                             </div>
-
-                            <!-- Right side: Text -->
-
                             <div class="col-12 col-md-6 col-lg-5 p-auto">
-                                <img src="@Url.Content("~/Content/Customer/images/services/4.webp")" class="img-fullwidth rounded-20 mb20" alt="">
+                                <img src="@Url.Content("~/Content/Customer/images/services/4.webp")" class="img-fluid home-feature-img" alt="">
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="jarallax text-light">
-            <img src="@Url.Content("~/Content/Customer/images/background/2.webp")" class="jarallax-img" alt="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="subtitle s2 wow fadeInUp mb-3">Our Mission</div>
-                        <h2 class="mb20 wow fadeInUp" style="word-spacing: 0.25em;" data-wow-delay=".2s">
-                            We aim to promote multicultural respect and unity in Melbourne, empowering East Asian communities to overcome discrimination and celebrate diversity.
-                        </h2>
-                    </div>
+    <section class="jarallax text-light">
+        <img src="@Url.Content("~/Content/Customer/images/background/2.webp")" class="jarallax-img" alt="">
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 p-5">
+                    <div class="diversity-highlight text-warning mb-3">Our Mission</div>
+                    <h2 class="fw-bold display-4" style="word-spacing: 0.25em;">
+                        We aim to promote multicultural respect and unity in Melbourne, empowering East Asian communities to overcome discrimination and celebrate diversity.
+                    </h2>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="cultural-events">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="subtitle s2 wow fadeInUp mb-3">Explore Cultures</div>
-                        <h2 class="wow fadeInUp" style="word-spacing: 0.25em;" data-wow-delay=".2s">Select Culture to Explore</h2>
+    <section id="cultural-events" class="bg-white py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-start">
+                    <div class="d-inline-block  px-3 py-1 border" style="border-radius: .25rem;background-color:#e2e2e2">
+                        <span class="text-dark ">Explore Cultures</span>
                     </div>
+                    <h2 class="mt-3 fw-bold">Select Culture to Explore</h2>
                 </div>
-
-                <div class="row justify-content-center">
-                    @foreach (var culture in new[] { "Chinese.jpg", "Japanese.png", "Korean.png", "Filipino.jpg", "Vietnamese.jpg" })
-                    {
-                        var cultureName = System.IO.Path.GetFileNameWithoutExtension(culture); // Remove file extension
-                        <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-sm-20 culture-item">
-                            <a href="@Url.Action("Index", "Events", new { culture = culture })" class="culture-btn">
-                                <div class="bg-color-2 rounded-30 mb-20 bg-warning">
-                                    <img src="@Url.Content($"~/Content/Customer/images/team/{culture}")" class="img-fluid" alt="@cultureName Culture" style="height: 150px; width: auto;">
-                                </div>
-                                <h4 class="mb-0">@cultureName</h4> <!-- Display culture name without extension -->
-                            </a>
+            </div>
+            <div class="row justify-content-center">
+                @foreach (var culture in new[] { "Chinese.jpg", "Japanese.png", "Korean.png", "Filipino.jpg", "Vietnamese.jpg" })
+            {
+                var cultureName = System.IO.Path.GetFileNameWithoutExtension(culture);
+                <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-4">
+                    <a href="@Url.Action("Index", "Events", new { culture = cultureName })" class="culture-btn">
+                        <div class="bg-color-2 rounded-4 bg-warning overflow-hidden" style="width: 200px; height: 180px;">
+                            <img src="@Url.Content($"~/Content/Customer/images/team/{culture}")" class="img-fluid rounded-4" alt="@cultureName Culture" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
-                    }
+                        <h4>@cultureName</h4>
+                    </a>
                 </div>
+            }
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
 
-    </div>
-    <!-- content close -->
+
+
 </main>
 
 
+
 @section Styles{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jarallax/dist/jarallax.css">
+
+    @Styles.Render("~/Content/css")
+
     <style>
-        .culture-item img {
-            height: 150px; /* Fixed height for all images */
-            width: auto; /* Maintain aspect ratio */
-            object-fit: cover; /* Cover the frame fully, might crop some parts */
+        .jarallax-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
 
-        .culture-item {
-            padding-right: 5px;
-            padding-left: 5px;
+        .jarallax {
+            height: 600px;
+        }
+
+
+
+        .home-feature-img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+        }
+
+        .carousel {
+            position: relative;
+            z-index: 1;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: -250px;
+            z-index: 2;
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 55%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .home-container p {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .home-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+
+
+        .carousel-item img {
+            width: 100%;
+            height: 1200px;
+            object-fit: cover;
+        }
+
+
+        .carousel-caption .display-1 {
+            font-weight: bold;
+        }
+
+        .slides-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .carousel-caption {
+            z-index: 999;
+            position: absolute;
+            right: auto;
+            left: 10%;
+            bottom: 50%;
+            transform: translateY(50%);
+            color: white;
+            text-align: left;
+            max-width: 45%;
+        }
+
+            .carousel-caption.left-text {
+                position: absolute;
+                right: auto;
+                left: 20%;
+                bottom: 50%;
+                transform: translateY(50%);
+                z-index: 10;
+                color: white;
+                text-align: left;
+                max-width: 45%;
+            }
+
+        .carousel-control-prev, .carousel-control-next {
+            z-index: 11;
+            width: 50px;
+            height: 50px;
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 11;
+        }
+
+        .carousel-control-prev {
+            left: 10px;
+        }
+
+        .carousel-control-next {
+            right: 10px;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+        .carousel-item {
+            transition: transform 0.5s ease;
+        }
+
+
+        .carousel-caption h5, .carousel-caption p {
+            color: white;
+        }
+
+        .carousel-item {
+            transition-duration: 1s;
+        }
+
+
+
+
+        .diversity-highlight {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+
+
+        #cultual-events { /* Corrected ID from "cultural-events" if there was a typo */
+            background-color: #fff;
         }
 
         .culture-btn {
             display: block;
             text-decoration: none;
             color: inherit;
+            width: 180px; /* Match the width set in HTML */
+            margin: auto; /* Center the button blocks within the column */
         }
 
-        .culture-item .culture-btn {
-            overflow: hidden;
+        #cultual-events .bg-color-2 {
             position: relative;
-            border-radius: 30px;
-            display: inline-block;
+            width: 180px;
+            height: 180px;
+            border-radius: 12px; /* Adjusted to be less rounded */
+            overflow: hidden;
+            background-color: #ffc107;
         }
 
-            .culture-item .culture-btn img {
-                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-                display: block;
-            }
+        .culture-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
 
-            .culture-item .culture-btn:hover img {
-                transform: scale(1.05);
-                opacity: 0.7;
-            }
+        .culture-btn:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
 
-        .culture-item h4 {
+        .culture-btn h4 {
+            margin-top: 8px;
             transition: color 0.3s ease-in-out;
         }
 
-        .culture-item:hover h4 {
-            color: #d48810;
+        .culture-btn:hover h4 {
+            color: #d48810; /* Or any highlight color that fits your design */
         }
+
     </style>
 }
 
 @section Scripts{
+    <!-- Include Jarallax CSS -->
+    <!-- Include Jarallax script -->
+    <script src="https://cdn.jsdelivr.net/npm/jarallax/dist/jarallax.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            jarallax(document.querySelectorAll('.jarallax'), {
+                speed: 0.2
+            });
+        });
+    </script>
 
 }

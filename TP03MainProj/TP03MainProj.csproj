@@ -1098,7 +1098,10 @@
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\fullcalendar.print.min.css" />
+    <Content Include="Content\Mycss\home.css" />
     <Content Include="Content\Mycss\mycss.css" />
+    <Content Include="Content\Mycss\responsive.css" />
+    <Content Include="Content\Mycss\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

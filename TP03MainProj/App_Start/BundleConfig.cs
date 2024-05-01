@@ -20,24 +20,39 @@ namespace TP03MainProj
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/Customer/plugins.js",
-                      "~/Scripts/Customer/designesia.js",
-                      "~/Scripts/Customer/swiper.js",
-                      "~/Scripts/Customer/custom-marquee.js",
-                      "~/Scripts/Customer/custom-swiper-1.js"));
+                      "~/Scripts/bootstrap.js"
+                      //,
+                      //"~/Scripts/Customer/plugins.js",
+                      //"~/Scripts/Customer/designesia.js",
+                      //"~/Scripts/Customer/swiper.js",
+                      //"~/Scripts/Customer/custom-marquee.js",
+                      //"~/Scripts/Customer/custom-swiper-1.js"
+                      ));
+
+            //bundles.Add(new StyleBundle("~/Content/css").Include(
+            //          "~/Content/bootstrap.css",
+            //          "~/Content/site.css",
+            //          "~/Content/Customer/css/plugins.css",
+            //          "~/Content/Customer/css/colors/scheme-01.css",
+            //          "~/Content/Customer/css/swiper.css",
+            //          "~/Content/Customer/css/style.css",
+            //          "~/Content/Customer/css/coloring.css",
+            //          "~/Content/Customer/css/jquery.countdown.css",
+            //          "~/Content/Customer/css/mdb.min.css"
+            //          ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/Customer/css/plugins.css",
-                      "~/Content/Customer/css/colors/scheme-01.css",
-                      "~/Content/Customer/css/swiper.css",
-                      "~/Content/Customer/css/style.css",
-                      "~/Content/Customer/css/coloring.css",
-                      "~/Content/Customer/css/jquery.countdown.css",
-                      "~/Content/Customer/css/mdb.min.css"
-                      ));
+          "~/Content/bootstrap.css",
+          "~/Content/site.css",
+          "~/Content/Customer/css/plugins.css",
+          "~/Content/Customer/css/swiper.css",
+          "~/Content/Mycss/responsive.css",
+          "~/Content/Mycss/style.css"
+          ));
+
+            bundles.Add(new StyleBundle("~/Content/singlecss").Include(
+                "~/Content/Mycss/home.css"
+                ));
 
             bundles.Add(new Bundle("~/bundles/fullcalendar").Include(
                       "~/Scripts/index.global.js",

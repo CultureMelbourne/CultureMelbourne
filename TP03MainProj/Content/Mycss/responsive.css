@@ -1,0 +1,156 @@
+﻿img {
+    width: 130px;
+    height: auto;
+}
+body, p, h1, h2, h3, h4, h5, h6, a, li {
+    line-height: 1.6;
+}
+/* 在全局 CSS 文件中定义字体样式 */
+body {
+    font-family: "Arial", sans-serif;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.875rem;
+}
+
+p, li, a {
+    font-size: 1rem;
+}
+
+
+/* Typography settings for mobile devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1.125rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 0.875rem;
+    }
+
+    p, li, a, .footer p {
+        font-size: 0.875rem;
+    }
+}
+
+/* Typography settings for tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    p, li, a, .footer p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Typography settings for desktops */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+    }
+
+    p, li, a, .footer p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Responsive grid and element-specific adjustments */
+@media (max-width: 768px) {
+    .footer .col-2, .footer .col-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .logo-footer {
+        width: 30%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .footer .col-2, .footer .col-4 {
+        flex: 0 0 auto;
+        max-width: auto;
+    }
+}
+
