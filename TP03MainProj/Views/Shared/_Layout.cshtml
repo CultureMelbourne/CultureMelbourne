@@ -24,11 +24,9 @@
     <!-- page preloader begin -->
     <!-- page preloader close -->
     <!-- header begin -->
-    <div class="container-fluid  bg-warning">
+    <div class="container-fluid bg-warning" style="position: relative; z-index: 1030;">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
-            @*<a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-                </a>*@
+
 
             <a href="@Url.Action("Index", "Home")" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                 <img class="p-auto pt-1"
@@ -41,11 +39,11 @@
             @using TP03MainProj.Helper
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a class="nav-link px-2 text-white link-dark @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a></li>
+                <li><a class="nav-link px-2 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a></li>
 
-                <li><a class="nav-link px-2 text-white link-dark @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a></li>
+                <li><a class="nav-link px-2 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a></li>
 
-                <li><a class="nav-link px-2 text-white link-dark @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a></li>
+                <li><a class="nav-link px-2 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a></li>
 
             </ul>
 
