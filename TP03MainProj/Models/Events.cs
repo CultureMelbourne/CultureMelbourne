@@ -44,4 +44,13 @@ namespace TP03MainProj.Models
         [ForeignKey("CalenderDateId")]
         public virtual CalenderDate Start_Date { get; set; } // Navigation Property
     }
+
+    public class Question
+    {
+        // Check this modification of the questionNum once
+        public int questionNum { get; set; }
+        public string Text { get; set; }
+        public List<string> Options { get; set; }
+        public string CorrectAnswer { get; set; }
+    }
 }

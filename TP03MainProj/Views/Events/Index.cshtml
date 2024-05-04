@@ -47,7 +47,7 @@
             <div class="col text-center">
                 <a class="btn culture-btn btn-primary text-nowrap w-25" href="@Url.Action("Index", "Events")#events-nav">Events</a>
                 <a class="btn culture-btn btn-primary fs-6 w-25" href="@Url.Action("Index", "Events")#quiz-nav">Quiz</a>
-                <a class="btn culture-btn btn-primary fs-6 w-25" href="">Attraction</a>
+                <a class="btn culture-btn btn-primary fs-6 w-25" href="@Url.Action("Index", "Events")#attract-nav">Attraction</a>
             </div>
             <div class="col"></div>
         </div>
@@ -83,19 +83,37 @@
             <br />
         </div>
         <!-- Please add and adjust the CSS according to page (but please keep the messages same as the ones below)-->
+        <!-- Put all this into class="container-fluid" of the division for responsive layout -->
         <div class="row justify-content-center section-row bg-warning pt-5 mt-5" id="quiz-section">
             <div class="col-lg-8 col-md-10 text-center">
                 <div class="row mb-3">
-                    <h1 style="word-spacing: 8px;">Common Phrases and Cultural Etiquette Quiz</h1>
+                    <h2 style="word-spacing: 8px;">Common Phrases and Cultural Etiquette Quiz</h2>
                 </div>
                 <div class="row justify-content-center pb-5 pt-5 ">
-                    <h4 id="startMessage" class="pb-5">"Want to learn about this culture in depth? Try this quiz!"</h4>
-
-                    <button id="loadQuiz" class="btn btn-primary text-white culture-btn  w-25">Learn About @ViewBag.Culture  </button>
+                    <h4 id="startMessage">"Want to learn about this culture in depth? Try this quiz!"</h4>
+                    <button id="loadQuiz" class="btn btn-primary text-white culture-btn w-25">Learn About @ViewBag.Culture</button>
                 </div>
-                <div id="quizFrame" class="text-white" style="display:none;"></div> <!-- Placeholder for the iFrame if needed -->
+                <div id="quizContent" style="display: none;">
+                    <div id="quizImage" class="quiz-image" style="margin-bottom: 20px;">
+                        <img src="" id="currentImage" alt="Cultural Image" style="width: 100%; height: auto; border: 2px solid #ccc;">
+                    </div>
+                    <div id="quizQuestions" class="quiz-questions">
+                        <h3 id="quizQuestion"></h3>
+                        <ul id="quizOptions" class="quiz-options" style="list-style: none; padding: 0;"></ul>
+                    </div>
+                    <button id="restartQuiz" class="btn btn-info" style="margin-top: 20px; display: none;">Restart Quiz</button>
+                </div>
+                <div id="highScoreDisplay" style="display: none; font-size: 24px; color: green; padding: 10px; border: 1px solid #ccc; text-align: center;">
+                    High Score: <span id="highScoreValue">0</span>
+                </div>
             </div>
         </div>
+        <!-- Attractions -->
+        <div id="attract-nav">
+            <br />
+            <br />
+        </div>
+        <div id="attract-section"></div>
     </div>
 
 </section>
@@ -112,6 +130,8 @@
     <script src="~/Scripts/quizLoader.js"></script>
 
     <!-- Modified the width of the calender to see if it fits -->
+
+    <!-- Add CSS for the quiz section -->
 
     <style>
 

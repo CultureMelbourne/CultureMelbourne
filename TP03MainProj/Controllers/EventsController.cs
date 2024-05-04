@@ -13,6 +13,7 @@ using CsvHelper.Configuration;
 using System.IO;
 using System.Web.UI.WebControls;
 using TP03MainProj.Helper;
+using Newtonsoft.Json;
 
 namespace TP03MainProj.Controllers
 {
@@ -203,6 +204,42 @@ namespace TP03MainProj.Controllers
                 Map(m => m.Description).Index(4);
                 Map(m => m.Url).Index(5);
             }
+        }
+
+        // Function to load quiz data based on culture from JSON
+        public ActionResult LoadQuizData(string culture)
+        {
+            string filePath = Server.MapPath($"~/Content/Quizzes/{culture}Quiz.json");
+            if (System.IO.File.Exists(filePath))
+            {
+                string jsonData = System.IO.File.ReadAllText(filePath);
+                var questions = JsonConvert.DeserializeObject<List<Question>>(jsonData);
+                return Json(questions, JsonRequestBehavior.AllowGet);
+            }
+            return HttpNotFound($"Quiz data not found for {culture}.");
+        }
+
+        // Function to save high score to session
+        public void SaveHighScore(int score)
+        {
+            var sessionScore = Session["HighScore"] as int? ?? 0;  // Handle possible null value and type casting
+            if (score > sessionScore)
+            {
+                Session["HighScore"] = score;
+            }
+        }
+
+        // Function to get current high score from session
+        public ActionResult GetHighScore()
+        {
+            var score = Session["HighScore"] as int? ?? 0; // Handle null and ensure a default value of 0
+            return Json(new { score = score }, JsonRequestBehavior.AllowGet);
+        }
+
+        // Reset high score (optional)
+        public void ResetHighScore()
+        {
+            Session["HighScore"] = 0;
         }
     }
 }
