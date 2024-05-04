@@ -19,6 +19,7 @@
     <link href="@Url.Content("~/Content/Customer/fonts/fontawesome6/css/solid.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/Customer/fonts/elegant_font/HTML_CSS/style.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/Customer/fonts/et-line-font/style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/scrollToTop.css")" rel="stylesheet" />
 </head>
 <body>
 
@@ -33,14 +34,14 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-2 align-content-center justify-content-center">
-                                    <!-- logo begin -->
-                                    <div id="logo" class="" >
-                                        <a href="@Url.Action("Index", "Home")">
-                                            <img class="logo-main p-auto pt-1" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="" style="width: 140px; height: auto;">
-                                            <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
-                                        </a>
-                                    </div>
-                                    <!-- logo close -->
+                                <!-- logo begin -->
+                                <div id="logo" class="">
+                                    <a href="@Url.Action("Index", "Home")">
+                                        <img class="logo-main p-auto pt-1" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="" style="width: 140px; height: auto;">
+                                        <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
+                                    </a>
+                                </div>
+                                <!-- logo close -->
                             </div>
                             <div class="col-8">
                                 @using TP03MainProj.Helper
@@ -51,13 +52,13 @@
                                     <li class="nav-item">
                                         <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a>
                                         @*<ul>
-                                            <li>
-                                                <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "DiverseCultures")" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a>
-                                            </li>
-                                            <li>
-                                                <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "MigrationStories")" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a>
-                                            </li>
-                                        </ul>*@
+                                        <li>
+                                            <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "DiverseCultures")" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "MigrationStories")" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a>
+                                        </li>
+                                    </ul>*@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>
@@ -77,6 +78,7 @@
                     </div>
                 </div>
             </div>
+            <button id="scrollToTopBtn" title="To the top"> ↑ </button>
         </header>
 
 
@@ -142,13 +144,13 @@
             </div>
         </footer>
 
-
-
         <!-- footer close -->
     </div>
+    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/scrollToTopJS")
 
 
     @RenderSection("scripts", required: false)

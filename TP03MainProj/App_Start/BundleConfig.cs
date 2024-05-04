@@ -54,6 +54,14 @@ namespace TP03MainProj
             "~/Scripts/charts.js"
             ));
 
+            bundles.Add(new StyleBundle("~/bundles/scrollToTopStyle").Include(
+                "~/Content/scrollToTop.css"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/scrollToTopJS").Include(
+                "~/Scripts/scrollToTop.js"
+                ));
+
             BundleTable.EnableOptimizations = true;
         }
     }
