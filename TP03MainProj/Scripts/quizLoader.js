@@ -12,11 +12,11 @@ $(document).ready(function () {
 
     loadQuizButton.click(function () {
         const culture = $('#culture').data('culture');
-        $.getJSON('/Events/LoadQuizData', { culture: culture }, function (questions) {
+        $.getJSON('/Events/LoadQuizData', { culture: culture }, function (questionsData) {
             startMessage.hide();
             loadQuizButton.hide();
             highScoreDisplay.show();
-            startQuiz(questions);
+            startQuiz(questionsData.questions);  // Adjusted for clarity
         });
     });
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
         questions.forEach(question => {
             // Append questions and options dynamically
             let questionElem = $('<div>').addClass('question').text(question.question);
-            let image = $('<img>').attr('src', `/Content/Images/${question.culture}/${question.questionNum}.jpg`);
+            let image = $('<img>').attr('src', `/Content/ImageSRC/${question.culture}/${question.questionNum}.jpg`);
             quizFrame.append(questionElem, image);
             question.options.forEach(option => {
                 let optionButton = $('<button>').addClass('option').text(option).click(function () {

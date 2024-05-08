@@ -45,11 +45,11 @@ namespace TP03MainProj.Models
         public virtual CalenderDate Start_Date { get; set; } // Navigation Property
     }
 
-    public class Question
+    public class Questions
     {
         // Check this modification of the questionNum once
-        public int questionNum { get; set; }
-        public string Text { get; set; }
+        public int QuestionNum { get; set; }
+        public string Question { get; set; } // Changed from Text to Question
         public List<string> Options { get; set; }
         public string CorrectAnswer { get; set; }
     }

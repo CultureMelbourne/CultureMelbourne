@@ -209,11 +209,11 @@ namespace TP03MainProj.Controllers
         // Function to load quiz data based on culture from JSON
         public ActionResult LoadQuizData(string culture)
         {
-            string filePath = Server.MapPath($"~/Content/Quizzes/{culture}Quiz.json");
+            string filePath = Server.MapPath($"~/Content/Quizzes/{culture}_culture_quiz.json");
             if (System.IO.File.Exists(filePath))
             {
                 string jsonData = System.IO.File.ReadAllText(filePath);
-                var questions = JsonConvert.DeserializeObject<List<Question>>(jsonData);
+                var questions = JsonConvert.DeserializeObject<List<Questions>>(jsonData);
                 return Json(questions, JsonRequestBehavior.AllowGet);
             }
             return HttpNotFound($"Quiz data not found for {culture}.");
