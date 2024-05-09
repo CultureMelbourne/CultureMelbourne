@@ -9,19 +9,19 @@
                 <h3 class="text-decoration-underline">Events for the date: @ViewBag.FormattedDate</h3>
                 foreach (var evt in Model)
                 {
-                    <div class="row mb-4">
+                    <div class="row mb-4 bg-light border rounded">
                         <!-- Image Area -->
                         <div class="col-md-4 d-flex justify-content-center align-items-center">
                             @*<img src="@evt.ImageUrl" alt="@evt.Title" class="img-fluid" ">*@
-                            <img src="@Url.Content("~/Content/Customer/images/services/1.webp")" alt="" style="max-height: 250px; class="img-fluid">
+                            <img src="@Url.Content("~/Content/Customer/images/services/1.webp")" alt="" style="max-height: 250px;" class="img-fluid w-50 h-auto">
 
                         </div>
                         <!-- Event Details -->
                         <div class="col-md-8">
-                            <div class="event-detail p-3 bg-light border rounded">
+                            <div class="event-detail p-3 ">
                                 <h4>@evt.Title</h4>
                                 <p>@evt.Description</p>
-                                <a class="btn btn-primary text-white" href="@evt.Url" target="_blank">More Info</a>
+                                <a class="btn btn-primary text-white h-25 w-25" href="@evt.Url" target="_blank">More Info</a>
                             </div>
                         </div>
                     </div>

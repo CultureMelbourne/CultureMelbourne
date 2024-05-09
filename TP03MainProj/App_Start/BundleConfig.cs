@@ -45,7 +45,6 @@ namespace TP03MainProj
           "~/Content/bootstrap.css",
           "~/Content/site.css",
           "~/Content/Customer/css/plugins.css",
-          "~/Content/Customer/css/swiper.css",
           "~/Content/Mycss/responsive.css",
           "~/Content/Mycss/style.css"
           ));
