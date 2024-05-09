@@ -1,0 +1,69 @@
+{
+  "cultures": [
+    {
+      "name": "Korean",
+      "questions": [
+        {
+          "questionNum": 1,
+          "question": " How do you say 'Hello' in Korean?",
+          "options": ["an nyeong ha se yo", "kam sa ham ni da", "ban gap seum ni da"],
+          "correctAnswer": "an nyeong ha se yo"
+        },
+        {
+          "questionNum": 2,
+          "question": "What is a common social practice in Korea showing respect?",
+          "options": ["Handshaking", "Bowing", "Nodding"],
+          "correctAnswer": "Bowing"
+        },
+        {
+          "questionNum": 3,
+          "question": "What is a customary way of pouring drinks for others in South Korea?",
+          "options": ["Using one hand", "Using elbows", "Using both hands"],
+          "correctAnswer": "Using both hands"
+        },
+        {
+          "questionNum": 4,
+          "question": "What is considered unpleasant for Koreans to hear? ",
+          "options": ["Handshaking", "Blowing your nose", "singing"],
+          "correctAnswer": "Blowing your nose"
+        },
+        {
+          "questionNum": 5,
+          "question": "How does going out with Koreans benefit you, according to the passage?",
+          "options": ["It helps you avoid social interaction", "It puts you in the good books with Korean friends or colleagues", "It limits your understanding of Korean culture"],
+          "correctAnswer": "It puts you in the good books with Korean friends or colleagues"
+        },
+        {
+          "questionNum": 6,
+          "question": "What is important when addressing people in South Korea?",
+          "options": ["Use their names", "Use their english names", "Use their korean name based on social hierarchy or ask for their preferred names"],
+          "correctAnswer": "Use their korean name based on social hierarchy or ask for their preferred names"
+        },
+        {
+          "questionNum": 7,
+          "question": "How do you say 'Thank you' in Korean? ",
+          "options": ["an nyeong ha se yo", "kam sa ham ni da", "Shil lye ham ni da"],
+          "correctAnswer": "kam sa ham ni da"
+        },
+        {
+          "questionNum": 8,
+          "question": "What is the Korean word for yes",
+          "options": ["ne", "a nim ni da", "choe song ham ni da"],
+          "correctAnswer": "ne"
+        },
+        {
+          "questionNum": 9,
+          "question": "What does 'ban gap seum ni da' mean in Korean? ",
+          "options": ["Nice to meet you", "Thank you", "I'm sorry"],
+          "correctAnswer": "Nice to meet you"
+        },
+        {
+          "questionNum": 10,
+          "question": "What is a common way to apologize in Korean?",
+          "options": ["Mi am ham ni da", "Shil lye ham ni da", "choe song ham ni da"],
+          "correctAnswer": "Shil lye ham ni da"
+        }
+      ]
+    }
+  ]
+}

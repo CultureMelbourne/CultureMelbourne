@@ -1,0 +1,65 @@
+{
+      "culture": "Vietnamese",
+      "questions": [
+        {
+          "questionNum": 1,
+          "question": "How do you say 'Thank you' in Vietnamese?",
+          "options": ["Cảm Ơn", "Xin Loi", "Taam Byeet"],
+          "correctAnswer": "Cảm Ơn"
+        },
+        {
+          "questionNum": 2,
+          "question": "How do you say 'Please' in Vietnamese?",
+          "options": ["Vui Lòng", "sin loy", "dep"],
+          "correctAnswer": "Vui Lòng"
+        },
+        {
+          "questionNum": 3,
+          "question": "How do you say 'Excuse me' in Vietnamese?",
+          "options": ["Gam-um", "Xin Lỗi", "comb"],
+          "correctAnswer": "Xin Lỗi"
+        },
+        {
+          "questionNum": 4,
+          "question": "How do you say 'Yes' in Vietnamese? ",
+          "options": ["Da", "Zin chow", "comb"],
+          "correctAnswer": "Da"
+        },
+        {
+          "questionNum": 5,
+          "question": "How do you say 'No' in Vietnamese?",
+          "options": ["yah", "Không", "Gam-um"],
+          "correctAnswer": "Không"
+        },
+        {
+          "questionNum": 6,
+          "question": "How do you say 'Nice to meet you' in Vietnamese?",
+          "options": ["Rất vui được gặp bạn", "tạm biệt", "dep"],
+          "correctAnswer": "Rất vui được gặp bạn"
+        },
+        {
+          "questionNum": 7,
+          "question": "How do you say 'Goodbye' in Vietnamese? ",
+          "options": ["tạm biệt", "", "choe song ham ni da"],
+          "correctAnswer": "Shil lye ham ni da"
+        },
+        {
+          "questionNum": 8,
+          "question": "What is a common way to apologize in Korean?",
+          "options": ["Mi am ham ni da", "Shil lye ham ni da", "choe song ham ni da"],
+          "correctAnswer": "Shil lye ham ni da"
+        },
+        {
+          "questionNum": 9,
+          "question": "What is a common way to apologize in Korean?",
+          "options": ["Mi am ham ni da", "Shil lye ham ni da", "choe song ham ni da"],
+          "correctAnswer": "Shil lye ham ni da"
+        },
+        {
+          "questionNum": 10,
+          "question": "What is a common way to apologize in Korean?",
+          "options": ["Mi am ham ni da", "Shil lye ham ni da", "choe song ham ni da"],
+          "correctAnswer": "Shil lye ham ni da"
+        }
+      ]
+    }

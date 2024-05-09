@@ -1,0 +1,51 @@
+{
+  "cultures": [
+    {
+      "name": "Japanese",
+      "questions": [
+        {
+          "questionNum": 1,
+          "question": "How do you say 'Hello' in Japanese?",
+          "options": ["Konnichiwa", "Arigatou", "Kudasai"],
+          "correctAnswer": "Konnichiwa"
+        },
+        {
+          "questionNum": 2,
+          "question": "How do you say 'Thank you' in Japanese?",
+          "options": ["Konnichiwa", "Arigatou", "Kudasai"],
+          "correctAnswer": "Konnichiwa"
+        },
+        {
+          "questionNum": 3,
+          "question": "How do you say 'Hello' in Japanese?",
+          "options": ["Arigatou", "Kudasai", "Sumimansen"],
+          "correctAnswer": "Arigatou"
+        },
+        {
+          "questionNum": 4,
+          "question": "What does 'Kanpai' mean in Japanese?",
+          "options": ["Cheers", "Yes", "I'm okay/I'm fine"],
+          "correctAnswer": "Cheers"
+        },
+        {
+          "questionNum": 5,
+          "question": "What does 'Daijoubu' mean in Japanese?",
+          "options": ["I'm okay/ I'm fine", "Greet someone by bowing", "No tipping"],
+          "correctAnswer": "I'm okay/ I'm fine"
+        },
+        {
+          "questionNum": 6,
+          "question": "What is a common practice for exchanging money in Japan?",
+          "options": ["Directly passing it hand to hand", "Using small trays", "Giving it back in return"],
+          "correctAnswer": "Using small trays"
+        },
+        {
+          "questionNum": 7,
+          "question": "What is considered impolite in Japan regarding eating or drinking?",
+          "options": ["Eating While walking on the street", "Drinking from wending machines", "Eating in restaurants"],
+          "correctAnswer": "Eating While walking on the street"
+        }
+      ]
+    }
+  ]
+}

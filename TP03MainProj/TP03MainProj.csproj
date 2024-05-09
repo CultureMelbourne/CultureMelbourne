@@ -240,6 +240,32 @@
     <Content Include="Content\Customer\css\jquery.countdown.css" />
     <Content Include="Content\Customer\css\mdb.min.css" />
     <Content Include="Content\Customer\css\mdb.rtl.min.css" />
+    <Content Include="Content\ImageSRC\Chinese\1.png" />
+    <Content Include="Content\ImageSRC\Chinese\10.jpg" />
+    <Content Include="Content\ImageSRC\Chinese\2.jpg" />
+    <Content Include="Content\ImageSRC\Chinese\3.jpg" />
+    <Content Include="Content\ImageSRC\Chinese\4.png" />
+    <Content Include="Content\ImageSRC\Chinese\5.jpg" />
+    <Content Include="Content\ImageSRC\Chinese\6.jpg" />
+    <Content Include="Content\ImageSRC\Chinese\7.jpg" />
+    <Content Include="Content\ImageSRC\Chinese\8.png" />
+    <Content Include="Content\ImageSRC\Chinese\9.jpg" />
+    <Content Include="Content\ImageSRC\Filipino\1.jpg" />
+    <Content Include="Content\ImageSRC\Filipino\2.jpg" />
+    <Content Include="Content\ImageSRC\Filipino\3.jpg" />
+    <Content Include="Content\ImageSRC\Filipino\4.jpg" />
+    <Content Include="Content\ImageSRC\Filipino\5.png" />
+    <Content Include="Content\ImageSRC\Filipino\6.jpg" />
+    <Content Include="Content\ImageSRC\Korean\1.jpg" />
+    <Content Include="Content\ImageSRC\Korean\10.png" />
+    <Content Include="Content\ImageSRC\Korean\2.jpg" />
+    <Content Include="Content\ImageSRC\Korean\3.jpg" />
+    <Content Include="Content\ImageSRC\Korean\4.jpg" />
+    <Content Include="Content\ImageSRC\Korean\5.jpg" />
+    <Content Include="Content\ImageSRC\Korean\6.png" />
+    <Content Include="Content\ImageSRC\Korean\7.png" />
+    <Content Include="Content\ImageSRC\Korean\8.jpg" />
+    <Content Include="Content\ImageSRC\Korean\9.jpg" />
     <Content Include="Content\Mycss\Education.css" />
     <Content Include="Content\Customer\css\plugins.css" />
     <Content Include="Content\Customer\css\style.css" />
@@ -1225,6 +1251,11 @@
     <Content Include="DataHandle\korea\age_distrbution.json" />
     <Content Include="DataHandle\philipines\age_distrbution.json" />
     <Content Include="DataHandle\vietnam\age_distrbution.json" />
+    <Content Include="Content\Quizzes\Chinese_cult_quiz.json" />
+    <Content Include="Content\Quizzes\Filipino_cult_quiz.json" />
+    <Content Include="Content\Quizzes\Japanese_cult_quiz.json" />
+    <Content Include="Content\Quizzes\Korean_cult_quiz.json" />
+    <Content Include="Content\Quizzes\Vietnamese_cult_quiz.json" />
     <None Include="Properties\PublishProfiles\cultmelboune - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\index.global.js" />
@@ -1375,8 +1406,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\ImageSRC\" />
-    <Folder Include="Content\Quizzes\" />
+    <Folder Include="Content\ImageSRC\Japanese\" />
+    <Folder Include="Content\ImageSRC\Vietnamese\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

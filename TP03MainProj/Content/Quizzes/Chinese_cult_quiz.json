@@ -1,0 +1,68 @@
+{
+  "cultures": [
+    {
+      "name": "Chinese",
+      "questions": [
+        {
+          "questionNum": 1,
+          "question": "How do you say 'Hello' in Chinese?",
+          "options": ["Nihao", "Xiexie", "Zao"],
+          "correctAnswer": "Nihao"
+        },
+        {
+          "questionNum": 2,
+          "question": "How do you say 'Thank you' in Chinese?",
+          "options": ["Shi", "Xiexie", "Wo jiao"],
+          "correctAnswer": "Xiexie"
+        },
+        {
+          "questionNum": 3,
+          "question": "What does 'Bù kèqì' mean in Chinese?",
+          "options": ["You're Welcome", "Good Morning", "My name is..."],
+          "correctAnswer": "You're welcome"
+        },
+        {
+          "questionNum": 4,
+          "question": "How do you say 'Good morning' in Chinese?",
+          "options": ["Hao", "Zao", "Wan an"],
+          "correctAnswer": "Zao"
+        },
+        {
+          "questionNum": 5,
+          "question": "What does 'Wǎn ān' mean in Chinese?",
+          "options": ["Good night", "Do not stick your chopstick perpendicularly on rice"],
+          "correctAnswer": "Good night"
+        },
+        {
+          "questionNum": 6,
+          "question": "How do you say 'My name is…' in Chinese?",
+          "options": ["Shi", "Wo jiao", "Bu Shi"],
+          "correctAnswer": "Wo jiao"
+        },
+        {
+          "questionNum": 7,
+          "question": "What does 'Shì' mean in Chinese?",
+          "options": ["Yes", "No", "Good"],
+          "correctAnswer": "Yes"
+        },
+        {
+          "questionNum": 8,
+          "question": "What does 'Bù shì' mean in Chinese?",
+          "options": ["Yes", "No", "Good"],
+          "correctAnswer": "No"
+        },
+        {
+          "questionNum": 9,
+          "question": "What does 'Hǎo' mean in Chinese?",
+          "options": ["Yes", "Good", "Do shake hands when you meet someone for the first time"],
+          "correctAnswer": "Good"
+        },
+        {
+          "questionNum": 10,
+          "question": "What is a cultural etiquette in Chinese dining?",
+          "options": ["Do not stick your chopstick perpendicularly on rice", "Do arrive on time", "Remove your shoes before entering someone's home or certain indoor spaces"]
+        }
+      ]
+    }
+  ]
+}

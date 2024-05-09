@@ -1,0 +1,45 @@
+{
+  "cultures": [
+    {
+      "name": "Filipino",
+      "questions": [
+        {
+          "questionNum": 1,
+          "question": "How do you say 'Good day' in Filipino? ",
+          "options": ["Oo", "Salamat", "Magandang araw"],
+          "correctAnswer": "Magandang araw"
+        },
+        {
+          "questionNum": 2,
+          "question": "What is the purpose of using 'po' and 'opo' in Filipino conversation?",
+          "options": ["To Show disrespect", "To indicate disagreement", "To demonstrate respect and politeness"],
+          "correctAnswer": "To demonstrate respect and politeness"
+        },
+        {
+          "questionNum": 3,
+          "question": "What is a customary practice when invited to a Filipino household?",
+          "options": ["Bringing gifts", "Bringing nothing", "Bringing food"],
+          "correctAnswer": "Bringing gifts"
+        },
+        {
+          "questionNum": 4,
+          "question": "What should you do when entering someone's house in Filipino culture?",
+          "options": ["Keep your shoes on", "Take your shoes off", "Wear new shoes"],
+          "correctAnswer": "Take your shoes off"
+        },
+        {
+          "questionNum": 5,
+          "question": "How should you respond to personal questions in Filipino culture? ",
+          "options": ["Be offended", "Refuse to answer", "Do not be offended"],
+          "correctAnswer": "Do not be offended"
+        },
+        {
+          "questionNum": 6,
+          "question": "How do you say 'Hello' in Vietnamese?",
+          "options": ["Xin Chao", "Gam-um", "Voo Laow"],
+          "correctAnswer": "Xin Chao"
+        }
+      ]
+    }
+  ]
+}
