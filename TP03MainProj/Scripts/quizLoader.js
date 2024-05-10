@@ -11,38 +11,58 @@ $(document).ready(function () {
     var currentScore = 0;
 
     loadQuizButton.click(function () {
-        const culture = $('#culture').data('culture');
-        $.getJSON('/Events/LoadQuizData', { culture: culture }, function (questionsData) {
-            startMessage.hide();
-            loadQuizButton.hide();
-            highScoreDisplay.show();
-            startQuiz(questionsData.questions);  // Adjusted for clarity
+        // Redundant method Ensuring culture name is in lowercase
+        //const culture = $('#culture').data('culture').toLowerCase();
+        $.getJSON('/Events/LoadQuizData', { culture: cultureFromViewBag }, function (data) {
+            const questionsData = data.cultures.find(c => c.name.toLowerCase() === cultureFromViewBag);
+            if (questionsData) {
+                startMessage.hide();
+                loadQuizButton.hide();
+                highScoreDisplay.show();
+                startQuiz(questionsData.questions);
+            } else {
+                alert('No quiz data available for this culture.');
+            }
         });
     });
+
 
     function startQuiz(questions) {
         quizFrame.html(''); // Clear previous quiz content
         currentScore = 0; // Reset current score
         questions.forEach(question => {
-            // Append questions and options dynamically
             let questionElem = $('<div>').addClass('question').text(question.question);
-            let image = $('<img>').attr('src', `/Content/ImageSRC/${question.culture}/${question.questionNum}.jpg`);
+            let imagePath = `/Content/Images/${cultureFromViewBag}/${question.questionNum}`;
+            let image = $('<img>').attr('src', `${imagePath}.jpg`).addClass('quiz-image').on('error', function () {
+                $(this).attr('src', `${imagePath}.png`); // For JPG or PNG check
+            });
+
             quizFrame.append(questionElem, image);
+            let optionsContainer = $('<div>').addClass('options-container');
             question.options.forEach(option => {
                 let optionButton = $('<button>').addClass('option').text(option).click(function () {
-                    handleAnswer(option, question.correctAnswer, question.culture, question.questionNum);
+                    handleAnswer(option, question.correctAnswer, $(this));
                 });
-                quizFrame.append(optionButton);
+                optionsContainer.append(optionButton);
             });
+            quizFrame.append(optionsContainer);
         });
         quizFrame.append($('<button>').attr('id', 'restartQuiz').text('Restart Quiz').click(resetQuiz));
     }
 
-    function handleAnswer(selectedOption, correctAnswer, culture, questionNum) {
+    function handleAnswer(selectedOption, correctAnswer, optionButton) {
+        $('.option').prop('disabled', true);  // Disable all options after a selection
         if (selectedOption === correctAnswer) {
             currentScore++;
+            optionButton.addClass('correct-answer');
             alert('Correct!');
         } else {
+            optionButton.addClass('wrong-answer');
+            $('.option').each(function () {
+                if ($(this).text() === correctAnswer) {
+                    $(this).addClass('correct-answer');
+                }
+            });
             alert('Wrong answer!');
         }
         updateHighScore(currentScore);

@@ -1251,10 +1251,10 @@
     <Content Include="DataHandle\korea\age_distrbution.json" />
     <Content Include="DataHandle\philipines\age_distrbution.json" />
     <Content Include="DataHandle\vietnam\age_distrbution.json" />
-    <Content Include="Content\Quizzes\Chinese_cult_quiz.json" />
     <Content Include="Content\Quizzes\Filipino_cult_quiz.json" />
     <Content Include="Content\Quizzes\Japanese_cult_quiz.json" />
     <Content Include="Content\Quizzes\Korean_cult_quiz.json" />
+    <Content Include="Content\Quizzes\Chinese_cult_quiz.json" />
     <Content Include="Content\Quizzes\Vietnamese_cult_quiz.json" />
     <None Include="Properties\PublishProfiles\cultmelboune - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />

@@ -60,7 +60,8 @@
         {
           "questionNum": 10,
           "question": "What is a cultural etiquette in Chinese dining?",
-          "options": ["Do not stick your chopstick perpendicularly on rice", "Do arrive on time", "Remove your shoes before entering someone's home or certain indoor spaces"]
+          "options": ["Do not stick your chopstick perpendicularly on rice", "Do arrive on time", "Remove your shoes before entering someone's home or certain indoor spaces"],
+          "correctAnswer": "Do not stick your chopstick perpendicularly on rice"
         }
       ]
     }

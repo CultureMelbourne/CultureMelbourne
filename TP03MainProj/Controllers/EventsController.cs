@@ -213,8 +213,12 @@ namespace TP03MainProj.Controllers
             if (System.IO.File.Exists(filePath))
             {
                 string jsonData = System.IO.File.ReadAllText(filePath);
-                var questions = JsonConvert.DeserializeObject<List<Questions>>(jsonData);
-                return Json(questions, JsonRequestBehavior.AllowGet);
+                var quizData = JsonConvert.DeserializeObject<QuizData>(jsonData);
+                var cultureData = quizData.Cultures.FirstOrDefault(c => c.Name.Equals(culture, StringComparison.OrdinalIgnoreCase));
+                if (cultureData != null)
+                {
+                    return Json(cultureData, JsonRequestBehavior.AllowGet);
+                }
             }
             return HttpNotFound($"Quiz data not found for {culture}.");
         }

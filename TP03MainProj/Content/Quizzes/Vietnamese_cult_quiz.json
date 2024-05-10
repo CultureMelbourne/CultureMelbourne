@@ -1,5 +1,7 @@
 {
-      "culture": "Vietnamese",
+  "cultures": [
+    {
+      "name": "Vietnamese",
       "questions": [
         {
           "questionNum": 1,
@@ -37,29 +39,35 @@
           "options": ["Rất vui được gặp bạn", "tạm biệt", "dep"],
           "correctAnswer": "Rất vui được gặp bạn"
         },
+
         {
-          "questionNum": 7,
-          "question": "How do you say 'Goodbye' in Vietnamese? ",
-          "options": ["tạm biệt", "", "choe song ham ni da"],
-          "correctAnswer": "Shil lye ham ni da"
+        "questionNum": 7,
+          "question": "What is a common gesture of respect when greeting someone in Vietnamese culture?",
+          "options": ["Bowing deeply", "Shaking hands firmly", "Offering a hug"],
+          "correctAnswer": "Bowing deeply"
         },
+        
         {
           "questionNum": 8,
-          "question": "What is a common way to apologize in Korean?",
-          "options": ["Mi am ham ni da", "Shil lye ham ni da", "choe song ham ni da"],
-          "correctAnswer": "Shil lye ham ni da"
+          "question": "How do you say 'Goodbye' in Vietnamese?",
+          "options": ["Tạm biệt", "Xin chào", "Cảm ơn bạn"],
+          "correctAnswer": "Tạm biệt"
         },
+        
         {
           "questionNum": 9,
-          "question": "What is a common way to apologize in Korean?",
-          "options": ["Mi am ham ni da", "Shil lye ham ni da", "choe song ham ni da"],
-          "correctAnswer": "Shil lye ham ni da"
+          "question": "How do you say 'Beautiful' in Vietnamese?",
+          "options": ["Đẹp","Xinh đẹp","Tuyệt vời"],
+          "correctAnswer": "Đẹp"
         },
         {
           "questionNum": 10,
-          "question": "What is a common way to apologize in Korean?",
-          "options": ["Mi am ham ni da", "Shil lye ham ni da", "choe song ham ni da"],
-          "correctAnswer": "Shil lye ham ni da"
+          "question": "How do you say 'Water please' in Vietnamese? ",
+          "options": ["Nước, làm ơn", "Nước, xin cảm ơn",
+           "Xin chào"],
+          "correctAnswer": "Nước, làm ơn"
         }
       ]
     }
+  ]
+}

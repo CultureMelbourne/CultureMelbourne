@@ -126,11 +126,16 @@
         var getCulturalDatesUrl = '@Url.Action("GetCulturalDates", "Events")';
         var getEventsFromEventbriteUrl = '@Url.Action("GetEventsFromEventbrite", "Events")';
     </script>
+    
+    <!-- Convert cultureName to lowercase to standardize -->
+    <script type="text/javascript">
+    var cultureFromViewBag = '@ViewBag.Culture'.toLowerCase(); 
+    </script>
+
     @Scripts.Render("~/bundles/fullcalendar")
     <script src="~/Scripts/quizLoader.js"></script>
 
     <!-- Modified the width of the calender to see if it fits -->
-
     <!-- Add CSS for the quiz section -->
 
     <style>
@@ -162,6 +167,16 @@
         .highlighted {
             background-color: #ff0;
             border: 2px solid #f00;
+        }
+
+        .correct-answer {
+            background-color: green;
+            color: white;
+        }
+
+        .wrong-answer {
+            background-color: red;
+            color: white;
         }
     </style>
 }

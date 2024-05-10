@@ -45,12 +45,24 @@ namespace TP03MainProj.Models
         public virtual CalenderDate Start_Date { get; set; } // Navigation Property
     }
 
+    public class CultureQuiz
+    {
+        public string Name { get; set; }
+        public List<Questions> Questions { get; set; }
+    }
+
+    public class QuizData
+    {
+        public List<CultureQuiz> Cultures { get; set; }
+    }
+
     public class Questions
     {
         // Check this modification of the questionNum once
         public int QuestionNum { get; set; }
-        public string Question { get; set; } // Changed from Text to Question
+        public string Question { get; set; }
         public List<string> Options { get; set; }
         public string CorrectAnswer { get; set; }
     }
+
 }
