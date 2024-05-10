@@ -5,45 +5,63 @@
       "questions": [
         {
           "questionNum": 1,
-          "question": "How do you say 'Hello' in Japanese?",
+          "question": "What is a traditional Japanese greeting?",
           "options": ["Konnichiwa", "Arigatou", "Kudasai"],
-          "correctAnswer": "Konnichiwa"
+          "correct_option": "Konnichiwa"
         },
         {
           "questionNum": 2,
-          "question": "How do you say 'Thank you' in Japanese?",
+          "question": "How do you express gratitude in Japanese?",
           "options": ["Konnichiwa", "Arigatou", "Kudasai"],
-          "correctAnswer": "Konnichiwa"
+          "correct_option": "Arigatou"
         },
         {
           "questionNum": 3,
-          "question": "How do you say 'Hello' in Japanese?",
-          "options": ["Arigatou", "Kudasai", "Sumimansen"],
-          "correctAnswer": "Arigatou"
+          "question": "What is the meaning of the Japanese word 'Kanpai'?",
+          "options": ["Cheers", "Yes", "I'm okay/I'm fine"],
+          "correct_option": "Cheers"
         },
         {
           "questionNum": 4,
-          "question": "What does 'Kanpai' mean in Japanese?",
-          "options": ["Cheers", "Yes", "I'm okay/I'm fine"],
-          "correctAnswer": "Cheers"
+          "question": "What does 'Daijoubu' signify in Japanese?",
+          "options": ["I'm okay/I'm fine", "Greet someone by bowing", "No tipping"],
+          "correct_option": "I'm okay/I'm fine"
         },
         {
           "questionNum": 5,
-          "question": "What does 'Daijoubu' mean in Japanese?",
-          "options": ["I'm okay/ I'm fine", "Greet someone by bowing", "No tipping"],
-          "correctAnswer": "I'm okay/ I'm fine"
+          "question": "How is money commonly exchanged in Japan?",
+          "options": ["Directly passing it hand to hand", "Using small trays", "Giving it back in return"],
+          "correct_option": "Using small trays"
         },
         {
           "questionNum": 6,
-          "question": "What is a common practice for exchanging money in Japan?",
-          "options": ["Directly passing it hand to hand", "Using small trays", "Giving it back in return"],
-          "correctAnswer": "Using small trays"
+          "questions": "What is considered impolite in Japan regarding dining?",
+          "options": ["Eating While walking on the street", "Drinking from vending machines", "Eating in restaurants"],
+          "correct_option": "Eating While walking on the street"
         },
         {
           "questionNum": 7,
-          "question": "What is considered impolite in Japan regarding eating or drinking?",
-          "options": ["Eating While walking on the street", "Drinking from wending machines", "Eating in restaurants"],
-          "correctAnswer": "Eating While walking on the street"
+          "question": "What is the traditional Japanese way of greeting someone at a home?",
+          "options": ["Taking off shoes at the entrance", "Shaking hands firmly", "Giving a bow"],
+          "correct_option": "Taking off shoes at the entrance"
+        },
+        {
+          "questionNum": 8,
+          "question": "What is the customary way to offer and receive business cards in Japan?",
+          "options": ["Receive with both hands, read it carefully, and put it in your pocket", "Toss it onto the table", "Fold it before handing it over"],
+          "correct_option": "Receive with both hands, read it carefully, and put it in your pocket"
+        },
+        {
+         "questionNum": 9,
+         "question": "What does the Japanese phrase 'Ganbatte kudasai' mean?",
+          "options": ["Goodbye", "Thank you", "Do your best"],
+         "correct_option": "Do your best"
+        },
+        {
+          "questionNum": 10,
+          "question": "What should you avoid doing when giving gifts in Japan?",
+          "options": ["Giving expensive gifts", "Opening the gift immediately upon receiving it", "Wrapping the gift in colorful paper"],
+          "correct_option": "Opening the gift immediately upon receiving it"
         }
       ]
     }
