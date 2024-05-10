@@ -78,10 +78,10 @@
 
         </div>
         <!-- quiz-->
-        <div id="quiz-nav">
+        <!--<div id="quiz-nav">
             <br />
             <br />
-        </div>
+        </div>-->
         <!-- Please add and adjust the CSS according to page (but please keep the messages same as the ones below)-->
         <!-- Put all this into class="container-fluid" of the division for responsive layout -->
         <div class="row justify-content-center section-row bg-warning pt-5 mt-5" id="quiz-section">
@@ -89,10 +89,14 @@
                 <div class="row mb-3">
                     <h2 style="word-spacing: 8px;">Common Phrases and Cultural Etiquette Quiz</h2>
                 </div>
+
                 <div class="row justify-content-center pb-5 pt-5 ">
                     <h4 id="startMessage">"Want to learn about this culture in depth? Try this quiz!"</h4>
                     <button id="loadQuiz" class="btn btn-primary text-white culture-btn w-25">Learn About @ViewBag.Culture</button>
                 </div>
+
+
+
                 <div id="quizContent" style="display: none;">
                     <div id="quizImage" class="quiz-image" style="margin-bottom: 20px;">
                         <img src="" id="currentImage" alt="Cultural Image" style="width: 100%; height: auto; border: 2px solid #ccc;">
@@ -103,11 +107,18 @@
                     </div>
                     <button id="restartQuiz" class="btn btn-info" style="margin-top: 20px; display: none;">Restart Quiz</button>
                 </div>
+
+
+
+
                 <div id="highScoreDisplay" style="display: none; font-size: 24px; color: green; padding: 10px; border: 1px solid #ccc; text-align: center;">
                     High Score: <span id="highScoreValue">0</span>
                 </div>
             </div>
         </div>
+
+
+
         <!-- Attractions -->
         <div id="attract-nav">
             <br />
@@ -126,14 +137,22 @@
         var getCulturalDatesUrl = '@Url.Action("GetCulturalDates", "Events")';
         var getEventsFromEventbriteUrl = '@Url.Action("GetEventsFromEventbrite", "Events")';
     </script>
-    
+
     <!-- Convert cultureName to lowercase to standardize -->
     <script type="text/javascript">
-    var cultureFromViewBag = '@ViewBag.Culture'.toLowerCase(); 
+    var cultureFromViewBag = '@ViewBag.Culture'.toLowerCase();
     </script>
 
     @Scripts.Render("~/bundles/fullcalendar")
     <script src="~/Scripts/quizLoader.js"></script>
+
+
+
+    <style>
+        .form-check-label {
+            margin-left: 5px;
+        }
+    </style>
 
     <!-- Modified the width of the calender to see if it fits -->
     <!-- Add CSS for the quiz section -->

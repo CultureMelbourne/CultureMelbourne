@@ -1,10 +1,15 @@
-﻿@model TP03MainProj.QuestionModel
+﻿@model TP03MainProj.Models.Questions
 
-<div class="question">@Model.Question</div>
-<img src="@Model.ImageUrl" class="quiz-image" />
-<div class="options-container">
-    @foreach (var option in Model.Options)
-    {
-        <button class="option" data-correct-answer="@Model.CorrectAnswer">@option</button>
-    }
+<div class="quiz-question" id="question-@Model.QuestionNum">
+    <h4>@Model.Question</h4>
+    <ul>
+        @foreach (var option in Model.Options)
+        {
+            <li>
+                <button class="btn btn-option" data-correct="@option.Equals(Model.CorrectAnswer)">
+                    @Html.Encode(option)
+                </button>
+            </li>
+        }
+    </ul>
 </div>

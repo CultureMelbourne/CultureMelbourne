@@ -9,18 +9,18 @@ $(document).ready(function () {
     const highScoreValue = $('#highScoreValue');
     var highScore = 0;  // Session high score
     var currentScore = 0;
-    var cultureFromViewBag; // Define cultureFromViewBag as a global variable
-
 
     loadQuizButton.click(function () {
-        cultureFromViewBag = $('#culture').data('culture').toLowerCase(); // 确保国家名是小写形式
-
+        // Redundant method Ensuring culture name is in lowercase
+        var cultureFromViewBag = $('#culture').data('culture').toLowerCase();
+        // Assuming you want to standardize to lowercase
         $.getJSON('/Events/LoadQuizData', { culture: cultureFromViewBag }, function (data) {
+
+
             if (data) {
                 startMessage.hide();
                 loadQuizButton.hide();
                 highScoreDisplay.show();
-                console.log(data);
 
                 startQuiz(data);
 
@@ -31,27 +31,37 @@ $(document).ready(function () {
     });
 
 
-    function startQuiz(data) {
-        quizFrame.html(''); // Clear previous quiz content
-        currentScore = 0; // Reset current score
-        data.Questions.forEach(question => {
-            let questionElem = $('<div>').addClass('question').text(question.Question);
-            //let imagePath = `/Content/ImageSRC/${cultureFromViewBag}/${question.QuestionNum}`;
-            //let image = $('<img>').attr('src', `${imagePath}.jpg`).addClass('quiz-image').on('error', function () {
-            //    $(this).attr('src', `${imagePath}.png`); // For JPG or PNG check
-            //});
-            quizFrame.append(questionElem);
-            let optionsContainer = $('<div>').addClass('options-container');
+    function startQuiz(quizData) {
+        $('#quizQuestions').empty();  // Clear previous questions if any
+        console.log(quizData);
+
+        quizData.Questions.forEach(question => {
+            let questionElem = $('<div>').addClass('question');
+            let questionText = $('<h4>').text(question.Question);
+            questionElem.append(questionText);
+
+            let optionsList = $('<ul>');
             question.Options.forEach(option => {
-                let optionButton = $('<button>').addClass('option').text(option).click(function () {
-                    handleAnswer(option, question.CorrectAnswer, $(this));
+                let optionItem = $('<li>');
+                let optionButton = $('<button>').addClass('btn btn-secondary option-button')
+                    .text(option)
+                    .data('correct', option === question.CorrectAnswer);
+                optionButton.on('click', function () {
+                    if ($(this).data('correct')) {
+                        alert('Correct!');
+                    } else {
+                        alert('Incorrect, try again.');
+                    }
                 });
-                optionsContainer.append(optionButton);
+                optionItem.append(optionButton);
+                optionsList.append(optionItem);
             });
-            quizFrame.append(optionsContainer);
+
+            questionElem.append(optionsList);
+            $('#quizQuestions').append(questionElem);
         });
-        quizFrame.append($('<button>').attr('id', 'restartQuiz').text('Restart Quiz').click(resetQuiz));
     }
+
 
 
     function handleAnswer(selectedOption, correctAnswer, optionButton) {

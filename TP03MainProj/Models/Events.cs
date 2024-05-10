@@ -64,11 +64,7 @@ namespace TP03MainProj.Models
         public List<string> Options { get; set; }
         public string CorrectAnswer { get; set; }
     }
-    public class QuestionModel
-    {
-        public string Question { get; set; }
-        public string ImageUrl { get; set; }
-        public List<string> Options { get; set; }
-        public string CorrectAnswer { get; set; }
-    }
+
+
+
 }

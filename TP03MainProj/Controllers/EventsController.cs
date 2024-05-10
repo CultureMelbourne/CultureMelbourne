@@ -215,13 +215,21 @@ namespace TP03MainProj.Controllers
                 string jsonData = System.IO.File.ReadAllText(filePath);
                 var quizData = JsonConvert.DeserializeObject<QuizData>(jsonData);
                 var cultureData = quizData.Cultures.FirstOrDefault(c => c.Name.Equals(culture, StringComparison.OrdinalIgnoreCase));
+
                 if (cultureData != null)
                 {
-                    return Json(cultureData, JsonRequestBehavior.AllowGet);
+                    // Create a new object that only includes the questions array
+                    var questionsOnly = new
+                    {
+                        Questions = cultureData.Questions
+                    };
+                    return Json(questionsOnly, JsonRequestBehavior.AllowGet);
                 }
             }
             return HttpNotFound($"Quiz data not found for {culture}.");
         }
+
+
 
         // Function to save high score to session
         public void SaveHighScore(int score)
