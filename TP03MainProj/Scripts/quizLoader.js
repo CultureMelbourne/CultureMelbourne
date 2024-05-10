@@ -12,9 +12,14 @@ $(document).ready(function () {
 
     loadQuizButton.click(function () {
         // Redundant method Ensuring culture name is in lowercase
-        //const culture = $('#culture').data('culture').toLowerCase();
+        var cultureFromViewBag = $('#culture').data('culture');
+        console.log(cultureFromViewBag);
+        // Assuming you want to standardize to lowercase
         $.getJSON('/Events/LoadQuizData', { culture: cultureFromViewBag }, function (data) {
+
             const questionsData = data.cultures.find(c => c.name.toLowerCase() === cultureFromViewBag);
+            console.log(questionsData);
+
             if (questionsData) {
                 startMessage.hide();
                 loadQuizButton.hide();
