@@ -9,22 +9,21 @@ $(document).ready(function () {
     const highScoreValue = $('#highScoreValue');
     var highScore = 0;  // Session high score
     var currentScore = 0;
+    var cultureFromViewBag; // Define cultureFromViewBag as a global variable
+
 
     loadQuizButton.click(function () {
-        // Redundant method Ensuring culture name is in lowercase
-        var cultureFromViewBag = $('#culture').data('culture');
-        console.log(cultureFromViewBag);
-        // Assuming you want to standardize to lowercase
+        cultureFromViewBag = $('#culture').data('culture').toLowerCase(); // 确保国家名是小写形式
+
         $.getJSON('/Events/LoadQuizData', { culture: cultureFromViewBag }, function (data) {
-
-            const questionsData = data.cultures.find(c => c.name.toLowerCase() === cultureFromViewBag);
-            console.log(questionsData);
-
-            if (questionsData) {
+            if (data) {
                 startMessage.hide();
                 loadQuizButton.hide();
                 highScoreDisplay.show();
-                startQuiz(questionsData.questions);
+                console.log(data);
+
+                startQuiz(data);
+
             } else {
                 alert('No quiz data available for this culture.');
             }
@@ -32,21 +31,20 @@ $(document).ready(function () {
     });
 
 
-    function startQuiz(questions) {
+    function startQuiz(data) {
         quizFrame.html(''); // Clear previous quiz content
         currentScore = 0; // Reset current score
-        questions.forEach(question => {
-            let questionElem = $('<div>').addClass('question').text(question.question);
-            let imagePath = `/Content/Images/${cultureFromViewBag}/${question.questionNum}`;
-            let image = $('<img>').attr('src', `${imagePath}.jpg`).addClass('quiz-image').on('error', function () {
-                $(this).attr('src', `${imagePath}.png`); // For JPG or PNG check
-            });
-
-            quizFrame.append(questionElem, image);
+        data.Questions.forEach(question => {
+            let questionElem = $('<div>').addClass('question').text(question.Question);
+            //let imagePath = `/Content/ImageSRC/${cultureFromViewBag}/${question.QuestionNum}`;
+            //let image = $('<img>').attr('src', `${imagePath}.jpg`).addClass('quiz-image').on('error', function () {
+            //    $(this).attr('src', `${imagePath}.png`); // For JPG or PNG check
+            //});
+            quizFrame.append(questionElem);
             let optionsContainer = $('<div>').addClass('options-container');
-            question.options.forEach(option => {
+            question.Options.forEach(option => {
                 let optionButton = $('<button>').addClass('option').text(option).click(function () {
-                    handleAnswer(option, question.correctAnswer, $(this));
+                    handleAnswer(option, question.CorrectAnswer, $(this));
                 });
                 optionsContainer.append(optionButton);
             });
@@ -54,6 +52,7 @@ $(document).ready(function () {
         });
         quizFrame.append($('<button>').attr('id', 'restartQuiz').text('Restart Quiz').click(resetQuiz));
     }
+
 
     function handleAnswer(selectedOption, correctAnswer, optionButton) {
         $('.option').prop('disabled', true);  // Disable all options after a selection
