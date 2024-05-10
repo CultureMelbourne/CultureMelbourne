@@ -5,12 +5,16 @@
 }
 
 <!-- Side Navigation -->
-<div class="sidebar">
+
+<div class="sidebar collapsed">
+    <button class="sidebar-toggle-btn">
+        <img src="@Url.Content("~/Content/Mycss/imgs/rightarrow.png")" alt="Expand Sidebar" class="img-fluid w-100 h-auto">
+    </button>
     <nav>
         <ul class="country-nav flex-column">
             <li class="nav-item">
-                <a href="#china-story" class="country-link  toggle-link">China</a>
-                <ul class="sub-nav">
+                <a href="#china-story" class="country-link btn-toggle toggle-link" aria-expanded="false">China</a>
+                <ul class="sub-nav" style="display: none;">
                     <li><a href="#china-story" class="country-link">Overview</a></li>
                     <li><a href="#china-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#china-data" class="country-link">Data Insight</a></li>
@@ -18,48 +22,45 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#japan-story" class="country-link toggle-link">Japan</a>
+                <a href="#japan-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Japan</a>
                 <ul class="sub-nav" style="display: none;">
                     <li><a href="#japan-story" class="country-link">Overview</a></li>
                     <li><a href="#japan-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#japan-data" class="country-link">Data Insight</a></li>
-
                     <li><a href="#japan-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#korea-story" class="country-link toggle-link">Korea</a>
+                <a href="#korea-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Korea</a>
                 <ul class="sub-nav" style="display: none;">
                     <li><a href="#korea-story" class="country-link">Overview</a></li>
                     <li><a href="#korea-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#korea-data" class="country-link">Data Insight</a></li>
-
                     <li><a href="#korea-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#philipines-story" class="country-link toggle-link">Philippines</a>
+                <a href="#philippines-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Philippines</a>
                 <ul class="sub-nav" style="display: none;">
-                    <li><a href="#philipines-story" class="country-link">Overview</a></li>
-                    <li><a href="#philipines-timeline" class="country-link">Timeline</a></li>
-                    <li><a href="#philipines-data" class="country-link">Data Insight</a></li>
-
-                    <li><a href="#philipines-migration" class="country-link">Migration Stories</a></li>
+                    <li><a href="#philippines-story" class="country-link">Overview</a></li>
+                    <li><a href="#philippines-timeline" class="country-link">Timeline</a></li>
+                    <li><a href="#philippines-data" class="country-link">Data Insight</a></li>
+                    <li><a href="#philippines-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#vietnam-story" class="country-link toggle-link">Vietnam</a>
+                <a href="#vietnam-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Vietnam</a>
                 <ul class="sub-nav" style="display: none;">
                     <li><a href="#vietnam-story" class="country-link">Overview</a></li>
                     <li><a href="#vietnam-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#vietnam-data" class="country-link">Data Insight</a></li>
-
                     <li><a href="#vietnam-migration" class="country-link">Migration Stories</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 </div>
+
 
 
 <!-- Side Navigation -->
@@ -327,17 +328,21 @@
 
     <style>
 
+
+
         .fixed-size-image {
-            width: 100%; 
-            height: 250px; 
+            width: 100%;
+            height: 250px;
             object-fit: cover;
         }
+
         .no-underline {
             text-decoration: none;
-            color:white;
+            color: white;
         }
+
             .no-underline:hover {
-                color: #FECE58; 
+                color: #FECE58;
             }
 
         .canvasjs-chart-container {
@@ -397,6 +402,28 @@
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
             border-radius: 10px;
         }
+        /* Style adjustments for the sidebar toggle button */
+        .sidebar-toggle-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #FECE58;
+            border: none;
+            color: black;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 50%;
+            outline: none;
+            z-index: 1001;
+        }
+
+        /* Hide the toggle button when the sidebar is expanded or on hover */
+        .sidebar.expanded .sidebar-toggle-btn,
+        .sidebar:hover .sidebar-toggle-btn {
+            display: none;
+        }
 
         .country-nav {
             list-style-type: none;
@@ -440,5 +467,30 @@
         .country-link:focus {
             background-color: #ccc;
         }
+
+
+        /* Initial state of the sidebar when collapsed */
+        .sidebar.collapsed {
+            width: 50px; /* Adjust width to your preference */
+            overflow: hidden;
+            transition: width 0.3s ease;
+        }
+
+        /* Expanded state of the sidebar */
+        .sidebar.expanded {
+            width: 200px; /* Adjust width to your preference */
+            transition: width 0.3s ease;
+        }
+
+        /* Style adjustments for navigation links in collapsed mode */
+        .sidebar.collapsed .country-link {
+            display: none; /* Hide text labels in collapsed state */
+        }
+
+        .sidebar.collapsed .nav-item {
+            text-align: center; /* Center icons or bullets if used */
+        }
+
+
     </style>
 }

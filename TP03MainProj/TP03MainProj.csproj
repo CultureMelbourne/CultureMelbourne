@@ -1099,6 +1099,7 @@
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\fullcalendar.print.min.css" />
     <Content Include="Content\Mycss\home.css" />
+    <Content Include="Content\Mycss\imgs\rightarrow.png" />
     <Content Include="Content\Mycss\mycss.css" />
     <Content Include="Content\Mycss\responsive.css" />
     <Content Include="Content\Mycss\style.css" />
@@ -1337,6 +1338,7 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\quizLoader.js" />
+    <Content Include="Scripts\sidebar.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

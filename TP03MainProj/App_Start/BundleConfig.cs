@@ -69,7 +69,8 @@ namespace TP03MainProj
 
             bundles.Add(new ScriptBundle("~/bundles/educationJS").Include(
             "~/Scripts/edu.js",
-            "~/Scripts/charts.js"
+            "~/Scripts/charts.js",
+            "~/Scripts/sidebar.js"
             ));
 
             BundleTable.EnableOptimizations = true;
