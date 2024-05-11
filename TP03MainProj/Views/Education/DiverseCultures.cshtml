@@ -118,6 +118,19 @@
                         <!-- Reduced from col-md-3 -->
                     </div>
                 </div>
+
+                <!-- For the Stream Chart -->
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="china-population-chart" class="chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -159,6 +172,19 @@
                     <div class="col-md-2">
                     </div>
                 </div>
+
+                <!-- For the Stream Chart -->
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="japan-population-chart" class="chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -196,6 +222,19 @@
                     <div class="col-md-8 p-1 mt-5">
                         <!-- Increased from col-md-6 -->
                         <div id="korea-occupa" class="canvasjs-chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+
+                <!-- For the Stream Chart -->
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="korea-population-chart" class="chart-container"></div>
                     </div>
                     <div class="col-md-2">
                     </div>
@@ -243,6 +282,19 @@
                     <div class="col-md-2">
                     </div>
                 </div>
+
+                <!-- For the Stream Chart -->
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="philippines-population-chart" class="chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -286,6 +338,19 @@
                     <div class="col-md-2">
                     </div>
                 </div>
+
+                <!-- For the Stream Chart -->
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-8 p-1 mt-5">
+                        <!-- Increased from col-md-6 -->
+                        <div id="vietnam-population-chart" class="chart-container"></div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -300,6 +365,43 @@
 @section Scripts{
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     @Scripts.Render("~/bundles/educationJS")
+
+    <!-- For the Stream Chart -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('.country-link').click(function (e) {
+            e.preventDefault();
+            var country = $(this).text().trim().toLowerCase();
+            loadChartData(country);
+        });
+    });
+
+    function loadChartData(country) {
+        $.getJSON('@Url.Action("GetCountryChartData", "Education")', { country: country }, function (data) {
+            if (!data.error) {
+                renderChart(country + '-population-chart', data.data);
+            } else {
+                console.error('Data loading error:', data.error);
+            }
+        });
+    }
+
+    function renderChart(chartId, data) {
+        var values = data.map(item => item.TotalPopulation);
+        var labels = data.map(item => item.CensusYear.toString());
+        zingchart.render({
+            id: chartId,
+            data: {
+                type: 'line',
+                series: [{ values: values }],
+                scaleX: { labels: labels }
+            },
+            height: 400,
+            width: '100%'
+        });
+    }
+    </script>
 
 
 

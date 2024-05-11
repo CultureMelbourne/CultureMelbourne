@@ -13,6 +13,7 @@ using CsvHelper.Configuration;
 using System.IO;
 using System.Web.UI.WebControls;
 using TP03MainProj.Helper;
+using Newtonsoft.Json;
 
 namespace TP03MainProj.Controllers
 {
@@ -204,5 +205,19 @@ namespace TP03MainProj.Controllers
                 Map(m => m.Url).Index(5);
             }
         }
+
+        // For the Stream Chart
+        public JsonResult GetCountryChartData(string country)
+        {
+            string path = Server.MapPath($"~/Content/PopulationData/{country.ToLower()}_population.json");
+            if (System.IO.File.Exists(path))
+            {
+                string jsonData = System.IO.File.ReadAllText(path);
+                var data = JsonConvert.DeserializeObject<dynamic>(jsonData);
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { error = "Data not found" }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

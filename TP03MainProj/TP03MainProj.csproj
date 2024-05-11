@@ -1227,6 +1227,11 @@
     <Content Include="DataHandle\korea\age_distrbution.json" />
     <Content Include="DataHandle\philipines\age_distrbution.json" />
     <Content Include="DataHandle\vietnam\age_distrbution.json" />
+    <Content Include="Content\PopulationData\chinese_population.json" />
+    <Content Include="Content\PopulationData\filipino_population.json" />
+    <Content Include="Content\PopulationData\japanese_population.json" />
+    <Content Include="Content\PopulationData\korean_population.json" />
+    <Content Include="Content\PopulationData\vietnamese_population.json" />
     <None Include="Properties\PublishProfiles\cultmelboune - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\index.global.js" />
