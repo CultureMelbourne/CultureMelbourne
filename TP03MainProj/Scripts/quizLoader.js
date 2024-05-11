@@ -50,7 +50,7 @@ $(document).ready(function () {
                 let lastQuestionForm = $('#question' + (quizData.Questions.length - 1) + ' form');
         lastQuestionForm.append($('<button>', {
             type: 'submit',
-            class: 'btn btn-success mt-3',
+            class: 'btn btn-success mt-3  submit-button',
             text: 'Complete Quiz'
         }));
     }
