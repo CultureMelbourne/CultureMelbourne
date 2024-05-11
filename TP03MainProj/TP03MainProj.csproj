@@ -240,23 +240,23 @@
     <Content Include="Content\Customer\css\jquery.countdown.css" />
     <Content Include="Content\Customer\css\mdb.min.css" />
     <Content Include="Content\Customer\css\mdb.rtl.min.css" />
-    <Content Include="Content\Images\chinese\1.png" />
+    <Content Include="Content\Images\chinese\1.jpg" />
     <Content Include="Content\Images\chinese\10.jpg" />
     <Content Include="Content\Images\chinese\2.jpg" />
     <Content Include="Content\Images\chinese\3.jpg" />
-    <Content Include="Content\Images\chinese\4.png" />
+    <Content Include="Content\Images\chinese\4.jpg" />
     <Content Include="Content\Images\chinese\5.jpg" />
     <Content Include="Content\Images\chinese\6.jpg" />
     <Content Include="Content\Images\chinese\7.jpg" />
-    <Content Include="Content\Images\chinese\8.png" />
+    <Content Include="Content\Images\chinese\8.jpg" />
     <Content Include="Content\Images\chinese\9.jpg" />
     <Content Include="Content\Images\filipino\1.jpg" />
     <Content Include="Content\Images\filipino\2.jpg" />
     <Content Include="Content\Images\filipino\3.jpg" />
     <Content Include="Content\Images\filipino\4.jpg" />
-    <Content Include="Content\Images\filipino\5.png" />
+    <Content Include="Content\Images\filipino\5.jpg" />
     <Content Include="Content\Images\filipino\6.jpg" />
-    <Content Include="Content\Images\japanese\1.png" />
+    <Content Include="Content\Images\japanese\1.jpg" />
     <Content Include="Content\Images\japanese\10.jpg" />
     <Content Include="Content\Images\japanese\2.jpg" />
     <Content Include="Content\Images\japanese\3.jpg" />
@@ -267,13 +267,13 @@
     <Content Include="Content\Images\japanese\8.jpg" />
     <Content Include="Content\Images\japanese\9.jpg" />
     <Content Include="Content\Images\korean\1.jpg" />
-    <Content Include="Content\Images\korean\10.png" />
+    <Content Include="Content\Images\korean\10.jpg" />
     <Content Include="Content\Images\korean\2.jpg" />
     <Content Include="Content\Images\korean\3.jpg" />
     <Content Include="Content\Images\korean\4.jpg" />
     <Content Include="Content\Images\korean\5.jpg" />
-    <Content Include="Content\Images\korean\6.png" />
-    <Content Include="Content\Images\korean\7.png" />
+    <Content Include="Content\Images\korean\6.jpg" />
+    <Content Include="Content\Images\korean\7.jpg" />
     <Content Include="Content\Images\korean\8.jpg" />
     <Content Include="Content\Images\korean\9.jpg" />
     <Content Include="Content\Images\vietnamese\1.jpg" />
@@ -281,10 +281,10 @@
     <Content Include="Content\Images\vietnamese\2.jpg" />
     <Content Include="Content\Images\vietnamese\3.jpg" />
     <Content Include="Content\Images\vietnamese\4.jpg" />
-    <Content Include="Content\Images\vietnamese\5.png" />
+    <Content Include="Content\Images\vietnamese\5.jpg" />
     <Content Include="Content\Images\vietnamese\6.jpg" />
     <Content Include="Content\Images\vietnamese\7.jpg" />
-    <Content Include="Content\Images\vietnamese\8.png" />
+    <Content Include="Content\Images\vietnamese\8.jpg" />
     <Content Include="Content\Images\vietnamese\9.jpg" />
     <Content Include="Content\Mycss\Education.css" />
     <Content Include="Content\Customer\css\plugins.css" />
@@ -1411,7 +1411,6 @@
     <Content Include="Views\Education\CountryStory\Vietnam.cshtml" />
     <Content Include="Views\Shared\WebGateLayout.cshtml" />
     <Content Include="Views\Home\WebGate.cshtml" />
-    <Content Include="Views\Events\QuizTemplate.cshtml" />
     <Content Include="Views\Education\MigrationStories\ChinaStory.cshtml" />
     <Content Include="Views\Education\MigrationStories\JapanStory.cshtml" />
     <Content Include="Views\Education\MigrationStories\VietnamStory.cshtml" />
@@ -1423,6 +1422,7 @@
     <Content Include="Views\Education\DataInsight\KoreaData.cshtml" />
     <Content Include="Views\Education\DataInsight\PhilipinesData.cshtml" />
     <Content Include="Views\Events\_EventsList.cshtml" />
+    <Content Include="Views\Events\_CultureQuizPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

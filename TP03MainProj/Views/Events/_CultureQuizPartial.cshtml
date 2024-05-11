@@ -1,0 +1,29 @@
+﻿@model TP03MainProj.Models.CultureQuiz
+
+<div class="quiz-content">
+    @foreach (var question in Model.Questions)
+    {
+        <div class="question-item">
+            <h4>@question.QuestionNum. @Html.Raw(HttpUtility.HtmlEncode(question.Question))</h4>
+            @{
+                var basePath = $"/Content/Images/{Model.Name.ToLower()}/{question.QuestionNum}";
+                var imagePath = $"{basePath}.jpg";
+                var fallbackPath = $"{basePath}.png";
+            }
+
+            <img src="@imagePath" alt="Question Image" onerror="this.src='@fallbackPath';" class="quiz-image">
+
+            <ul class="options-list">
+                @foreach (var option in question.Options)
+                {
+                    <li>
+                        <button class="option-button"
+                                data-correct="@option.Equals(question.CorrectAnswer)">
+                            @Html.Raw(HttpUtility.HtmlEncode(option))
+                        </button>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>

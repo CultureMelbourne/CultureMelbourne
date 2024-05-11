@@ -14,6 +14,7 @@ using System.IO;
 using System.Web.UI.WebControls;
 using TP03MainProj.Helper;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace TP03MainProj.Controllers
 {
@@ -129,6 +130,10 @@ namespace TP03MainProj.Controllers
         }
 
 
+
+
+
+
         // To retrieve data from API (using static DB for the time being)
         //public JsonResult GetEventsFromEventbrite(string culture, DateTime date)
         //{
@@ -219,15 +224,48 @@ namespace TP03MainProj.Controllers
                 if (cultureData != null)
                 {
                     // Create a new object that only includes the questions array
-                    var questionsOnly = new
-                    {
-                        Questions = cultureData.Questions
-                    };
-                    return Json(questionsOnly, JsonRequestBehavior.AllowGet);
+                    //var questionsOnly = new
+                    //{
+                    //    Questions = cultureData.Questions
+                    //};
+                    return Json(cultureData, JsonRequestBehavior.AllowGet);
                 }
             }
             return HttpNotFound($"Quiz data not found for {culture}.");
         }
+
+        [HttpGet]
+        public ActionResult QuizPartial(string culture)
+        {
+            string filePath = Server.MapPath($"~/Content/Quizzes/{culture}_cult_quiz.json");
+            if (System.IO.File.Exists(filePath))
+            {
+                string jsonData = System.IO.File.ReadAllText(filePath);
+                var quizData = JsonConvert.DeserializeObject<QuizData>(jsonData);
+                var cultureData = quizData.Cultures.FirstOrDefault(c => c.Name.Equals(culture, StringComparison.OrdinalIgnoreCase));
+
+                if (cultureData != null)
+                {
+                    return PartialView("_CultureQuizPartial", cultureData);
+                }
+            }
+            return HttpNotFound($"Quiz data not found for {culture}.");
+        }
+
+
+
+
+        //public ActionResult QuestionPartial(int questionId)
+        //{
+        //    var question = GetQuestionById(questionId); // Fetch the question based on ID or other criteria
+        //    return PartialView("_QuestionPartial", question);
+        //}
+
+        //public Questions GetQuestionById(int questionNum)
+        //{
+        //    // Flattening the list of questions from all quizzes
+        //    return _quizzes.SelectMany(quiz => quiz.Questions).FirstOrDefault(q => q.QuestionNum == questionNum);
+        //}
 
 
 

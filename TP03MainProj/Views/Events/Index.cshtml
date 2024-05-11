@@ -93,27 +93,27 @@
                 <div class="row justify-content-center pb-5 pt-5 ">
                     <h4 id="startMessage">"Want to learn about this culture in depth? Try this quiz!"</h4>
                     <button id="loadQuiz" class="btn btn-primary text-white culture-btn w-25">Learn About @ViewBag.Culture</button>
-                </div>
 
-
-
-                <div id="quizContent" style="display: none;">
-                    <div id="quizImage" class="quiz-image" style="margin-bottom: 20px;">
-                        <img src="" id="currentImage" alt="Cultural Image" style="width: 100%; height: auto; border: 2px solid #ccc;">
+                    <!-- Score display area, initially hidden -->
+                    <div id="scoreDisplay" class="mt-3 mb-3" style="display: none;">
+                        <h3>Your Score: <span id="finalScore">0</span></h3>
                     </div>
-                    <div id="quizQuestions" class="quiz-questions">
-                        <h3 id="quizQuestion"></h3>
-                        <ul id="quizOptions" class="quiz-options" style="list-style: none; padding: 0;"></ul>
-                    </div>
-                    <button id="restartQuiz" class="btn btn-info" style="margin-top: 20px; display: none;">Restart Quiz</button>
+
+                    <button id="restartQuiz" class="btn btn-primary text-white culture-btn w-25" style="display: none;">Restart</button>
                 </div>
 
 
+                @*<div id="quizQuestions"></div>*@
+                <div id="quizQuestions" class="w-100 ">
 
-
-                <div id="highScoreDisplay" style="display: none; font-size: 24px; color: green; padding: 10px; border: 1px solid #ccc; text-align: center;">
-                    High Score: <span id="highScoreValue">0</span>
                 </div>
+                <button id="prevQuestion" class="btn btn-primary " style="display: none;">Previous</button>
+                <button id="nextQuestion" class="btn btn-primary" style="display: none;">Next</button>
+
+
+                @*<div id="highScoreDisplay" style="display: none; font-size: 24px; color: green; padding: 10px; border: 1px solid #ccc; text-align: center;">
+            High Score: <span id="highScoreValue">0</span>
+        </div>*@
             </div>
         </div>
 
@@ -158,6 +158,94 @@
     <!-- Add CSS for the quiz section -->
 
     <style>
+        /* General card styling for each question */
+        .quiz-img {
+            width:100%;
+            height:auto;
+        }
+        .question.card {
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+            .question.card:hover {
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+
+        /* Header of each question */
+        .card-header {
+            background-color: #007bff; /* Primary color */
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        /* Image styling */
+        .card-img-top {
+            width: 20%; /* Ensures the image takes up the entire card width */
+            height: auto; /* Maintain aspect ratio */
+            border-bottom: 1px solid #dee2e6; /* A subtle border under the image */
+        }
+
+        /* Styling for the body of the card where options are located */
+        .card-body {
+            padding: 1rem;
+        }
+
+        /* List group item styling - clickable options */
+        .list-group-item {
+            display: flex; /* Makes the label a flex container */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            height: 50px; /* Fixed height as specified */
+            width: auto; /* Width adjusts to content or container */
+        }
+
+
+        .list-group-item-action:hover {
+            background-color: #007bff;
+            color:white;/* Light grey on hover for feedback */
+        }
+
+        /* Success and danger styles for correct/incorrect answers */
+        .list-group-item-success {
+            background-color: #28a745; /* Bootstrap success green */
+            color: white;
+        }
+
+        .list-group-item-danger {
+            background-color: #dc3545; /* Bootstrap danger red */
+            color: white;
+        }
+
+        /* Button styling for invisible radio buttons */
+        .btn-check:checked + .btn-secondary {
+            background-color: #007bff; /* Match the primary color when selected */
+            color: white;
+        }
+
+        /* Navigation buttons styling */
+        .btn-primary {
+            background-color: #007bff; /* Primary blue */
+            border-color: #007bff;
+            color: white;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Darker blue on hover */
+                border-color: #0056b3;
+            }
+
+
+        #prevQuestion, #nextQuestion {
+            margin: 10px;
+            padding: 5px 20px;
+            font-size: 16px;
+            width: 10vh;
+            height: 3vh;
+        }
 
         #quizFrame {
             height: 1000px;

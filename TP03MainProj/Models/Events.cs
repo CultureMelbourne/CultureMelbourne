@@ -50,12 +50,6 @@ namespace TP03MainProj.Models
         public string Name { get; set; }
         public List<Questions> Questions { get; set; }
     }
-
-    public class QuizData
-    {
-        public List<CultureQuiz> Cultures { get; set; }
-    }
-
     public class Questions
     {
         // Check this modification of the questionNum once
@@ -64,6 +58,13 @@ namespace TP03MainProj.Models
         public List<string> Options { get; set; }
         public string CorrectAnswer { get; set; }
     }
+
+    public class QuizData
+    {
+        public List<CultureQuiz> Cultures { get; set; }
+    }
+
+
 
 
 
