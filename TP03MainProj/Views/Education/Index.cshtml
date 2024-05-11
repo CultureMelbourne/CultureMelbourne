@@ -1,10 +1,10 @@
-﻿ 
+﻿
 @{
     ViewBag.Title = "Education";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section id="welcome-section" class="">
+<section id="welcome-section" class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
     <div class="background-images">
         <div class="img1"></div>
         <div class="img2"></div>
@@ -13,64 +13,78 @@
         <div class="img5"></div>
 
     </div>
-    <div class="container">
-        <div class="text-center pb-5" id="welcome-education-text">
-            <h1>Discover  the  Wonders  of  Multicultural  Education</h1>
+    <div class="row">
+        <div class="col-12 text-center" id="welcome-education-text">
+            <div class="display-1 fw-bold mb-4 text-white">Discover the Wonders of Multicultural Education</div>
             <button id="explore-button" class="btn btn-capsule">Discover More</button>
         </div>
+    </div>
 
-        <div id="education-content" class="justify-content-center align-items-center" style="">
-            <button id="exit-button" class="btn btn-secondary"></button>
+    <div id="education-content" class="justify-content-center align-items-center row" style="display: none; height: 80%;">
+        <div class="container h-100 d-flex flex-column justify-content-center">
 
-            <div class="no-bottom no-top" id="">
-                <div id="top"></div>
+            <!-- Exit Button Row -->
+            <div class="row justify-content-end">
+                <button id="exit-button" class="btn btn-secondary">Exit</button>
+            </div>
 
-                <section id="subheader">
-                    <div class="container">
-                        <div class="row text-center ">
-                            <div class="col-lg-8 offset-lg-2 ">
-                                <h2 class="wow fadeInUp mb20" data-wow-delay=".2s">Embark on a Journey of Cultural Discovery</h2>
-                                <ul class="crumb mb-5" id="education-nav">
-                                    <li style="font-size: large;">
-                                        <a class="text-dark" href="@Url.Action("Index", "Home")">Home</a>
-                                    </li>
-                                    <li style="font-size: large;" class="text-dark ms-2 me-2">></li>
-                                    <li style="font-size: large; color: #d48810 " class="active">Education Center</li>
-                                </ul>
-                            </div>
+            <!-- Main Content Row -->
+            <div class="row flex-grow-1 align-items-center">
+                <div class="container">
+                    <!-- Header and Navigation -->
+                    <div class="row">
+                        <div class="col-12 offset-md-1 col-lg-8 offset-lg-2 text-center">
+                            <div class="display-5 fw-bold" data-wow-delay=".2s">Embark on a Journey of Cultural Discovery</div>
+                            <ul class="nav justify-content-center mb-5">
+                                <li class="nav-item d-flex align-items-center">
+                                    <a class="nav-link text-dark" href="@Url.Action("Index", "Home")">Home</a>
+                                </li>
+                                <li class="nav-item d-flex align-items-center">
+                                    <span class="text-dark mx-2">></span>
+                                </li>
+                                <li class="nav-item d-flex align-items-center">
+                                    <a class="nav-link" style="color: #d48810;">Education Center</a>
+                                </li>
+                            </ul>
+
                         </div>
-
-
-                        <div class="bookshelf row justify-content-center mt-5">
-                            <div class="book" id="china-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Chinese.jpg")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "china" })" class="overlay-btn">China</a>
-                            </div>
-                            <div class="book" id="japan-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Japanese.png")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "japan" })" class="overlay-btn">Japan</a>
-                            </div>
-                            <div class="book" id="korea-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Korean.png")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "korea" })" class="overlay-btn">Korea</a>
-                            </div>
-                            <div class="book" id="philippines-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Filipino.jpg")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "philipines" })" class="overlay-btn">Philippines</a>
-                            </div>
-                            <div class="book" id="vietnam-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Vietnamese.jpg")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "vietnam" })" class="overlay-btn">Vietnam</a>
-                            </div>
-                        </div>
-
-
-
                     </div>
-                </section>
+
+
+                    <!-- Bookshelf Display -->
+                    <div class="row justify-content-center mt-5">
+                        <div class="bookshelf d-flex flex-wrap">
+                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="china-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Chinese.jpg")');">
+                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "china" })" class="overlay-btn fs-5">China</a>
+                            </div>
+                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="japan-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Japanese.png")');">
+                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "japan" })" class="overlay-btn fs-5">Japan</a>
+                            </div>
+                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="korea-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Korean.png")');">
+                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "korea" })" class="overlay-btn fs-5">Korea</a>
+                            </div>
+                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="philippines-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Filipino.jpg")');">
+                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "philipines" })" class="overlay-btn fs-5">Philippines</a>
+                            </div>
+                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="vietnam-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Vietnamese.jpg")');">
+                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "vietnam" })" class="overlay-btn fs-5">Vietnam</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </div>
     </div>
+
+
+
+
 </section>
 
 
 @section Styles {
-    @Styles.Render("~/bundles/Culture")
     @Styles.Render("~/bundles/css")
 }
 

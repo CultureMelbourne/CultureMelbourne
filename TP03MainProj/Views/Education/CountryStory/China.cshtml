@@ -1,43 +1,57 @@
 ﻿@model string
 
 <!-- overview -->
-<section class="bg-grey text-dark" style="background-size: cover; background-repeat: no-repeat;">
-    <div class="container" style="background-size: cover; background-repeat: no-repeat;">
+<section class="bg-light m-5 p-5 text-dark">
+    <div class="container">
+        <div class="row gx-5 align-items-center">
 
-        <div class="row gx-5 align-items-center" style="background-size: cover; background-repeat: no-repeat;">
-            <div class="col-lg-6" style="background-size: cover; background-repeat: no-repeat;">
-                <div class="row" style="background-size: cover; background-repeat: no-repeat;">
-                    <div class="col-6" style="background-size: cover; background-repeat: no-repeat;">
-                        <img src="@Url.Content("~/Content/Customer/images/study-case-single/main/cn/new born.png")" class="img-resize rounded-10 wow zoomIn animated" alt="" style="visibility: visible; animation-name: zoomIn;">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="container">
+                            <div class="row">
+                                <img src="@Url.Content("~/Content/Customer/images/study-case-single/main/cn/new born.png")" class="img-fluid " style="width:80%;height:auto;" alt="New Born">
 
-                        <div class="spacer-single" style="background-size: cover; background-repeat: no-repeat;"></div>
-                        <div class="col-6 offset-3" style="background-size: cover; background-repeat: no-repeat;">
-                            <div class="de_count wow fadeInUp animated" style="background-size: cover; background-repeat: no-repeat; visibility: visible; animation-name: fadeInUp;">
-                                <h3><span class="timer" data-to="160652" data-speed="3000">160,652</span>+</h3>
-                                <h4>China-born<br>Population in Victoria</h4>
                             </div>
+                            <div class="row p-4">
+
+                                <div class="fw-bold display-5"><span class="timer" data-to="160652" data-speed="3000">160,652</span>+</div>
+                                <hr>
+                                <div class="fs-5">China-born Population in Victoria</div>
+                            </div>
+
                         </div>
+
                     </div>
-                    <div class="col-6" style="background-size: cover; background-repeat: no-repeat;">
-                        <div class="spacer-double" style="background-size: cover; background-repeat: no-repeat;"></div>
-                        <div class="col-6" style="background-size: cover; background-repeat: no-repeat;">
-                            <div class="de_count wow fadeInUp animated" style="background-size: cover; background-repeat: no-repeat; visibility: visible; animation-name: fadeInUp;">
-                                <h3><span class="timer" data-to="7" data-speed="3000">7</span>%</h3>
-                                <h4>Proportion of<br> Chinese population <br>in <strong class="">1861</strong></h4>
+                    <div class="col-md-6">
+
+                        <div class="container">
+                            <div class="row p-4">
+                                <div class="fw-bold display-5"><span class="timer" data-to="7" data-speed="3000">7</span>%</div>
+                                <hr>
+                                <div class="fs-5">Proportion of Chinese population in 1861</div>
                             </div>
+                            <div class="row">
+                                <img src="@Url.Content("~/Content/Customer/images/study-case-single/main/cn/1861.png")" class="img-fluid " style="width:80%;height:auto;" alt="1861">
+
+
+                            </div>
+
                         </div>
-                        <div class="spacer-10" style="background-size: cover; background-repeat: no-repeat;"></div>
-                        <img src="@Url.Content("~/Content/Customer/images/study-case-single/main/cn/1861.png")" class="img-resize rounded-10 wow zoomIn animated" alt="" style="visibility: visible; animation-name: zoomIn;">
+
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6" style="background-size: cover; background-repeat: no-repeat;">
-                <h1><strong class="text-danger">Chinese</strong> Community in Victoria </h1>
-                <p>Chinese settlers first arrived in Victoria during the gold rush era, facing hardships and contributing significantly to the region's development. By 1861, their vibrant community formed 7% of the population, with Little Bourke Street in Melbourne becoming a cultural and business hub. Despite facing immigration restrictions, the Chinese community thrived, diversifying into various sectors. The 1970s saw the removal of discriminatory policies, leading to strengthened ties and a significant increase in the China-born population in Victoria, highlighting their enduring legacy and contribution to Victorian society.</p>
+
+
+            <div class="col-lg-6 ">
+                <div class="display-3 fw-bold pt-2"><div class="text-danger">Chinese</div> Community in Victoria</div>
+                <p class="fs-5">Chinese settlers first arrived in Victoria during the gold rush era, facing hardships and contributing significantly to the region's development. By 1861, their vibrant community formed 7% of the population, with Little Bourke Street in Melbourne becoming a cultural and business hub. Despite facing immigration restrictions, the Chinese community thrived, diversifying into various sectors. The 1970s saw the removal of discriminatory policies, leading to strengthened ties and a significant increase in the China-born population in Victoria, highlighting their enduring legacy and contribution to Victorian society.</p>
             </div>
         </div>
     </div>
 </section>
+
 <!-- timeline -->
 
 <section class="timeline" id="china-timeline">
@@ -49,9 +63,7 @@
                     <div class="de-timeline-article odd">
                         <div class="site-center-line"></div>
                         <div class="content-left-container">
-                            <div class="owl-single-dots owl-carousel owl-theme">
-                                <div class="item"><img class="timeline-image" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1850.jpg")" alt="The Last of us"></div>
-                            </div>
+                            <img class="timeline-image mt-5" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1850.jpg")" alt="The Last of us">
                         </div>
                         <div class="content-right-container">
                             <div class="year__">
@@ -59,8 +71,11 @@
                                 <h4 class="de-timeline-year">1850</h4>
                             </div>
                             <div class="content-right">
-                                <h3 class="de-timeline-title">Gold Rush and Early Settlement</h3>
-                                <p>Arrival of the first Chinese settlers during the gold rush. Many were contracted to agents and faced years of repayments while supporting their families back in China..</p>
+                                <div class="mt-5 fs-4">
+                                    <div class="de-timeline-title fw-bold">Gold Rush and Early Settlement</div>
+                                    <p class="fs-6">Arrival of the first Chinese settlers during the gold rush. Many were contracted to agents and faced years of repayments while supporting their families back in China.</p>
+                                </div>
+
                             </div>
                         </div>
                         <div class="meta-dot">
@@ -75,15 +90,17 @@
                                 <div class="d-line"></div>
                                 <h4 class="de-timeline-year">1861</h4>
                             </div>
+
                             <div class="content-right">
-                                <h3 class="de-timeline-title">Establishment and Growth of the Chinese Community</h3>
-                                <p>The Chinese community had established itself, making up nearly 7% of the Victorian population. Melbourne's Little Bourke Street became a hub for Chinese cultural and business activity.</p>
+                                <div class="mt-5 fs-4">
+                                    <div class="de-timeline-title fw-bold">Gold Rush and Early Settlement</div>
+                                    <p class="fs-6">Arrival of the first Chinese settlers during the gold rush. Many were contracted to agents and faced years of repayments while supporting their families back in China.</p>
+                                </div>
+
                             </div>
                         </div>
                         <div class="content-right-container">
-                            <div class="owl-single-dots owl-carousel owl-theme">
-                                <div class="item"><img class="timeline-image" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1861.jpg")" alt="The Last of us"></div>
-                            </div>
+                            <img class="timeline-image mt-5" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1861.jpg")" alt="The Last of us">
                         </div>
                         <div class="meta-dot">
                         </div>
@@ -93,9 +110,7 @@
                     <div class="de-timeline-article odd">
                         <div class="site-center-line"></div>
                         <div class="content-left-container">
-                            <div class="owl-single-dots owl-carousel owl-theme">
-                                <div class="item"><img class="timeline-image" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/Late 1800s.png")" alt="The Last of us"></div>
-                            </div>
+                            <img class="timeline-image mt-5" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/Late 1800s.png")" alt="The Last of us">
                         </div>
                         <div class="content-right-container">
                             <div class="year__">
@@ -103,8 +118,10 @@
                                 <h4 class="de-timeline-year">Late 1800s</h4>
                             </div>
                             <div class="content-right">
-                                <h3 class="de-timeline-title">Economic Diversification and Community Contributions</h3>
-                                <p>As gold resources dwindled, many Chinese settlers turned to market gardening, small businesses, and various trades, such as laundry operations and medicine, contributing significantly to local economies.</p>
+                                <div class="mt-5 fs-4">
+                                    <div class="de-timeline-title fw-bold">Economic Diversification and Community Contributions</div>
+                                    <p class="fs-6">As gold resources dwindled, many Chinese settlers turned to market gardening, small businesses, and various trades, such as laundry operations and medicine, contributing significantly to local economies.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="meta-dot">
@@ -120,14 +137,15 @@
                                 <h4 class="de-timeline-year">1901</h4>
                             </div>
                             <div class="content-right">
-                                <h3 class="de-timeline-title">The Impact of the White Australia Policy</h3>
-                                <p>The Immigration Restriction Act, part of the White Australia Policy, significantly limited Chinese immigration using methods like a dictation test. This era saw stringent residency conditions for Chinese immigrants.</p>
+                                <div class="mt-5 fs-4">
+                                    <div class="de-timeline-title fw-bold">The Impact of the White Australia Policy</div>
+                                    <p class="fs-6">The Immigration Restriction Act, part of the White Australia Policy, significantly limited Chinese immigration using methods like a dictation test. This era saw stringent residency conditions for Chinese immigrants.</p>
+                                </div>
+
                             </div>
                         </div>
                         <div class="content-right-container">
-                            <div class="owl-single-dots owl-carousel owl-theme">
-                                <div class="item"><img class="timeline-image" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1901 act.png")" alt="The Last of us"></div>
-                            </div>
+                            <img class="timeline-image mt-5" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1901 act.png")" alt="The Last of us">
                         </div>
                         <div class="meta-dot">
                         </div>
@@ -137,9 +155,7 @@
                     <div class="de-timeline-article odd">
                         <div class="site-center-line"></div>
                         <div class="content-left-container">
-                            <div class="owl-single-dots owl-carousel owl-theme">
-                                <div class="item"><img class="timeline-image" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1970.jpg")" alt="The Last of us"></div>
-                            </div>
+                            <img class="timeline-image mt-5" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1970.jpg")" alt="The Last of us">
                         </div>
                         <div class="content-right-container">
                             <div class="year__">
@@ -147,10 +163,13 @@
                                 <h4 class="de-timeline-year">1970s</h4>
                             </div>
                             <div class="content-right">
-                                <h3 class="de-timeline-title">Fighting Discrimination and Changing Policies</h3>
-                                <p>The discriminatory immigration policies began to be dismantled, leading to an increase in Chinese immigration and stronger trade links between Victoria and China.</p>
+                                <div class="mt-5 fs-4">
+                                    <div class="de-timeline-title fw-bold">Fighting Discrimination and Changing Policies</div>
+                                    <p class="fs-6">The discriminatory immigration policies began to be dismantled, leading to an increase in Chinese immigration and stronger trade links between Victoria and China.</p>
+
+                                </div>
+                                </div>
                             </div>
-                        </div>
                         <div class="meta-dot">
                         </div>
                     </div>
@@ -164,14 +183,15 @@
                                 <h4 class="de-timeline-year">1986-1991</h4>
                             </div>
                             <div class="content-right">
-                                <h3 class="de-timeline-title">Post-Tiananmen Immigration Surge</h3>
-                                <p>The China-born population in Victoria more than doubled, largely due to Chinese students seeking citizenship and asylum following the Tiananmen Square protests.</p>
+                                <div class="mt-5 fs-4">
+                                    <div class="de-timeline-title fw-bold">Post-Tiananmen Immigration Surge</div>
+                                    <p class="fs-6">The China-born population in Victoria more than doubled, largely due to Chinese students seeking citizenship and asylum following the Tiananmen Square protests.</p>
+
+                                </div>
                             </div>
                         </div>
                         <div class="content-right-container">
-                            <div class="owl-single-dots owl-carousel owl-theme">
-                                <div class="item"><img class="timeline-image" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1986-199.jpg")" alt="The Last of us"></div>
-                            </div>
+                            <img class="timeline-image mt-5" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/1986-199.jpg")" alt="The Last of us">
                         </div>
                         <div class="meta-dot">
                         </div>
@@ -181,9 +201,7 @@
                     <div class="de-timeline-article odd">
                         <div class="site-center-line"></div>
                         <div class="content-left-container">
-                            <div class="owl-single-dots owl-carousel owl-theme">
-                                <div class="item"><img class="timeline-image" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/2024.webp")" alt="The Last of us"></div>
-                            </div>
+                            <img class="timeline-image mt-5" src="@Url.Content("~/Content/Customer/images/timeline/Chinese/2024.webp")" alt="The Last of us"><
                         </div>
                         <div class="content-right-container">
                             <div class="year__">
@@ -191,8 +209,11 @@
                                 <h4 class="de-timeline-year">2016-Now</h4>
                             </div>
                             <div class="content-right">
-                                <h3 class="de-timeline-title">Contemporary Growth and Contributions</h3>
-                                <p>The census recorded 160,652 China-born individuals in Victoria. The recent years have seen a rise in professional migrants from China, including scholars and business investors, alongside a large number of students.</p>
+                                <div class="mt-5 fs-4">
+                                    <div class="de-timeline-title fw-bold">Contemporary Growth and Contributions</div>
+                                    <p class="fs-6">The census recorded 160,652 China-born individuals in Victoria. The recent years have seen a rise in professional migrants from China, including scholars and business investors, alongside a large number of students.</p>
+
+                                </div>
                             </div>
                         </div>
                         <div class="meta-dot">

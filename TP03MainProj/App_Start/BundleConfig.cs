@@ -45,10 +45,13 @@ namespace TP03MainProj
           "~/Content/bootstrap.css",
           "~/Content/site.css",
           "~/Content/Customer/css/plugins.css",
-          "~/Content/Customer/css/swiper.css",
           "~/Content/Mycss/responsive.css",
           "~/Content/Mycss/style.css"
           ));
+
+            bundles.Add(new StyleBundle("~/Content/edu").Include(
+"~/Content/Customer/css/style.css"
+));
 
             bundles.Add(new StyleBundle("~/Content/singlecss").Include(
                 "~/Content/Mycss/home.css"
@@ -66,7 +69,8 @@ namespace TP03MainProj
 
             bundles.Add(new ScriptBundle("~/bundles/educationJS").Include(
             "~/Scripts/edu.js",
-            "~/Scripts/charts.js"
+            "~/Scripts/charts.js",
+            "~/Scripts/sidebar.js"
             ));
 
             BundleTable.EnableOptimizations = true;
