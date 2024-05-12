@@ -19,12 +19,8 @@ namespace TP03MainProj.DataHandle
 
     }
 
-    public class OccupationData
-    {
-        public int Year { get; set; }
-        public string Occupation { get; set; }
-        public int Total { get; set; }
-    }
+
+
 
     public class Population {
         public int CensusYear { get; set; }
@@ -32,12 +28,28 @@ namespace TP03MainProj.DataHandle
         public int Total_Population { get; set; }
     }
 
-    public class Religion { 
-        public int Year { get; set;}
+    public class ReligionData
+    {
         public string Religion_Name { get; set; }
         public int Total { get; set; }
     }
 
+    public class ReligionReport
+    {
+        public string culture { get; set; }
+        public List<ReligionData> data { get; set; }
+    }
+    public class OccupationData
+    {
+        public string Occupation { get; set; }
+        public int Total { get; set; }
+    }
+
+    public class OccupationReport
+    {
+        public string culture { get; set; }
+        public List<OccupationData> data { get; set; }
+    }
     public class DiverseCulturesViewModel { 
         public List<CountryData>  countryDatas { get; set; } = new List<CountryData>();
 
@@ -46,9 +58,9 @@ namespace TP03MainProj.DataHandle
     public class CountryData {
         public string CountryName { get; set; }
         public List<AgeDistribution> ageDistributions { get; set; } = new List<AgeDistribution>();
-        public List<OccupationData> occupation { get; set; } = new List<OccupationData>();
+        public List<OccupationReport> occupation { get; set; } = new List<OccupationReport>();
         public List<Population> populations { get; set; } = new List<Population>();
-        public List<Religion> religions { get; set; } = new List<Religion>();
+        public List<ReligionReport> religions { get; set; } = new List<ReligionReport>();
     }
 
 }

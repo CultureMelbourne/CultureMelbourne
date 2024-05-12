@@ -41,20 +41,19 @@ namespace TP03MainProj.Controllers
             countryData.ageDistributions = ageDataList;
 
             var occupationJson = System.IO.File.ReadAllText(occupationPath);
-            var occupationDataList = JsonConvert.DeserializeObject<List<OccupationData>>(occupationJson);
-            countryData.occupation.AddRange(occupationDataList);
+            var occupationReport = JsonConvert.DeserializeObject<OccupationReport>(occupationJson);
+            countryData.occupation.Add(occupationReport);
 
             var populationJson = System.IO.File.ReadAllText(populationPath);
             var populationDataList = JsonConvert.DeserializeObject<List<Population>>(populationJson);
             countryData.populations.AddRange(populationDataList);
 
-            // 如果国家名不是日本，才加载宗教数据
-            if (countryName != "Japan" && System.IO.File.Exists(religionPath))
-            {
-                var religionJson = System.IO.File.ReadAllText(religionPath);
-                var religionDataList = JsonConvert.DeserializeObject<List<Religion>>(religionJson);
-                countryData.religions.AddRange(religionDataList);
-            }
+
+            var religionJson = System.IO.File.ReadAllText(religionPath);
+            var religionReport = JsonConvert.DeserializeObject<ReligionReport>(religionJson);
+            countryData.religions.Add(religionReport);
+
+
 
             return Json(countryData);
         }
@@ -62,48 +61,6 @@ namespace TP03MainProj.Controllers
 
         public ActionResult DiverseCultures()
         {
-
-            //DiverseCulturesViewModel diverseCulturesViewModel = new DiverseCulturesViewModel();
-            //var basePath = Server.MapPath("~/DataHandle/");
-            //string[] folders = { "china", "japan", "korea", "philipines", "vietnam" };
-            //foreach (var folder in folders)
-            //{
-            //    CountryData countryData = new CountryData();
-            //    countryData.CountryName = folder;
-
-            //    var agePath = Path.Combine(basePath, folder, "age_distrbution.json");
-            //    var occupationPath = Path.Combine(basePath, folder, "occupation.json");
-            //    var populationPath = Path.Combine(basePath, folder, "population.json");
-            //    var religionPath = Path.Combine(basePath, folder, "religion.json");
-                
-                
-            //    var ageDataList = LoadAgeDistributions(agePath);
-            //    countryData.ageDistributions = ageDataList;
-
-
-            //    var occupationJson = System.IO.File.ReadAllText(occupationPath);
-            //    var occupationDataList = JsonConvert.DeserializeObject<List<OccupationData>>(occupationJson);
-            //    countryData.occupation.AddRange(occupationDataList);
-
-
-            //    var populationJson = System.IO.File.ReadAllText(populationPath);
-            //    var populationDataList = JsonConvert.DeserializeObject<List<Population>>(populationJson);
-            //    countryData.populations.AddRange(populationDataList);
-
-            //    if (folder != "Japan")
-            //    {
-            //        var religionJson = System.IO.File.ReadAllText(religionPath);
-            //        var religionDataList = JsonConvert.DeserializeObject<List<Religion>>(religionJson);
-            //        countryData.religions.AddRange(religionDataList);
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //    diverseCulturesViewModel.countryDatas.Add(countryData);
-
-            //}
-
             return View();
         }
 

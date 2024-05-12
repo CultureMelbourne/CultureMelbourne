@@ -1,169 +1,171 @@
-﻿function LoadAgeDistributes(countryName, data) {
-    var ageDistributions = data.ageDistributions;
-    var decadePopulation = {};
-    var ageGroups = [
-        "0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39",
-        "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79",
-        "80-84", "85-89", "90-94", "95-99", "100-104", "105-109", "110-114"
-    ];
+﻿function loadReligionChart(countryName, religionReports) {
+    // Ensure the religion data is available and valid
+    if (!religionReports || !religionReports.length || !religionReports[0].data) {
+        console.warn('No religion data available for', countryName);
+        return;
+    }
 
-    var colors = [
-        "#FFD700", "#FF8C00", "#FF6347", "#FF4500", "#FF1493", "#FF00FF",
-        "#DB7093", "#B22222", "#8B0000", "#8B008B", "#800080", "#4B0082",
-        "#2F4F4F", "#00FFFF", "#00FF7F", "#008000", "#006400", "#0000FF",
-        "#000080", "#00008B", "#0000CD", "#4682B4", "#1E90FF"
-    ];
+    // Using the first report's data if there are multiple
+    var religionData = religionReports[0].data;
+    console.log(religionData); // Log to verify the data
 
-    ageDistributions.forEach(function (distribution) {
-        var censusYear = distribution.CensusYear;
-        var decade = Math.floor(censusYear / 10) * 10;
-        if (!decadePopulation[decade]) {
-            decadePopulation[decade] = { totalPopulation: 0, ageGroups: {} };
-            ageGroups.forEach(function (age) {
-                decadePopulation[decade].ageGroups[age] = 0;
-            });
-        }
-
-        ageGroups.forEach(function (age, index) {
-            var agePopulation = distribution.AgeDistributions[index];
-            decadePopulation[decade].ageGroups[age] += agePopulation;
-            decadePopulation[decade].totalPopulation += agePopulation;
-        });
-    });
-
-    var dataSeries = ageGroups.map(function (age, index) {
+    // Prepare data for the pie chart
+    var chartData = religionData.map(function (item) {
         return {
-            type: "stackedColumn",
-            name: age,
-            showInLegend: true,
-            color: colors[index % colors.length],
-            dataPoints: []
+            values: [item.Total],
+            text: item.Religion_Name
         };
     });
-
-    Object.keys(decadePopulation).sort((a, b) => a - b).map(Number).forEach(function (decade) {
-        dataSeries.forEach(function (series) {
-            series.dataPoints.push({
-                x: decade,
-                y: decadePopulation[decade].ageGroups[series.name],
-                label: decade.toString()
-            });
-        });
-    });
-
-    var options = {
-        animationEnabled: true,
+    var title = countryName;
+    title = title.charAt(0).toUpperCase() + title.slice(1);
+    // ZingChart configuration
+    var config = {
+        type: 'pie',
         title: {
-            text: "Population Distribution by Age in " + countryName
+            text: title + ' Religious Distribution',
+            fontSize: 18,
+            adjustLayout: true
         },
-        axisX: {
-            title: "Decade",
-            interval: 10,
-            valueFormatString: "####"
-        },
-        axisY: {
-            title: "Population"
-        },
-        legend: {
-            cursor: "pointer",
-            itemclick: function (e) {
-                var active = e.dataSeries.visible;
-                e.chart.options.data.forEach(function (data) {
-                    data.visible = false; // initially turn everything off
-                });
-                e.dataSeries.visible = !active; // toggle the clicked series
-                e.chart.render();
+        plot: {
+            valueBox: [
+                {
+                    text: '%t\n%npv%', // Shows the religion name and percentage
+                    placement: 'out',
+                    fontColor: '#333',
+                    fontSize: '12px',
+                    fontWeight: 'bold'
+                }
+            ],
+            tooltip: {
+                text: '%t: %v (%npv%)'
+            },
+            animation: {
+                effect: 3,
+                method: 5,
+                sequence: 1,
+                speed: 800
             }
         },
-        data: dataSeries
+        series: chartData
     };
 
-    var chartContainer = document.getElementById(countryName + "-age");
-    var chart = new CanvasJS.Chart(chartContainer, options);
-    chart.render();
+    // Render the chart
+    zingchart.render({
+        id: countryName.toLowerCase() + '-religion-chart', // Specific ID for the religion chart
+        data: config,
+        height: 400,
+        width: '100%'
+    });
 }
 
+function loadOccupationChart(countryName, occupationReports) {
+    // Check if occupation data is available
+    if (!occupationReports || !occupationReports.length || !occupationReports[0].data) {
+        console.warn('No occupation data available for', countryName);
+        return;
+    }
 
+    // Extracting the first report's data
+    var occupationData = occupationReports[0].data;
 
-function LoadOccupationData(countryName, data) {
-    var occupationData = data.occupation;
-    var years = {};
-    var occupationCategories = new Set();
-
-    // Organize data by year and collect all occupations
-    occupationData.forEach(function (item) {
-        if (!years[item.Year]) {
-            years[item.Year] = [];
-        }
-        years[item.Year].push({
-            label: item.Occupation,
-            y: item.Total
-        });
-        occupationCategories.add(item.Occupation);
+    // Prepare data for the pie chart
+    var chartData = occupationData.map(function (item) {
+        return {
+            values: [item.Total],
+            text: item.Occupation
+        };
     });
-
-    // Prepare the data series for the chart
-    var chartData = [];
-    occupationCategories.forEach(function (occupation) {
-        var dataPoints = [];
-        Object.keys(years).forEach(function (year) {
-            var yearData = years[year].find(o => o.label === occupation);
-            if (yearData && yearData.y > 0) { // Only add data points if y > 0
-                dataPoints.push({
-                    label: year,
-                    y: yearData.y
-                });
-            }
-        });
-        chartData.push({
-            type: "column",
-            name: occupation,
-            showInLegend: true,
-            dataPoints: dataPoints
-        });
-    });
-
-    // Create the chart
-    var chart = new CanvasJS.Chart(countryName + "-occupa", {
-        animationEnabled: true,
-        theme: "light2",
+    var title = countryName;
+    title = title.charAt(0).toUpperCase() + title.slice(1);
+    // ZingChart configuration for pie chart
+    var config = {
+        type: 'pie',
         title: {
-            text: "Occupational Distribution Over Years in " + countryName
+            text: title + ' Occupation Distribution',
+            fontSize: 18,
+            adjustLayout: true
         },
-        axisX: {
-            title: "Year",
-            interval: 1,
-            labelAngle: -45
-        },
-        axisY: {
-            title: "Total Individuals",
-            labelFormatter: function (e) {
-                return CanvasJS.formatNumber(e.value, "#,##0");
-            }
-        },
-        toolTip: {
-            shared: true,
-            contentFormatter: function (e) {
-                var content = "Year: " + e.entries[0].dataPoint.label + "<br/>";
-                e.entries.forEach(function (entry) {
-                    content += entry.dataSeries.name + ": " + entry.dataPoint.y + "<br/>";
-                });
-                return content;
-            }
-        },
-        legend: {
-            cursor: "pointer",
-            itemclick: function (e) {
-                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                    e.dataSeries.visible = false;
-                } else {
-                    e.dataSeries.visible = true;
+        plot: {
+            valueBox: [
+                {
+                    text: '%t\n%npv%', // Shows the text and percentage value of each segment
+                    placement: 'out', // Place labels outside the chart
+                    fontColor: '#333',
+                    fontSize: '12px',
+                    fontWeight: 'bold'
                 }
-                e.chart.render();
+            ],
+            tooltip: {
+                text: '%t: %v (%npv%)' // Detailed tooltip showing name, value, and percentage
+            },
+            animation: {
+                effect: 3, // Specifies the animation effect
+                method: 5, // Specifies the animation method
+                sequence: 1, // Order of animation
+                speed: 800 // Speed in milliseconds
             }
         },
-        data: chartData
-    });
+        series: chartData
+    };
 
-    chart.render();
+    // Render the chart
+    zingchart.render({
+        id: countryName.toLowerCase() + '-occupation-chart', // Element ID to render the chart
+        data: config,
+        height: 400,
+        width: '100%'
+    });
+}
+
+function loadPopulation(countryName, populations) {
+    // Dynamically generate the chart container ID based on the country name.
+    var chartContainerId = countryName.toLowerCase() + '-population-chart';
+    var chartContainer = $('#' + chartContainerId);
+
+    // Configuration for the chart with animation options
+    var title = countryName;
+    title = title.charAt(0).toUpperCase() + title.slice(1);
+    var myConfig = {
+        type: 'stream',  // Chart type as line graph.
+        title: {
+            text: title + ' Population Change Over Years',  // Dynamic title.
+            fontSize: 24,
+        },
+        scaleX: {
+            label: { text: 'Year' },
+            // Map CensusYear to scale labels.
+            values: populations.map(item => item.CensusYear)
+        },
+        scaleY: {
+            label: { text: 'Total Population' }
+        },
+        series: [{
+            values: populations.map(item => item.Total_Population)
+        }],
+        plot: {
+            animation: {
+                effect: 'ANIMATION_SLIDE_LEFT',  // Animation effect to slide in from the left
+                sequence: 1,  // Start animation sequence
+                speed: 800  // Speed of the animation in milliseconds
+            }
+        }
+    };
+
+    // Check if the chart has already been rendered.
+    if (zingchart.exec(chartContainerId, 'getdata')) {
+        // Update the existing chart with new data.
+        zingchart.exec(chartContainerId, 'setseriesvalues', {
+            graphid: 0,
+            all: true,
+            values: [populations.map(item => item.Total_Population)]
+        });
+    } else {
+        // Render the chart for the first time with animation.
+        zingchart.render({
+            id: chartContainerId,
+            data: myConfig,
+            height: '500px',
+            width: '100%'
+        });
+    }
 }
