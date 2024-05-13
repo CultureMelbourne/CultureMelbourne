@@ -123,6 +123,10 @@
         max-height: 70vh; /* 限制最大高度 */
         overflow-y: auto; /* 启用垂直方向的溢出滚动 */
         width: 75%; /* 在小屏幕下设置更小的宽度 */
+        position: relative;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
     }
     .overlay-btn span {
         font-size: 26px;
