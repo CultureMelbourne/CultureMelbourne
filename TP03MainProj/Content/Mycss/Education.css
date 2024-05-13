@@ -1,67 +1,4 @@
-﻿@media (max-width: 1200px) {
-    .book {
-        width: 25%;
-        padding-top: 37.5%;
-    }
-}
-
-@media (max-width: 992px) {
-    .book {
-        width: 33.3333%;
-        padding-top: 50%;
-    }
-}
-
-@media (max-width: 768px) {
-    .bookshelf {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .book {
-        width: 50%;
-        padding-top: 75%;
-        margin: 10px 0;
-    }
-
-        .book:hover {
-            transform: none;
-        }
-}
-
-@media (max-width: 480px) {
-    .book {
-        width: 80%;
-        padding-top: 120%;
-    }
-}
-
-
-@media (max-width: 1200px) {
-    .book:hover .overlay-btn {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 992px) {
-    .book:hover .overlay-btn {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    .book:hover .overlay-btn {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .book:hover .overlay-btn {
-        font-size: 12px;
-    }
-}
-
-
+﻿
 .btn-capsule {
     word-spacing: 0.25em;
     background-color: #d48810;
@@ -175,11 +112,27 @@
     transform: translate(-50%, -50%);
     padding: 20px;
     border-radius: 10px;
-    background-color: #ffffffb2;
     z-index: 1000;
-    height: 80%;
+    overflow-y: auto; /* 启用垂直方向的溢出滚动 */
+    height: 90vh; /* 例如设置为视口高度 */
 }
 
+@media (max-width: 768px) {
+    #education-content {
+        height: auto; /* 自适应高度 */
+        max-height: 70vh; /* 限制最大高度 */
+        overflow-y: auto; /* 启用垂直方向的溢出滚动 */
+        width: 75%; /* 在小屏幕下设置更小的宽度 */
+    }
+    .overlay-btn span {
+        font-size: 26px;
+    }
+}
+
+
+.nav-link {
+    text-align: center; /* 设置链接文本水平居中对齐 */
+}
 
 #exit-button {
     position: absolute;
@@ -219,11 +172,7 @@
         transform: rotate(-45deg);
     }
 
-.img-fluid {
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-}
+
 
 .bg-img {
     position: relative;
@@ -234,23 +183,21 @@
 
 .bookshelf {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    overflow: hidden;
-    padding: 20px 0;
+    gap: 10px;
 }
 
 .book {
-    transition: transform 0.3s ease;
     background-size: cover;
     background-position: center;
-    cursor: pointer;
-    width: 20%;
-    height: 0;
-    padding-top: 30%;
     position: relative;
-    margin: 0 -3%;
+    width: 15%; /* Ensures that the width fills the parent */
+    height: auto; /* Important for maintaining aspect ratio without directly setting height */
+    padding-top: 56.25%; /* This sets an aspect ratio of 16:9 */
+    margin-bottom: 15px; /* Adds space between rows */
     transition: transform 0.3s ease;
-    cursor: pointer;
+    overflow: hidden;
 }
 
     .book:hover {
@@ -261,17 +208,18 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
     color: white;
-    text-decoration: none;
-    font-size: 24px;
+    text-align: center; /* Ensures text is centered */
     opacity: 0;
-    transition: opacity 0.3s, background-color 0.3s ease, font-size 0.3s ease;
+    transition: opacity 0.3s ease;
+    padding: 10px; /* Adds padding to prevent text from touching the edges */
+    box-sizing: border-box; /* Includes padding in height/width calculations */
 }
 
 .book:hover .overlay-btn {
@@ -280,34 +228,6 @@
     background: rgba(0, 0, 0, 0.7);
 }
 
-
-/* Smaller devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    .overlay-btn {
-        font-size: 14px; /* slightly smaller font size on small devices */
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .overlay-btn {
-        font-size: 16px; /* default size for medium devices */
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    .overlay-btn {
-        font-size: 18px; /* larger font size for larger screens */
-    }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .overlay-btn {
-        font-size: 20px; /* even larger font size for very large screens */
-    }
-}
 
 .img1 {
     background-image: url('/Content/Customer/images/study-case/3.jpg');
@@ -328,3 +248,35 @@
 .img5 {
     background-image: url('/Content/Customer/images/study-case/7.jpg');
 }
+/* 在小屏幕下设置 .book 的宽度和 padding-top */
+@media (max-width: 768px) {
+    .book {
+        width: 50%;
+        padding-top: 75%;
+    }
+}
+
+/* 在非常小的屏幕下进一步调整 .book 的宽度和 padding-top */
+@media (max-width: 480px) {
+    .book {
+        width: 80%;
+        padding-top: 120%;
+    }
+}
+
+/* 调整按钮大小以避免溢出 */
+@media (max-width: 768px) {
+    .overlay-btn {
+        font-size: 14px;
+        padding: 5px; /* 调整按钮的 padding */
+    }
+}
+
+/* 对非常小的屏幕进一步调整按钮大小 */
+@media (max-width: 480px) {
+    .overlay-btn {
+        font-size: 12px;
+        padding: 3px; /* 进一步调整按钮的 padding */
+    }
+}
+

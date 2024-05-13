@@ -4,8 +4,9 @@
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section id="welcome-section" class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+<section id="welcome-section" class="container-fluid vh-100 d-flex align-items-center justify-content-center">
     <div class="background-images">
+        <!-- Consider using Bootstrap's responsive utilities -->
         <div class="img1"></div>
         <div class="img2"></div>
         <div class="img3"></div>
@@ -15,70 +16,39 @@
     </div>
     <div class="row">
         <div class="col-12 text-center" id="welcome-education-text">
-            <div class="display-1 fw-bold mb-4 text-white">Discover the Wonders of Multicultural Education</div>
-            <button id="explore-button" class="btn btn-capsule">Discover More</button>
+            <h1 class="display-1 fw-bold mb-4 text-white">Discover the Wonders of Multicultural Education</h1>
+            <button id="explore-button" class="btn btn-primary">Discover More</button>
         </div>
     </div>
 
-    <div id="education-content" class="justify-content-center align-items-center row" style="display: none; height: 80%;">
+    <div id="education-content" class="justify-content-center align-items-center row bg-white bg-opacity-75 m-5" style="display: none;">
         <div class="container h-100 d-flex flex-column justify-content-center">
-
-            <!-- Exit Button Row -->
             <div class="row justify-content-end">
-                <button id="exit-button" class="btn btn-secondary">Exit</button>
+                <button id="exit-button" class="btn btn-secondary mb-5"></button>
             </div>
-
-            <!-- Main Content Row -->
             <div class="row flex-grow-1 align-items-center">
-                <div class="container">
-                    <!-- Header and Navigation -->
-                    <div class="row">
-                        <div class="col-12 offset-md-1 col-lg-8 offset-lg-2 text-center">
-                            <div class="display-5 fw-bold" data-wow-delay=".2s">Embark on a Journey of Cultural Discovery</div>
-                            <ul class="nav justify-content-center mb-5">
-                                <li class="nav-item d-flex align-items-center">
-                                    <a class="nav-link text-dark" href="@Url.Action("Index", "Home")">Home</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center">
-                                    <span class="text-dark mx-2">></span>
-                                </li>
-                                <li class="nav-item d-flex align-items-center">
-                                    <a class="nav-link" style="color: #d48810;">Education Center</a>
-                                </li>
-                            </ul>
+                <div class="container text-center">
+                    <h2 class="display-5 fw-bold mb-5">Embark on a Journey of Cultural Discovery</h2>
+                    <nav class="nav justify-content-center align-items-center">
+                        <a class="nav-link text-dark" href="#">Home</a>
+                        <span class="text-dark mx-2 d-flex fw-bold">></span>
+                        <a class="nav-link text-warning fw-bold" href="#">Education Center</a>
+                    </nav>
 
-                        </div>
+                    <div class="row justify-content-center mt-5 bookshelf">
+                        @foreach (var country in new[] { "China", "Japan", "Korea", "Philipines", "Vietnam" })
+                        {
+                            <div class="col-6 col-md-4 col-lg-3 col-xl-2 book rounded" style="background-image: url('@Url.Content($"~/Content/Customer/images/team/{country}.jpg")');">
+                                <a href="@Url.Action("DiverseCultures", "Education", new { country = country.ToLower() })" class="overlay-btn w-100 h-100 d-flex align-items-center justify-content-center" style="text-decoration: none;">
+                                    <span class="fw-bold">@country</span>
+                                </a>
+                            </div>
+                        }
                     </div>
-
-
-                    <!-- Bookshelf Display -->
-                    <div class="row justify-content-center mt-5">
-                        <div class="bookshelf d-flex flex-wrap">
-                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="china-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Chinese.jpg")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "china" })" class="overlay-btn fs-5">China</a>
-                            </div>
-                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="japan-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Japanese.png")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "japan" })" class="overlay-btn fs-5">Japan</a>
-                            </div>
-                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="korea-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Korean.png")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "korea" })" class="overlay-btn fs-5">Korea</a>
-                            </div>
-                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="philippines-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Filipino.jpg")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "philipines" })" class="overlay-btn fs-5">Philippines</a>
-                            </div>
-                            <div class="book col-6 col-sm-4 col-md-3 col-lg-2" id="vietnam-img" style="background-image: url('@Url.Content("~/Content/Customer/images/team/Vietnamese.jpg")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = "vietnam" })" class="overlay-btn fs-5">Vietnam</a>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
         </div>
     </div>
-
-
 
 
 </section>

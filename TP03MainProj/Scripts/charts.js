@@ -9,41 +9,45 @@
     var religionData = religionReports[0].data;
     console.log(religionData); // Log to verify the data
 
-    // Prepare data for the pie chart
-    var chartData = religionData.map(function (item) {
-        return {
-            values: [item.Total],
-            text: item.Religion_Name
-        };
-    });
+    // Prepare data for the bar chart
+    var chartData = [{
+        values: religionData.map(item => item.Total),
+        text: "Total",
+        backgroundColor: '#007BFF' // You can set a specific color or use a color palette
+    }];
+
     var title = countryName;
     title = title.charAt(0).toUpperCase() + title.slice(1);
-    // ZingChart configuration
+
+    // ZingChart configuration for a bar chart
     var config = {
-        type: 'pie',
+        type: 'bar', // Change chart type to bar
         title: {
             text: title + ' Religious Distribution',
             fontSize: 18,
             adjustLayout: true
         },
+        scaleX: {
+            labels: religionData.map(item => item.Religion_Name), // X-axis labels from religion names
+            item: {
+                angle: -15 // Optional: Rotate labels for better fitting
+            }
+        },
+        scaleY: {
+            // Set y-axis scaling
+            'min-value': 0, // Start scale at 0
+            'max-value': Math.max(...religionData.map(item => item.Total)) * 1.1, // Set max as the highest value increased by 10%
+            'step': Math.max(...religionData.map(item => item.Total)) / 10 // Set steps dynamically or choose a fixed value
+        },
         plot: {
-            valueBox: [
-                {
-                    text: '%t\n%npv%', // Shows the religion name and percentage
-                    placement: 'out',
-                    fontColor: '#333',
-                    fontSize: '12px',
-                    fontWeight: 'bold'
-                }
-            ],
-            tooltip: {
-                text: '%t: %v (%npv%)'
-            },
             animation: {
                 effect: 3,
                 method: 5,
                 sequence: 1,
                 speed: 800
+            },
+            tooltip: {
+                text: '%t: %v'
             }
         },
         series: chartData
@@ -57,6 +61,8 @@
         width: '100%'
     });
 }
+
+
 
 function loadOccupationChart(countryName, occupationReports) {
     // Check if occupation data is available

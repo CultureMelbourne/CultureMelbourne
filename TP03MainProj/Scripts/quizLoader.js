@@ -72,7 +72,6 @@ $(document).ready(function () {
             onerror: `this.src='${imagePath}.png'`
         });
 
-        // Using a form to wrap options for proper submission handling
         let form = $('<form>', {
             class: 'card-body align-content-center justify-content-center'
         });
@@ -92,14 +91,16 @@ $(document).ready(function () {
                 class: 'col-12 col-md-8'
             });
 
-            let optionLabel = $('<label>', {
-                class: 'list-group-item list-group-item-action text-center border-top-5 border border-dark rounded-3 shadow p-2 mb-3 fs-6',
-                for: optionId // Updated style for handling overflow
+            let optionTextSpan = $('<span>', {
+                class: 'small-text', 
+                style: 'display: block;' 
             }).text(option);
 
-
-
-
+            let optionLabel = $('<label>', {
+                class: 'list-group-item list-group-item-action text-center border border-dark rounded-3 shadow p-2 mb-3 fs-6',
+                for: optionId,
+                style: 'white-space: normal; overflow-wrap: break-word;'  // CSS直接在标签上应用
+            });
 
             let optionInput = $('<input>', {
                 type: 'radio',
@@ -109,11 +110,13 @@ $(document).ready(function () {
                 'data-correct': option === question.CorrectAnswer
             }).on('change', optionClicked);
 
-            optionLabel.prepend(optionInput);
+            optionLabel.append(optionInput, optionTextSpan);
             optionCol.append(optionLabel);
             optionRow.append(optionCol);
             optionsContainer.append(optionRow);
         });
+
+
 
         form.append(optionsContainer);
         let cardRow = $('<div>', { class: 'row g-0' });
@@ -124,6 +127,7 @@ $(document).ready(function () {
         questionElem.append(questionHeader, cardRow);
         return questionElem;
     }
+
 
 
 

@@ -42,27 +42,24 @@
         </div>
         <div class="row row-cols-3 justify-content-center m-auto section-row shadow p-2 bg-body rounded mt-2 mb-3  border-bottom" id="button-section">
             <div class="col text-center">
-                <a class="btn culture-btn btn-primary text-nowrap w-25" href="#events-nav">Events</a>
-                <a class="btn culture-btn btn-primary fs-6 w-25" href="#quiz-section">Quiz</a>
-                <a class="btn culture-btn btn-primary fs-6 w-25" href="#attract-section">Attraction</a>
+                <a class="btn culture-btn btn-primary mb-2 text-nowrap " href="#events-nav">Events</a>
+                <a class="btn culture-btn btn-primary mb-2 fs-6 " href="#quiz-section">Quiz</a>
+                <a class="btn culture-btn btn-primary mb-2 fs-6 " href="#attract-section">Attraction</a>
             </div>
 
         </div>
 
         <div id="events-nav">
-            <br />
-            <br />
-            <br />
+
         </div>
 
         <div class="row justify-content-center section-row mt-5" id="events">
-            <div class="col-4">
-
+            <!-- Responsive Calendar Column -->
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
                 <div id="calendar" class="mx-auto"></div>
-
             </div>
-            <div class="col-12 col-md-6">
-                <div class="row text-center w-75 h-auto">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="row text-center w-100 h-auto">
                     <h6 style="background-color:powderblue;"><i>Click around the Calendar to find Events for the Festivals above...</i></h6>
                 </div>
                 <div class="row">
@@ -80,8 +77,9 @@
                 </div>
 
                 <div class="row justify-content-center pb-5 pt-5 ">
-                    <button id="loadQuiz" class="btn btn-primary text-white culture-btn w-25">Learn About @ViewBag.Culture</button>
-
+                    <button id="loadQuiz" class="btn btn-primary text-white culture-btn w-auto px-2 px-sm-3 px-md-4">
+                        <span class="d-block d-sm-inline text-nowrap small-text">Learn About @ViewBag.Culture</span>
+                    </button>
                     <!-- Score display area, initially hidden -->
                     <div id="scoreDisplay" class="mt-3 mb-3" style="display: none;">
                         <h3>Your Score: <span id="finalScore">0</span></h3>
@@ -95,8 +93,8 @@
                 <div id="quizQuestions" class="w-100 ">
 
                 </div>
-                <button id="prevQuestion" class="btn btn-primary " style="display: none;">Previous</button>
-                <button id="nextQuestion" class="btn btn-primary " style="display: none;">Next</button>
+                <button id="prevQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Previous</button>
+                <button id="nextQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Next</button>
             </div>
         </div>
 
@@ -171,6 +169,11 @@
     <!-- Add CSS for the quiz section -->
 
     <style>
+        #quizQuestions .option-text {
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
 
         .form-check-label {
             margin-left: 5px;
@@ -222,8 +225,14 @@
             transition: background-color 0.2s ease-in-out;
             height: 50px; /* Fixed height as specified */
             width: auto; /* Width adjusts to content or container */
+            white-space: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
-
+        .small-text {
+            font-size: calc(100% - 1px); /* 动态调整字体大小以适应容器宽度 */
+            line-height: 1.2; /* 调整行高以提高可读性 */
+        }
 
         .list-group-item-action:hover {
             background-color: #007bff;

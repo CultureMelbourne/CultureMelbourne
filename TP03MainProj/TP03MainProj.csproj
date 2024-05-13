@@ -1096,11 +1096,11 @@
     <Content Include="Content\Customer\images\svg\phone-svgrepo-com-white.svg" />
     <Content Include="Content\Customer\images\svg\phone-svgrepo-com.svg" />
     <Content Include="Content\Customer\images\svg\users-svgrepo-com.svg" />
-    <Content Include="Content\Customer\images\team\Chinese.jpg" />
-    <Content Include="Content\Customer\images\team\Filipino.jpg" />
-    <Content Include="Content\Customer\images\team\Japanese.png" />
-    <Content Include="Content\Customer\images\team\Korean.png" />
-    <Content Include="Content\Customer\images\team\Vietnamese.jpg" />
+    <Content Include="Content\Customer\images\team\China.jpg" />
+    <Content Include="Content\Customer\images\team\Philipines.jpg" />
+    <Content Include="Content\Customer\images\team\Japan.jpg" />
+    <Content Include="Content\Customer\images\team\Korea.jpg" />
+    <Content Include="Content\Customer\images\team\Vietnam.jpg" />
     <Content Include="Content\Customer\images\testimonial\1.jpg" />
     <Content Include="Content\Customer\images\testimonial\2.jpg" />
     <Content Include="Content\Customer\images\testimonial\3.jpg" />
