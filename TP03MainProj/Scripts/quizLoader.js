@@ -122,21 +122,28 @@ $(document).ready(function () {
     }
 
 
+
     function optionClicked() {
         let isCorrect = $(this).data('correct');
         let questionIndex = $(this).closest('.question').index();
+        let questionElem = $(this).closest('.question');
+        let correctAnswerLabel = questionElem.find('input[data-correct="true"]').parent('label');
+        let correctAnswer = correctAnswerLabel.text();
+
 
         // Mark only if not previously attempted
-        if (!$(this).closest('.question').data('attempted')) {
-            $(this).closest('.question').data('attempted', true);
+        if (!questionElem.data('attempted')) {
+            questionElem.data('attempted', true);
             if (isCorrect) {
                 currentScore++;
                 $(this).closest('label').addClass('list-group-item-success').removeClass('list-group-item-action');
             } else {
                 $(this).closest('label').addClass('list-group-item-danger').removeClass('list-group-item-action');
+                alert('Incorrect！The answer is: ' + correctAnswer);
             }
         }
     }
+
     function handleSubmit(event) {
         event.preventDefault(); // Prevent the default form submission
         endQuiz(); // Call to handle the end of the quiz
@@ -216,61 +223,3 @@ $(document).ready(function () {
     }
 
 });
-
-
-
-
-
-
-
-/* Code for Tally.so implementation
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('loadQuiz').addEventListener('click', function () {
-        var button = this;
-        var message = document.getElementById('startMessage');
-        var quizFrameDiv = document.getElementById('quizFrame');
-
-        button.style.display = 'none';  // For hiding the button
-        message.style.display = 'none'; // For hiding the messgaes
-
-        var cultureName = document.getElementById('culture').getAttribute('data-culture');
-        var iframeSrc = '';
-
-        // Below are temporary embed links (Real ones from Tally.so after Siqi modifies)
-        switch (cultureName) {
-            case 'Japanese':
-                iframeSrc = 'https://tally.so/embed/wdY0Dr?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
-                break;
-            case 'Chinese':
-                iframeSrc = 'https://tally.so/embed/wvNDOg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
-                break;
-            case 'Korean':
-                iframeSrc = 'https://tally.so/embed/3EPlbl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
-                break;
-            case 'Filipino':
-                iframeSrc = 'https://tally.so/embed/nWARpk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
-                break;
-            case 'Vietnamese':
-                iframeSrc = 'https://tally.so/embed/mRzoYK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
-                break;
-            default:
-                iframeSrc = '';
-                break;
-        }
-
-        var iframe = document.createElement('iframe');
-        iframe.src = iframeSrc;
-        iframe.width = '100%';
-        iframe.height = '100%';
-        iframe.frameBorder = '0';
-        iframe.marginHeight = '0';
-        iframe.marginWidth = '0';
-        iframe.title = 'Cultural Quiz';
-        
-
-        quizFrameDiv.appendChild(iframe);
-        quizFrameDiv.style.display = 'block';
-    });
-});
-*/
