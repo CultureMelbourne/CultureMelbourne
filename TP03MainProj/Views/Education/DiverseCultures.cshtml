@@ -102,7 +102,32 @@
 
                     <div class="bg-light text-dark pb-5" id="@($"{countryId}-data")">
                         <div class="container">
-                            <div class="row display-3 p-5 fw-bold justify-content-center">@($"{country} Chart")</div>
+                            @{
+                                var title = "";
+                                switch (country as string)
+                                {
+                                    case "China":
+                                        title = "Chinese";
+                                        break;
+                                    case "Japan":
+                                        title = "Japanese";
+                                        break;
+                                    case "Korea":
+                                        title = "Korean";
+                                        break;
+                                    case "Philipines":
+                                        title = "Filipino";
+                                        break;
+                                    case "Vietnam":
+                                        title = "Vietnamese";
+                                        break;
+                                    default:
+                                        title = ""; // Default colour
+                                        break;
+                                }
+
+                            }
+                            <div class="row display-3 p-5 fw-bold justify-content-center">@($"{title} Analytics")</div>
 
                             <!-- Dropdown for selecting the chart type -->
                             <div class="row justify-content-center mb-4">
