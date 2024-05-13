@@ -1,1 +1,37 @@
-[{"Year":1971,"Occupation":"Professional, technical & related workers","Total":91},{"Year":1971,"Occupation":"Clerical workers","Total":43},{"Year":1971,"Occupation":"Tradesmen, production-process workers & labourers","Total":28},{"Year":1971,"Occupation":"Sales workers","Total":12},{"Year":1971,"Occupation":"Administrative, executive & managerial workers","Total":8},{"Year":1971,"Occupation":"Service, sport & recreation workers","Total":6},{"Year":1971,"Occupation":"Workers in transport & communication","Total":5},{"Year":1971,"Occupation":"Members of armed services","Total":3},{"Year":1976,"Occupation":"Tradesmen, production-process workers & labourers","Total":160},{"Year":1976,"Occupation":"Professional, technical & related workers","Total":155},{"Year":1976,"Occupation":"Clerical workers","Total":146},{"Year":1976,"Occupation":"Sales workers","Total":36},{"Year":1976,"Occupation":"Administrative, executive & managerial workers","Total":25},{"Year":1976,"Occupation":"Service, sport & recreation workers","Total":18},{"Year":1976,"Occupation":"Farmers, fishermen, hunters, timber getters & related workers","Total":4},{"Year":1976,"Occupation":"Workers in transport & communication","Total":3},{"Year":1981,"Occupation":"Tradesmen, production-process workers & labourers n.e.c.","Total":620},{"Year":1981,"Occupation":"Professional, technical & related workers","Total":420},{"Year":1981,"Occupation":"Clerical workers","Total":324},{"Year":1981,"Occupation":"Service, sport & recreation workers","Total":123},{"Year":1981,"Occupation":"Transport & communication workers","Total":52},{"Year":1981,"Occupation":"Sales workers","Total":43},{"Year":1981,"Occupation":"Administrative, executive & managerial workers","Total":22},{"Year":1981,"Occupation":"Members of armed services","Total":16},{"Year":1986,"Occupation":"Clerks","Total":827},{"Year":1986,"Occupation":"Labourers & related workers","Total":763},{"Year":1986,"Occupation":"Plant & machine operators & drivers","Total":400},{"Year":1986,"Occupation":"Para-professionals","Total":399},{"Year":1986,"Occupation":"Tradespersons","Total":382},{"Year":1986,"Occupation":"Professionals","Total":232},{"Year":1986,"Occupation":"Salespersons & personal service workers","Total":219},{"Year":1986,"Occupation":"Managers & administrators","Total":84},{"Year":1991,"Occupation":"Labourers & related workers","Total":1666},{"Year":1991,"Occupation":"Clerks","Total":1518},{"Year":1991,"Occupation":"Plant & machine operators & drivers","Total":775},{"Year":1991,"Occupation":"Para-professionals","Total":713},{"Year":1991,"Occupation":"Tradespersons","Total":695},{"Year":1991,"Occupation":"Salespersons & personal service workers","Total":548},{"Year":1991,"Occupation":"Professionals","Total":512},{"Year":1991,"Occupation":"Managers & administrators","Total":193},{"Year":1996,"Occupation":"Labourers & related workers","Total":2019},{"Year":1996,"Occupation":"Intermediate clerical, sales & service workers","Total":1700},{"Year":1996,"Occupation":"Intermediate production & transport workers","Total":1548},{"Year":1996,"Occupation":"Professionals","Total":1382},{"Year":1996,"Occupation":"Elementary clerical, sales & service workers","Total":990},{"Year":1996,"Occupation":"Tradespersons & related workers","Total":969},{"Year":1996,"Occupation":"Associate professionals","Total":653},{"Year":1996,"Occupation":"Advanced clerical & service workers","Total":271},{"Year":2001,"Occupation":"Labourers & related workers","Total":2395},{"Year":2001,"Occupation":"Intermediate clerical, sales & service workers","Total":2366},{"Year":2001,"Occupation":"Professionals","Total":1973},{"Year":2001,"Occupation":"Intermediate production & transport workers","Total":1707},{"Year":2001,"Occupation":"Elementary clerical, sales & service workers","Total":1639},{"Year":2001,"Occupation":"Tradespersons & related workers","Total":1027},{"Year":2001,"Occupation":"Associate professionals","Total":850},{"Year":2001,"Occupation":"Managers & administrators","Total":343},{"Year":2006,"Occupation":"Intermediate clerical, sales & service workers","Total":3449},{"Year":2006,"Occupation":"Professionals","Total":3053},{"Year":2006,"Occupation":"Labourers & related workers","Total":2824},{"Year":2006,"Occupation":"Intermediate production & transport workers","Total":1948},{"Year":2006,"Occupation":"Elementary clerical, sales & service workers","Total":1880},{"Year":2006,"Occupation":"Associate professionals","Total":1346},{"Year":2006,"Occupation":"Tradespersons & related workers","Total":1305},{"Year":2011,"Occupation":"Professionals","Total":5193},{"Year":2011,"Occupation":"Elementary clerical, sales & service workers","Total":2540},{"Year":2011,"Occupation":"Tradesmen, production-process workers & labourers","Total":2278},{"Year":2011,"Occupation":"Service, sport & recreation workers","Total":2097},{"Year":2011,"Occupation":"Professional, technical & related workers","Total":1920},{"Year":2011,"Occupation":"Clerical workers","Total":1642},{"Year":2011,"Occupation":"Advanced clerical & service workers","Total":1480},{"Year":2016,"Occupation":"Professionals","Total":5109},{"Year":2016,"Occupation":"Service, sport & recreation workers","Total":4518},{"Year":2016,"Occupation":"Labourers & related workers","Total":3944},{"Year":2016,"Occupation":"Sales workers","Total":2809},{"Year":2016,"Occupation":"Professional, technical & related workers","Total":2604},{"Year":2016,"Occupation":"Tradespersons & related workers","Total":2416},{"Year":2016,"Occupation":"Clerical workers","Total":2160},{"Year":2016,"Occupation":"Salespersons & personal service workers","Total":2096}]
+{
+  "culture": "Philipines",
+  "data": [
+    {
+      "Occupation": "Professionals",
+      "Total": 5109
+    },
+    {
+      "Occupation": "Service, sport & recreation workers",
+      "Total": 4518
+    },
+    {
+      "Occupation": "Labourers & related workers",
+      "Total": 3944
+    },
+    {
+      "Occupation": "Sales workers",
+      "Total": 2809
+    },
+    {
+      "Occupation": "Professional, technical & related workers",
+      "Total": 2604
+    },
+    {
+      "Occupation": "Tradespersons & related workers",
+      "Total": 2416
+    },
+    {
+      "Occupation": "Clerical workers",
+      "Total": 2160
+    },
+    {
+      "Occupation": "Salespersons & personal service workers",
+      "Total": 2096
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 ﻿$(document).ready(function () {
+
+    // Function to navigate to specific sections
     function navigateToSection(sectionId) {
         $('.story-item').hide();
         $(sectionId).show();
@@ -11,34 +13,30 @@
         } else {
             console.error("Section not found:", sectionId);
         }
-
     }
+
+    // Toggle sections and load data
     $('.toggle-link').click(function (e) {
         e.preventDefault();
         $(this).siblings('.sub-nav').slideToggle();
         $('.sub-nav').not($(this).siblings('.sub-nav')).slideUp();
         var sectionId = $(this).attr('href');
         navigateToSection(sectionId);
-
-        // 调用函数来发送Ajax请求
         var countryName = sectionId.replace('#', '').replace('-story', '');
         loadCountryData(countryName);
     });
 
+    // Check URL parameters to display charts or default view
     var urlParams = new URLSearchParams(window.location.search);
     var country = urlParams.get('country');
     if (country) {
         navigateToSection('#' + country + "-story");
-        $('a[href="#' + country + '"]').next('.sub-nav').slideDown();
-
-        // 页面加载完成后，调用函数来发送Ajax请求
         loadCountryData(country);
     } else {
-        $('.sub-nav').first().slideDown();
         navigateToSection($('.toggle-link').first().attr('href'));
     }
 
-    // 创建一个函数来发送Ajax请求
+    // Load data and display charts
     function loadCountryData(countryName) {
         $.ajax({
             url: '/Education/GetCountryData',
@@ -51,12 +49,16 @@
     }
 
     function loadChart(countryName, data) {
-
-        LoadAgeDistributes(countryName, data);
-        LoadOccupationData(countryName, data);
-
-
+        loadPopulation(countryName, data.populations);
+        loadOccupationChart(countryName, data.occupation);
+        loadReligionChart(countryName, data.religions);
     }
 
-
+    // Change event for selecting chart type
+    $('.chart-type-selector').change(function () {
+        var selectedChart = $(this).val();
+        var countryId = $(this).closest('.story-item').attr('id').split('-')[0];
+        $('.chart-container', `#${countryId}-data`).hide(); // Hide all charts
+        $(`#${countryId}-${selectedChart}`).show(); // Show the selected chart
+    });
 });

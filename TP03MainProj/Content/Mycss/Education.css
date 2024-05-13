@@ -93,19 +93,23 @@
 
 
 .background-images {
-    display: flex;
-    justify-content: space-around;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1; /* 将背景放在内容之后 */
+    display: flex;
 }
 
 #welcome-education-text {
-    z-index: 3;
-    position: relative;
+    z-index: 3; /* 确保在背景之上 */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
     #welcome-education-text h1 {
@@ -125,15 +129,15 @@
 }
 
 #welcome-section {
-    height: 100vh;
-    background-size: cover;
-    position: relative;
+    width: 100vw; /* 视口宽度 */
+    height: 100vh; /* 视口高度 */
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 15%;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
     #welcome-section::after {
@@ -274,9 +278,36 @@
     opacity: 1;
     color: white;
     background: rgba(0, 0, 0, 0.7);
-    font-size: 24px;
 }
 
+
+/* Smaller devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .overlay-btn {
+        font-size: 14px; /* slightly smaller font size on small devices */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .overlay-btn {
+        font-size: 16px; /* default size for medium devices */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .overlay-btn {
+        font-size: 18px; /* larger font size for larger screens */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .overlay-btn {
+        font-size: 20px; /* even larger font size for very large screens */
+    }
+}
 
 .img1 {
     background-image: url('/Content/Customer/images/study-case/3.jpg');

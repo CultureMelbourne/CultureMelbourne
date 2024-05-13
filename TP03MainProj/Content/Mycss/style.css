@@ -1,0 +1,23 @@
+﻿.btn {
+    width: 150px;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        width: 100%;
+    }
+}
+
+h1 {
+    font-size: 1.75rem; /* Large screens */
+    line-height: 1.2;
+}
+

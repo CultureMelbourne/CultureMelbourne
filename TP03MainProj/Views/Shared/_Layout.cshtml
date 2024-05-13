@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - CultMelbourne</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -12,6 +12,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 
     <link href="@Url.Content("~/Content/Customer/fonts/fontawesome4/css/font-awesome.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/Customer/fonts/fontawesome6/css/fontawesome.css")" rel="stylesheet" />
@@ -21,132 +22,93 @@
     <link href="@Url.Content("~/Content/Customer/fonts/et-line-font/style.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/scrollToTop.css")" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-warning">
+    <!-- page preloader begin -->
+    <!-- page preloader close -->
+    <!-- header begin -->
+    <div class="container-fluid bg-warning" style="position: relative; z-index: 1030;">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
 
-    <div id="wrapper">
-        <!-- page preloader begin -->
-        <div id="de-loader"></div>
-        <!-- page preloader close -->
-        <!-- header begin -->
-        <header class="w-100">
-            <div class="container-fluid">
-                <div class="row bg-warning ps-2 pe-2 p-1">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-2 align-content-center justify-content-center">
-                                <!-- logo begin -->
-                                <div id="logo" class="">
-                                    <a href="@Url.Action("Index", "Home")">
-                                        <img class="logo-main p-auto pt-1" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="" style="width: 140px; height: auto;">
-                                        <img class="logo-mobile" src="@Url.Content("~/Content/Customer/images/logo-mobile.png")" alt="">
-                                    </a>
-                                </div>
-                                <!-- logo close -->
-                            </div>
-                            <div class="col-8">
-                                @using TP03MainProj.Helper
-                                <ul id="mainmenu" class="nav  ms-5 m-1 p-1 text-center align-content-center justify-content-center">
-                                    <li class="nav-item">
-                                        <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a>
-                                        @*<ul>
-                                        <li>
-                                            <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "DiverseCultures")" href="@Url.Action("DiverseCultures", "Education")">Diverse Cultures</a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Education", "MigrationStories")" href="@Url.Action("MigrationStories", "Education")">Migration Stories</a>
-                                        </li>
-                                    </ul>*@
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
+            <a href="@Url.Action("Index", "Home")" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img class="p-auto pt-1"
+                     src="@Url.Content("~/Content/Customer/images/logo-mobile.png")"
+                     srcset="@Url.Content("~/Content/Customer/images/logo.png") 800w,
+                 @Url.Content("~/Content/Customer/images/logo-mobile.png") 400w"
+                     sizes="(max-width: 768px) 100vw, 50vw"
+                     alt="Responsive Logo">
+            </a>
+            @using TP03MainProj.Helper
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a class="nav-link px-2 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a></li>
+
+                <li><a class="nav-link px-2 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a></li>
+
+                <li><a class="nav-link px-2 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a></li>
+
+            </ul>
+
+            <div class="col-md-3 text-end">
+
+            </div>
+        </header>
+    </div>
+
+    <!-- header close -->
+    <!-- content begin -->
+    <div class="bg-warning">
+        @RenderBody()
+
+    </div>
+    <!-- content close -->
+    <!-- footer begin -->
+    <div class="container bg-warning">
+        <footer class="footer py-5">
+            <div class="row">
+                <div class="col-4 offset-1">
+                    <img class="logo-footer"
+                         src="@Url.Content("~/Content/Customer/images/logo-mobile.png")"
+                         srcset="@Url.Content("~/Content/Customer/images/logo.png") 800w,
+                             @Url.Content("~/Content/Customer/images/logo-mobile.png") 400w"
+                         sizes="(max-width: 768px) 100vw, 50vw"
+                         alt="CultMelbourne Logo">
+                    <div class="spacer-20"></div>
+                    <p class="text-white">Committed to celebrating Melbourne's multicultural legacy, we aim to educate and unite, combating discrimination and nurturing cultural connections.</p>
                 </div>
-                <div class="row text-center align-content-center justify-content-center" style="background-color: white; color: yellow;">
-                    <div class="col-12">
-                        <div class="mainmenu">
-                            <h6 class="tagline text-warning menu-item" style="font-style: italic;">
-                                Melbourne's Gateway to East Asian Wonders
-                            </h6>
-                        </div>
-                    </div>
+                <div class="col-2">
+                </div>
+
+                <div class="col-2">
+                    <h5 class="text-white">CultMelbourne</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item text-white mb-2"><a href="@Url.Action("Index", "Home")" class="nav-link text-white p-0 ">Home</a></li>
+                        <li class="nav-item text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link text-white p-0 ">Education</a></li>
+                        <li class="nav-item text-white mb-2"><a href="#cultural-events" class="nav-link p-0 text-white ">Culture Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                    <h5 class="text-white">Our Services</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item text-white mb-2">East Asian Melodies</li>
+                        <li class="nav-item text-white mb-2">Discover East Asia</li>
+                        <li class="nav-item text-white mb-2">Voices of East Asia</li>
+                        <li class="nav-item text-white mb-2">Cultural Insights</li>
+                    </ul>
                 </div>
             </div>
-            <button id="scrollToTopBtn" title="To the top"> ↑ </button>
-        </header>
 
-
-        <!-- header close -->
-        <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
-            @RenderBody()
-
-        </div>
-        <!-- content close -->
-        <!-- footer begin -->
-        <footer class="bg-warning">
-            <div class="container">
-                <div class="row gx-5">
-                    <!-- Logo and Description -->
-                    <div class="col-lg-4">
-                        <img class="logo-footer" src="@Url.Content("~/Content/Customer/images/logo.png")" alt="">
-                        <div class="spacer-20"></div>
-                        <p>Committed to celebrating Melbourne's multicultural legacy, we aim to educate and unite, combating discrimination and nurturing cultural connections.</p>
-                    </div>
-
-                    <!-- CultMelbourne and Our Services, adjacent on the right -->
-                    <div class="col-lg-8">
-                        <div class="row align-items-start justify-content-end">
-                            <div class="col-lg-6 " style=" text-align: right; ">
-                                <div class="widget pe-4">
-                                    <h5>CultMelbourne</h5>
-                                    <ul>
-                                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                                        <li><a href="@Url.Action("Index", "Education")">Education</a></li>
-                                        <li><a href="#cultural-events">Culture Events</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="widget">
-                                    <h5>Our Services</h5>
-                                    <ul>
-                                        <li><a href="#">East Asian Melodies</a></li>
-                                        <li><a href="#">Discover East Asia</a></li>
-                                        <li><a href="#">Voices of East Asia</a></li>
-                                        <li><a href="#">Cultural Insights</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Subfooter -->
-                <div class="subfooter">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="de-flex">
-                                    <div class="de-flex-col">
-                                        © 2024 The Quad. All rights reserved.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-flex justify-content-between border-white border-opacity-25  py-4 my-4 border-top">
+                <p class="text-white">© 2024 The Quad. All rights reserved.</p>
             </div>
         </footer>
-
-        <!-- footer close -->
     </div>
-    
+
+
+
+
+    <!-- footer close -->
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -1,37 +1,37 @@
 {
-  "culture": "China",
+  "culture": "Japan",
   "data": [
     {
       "Religion_Name": "No religion",
-      "Total": 121547
+      "Total": 5217
     },
     {
       "Religion_Name": "Buddhism",
-      "Total": 16125
+      "Total": 1714
     },
     {
       "Religion_Name": "Catholic",
-      "Total": 3050
+      "Total": 303
     },
     {
-      "Religion_Name": "Baptist",
-      "Total": 2726
+      "Religion_Name": "Japanese Religions",
+      "Total": 212
     },
     {
       "Religion_Name": "Anglican",
-      "Total": 1625
+      "Total": 104
     },
     {
-      "Religion_Name": "Uniting Church",
-      "Total": 1382
+      "Religion_Name": "Baptist",
+      "Total": 83
     },
     {
       "Religion_Name": "Presbyterian & Reformed",
-      "Total": 656
+      "Total": 68
     },
     {
       "Religion_Name": "Islam",
-      "Total": 583
+      "Total": 62
     }
   ]
 }
