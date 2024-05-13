@@ -276,6 +276,11 @@
     <Content Include="Content\Images\korean\7.jpg" />
     <Content Include="Content\Images\korean\8.jpg" />
     <Content Include="Content\Images\korean\9.jpg" />
+    <Content Include="Content\Images\Attractions\Chinese_Attraction.jpg" />
+    <Content Include="Content\Images\Attractions\Filipino_Attraction.jpg" />
+    <Content Include="Content\Images\Attractions\Japanese_Attraction.jpg" />
+    <Content Include="Content\Images\Attractions\Korean_Attraction.jpg" />
+    <Content Include="Content\Images\Attractions\Vietnamese_Attraction.jpg" />
     <Content Include="Content\Images\vietnamese\1.jpg" />
     <Content Include="Content\Images\vietnamese\10.jpg" />
     <Content Include="Content\Images\vietnamese\2.jpg" />
@@ -1437,6 +1442,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Events\Attractions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
