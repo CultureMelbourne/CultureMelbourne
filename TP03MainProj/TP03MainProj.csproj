@@ -240,6 +240,7 @@
     <Content Include="Content\Customer\css\jquery.countdown.css" />
     <Content Include="Content\Customer\css\mdb.min.css" />
     <Content Include="Content\Customer\css\mdb.rtl.min.css" />
+    <Content Include="Content\Customer\images\logo.png" />
     <Content Include="Content\Images\chinese\1.jpg" />
     <Content Include="Content\Images\chinese\10.jpg" />
     <Content Include="Content\Images\chinese\2.jpg" />
@@ -291,6 +292,7 @@
     <Content Include="Content\Images\vietnamese\7.jpg" />
     <Content Include="Content\Images\vietnamese\8.jpg" />
     <Content Include="Content\Images\vietnamese\9.jpg" />
+    <Content Include="Content\Mycss\quiz.css" />
     <Content Include="Content\Mycss\Education.css" />
     <Content Include="Content\Customer\css\plugins.css" />
     <Content Include="Content\Customer\css\style.css" />
@@ -1055,7 +1057,6 @@
     <Content Include="Content\Customer\images\logo-clients\7.png" />
     <Content Include="Content\Customer\images\logo-clients\8.png" />
     <Content Include="Content\Customer\images\logo-mobile.png" />
-    <Content Include="Content\Customer\images\logo.png" />
     <Content Include="Content\Customer\images\news-thumbnail\pic-blog-1.jpg" />
     <Content Include="Content\Customer\images\news-thumbnail\pic-blog-2.jpg" />
     <Content Include="Content\Customer\images\news-thumbnail\pic-blog-3.jpg" />
@@ -1439,10 +1440,14 @@
     <Content Include="Views\Education\DataInsight\PhilipinesData.cshtml" />
     <Content Include="Views\Events\_EventsList.cshtml" />
     <Content Include="Views\Events\_CultureQuizPartial.cshtml" />
+    <Content Include="Views\Events\Attractions\Chinese.cshtml" />
+    <Content Include="Views\Events\Attractions\Korean.cshtml" />
+    <Content Include="Views\Events\Attractions\Japanese.cshtml" />
+    <Content Include="Views\Events\Attractions\Vietnamese.cshtml" />
+    <Content Include="Views\Events\Attractions\Filipino.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Events\Attractions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

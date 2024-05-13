@@ -93,9 +93,13 @@ $(document).ready(function () {
             });
 
             let optionLabel = $('<label>', {
-                class: 'list-group-item list-group-item-action text-center border-top-5 border border-dark rounded-3 shadow mb-3',
-                for: optionId
+                class: 'list-group-item list-group-item-action text-center border-top-5 border border-dark rounded-3 shadow p-2 mb-3 fs-6',
+                for: optionId // Updated style for handling overflow
             }).text(option);
+
+
+
+
 
             let optionInput = $('<input>', {
                 type: 'radio',
@@ -120,6 +124,7 @@ $(document).ready(function () {
         questionElem.append(questionHeader, cardRow);
         return questionElem;
     }
+
 
 
 

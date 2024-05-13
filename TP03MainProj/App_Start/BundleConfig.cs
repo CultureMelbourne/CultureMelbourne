@@ -77,6 +77,10 @@ namespace TP03MainProj
                 "~/Content/scrollToTop.css"
                 ));
 
+            bundles.Add(new StyleBundle("~/bundles/quizstyle").Include(
+                              "~/Content/Mycss/quiz.css"
+                ));
+
             bundles.Add(new ScriptBundle("~/bundles/scrollToTopJS").Include(
                 "~/Scripts/scrollToTop.js"
                 ));
