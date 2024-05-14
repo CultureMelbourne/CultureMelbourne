@@ -40,23 +40,24 @@ $(document).ready(function () {
         var cultureFromViewBag = quizData.Name.toLowerCase();
 
         quizData.Questions.forEach((question, index) => {
-            const questionElem = createQuestionElement(question, index,cultureFromViewBag);
+            const questionElem = createQuestionElement(question, index, cultureFromViewBag);
             quizQuestions.append(questionElem);
         });
 
         setupNavigation(quizData.Questions.length);
         showQuestion(currentQuestionIndex); // Show the first question
 
-                let lastQuestionForm = $('#question' + (quizData.Questions.length - 1) + ' form');
+        let lastQuestionForm = $('#question' + (quizData.Questions.length - 1) + ' form');
         lastQuestionForm.append($('<button>', {
             type: 'submit',
-            class: 'btn btn-success mt-3  submit-button',
+            class: 'btn btn-success mt-3 submit-button',
             text: 'Complete Quiz'
         }));
     }
+
     function createQuestionElement(question, index, cultureFromViewBag) {
         let questionElem = $('<div>', {
-            class: 'question card shadow-lg p-5  bg-body rounded-5 col-12 mx-auto border rounded',
+            class: 'question card shadow-lg p-5 bg-body rounded-5 col-12 mx-auto border rounded',
             id: 'question' + index
         }).hide();
 
@@ -73,7 +74,7 @@ $(document).ready(function () {
         });
 
         let form = $('<form>', {
-            class: 'card-body d-flex align-items-center justify-content-center'
+            class: 'card-body d-flex flex-column align-items-center justify-content-center'
         });
 
         let optionsContainer = $('<div>', {
@@ -88,7 +89,7 @@ $(document).ready(function () {
             });
 
             let optionCol = $('<div>', {
-                class: 'col-12 col-md-8'
+                class: 'col-12 col-md-8  justify-content-center'
             });
 
             let optionTextSpan = $('<span>', {
@@ -117,6 +118,7 @@ $(document).ready(function () {
         });
 
         form.append(optionsContainer);
+
         let cardRow = $('<div>', { class: 'row g-0' });
         let imageCol = $('<div>', { class: 'col-md-4' }).append(image);
         let textCol = $('<div>', { class: 'col-md-8' }).append(form);
@@ -125,6 +127,8 @@ $(document).ready(function () {
         questionElem.append(questionHeader, cardRow);
         return questionElem;
     }
+
+
 
 
 

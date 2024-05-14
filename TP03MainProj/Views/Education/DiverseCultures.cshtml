@@ -5,16 +5,15 @@
 }
 
 <!-- Side Navigation -->
-
-<div class="sidebar collapsed">
-    <button class="sidebar-toggle-btn">
-        <img src="@Url.Content("~/Content/Mycss/imgs/rightarrow.png")" alt="Expand Sidebar" class="img-fluid w-100 h-auto">
+<div class="sidebar collapsed bg-dark  border-dark border rounded-5 shadow-lg"    >
+    <button class="sidebar-toggle-btn bg-dark">
+        <img src="@Url.Content("~/Content/Mycss/imgs/rightarrow.png")" alt="Expand Sidebar" class="img-fluid w-100 h-auto white-img">
     </button>
-    <nav>
-        <ul class="country-nav flex-column">
+    <nav class="">
+        <ul class="country-nav flex-column ">
             <li class="nav-item">
                 <a href="#china-story" class="country-link btn-toggle toggle-link" aria-expanded="false">China</a>
-                <ul class="sub-nav" style="display: none;">
+                <ul class="sub-nav">
                     <li><a href="#china-story" class="country-link">Overview</a></li>
                     <li><a href="#china-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#china-data" class="country-link">Data Insight</a></li>
@@ -23,7 +22,7 @@
             </li>
             <li class="nav-item">
                 <a href="#japan-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Japan</a>
-                <ul class="sub-nav" style="display: none;">
+                <ul class="sub-nav">
                     <li><a href="#japan-story" class="country-link">Overview</a></li>
                     <li><a href="#japan-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#japan-data" class="country-link">Data Insight</a></li>
@@ -32,7 +31,7 @@
             </li>
             <li class="nav-item">
                 <a href="#korea-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Korea</a>
-                <ul class="sub-nav" style="display: none;">
+                <ul class="sub-nav">
                     <li><a href="#korea-story" class="country-link">Overview</a></li>
                     <li><a href="#korea-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#korea-data" class="country-link">Data Insight</a></li>
@@ -41,7 +40,7 @@
             </li>
             <li class="nav-item">
                 <a href="#philipines-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Philippines</a>
-                <ul class="sub-nav" style="display: none;">
+                <ul class="sub-nav">
                     <li><a href="#philipines-story" class="country-link">Overview</a></li>
                     <li><a href="#philipines-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#philipines-data" class="country-link">Data Insight</a></li>
@@ -50,7 +49,7 @@
             </li>
             <li class="nav-item">
                 <a href="#vietnam-story" class="country-link btn-toggle toggle-link" aria-expanded="false">Vietnam</a>
-                <ul class="sub-nav" style="display: none;">
+                <ul class="sub-nav">
                     <li><a href="#vietnam-story" class="country-link">Overview</a></li>
                     <li><a href="#vietnam-timeline" class="country-link">Timeline</a></li>
                     <li><a href="#vietnam-data" class="country-link">Data Insight</a></li>
@@ -61,16 +60,12 @@
     </nav>
 </div>
 
-
-
 <!-- Side Navigation -->
-@*choose part*@
 <section class="mt-4 bg-white container-fluid">
     <div class="container m-1 p-1 mt-1 pt-1">
         <div class="row flex-grow-1">
-            <!-- Adjust the column width and offset as needed to fit the design -->
             <div class="col-lg-10 offset-lg-1">
-                <ul class="nav ">
+                <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link text-dark fs-5" href="@Url.Action("Index", "Home")">Home</a>
                     </li>
@@ -91,7 +86,6 @@
         </div>
     </div>
 
-    @*Story part*@
     <div class="row">
         <div class="container-fluid">
             @foreach (var country in new[] { "China", "Japan", "Korea", "Philipines", "Vietnam" })
@@ -157,9 +151,8 @@
             }
         </div>
     </div>
-
-
 </section>
+
 
 
 
@@ -188,74 +181,16 @@
     @Styles.Render("~/Content/edu")
 
     <style>
-
-        .fs-responsive {
-            font-size: calc(0.9rem + 0.5vw); /* Smaller base size with slight scaling based on viewport width */
+        /* 自定义样式 */
+        .shadow-custom {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .chart-container {
-            width: 100%;
-            min-height: 500px;
+        .border-custom {
+            border: 1px solid #dee2e6;
         }
-
-
-        .fixed-size-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .no-underline {
-            text-decoration: none;
-            color: white;
-        }
-
-            .no-underline:hover {
-                color: #FECE58;
-            }
-
-        .canvasjs-chart-container {
-            max-width: 100%;
-            width: 100%;
-            min-height: 500px;
-            max-height: 600px;
-            height: auto;
-            overflow: visible;
-        }
-
-
-
-        .edu-img {
-            height: 150px; /* Fixed height for all images */
-            width: auto; /* Maintain aspect ratio */
-            object-fit: cover; /* Cover the frame fully, might crop some parts */
-        }
-
-        .choose-item.highlight {
-            border: 2px solid #FECE58;
-            box-shadow: 0 0 20px 5px #FECE58;
-        }
-
-        .choose-item:hover {
-            border: 2px solid #FECE58;
-            box-shadow: 0 0 20px 5px #FECE58;
-        }
-
-        .timeline-image {
-            max-width: 100%;
-            max-height: 5%;
-            object-fit: cover;
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-        }
-        .story img {
-            border-radius: 18px;
-        }
-        .img-resize {
-            max-width: 75%;
-            max-height: auto;
-            object-fit: contain;
+        .white-img {
+            filter: brightness(0) invert(1);
         }
 
         .sidebar {
@@ -264,8 +199,9 @@
             transform: translateY(-50%);
             left: 0;
             width: 200px;
-            height: 50%;
-            background-color: #FECE58;
+            height: auto;
+            min-height: 20%;
+            max-height: 80%;
             overflow-x: hidden;
             overflow-y: auto;
             z-index: 1000;
@@ -273,25 +209,26 @@
             padding-bottom: 20px;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
             border-radius: 10px;
+            transition: width 0.3s ease;
+            background-color: #343a40;
         }
-        /* Style adjustments for the sidebar toggle button */
+
         .sidebar-toggle-btn {
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            background-color: #FECE58;
             border: none;
-            color: black;
             font-size: 24px;
             cursor: pointer;
             padding: 5px 10px;
             border-radius: 50%;
             outline: none;
             z-index: 1001;
+            
+            
         }
 
-        /* Hide the toggle button when the sidebar is expanded or on hover */
         .sidebar.expanded .sidebar-toggle-btn,
         .sidebar:hover .sidebar-toggle-btn {
             display: none;
@@ -309,15 +246,15 @@
         .country-link {
             display: block;
             text-decoration: none;
-            color: black;
             font-weight: bold;
             padding: 10px 0;
-            border-bottom: 1px solid #000;
+            
         }
 
-            .country-link:hover {
-                background-color: #ccc;
-            }
+        .country-link, .sub-nav a {
+            color:white;
+        }
+
 
         .sub-nav {
             display: none;
@@ -327,40 +264,30 @@
 
             .sub-nav a {
                 display: block;
-                color: black;
                 font-size: 0.9em;
             }
 
-                .sub-nav a:hover {
-                    background-color: #e6e6e6;
-                }
-
         .country-link:hover,
         .country-link:focus {
-            background-color: #ccc;
+            background-color: #ffffff;
+            color:black;
         }
 
-
-        /* Initial state of the sidebar when collapsed */
         .sidebar.collapsed {
-            width: 50px; /* Adjust width to your preference */
-            overflow: hidden;
-            transition: width 0.3s ease;
+            width: 50px;
         }
 
-        /* Expanded state of the sidebar */
         .sidebar.expanded {
-            width: 200px; /* Adjust width to your preference */
-            transition: width 0.3s ease;
+            width: 200px;
         }
 
-        /* Style adjustments for navigation links in collapsed mode */
         .sidebar.collapsed .country-link {
-            display: none; /* Hide text labels in collapsed state */
+            display: none;
         }
 
         .sidebar.collapsed .nav-item {
-            text-align: center; /* Center icons or bullets if used */
+            text-align: center;
         }
+
     </style>
 }
