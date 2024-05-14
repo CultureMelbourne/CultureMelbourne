@@ -168,13 +168,13 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                @foreach (var culture in new[] { "Chinese.jpg", "Japanese.png", "Korean.png", "Filipino.jpg", "Vietnamese.jpg" })
+                @foreach (var culture in new[] { "Chinese.jpg", "Japanese.jpg", "Korean.jpg", "Filipino.jpg", "Vietnamese.jpg" })
                 {
                     var cultureName = System.IO.Path.GetFileNameWithoutExtension(culture);
                     <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-4">
                         <a href="@Url.Action("Index", "Events", new { culture = cultureName })" class="culture-btn">
                             <div class="bg-color-2 rounded-4 bg-warning overflow-hidden" style="width: 200px; height: 180px;">
-                                <img src="@Url.Content($"~/Content/Customer/images/team/{culture}")" class="img-fluid rounded-4" alt="@cultureName Culture" style="height: 100%; width: 100%; object-fit: cover;">
+                                <img src="@Url.Content($"~/Content/Images/team/{culture}")" class="img-fluid rounded-4" alt="@cultureName Culture" style="height: 100%; width: 100%; object-fit: cover;">
                             </div>
                             <h5>@cultureName</h5>
                         </a>

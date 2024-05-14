@@ -60,7 +60,7 @@
             </div>
             <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
                 <div class="row text-center w-100 h-auto">
-                    <h6 style="background-color:powderblue;"><i>Click around the Calendar to find Events for the Festivals above...</i></h6>
+                    <h6 class="bg-info rounded shadow p-1"><i>Click around the Calendar to find Events for the Festivals above...</i></h6>
                 </div>
                 <div class="row">
                     <div id="events-list"></div>
@@ -90,11 +90,13 @@
 
 
                 @*<div id="quizQuestions"></div>*@
-                <div id="quizQuestions" class="w-100 ">
+            <div class="mb-5">
+                <div id="quizQuestions" class="w-100 mb-2">
 
                 </div>
                 <button id="prevQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Previous</button>
                 <button id="nextQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Next</button>
+            </div>
             </div>
         </div>
 
@@ -198,12 +200,6 @@
             }
 
         /* Header of each question */
-        .card-header {
-            background-color: #007bff; /* Primary color */
-            color: white;
-            font-size: 1.25rem;
-        }
-
         /* Image styling */
         .card-img-top {
             width: 20%; /* Ensures the image takes up the entire card width */
@@ -300,8 +296,7 @@
         }
 
         .highlighted {
-            background-color: #ff0;
-            border: 2px solid #f00;
+            background-color: #dbdbdb;
         }
 
         .correct-answer {

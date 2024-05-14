@@ -282,6 +282,11 @@
     <Content Include="Content\Images\Attractions\Japanese_Attraction.jpg" />
     <Content Include="Content\Images\Attractions\Korean_Attraction.jpg" />
     <Content Include="Content\Images\Attractions\Vietnamese_Attraction.jpg" />
+    <Content Include="Content\Images\team\Chinese.jpg" />
+    <Content Include="Content\Images\team\Japanese.jpg" />
+    <Content Include="Content\Images\team\Korean.jpg" />
+    <Content Include="Content\Images\team\Filipino.jpg" />
+    <Content Include="Content\Images\team\Vietnamese.jpg" />
     <Content Include="Content\Images\vietnamese\1.jpg" />
     <Content Include="Content\Images\vietnamese\10.jpg" />
     <Content Include="Content\Images\vietnamese\2.jpg" />

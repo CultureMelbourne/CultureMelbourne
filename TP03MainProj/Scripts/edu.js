@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
 
     // Function to navigate to specific sections
     function navigateToSection(sectionId) {

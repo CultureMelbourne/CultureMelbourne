@@ -56,12 +56,12 @@ $(document).ready(function () {
     }
     function createQuestionElement(question, index, cultureFromViewBag) {
         let questionElem = $('<div>', {
-            class: 'question card mb-4 shadow-sm bg-light col-8 mx-auto',
+            class: 'question card shadow-lg p-5  bg-body rounded-5 col-12 mx-auto border rounded',
             id: 'question' + index
         }).hide();
 
         let questionHeader = $('<div>', {
-            class: 'card-header bg-primary text-white text-center'
+            class: 'fs-2 mb-3 fw-bold text-center'
         }).text(question.Question);
 
         let imagePath = `/Content/Images/${cultureFromViewBag}/${question.QuestionNum}`;
@@ -73,7 +73,7 @@ $(document).ready(function () {
         });
 
         let form = $('<form>', {
-            class: 'card-body align-content-center justify-content-center'
+            class: 'card-body d-flex align-items-center justify-content-center'
         });
 
         let optionsContainer = $('<div>', {
@@ -92,14 +92,14 @@ $(document).ready(function () {
             });
 
             let optionTextSpan = $('<span>', {
-                class: 'small-text', 
-                style: 'display: block;' 
+                class: 'small-text',
+                style: 'display: block;'
             }).text(option);
 
             let optionLabel = $('<label>', {
                 class: 'list-group-item list-group-item-action text-center border border-dark rounded-3 shadow p-2 mb-3 fs-6',
                 for: optionId,
-                style: 'white-space: normal; overflow-wrap: break-word;'  // CSS直接在标签上应用
+                style: 'white-space: normal; overflow-wrap: break-word;'
             });
 
             let optionInput = $('<input>', {
@@ -116,8 +116,6 @@ $(document).ready(function () {
             optionsContainer.append(optionRow);
         });
 
-
-
         form.append(optionsContainer);
         let cardRow = $('<div>', { class: 'row g-0' });
         let imageCol = $('<div>', { class: 'col-md-4' }).append(image);
@@ -127,6 +125,7 @@ $(document).ready(function () {
         questionElem.append(questionHeader, cardRow);
         return questionElem;
     }
+
 
 
 

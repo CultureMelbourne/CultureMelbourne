@@ -44,57 +44,7 @@ namespace TP03MainProj.Controllers
             base.Dispose(disposing);
         }
 
-        //Redundant method for Cultural Dates mapping
-        /*
-        public JsonResult GetCulturalDates(string culture, DateTime start, DateTime end)
-        {
-            string filePath = Server.MapPath("~/Content/DataSource/calendar_data.csv");
-
-            var culturalDates = new List<CalenderDate>();
-            // Read all lines from the CSV file
-            var lines = System.IO.File.ReadAllLines(filePath);
-
-            // Define an array of expected date formats
-            var dateFormats = new[] { "dd/MM/yyyy", "MM/dd/yyyy", "yyyy-MM-dd", "yyyy/MM/dd" };
-            // Specify the CultureInfo; InvariantCulture is a good choice for a neutral culture
-            var cultureInfo = CultureInfo.InvariantCulture;
-
-            // Skip the header line if your CSV has one
-            foreach (var line in lines.Skip(1))
-            {
-                var columns = line.Split(',');
-
-                DateTime startDate, endDate;
-                bool isStartValid = DateTime.TryParseExact(columns[2], dateFormats, cultureInfo, DateTimeStyles.None, out startDate);
-                bool isEndValid = DateTime.TryParseExact(columns[3], dateFormats, cultureInfo, DateTimeStyles.None, out endDate);
-
-                if (isStartValid && isEndValid)
-                {
-                    var calendarDate = new CalenderDate
-                    {
-                        Culture = columns[0],
-                        Title = columns[1],
-                        Start_Date = startDate,
-                        End_Date = endDate,
-                    };
-
-                    culturalDates.Add(calendarDate);
-                }
-            }
-
-            // Filter and select dates as before
-            var filteredDates = culturalDates
-                .Where(d => d.Culture.Equals(culture, StringComparison.OrdinalIgnoreCase))
-                .Select(d => new
-                {
-                    title = d.Title,
-                    start = d.Start_Date.ToString("yyyy-MM-dd"),
-                    end = d.End_Date.ToString("yyyy-MM-dd"),
-                }).ToList();
-
-            return Json(filteredDates, JsonRequestBehavior.AllowGet);
-        }
-        */
+       
 
 
         // Modified method to map the events data to the calendar

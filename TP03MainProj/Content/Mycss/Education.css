@@ -1,5 +1,4 @@
-﻿
-.btn-capsule {
+﻿.btn-capsule {
     word-spacing: 0.25em;
     background-color: #d48810;
     color: black;
@@ -26,8 +25,6 @@
 #welcome-education-text h1 {
     word-spacing: 0.25em;
 }
-
-
 
 .background-images {
     position: absolute;
@@ -59,14 +56,12 @@
     background-position: center;
 }
 
-
-
 #welcome-section.dark-overlay {
     position: relative;
 }
 
 #welcome-section {
-    width: 100vw; /* 视口宽度 */
+    width: 99vw; /* 视口宽度 */
     height: 100vh; /* 视口高度 */
     display: flex;
     align-items: center;
@@ -88,7 +83,6 @@
         z-index: 2;
     }
 
-
 #welcome-education-text {
     text-align: center;
 }
@@ -107,14 +101,30 @@
 #education-content {
     display: none;
     position: absolute;
-    top: 50%;
+    top: 10%; /* Adjusted for footer */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     padding: 20px;
     border-radius: 10px;
     z-index: 1000;
-    overflow-y: auto; /* 启用垂直方向的溢出滚动 */
-    height: 90vh; /* 例如设置为视口高度 */
+    height: 80vh; /* Adjusted for footer */
+    box-sizing: border-box;
+}
+
+/* Adjustments for laptop screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+    #education-content h2 {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+
+    .book {
+        width: 20%; /* Adjust width */
+        padding-top: 30%; /* Adjust padding-top to maintain aspect ratio */
+    }
+
+    .overlay-btn span {
+        font-size: 1rem; /* Adjust button font size */
+    }
 }
 
 @media (max-width: 768px) {
@@ -125,24 +135,17 @@
         width: 75%; /* 在小屏幕下设置更小的宽度 */
         position: relative;
         top: 50%;
-        left: 40%;
+        left: 50%;
         transform: translate(-50%, -50%);
     }
+
     .overlay-btn span {
         font-size: 26px;
     }
 }
 
-
-.nav-link {
-    text-align: center; /* 设置链接文本水平居中对齐 */
-}
-
-#exit-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
+#education-content .nav-link {
+    text-align: center;
 }
 
 #exit-button {
@@ -175,8 +178,6 @@
     #exit-button:after {
         transform: rotate(-45deg);
     }
-
-
 
 .bg-img {
     position: relative;
@@ -232,7 +233,6 @@
     background: rgba(0, 0, 0, 0.7);
 }
 
-
 .img1 {
     background-image: url('/Content/Customer/images/study-case/3.jpg');
 }
@@ -252,6 +252,7 @@
 .img5 {
     background-image: url('/Content/Customer/images/study-case/7.jpg');
 }
+
 /* 在小屏幕下设置 .book 的宽度和 padding-top */
 @media (max-width: 768px) {
     .book {
@@ -283,4 +284,3 @@
         padding: 3px; /* 进一步调整按钮的 padding */
     }
 }
-
