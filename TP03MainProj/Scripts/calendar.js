@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
-    var lastHighlighted;
 
+    var lastHighlighted;
     var culture = document.getElementById('culture').getAttribute('data-culture');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        // themeSystem: 'bootstrap', // Anything for FontAwesome?
         headerToolbar: {
             left: 'prevYear,prev,next,nextYear today',
             center: 'title',
@@ -105,4 +104,26 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }, 100);
+});
+
+// CSS for FullCalendar customization and mobile button layout
+document.addEventListener('DOMContentLoaded', function () {
+    var style = document.createElement('style');
+    style.innerHTML = `
+        .fc-daygrid-day-frame {
+            border: 2px  black; /* 设置内部日期块的边框颜色为黑色 */
+        }
+        @media (max-width: 576px) {
+            .fc-header-toolbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .fc-header-toolbar .fc-toolbar-chunk {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 });

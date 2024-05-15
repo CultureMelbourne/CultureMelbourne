@@ -1,1 +1,155 @@
-﻿
+﻿@keyframes slideDown {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+#quizQuestions .option-text {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+
+
+.cheer {
+    animation: slideDown 2s forwards;
+    background-size: 500px auto; /* 确保背景图片覆盖整个容器的宽度 */
+    background-position: center; /* 将背景图片居中 */
+    width: 500px; /* 使容器宽度为 100% */
+    height: auto; /* 使容器高度为 100% */
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
+
+.submit-button {
+    width: 140px;
+    height: 60px;
+}
+/* General card styling for each question */
+.quiz-img {
+    width: 100%;
+    height: auto;
+}
+
+.question.card {
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    .question.card:hover {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+/* Header of each question */
+/* Image styling */
+.card-img-top {
+    width: 20%; /* Ensures the image takes up the entire card width */
+    height: auto; /* Maintain aspect ratio */
+    border-bottom: 1px solid #dee2e6; /* A subtle border under the image */
+}
+
+/* Styling for the body of the card where options are located */
+.card-body {
+    padding: 1rem;
+}
+
+/* List group item styling - clickable options */
+.list-group-item {
+    display: flex; /* Makes the label a flex container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    height: 50px; /* Fixed height as specified */
+    width: auto; /* Width adjusts to content or container */
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.small-text {
+    font-size: calc(100% - 1px); /* 动态调整字体大小以适应容器宽度 */
+    line-height: 1.2; /* 调整行高以提高可读性 */
+}
+
+.list-group-item-action:hover {
+    background-color: #007bff;
+    color: white; /* Light grey on hover for feedback */
+}
+
+/* Success and danger styles for correct/incorrect answers */
+.list-group-item-success {
+    background-color: #28a745; /* Bootstrap success green */
+    color: white;
+}
+
+.list-group-item-danger {
+    background-color: #dc3545; /* Bootstrap danger red */
+    color: white;
+}
+
+/* Button styling for invisible radio buttons */
+.btn-check:checked + .btn-secondary {
+    background-color: #007bff; /* Match the primary color when selected */
+    color: white;
+}
+
+/* Navigation buttons styling */
+.btn-primary {
+    background-color: #007bff; /* Primary blue */
+    border-color: #007bff;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        border-color: #0056b3;
+    }
+
+
+#prevQuestion, #nextQuestion {
+    margin: 10px;
+    padding: 5px 20px;
+    font-size: 16px;
+}
+
+#quizFrame {
+    height: 1000px;
+}
+
+.culture-btn {
+    min-height: 40px;
+    height: 40px;
+}
+
+
+
+    .event-detail h3 {
+        margin-top: 0;
+    }
+
+.fc-day:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.highlighted {
+    background-color: #dbdbdb;
+}
+
+.correct-answer {
+    background-color: green;
+    color: white;
+}
+
+.wrong-answer {
+    background-color: red;
+    color: white;
+}

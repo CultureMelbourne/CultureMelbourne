@@ -8,7 +8,7 @@
                 <h3 class="my-4 p-3 bg-light rounded">Events for the date: <span class="text-decoration-underline">@ViewBag.FormattedDate</span></h3>
                 foreach (var evt in Model)
                 {
-                    <div class="row mb-4 shadow-sm p-3 bg-body rounded">
+                    <div class="row mb-4 shadow-lg p-3 bg-body rounded">
                         <!-- Image Area -->
                         <div class="col-md-4 d-flex justify-content-center align-items-center">
                             <img src="@Url.Content("~/Content/Customer/images/services/1.webp")" alt="@evt.Title" style="max-height: 250px;" class="img-fluid w-100 rounded h-auto">

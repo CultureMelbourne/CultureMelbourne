@@ -49,17 +49,17 @@
 
         </div>
 
-        <div id="events-nav">
+        <div id="events-nav" class="">
 
         </div>
 
         <div class="row justify-content-center section-row mt-5" id="events">
             <!-- Responsive Calendar Column -->
-            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
-                <div id="calendar" class="mx-auto"></div>
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 shadow-lg p-lg-5 rounded-5 border" style="background: #F5F5DC">
+                <div id="calendar" class="mx-auto  "></div>
             </div>
             <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
-                <div class="row text-center w-100 h-auto">
+                <div class="row text-center w-100 h-auto m-2 mt-2 mb-2">
                     <h6 class="bg-info rounded shadow p-1"><i>Click around the Calendar to find Events for the Festivals above...</i></h6>
                 </div>
                 <div class="row">
@@ -68,15 +68,14 @@
             </div>
         </div>
 
-        <div class="row justify-content-center section-row  shadow-lg rounded-5 bg-body pt-5 mb-5 mt-5" id="quiz-section" style="">
+        <div class="row justify-content-center section-row shadow-lg rounded-5 bg-body pt-5 mb-5 mt-5" id="quiz-section" style="">
             <div class="col-lg-8 col-md-10 text-center">
                 <div class="row mb-3">
                     <h2 style="word-spacing: 2px;" class="fw-bold display-3">Common Phrases and Cultural Etiquette Quiz</h2>
                     <h4 id="startMessage">"Want to learn about this culture in depth? Try this quiz!"</h4>
-
                 </div>
 
-                <div class="row justify-content-center pb-5 pt-5 ">
+                <div class="row justify-content-center pb-5 pt-5">
                     <button id="loadQuiz" class="btn btn-primary text-white culture-btn w-auto px-2 px-sm-3 px-md-4">
                         <span class="d-block d-sm-inline text-nowrap small-text">Learn About @ViewBag.Culture</span>
                     </button>
@@ -88,17 +87,29 @@
                     <button id="restartQuiz" class="btn btn-primary text-white culture-btn w-25" style="display: none;">Restart</button>
                 </div>
 
-
-                @*<div id="quizQuestions"></div>*@
-            <div class="mb-5">
-                <div id="quizQuestions" class="w-100 mb-2">
-
+                <div class="mb-5" id="quizQuestions">
+                    <!-- Progress bar -->
+                    <div class="progress mb-3 m-auto " id="progress_area" style="display: none; width: 95%;">
+                        <div id="quizProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%; ">Question 0 of 0</div>
+                    </div>
+                    <!-- Questions content -->
+                    <div id="quizContent" class="w-100 mb-2"></div>
+                    <button id="prevQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Previous</button>
+                    <button id="nextQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Next</button>
                 </div>
-                <button id="prevQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Previous</button>
-                <button id="nextQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Next</button>
-            </div>
+                @*<audio id="cheerSound" src="path/to/cheer.mp3" preload="auto"></audio>*@
+
+                <!-- 喝彩动画 -->
+                <!--<div id="cheerAnimation" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;">
+                    <div class="cheer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('@Url.Content("~/Content/Images/Quiz/cheer1.gif")') repeat; background-size: cover; background-position: center;"></div>
+                </div>-->
+
             </div>
         </div>
+
+
+
+
 
 
 
@@ -163,6 +174,7 @@
     @Scripts.Render("~/bundles/fullcalendar")
     <script src="~/Scripts/quizLoader.js"></script>
 
+    @Styles.Render("~/bundles/quizstyle")
 
 
 
@@ -171,142 +183,11 @@
     <!-- Add CSS for the quiz section -->
 
     <style>
-        #quizQuestions .option-text {
-            overflow-wrap: break-word;
-            hyphens: auto;
-        }
-
-
-        .form-check-label {
-            margin-left: 5px;
-        }
-        .submit-button {
-            width:140px;
-            height:60px;
-        }
-        /* General card styling for each question */
-        .quiz-img {
-            width: 100%;
-            height: auto;
-        }
-        .question.card {
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease-in-out;
-        }
-
-            .question.card:hover {
-                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            }
-
-        /* Header of each question */
-        /* Image styling */
-        .card-img-top {
-            width: 20%; /* Ensures the image takes up the entire card width */
-            height: auto; /* Maintain aspect ratio */
-            border-bottom: 1px solid #dee2e6; /* A subtle border under the image */
-        }
-
-        /* Styling for the body of the card where options are located */
-        .card-body {
-            padding: 1rem;
-        }
-
-        /* List group item styling - clickable options */
-        .list-group-item {
-            display: flex; /* Makes the label a flex container */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-            height: 50px; /* Fixed height as specified */
-            width: auto; /* Width adjusts to content or container */
-            white-space: normal;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-        .small-text {
-            font-size: calc(100% - 1px); /* 动态调整字体大小以适应容器宽度 */
-            line-height: 1.2; /* 调整行高以提高可读性 */
-        }
-
-        .list-group-item-action:hover {
-            background-color: #007bff;
-            color:white;/* Light grey on hover for feedback */
-        }
-
-        /* Success and danger styles for correct/incorrect answers */
-        .list-group-item-success {
-            background-color: #28a745; /* Bootstrap success green */
-            color: white;
-        }
-
-        .list-group-item-danger {
-            background-color: #dc3545; /* Bootstrap danger red */
-            color: white;
-        }
-
-        /* Button styling for invisible radio buttons */
-        .btn-check:checked + .btn-secondary {
-            background-color: #007bff; /* Match the primary color when selected */
-            color: white;
-        }
-
-        /* Navigation buttons styling */
-        .btn-primary {
-            background-color: #007bff; /* Primary blue */
-            border-color: #007bff;
-            color: white;
-        }
-
-            .btn-primary:hover {
-                background-color: #0056b3; /* Darker blue on hover */
-                border-color: #0056b3;
-            }
-
-
-        #prevQuestion, #nextQuestion {
-            margin: 10px;
-            padding: 5px 20px;
-            font-size: 16px;
-        }
-
-        #quizFrame {
-            height: 1000px;
-        }
-
-        .culture-btn {
-            min-height: 40px;
-            height: 40px;
-        }
         .event-detail {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 3px solid @cultureColour;
-            border-radius: 5px;
-        }
-
-            .event-detail h3 {
-                margin-top: 0;
-            }
-
-        .fc-day:hover {
-            background-color: #eee;
-            cursor: pointer;
-        }
-
-        .highlighted {
-            background-color: #dbdbdb;
-        }
-
-        .correct-answer {
-            background-color: green;
-            color: white;
-        }
-
-        .wrong-answer {
-            background-color: red;
-            color: white;
-        }
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 3px solid @cultureColour;
+    border-radius: 5px;
+}
     </style>
 }

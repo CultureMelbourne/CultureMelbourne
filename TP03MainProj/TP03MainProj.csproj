@@ -282,6 +282,8 @@
     <Content Include="Content\Images\Attractions\Japanese_Attraction.jpg" />
     <Content Include="Content\Images\Attractions\Korean_Attraction.jpg" />
     <Content Include="Content\Images\Attractions\Vietnamese_Attraction.jpg" />
+    <Content Include="Content\Images\Quiz\cheer1.gif" />
+    <Content Include="Content\Images\Quiz\cheer.gif" />
     <Content Include="Content\Images\team\Chinese.jpg" />
     <Content Include="Content\Images\team\Japanese.jpg" />
     <Content Include="Content\Images\team\Korean.jpg" />

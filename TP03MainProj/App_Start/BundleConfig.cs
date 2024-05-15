@@ -64,6 +64,7 @@ namespace TP03MainProj
                               "~/Content/Mycss/quiz.css"
                 ));
 
+
             bundles.Add(new ScriptBundle("~/bundles/scrollToTopJS").Include(
                 "~/Scripts/scrollToTop.js"
                 ));

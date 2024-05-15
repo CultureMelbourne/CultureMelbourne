@@ -1,6 +1,4 @@
-﻿// new custom implementation
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
     $(document).on('change', '.btn-check', optionClicked);
     $(document).on('submit', 'form', handleSubmit);
     const startMessage = $('#startMessage');
@@ -10,10 +8,15 @@ $(document).ready(function () {
     var highScore = 0;  // Session high score
     var currentScore = 0;
     const quizQuestions = $('#quizQuestions');
+    const quizContent = $('#quizContent');
     const restartQuizButton = $('#restartQuiz').hide();
     const prevQuestionButton = $('#prevQuestion');
     const nextQuestionButton = $('#nextQuestion');
+    const progressbar = $('#progress_area');
+    const cheerSound = $('#cheerSound')[0];
+    const cheerAnimation = $('#cheerAnimation');
     var quizData;
+
     loadQuizButton.on('click', function () {
         var culture = $('#culture').data('culture').toLowerCase();
         loadQuiz(culture);
@@ -26,6 +29,7 @@ $(document).ready(function () {
                 startMessage.hide();
                 loadQuizButton.hide();
                 highScoreDisplay.show();
+                progressbar.show();
                 initializeQuiz(quizData);
             } else {
                 alert('No quiz data available for this culture.');
@@ -33,15 +37,14 @@ $(document).ready(function () {
         });
     }
 
-
     function initializeQuiz(quizData) {
-        quizQuestions.empty();
+        quizContent.empty(); // 只清空问题内容，不清空整个quizQuestions
         currentQuestionIndex = 0; // Reset to start from the first question
         var cultureFromViewBag = quizData.Name.toLowerCase();
 
         quizData.Questions.forEach((question, index) => {
             const questionElem = createQuestionElement(question, index, cultureFromViewBag);
-            quizQuestions.append(questionElem);
+            quizContent.append(questionElem);
         });
 
         setupNavigation(quizData.Questions.length);
@@ -53,6 +56,8 @@ $(document).ready(function () {
             class: 'btn btn-success mt-3 submit-button',
             text: 'Complete Quiz'
         }));
+
+        updateProgressBar(0, quizData.Questions.length); // Initialize progress bar
     }
 
     function createQuestionElement(question, index, cultureFromViewBag) {
@@ -63,7 +68,7 @@ $(document).ready(function () {
 
         let questionHeader = $('<div>', {
             class: 'fs-2 mb-3 fw-bold text-center'
-        }).text(question.Question);
+        }).text(`Question ${index + 1}: ${question.Question}`);
 
         let imagePath = `/Content/Images/${cultureFromViewBag}/${question.QuestionNum}`;
         let image = $('<img>', {
@@ -89,7 +94,7 @@ $(document).ready(function () {
             });
 
             let optionCol = $('<div>', {
-                class: 'col-12 col-md-8  justify-content-center'
+                class: 'col-12 col-md-8 justify-content-center'
             });
 
             let optionTextSpan = $('<span>', {
@@ -128,20 +133,12 @@ $(document).ready(function () {
         return questionElem;
     }
 
-
-
-
-
-
-
-
     function optionClicked() {
         let isCorrect = $(this).data('correct');
         let questionIndex = $(this).closest('.question').index();
         let questionElem = $(this).closest('.question');
         let correctAnswerLabel = questionElem.find('input[data-correct="true"]').parent('label');
         let correctAnswer = correctAnswerLabel.text();
-
 
         // Mark only if not previously attempted
         if (!questionElem.data('attempted')) {
@@ -160,24 +157,29 @@ $(document).ready(function () {
         event.preventDefault(); // Prevent the default form submission
         endQuiz(); // Call to handle the end of the quiz
     }
+
     function endQuiz() {
         showFinalMessage(currentScore, highScore);
-        $('#quizQuestions').hide();
+        $('#quizContent').hide();
         $('#restartQuiz').show();
         $('#prevQuestion').hide();
         $('#nextQuestion').hide();
+        progressbar.hide();
+
         updateHighScore(currentScore); // Update the high score if necessary
     }
 
     function resetQuiz() {
         currentScore = 0;
-        $('#quizQuestions').empty().show();
+        $('#quizContent').empty().show();
         startMessage.show();
         loadQuizButton.show();
         restartQuizButton.hide();
         highScoreDisplay.hide();
         startMessage.hide();
         loadQuizButton.hide();
+        progressbar.show();
+
         $('#scoreDisplay').hide(); // Hide the score display when restarting
         initializeQuiz(quizData); // Re-initialize the quiz
     }
@@ -185,7 +187,6 @@ $(document).ready(function () {
     $(document).on('click', '#restartQuiz', function () {
         resetQuiz(); // Reset the quiz when the restart button is clicked
     });
-
 
     function setupNavigation(totalQuestions) {
         prevQuestionButton.click(() => navigate(-1, totalQuestions));
@@ -199,9 +200,9 @@ $(document).ready(function () {
             currentQuestionIndex = newIndex;
             showQuestion(currentQuestionIndex);
             updateButtonVisibility(currentQuestionIndex, totalQuestions);
+            updateProgressBar(currentQuestionIndex, totalQuestions); // Update progress bar
         }
     }
-
 
     function showQuestion(index) {
         $('.question').hide().eq(index).fadeIn(400);
@@ -212,10 +213,38 @@ $(document).ready(function () {
         $('#nextQuestion').toggle(currentIndex < totalQuestions - 1);
     }
 
+    function updateProgressBar(currentIndex, totalQuestions) {
+        const progressBar = $('#quizProgress');
+        const progress = ((currentIndex + 1) / totalQuestions) * 100;
+        progressBar.css('width', progress + '%').attr('aria-valuenow', progress).text(`Question ${currentIndex + 1} of ${totalQuestions}`);
+    }
+
     function showFinalMessage(score, highScore) {
         // Update and show the score display
         $('#finalScore').text(score); // Display the final score
-        $('#scoreDisplay').show(); // Show the score display section
+        $('#scoreDisplay').show().hide().fadeIn(1000); // Show the score display section with animation
+
+        // Animate the final score value
+        $({ countNum: 0 }).animate({ countNum: score }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function () {
+                $('#finalScore').text(Math.floor(this.countNum));
+            },
+            complete: function () {
+                $('#finalScore').text(this.countNum);
+            }
+        });
+
+        // 播放喝彩声音
+        //cheerSound.play();
+
+        
+        cheerAnimation.fadeIn(500, function () {
+            setTimeout(function () {
+                cheerAnimation.fadeOut(500);
+            }, 1000); 
+        });
 
         let message;
         if (score > highScore) {
@@ -230,8 +259,7 @@ $(document).ready(function () {
 
         // Show the high score in the display if needed
         highScoreValue.text(highScore);
-        highScoreDisplay.show();
-        restartQuizButton.show(); // Ensure the restart button is shown
+        highScoreDisplay.show().hide().fadeIn(1000); // Show the high score display with animation
+        restartQuizButton.show().hide().fadeIn(1000); // Ensure the restart button is shown with animation
     }
-
 });
