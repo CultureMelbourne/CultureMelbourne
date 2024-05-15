@@ -26,6 +26,9 @@
     <!-- page preloader close -->
     <!-- header begin -->
     <div class="container-fluid" style="position: relative; z-index: 1030; background: linear-gradient(to right, #FFA500, #FF8C00, #FF7F50, #FF4500); ">
+    @*<div class="container-fluid" style="position: relative; z-index: 1030; background: linear-gradient(to right, #8B0000, #A52A2A); ">*@
+
+    @*<div class="container-fluid" style="position: relative; z-index: 1030; background: linear-gradient(to right, #8A360F, #CC4E5C); ">*@
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
 
 
@@ -57,66 +60,69 @@
 
     <!-- header close -->
     <!-- content begin -->
-    <div class="" style="background: linear-gradient(to right, #FFA500, #FF8C00, #FF7F50, #FF4500);">
+    <div class="bg-light">
         @RenderBody()
 
     </div>
     <!-- content close -->
     <!-- footer begin -->
     <div class="container-fluid bg-warning" style="background: linear-gradient(to right, #FFA500, #FF8C00, #FF7F50, #FF4500);">
-        <footer class="footer py-5">
-            <div class="row">
-                <div class="col-4 offset-1">
-                    <img class="logo-footer"
-                         src="@Url.Content("~/Content/Customer/images/logo-mobile.png")"
-                         srcset="@Url.Content("~/Content/Customer/images/logo.png") 800w,
+        @*<div class="container-fluid bg-warning" style="background: linear-gradient(to right, #8B0000, #A52A2A); ">*@
+            @*<div class="container-fluid bg-warning" style="background: linear-gradient(to right, #8A360F, #CC4E5C);">*@
+
+                <footer class="footer py-5">
+                    <div class="row">
+                        <div class="col-4 offset-1">
+                            <img class="logo-footer"
+                                 src="@Url.Content("~/Content/Customer/images/logo-mobile.png")"
+                                 srcset="@Url.Content("~/Content/Customer/images/logo.png") 800w,
                              @Url.Content("~/Content/Customer/images/logo-mobile.png") 400w"
-                         sizes="(max-width: 768px) 100vw, 50vw"
-                         alt="CultMelbourne Logo">
-                    <div class="spacer-20"></div>
-                    <p class="text-white">Committed to celebrating Melbourne's multicultural legacy, we aim to educate and unite, combating discrimination and nurturing cultural connections.</p>
-                </div>
-                <div class="col-2">
-                </div>
+                                 sizes="(max-width: 768px) 100vw, 50vw"
+                                 alt="CultMelbourne Logo">
+                            <div class="spacer-20"></div>
+                            <p class="text-white">Committed to celebrating Melbourne's multicultural legacy, we aim to educate and unite, combating discrimination and nurturing cultural connections.</p>
+                        </div>
+                        <div class="col-2">
+                        </div>
 
-                <div class="col-2">
-                    <h5 class="text-white fw-bold">Culture Melbourne</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Home")" class=" nav-link text-white p-0 ">Home</a></li>
-                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class=" nav-link  text-white p-0 ">Education</a></li>
-                        <li class="nav-item  text-white mb-2"><a href="#cultural-events" class="nav-link  p-0 text-white ">Culture Events</a></li>
-                    </ul>
-                </div>
+                        <div class="col-2">
+                            <h5 class="text-white fw-bold">Culture Melbourne</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Home")" class=" nav-link text-white p-0 ">Home</a></li>
+                                <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class=" nav-link  text-white p-0 ">Education</a></li>
+                                <li class="nav-item  text-white mb-2"><a href="#cultural-events" class="nav-link  p-0 text-white ">Culture Events</a></li>
+                            </ul>
+                        </div>
 
-                <div class="col-2">
-                    <h5 class="text-white fw-bold">Our Services</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">East Asian Melodies</a></li>
-                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">Discover East Asia</a></li>
-                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">Voices of East Asia</a></li>
-                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">Cultural Insights</a></li>
-                    </ul>
-                </div>
+                        <div class="col-2">
+                            <h5 class="text-white fw-bold">Our Services</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">East Asian Melodies</a></li>
+                                <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">Discover East Asia</a></li>
+                                <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">Voices of East Asia</a></li>
+                                <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class="nav-link  text-white p-0 ">Cultural Insights</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center border-white border-opacity-25   py-4 my-4 border-top">
+                        <p class="text-white">© 2024 The Quad. All rights reserved.</p>
+                    </div>
+                </footer>
             </div>
 
-            <div class="d-flex justify-content-center border-white border-opacity-25   py-4 my-4 border-top">
-                <p class="text-white">© 2024 The Quad. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
 
 
 
 
+            <!-- footer close -->
 
-    <!-- footer close -->
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/scrollToTopJS")
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @Scripts.Render("~/bundles/scrollToTopJS")
 
 
-    @RenderSection("scripts", required: false)
+            @RenderSection("scripts", required: false)
 
 </body>
 </html>

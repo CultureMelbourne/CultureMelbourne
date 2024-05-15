@@ -78,7 +78,7 @@
 
 
     <section class=" p-5 ">
-        <div class="container home-container pt-5 g-4 overlay-content rounded-4 rounded bg-white" style="border-radius: 15px;">
+        <div class="container home-container pt-5 g-4 overlay-content rounded-4  shadow-lg " style="border-radius: 15px; background-color: #F5F5F5;">
             <div class="row justify-content-center mb-4 mb-md-5">
                 <div class="col-12 text-center">
                     <!-- Custom class for tight background -->
@@ -173,8 +173,8 @@
                     var cultureName = System.IO.Path.GetFileNameWithoutExtension(culture);
                     <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-4">
                         <a href="@Url.Action("Index", "Events", new { culture = cultureName })" class="culture-btn">
-                            <div class="bg-color-2 rounded-4 bg-warning overflow-hidden" style="width: 200px; height: 180px;">
-                                <img src="@Url.Content($"~/Content/Images/team/{culture}")" class="img-fluid rounded-4" alt="@cultureName Culture" style="height: 100%; width: 100%; object-fit: cover;">
+                            <div class="bg-color-2 shadow-lg rounded-4 border-bottom-5  border-5 bg-body overflow-hidden" style="width: 200px; height: 180px;">
+                                <img src="@Url.Content($"~/Content/Images/team/{culture}")" class="img-fluid rounded-4 border-bottom-5  " alt="@cultureName Culture" style="height: 100%; width: 100%; object-fit: cover;">
                             </div>
                             <h5>@cultureName</h5>
                         </a>
