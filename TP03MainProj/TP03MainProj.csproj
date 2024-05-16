@@ -175,6 +175,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\AuthenticateFilter.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Helper\NavigationHelper.cs" />
     <Compile Include="Migrations\202403191317491_InitialCreate.cs" />
     <Compile Include="Migrations\202403191317491_InitialCreate.designer.cs">
@@ -251,6 +252,17 @@
     <Content Include="Content\Images\chinese\7.jpg" />
     <Content Include="Content\Images\chinese\8.jpg" />
     <Content Include="Content\Images\chinese\9.jpg" />
+    <Content Include="Content\Images\events\Buddha%27s Birthday.jpg" />
+    <Content Include="Content\Images\events\Chinese New Year.jpeg" />
+    <Content Include="Content\Images\events\Double Ninth Festival.jpg" />
+    <Content Include="Content\Images\events\Double Seventh Festival.jpg" />
+    <Content Include="Content\Images\events\Dragon Boat Festival.jpg" />
+    <Content Include="Content\Images\events\Laba Festival.jpg" />
+    <Content Include="Content\Images\events\Lunar New Year and Lantern Festival.jpg" />
+    <Content Include="Content\Images\events\Melbourne Lunar New Year Dragon Boat Festival 2024.jpg" />
+    <Content Include="Content\Images\events\Mid-autumn Festival.jpg" />
+    <Content Include="Content\Images\events\Qingming Festival.jpg" />
+    <Content Include="Content\Images\events\Winter Solstice.png" />
     <Content Include="Content\Images\filipino\1.jpg" />
     <Content Include="Content\Images\filipino\2.jpg" />
     <Content Include="Content\Images\filipino\3.jpg" />
