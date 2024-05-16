@@ -27,12 +27,10 @@ footer .nav-item a:hover {
     text-decoration: underline;
 }
 
-/* 背景渐变样式 */
 .gradient-bg {
     background: linear-gradient(to right, #FFA500, #FF8C00, #FF7F50, #FF4500);
 }
 
-/* 自定义侧边栏样式 */
 #header_sidebar {
     position: fixed;
     top: 0;
