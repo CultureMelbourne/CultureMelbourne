@@ -181,7 +181,11 @@
     @Styles.Render("~/Content/edu")
 
     <style>
-        /* 自定义样式 */
+        .timeline-image {
+            width: 100%;
+            height: auto;
+            border-radius:15px;
+        }
         .shadow-custom {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -288,6 +292,14 @@
         .sidebar.collapsed .nav-item {
             text-align: center;
         }
+        .card-title a {
+            text-decoration: none;
+            color: white;
+        }
+
+            .card-title a:hover {
+                color: gold;
+            }
 
     </style>
 }
