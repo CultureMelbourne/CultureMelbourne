@@ -136,12 +136,26 @@
 
                             <!-- Population Chart Container -->
                             <div class="row justify-content-center">
-                                <div class="col-md-10 p-1 mt-5">
+                                <div class="col-12 col-md-10 p-1 mt-5">
                                     <div id="@($"{countryId}-population-chart")" class="chart-container"></div>
                                     <div id="@($"{countryId}-occupation-chart")" style="display: none;" class="chart-container"></div>
                                     <div id="@($"{countryId}-religion-chart")" style="display: none;" class="chart-container"></div>
+
+
                                 </div>
                             </div>
+
+                            @*<div class="row justify-content-center">
+                                <div class="col-12 col-md-10 p-1 mt-5">
+                                    <div id="@($"{countryId}-occupation-chart")" style="display: none;" class="chart-container"></div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-10 p-1 mt-5">
+                                    <div id="@($"{countryId}-religion-chart")" style="display: none;" class="chart-container"></div>
+                                </div>
+                            </div>*@
 
                         </div>
                     </div>
@@ -181,6 +195,17 @@
     @Styles.Render("~/Content/edu")
 
     <style>
+        .chart-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+
         .timeline-image {
             width: 100%;
             height: auto;

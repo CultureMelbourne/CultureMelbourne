@@ -62,4 +62,7 @@ $(document).ready(function () {
         $('.chart-container', `#${countryId}-data`).hide(); // Hide all charts
         $(`#${countryId}-${selectedChart}`).show(); // Show the selected chart
     });
+
+
+
 });

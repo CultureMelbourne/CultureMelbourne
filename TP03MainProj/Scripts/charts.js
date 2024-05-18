@@ -1,89 +1,68 @@
 ﻿function loadReligionChart(countryName, religionReports) {
-    // Ensure the religion data is available and valid
     if (!religionReports || !religionReports.length || !religionReports[0].data) {
         console.warn('No religion data available for', countryName);
         return;
     }
 
-    // Using the first report's data if there are multiple
     var religionData = religionReports[0].data;
-    console.log(religionData); // Log to verify the data
-
-    // Prepare data for the bar chart
     var chartData = [{
         values: religionData.map(item => item.Total),
         text: "Total",
-        backgroundColor: '#007BFF' // You can set a specific color or use a color palette
+        backgroundColor: '#007BFF'
     }];
+    var title = countryName.charAt(0).toUpperCase() + countryName.slice(1);
 
-    var title = countryName;
-    title = title.charAt(0).toUpperCase() + title.slice(1);
-
-    // ZingChart configuration for a bar chart
     var config = {
-        type: 'bar', // Change chart type to bar
+        type: 'bar',
         title: {
             text: title + ' Religious Distribution',
             fontSize: 18,
             adjustLayout: true
         },
         scaleX: {
-            labels: religionData.map(item => item.Religion_Name), // X-axis labels from religion names
-            item: {
-                angle: -15 // Optional: Rotate labels for better fitting
-            }
+            labels: religionData.map(item => item.Religion_Name),
+            item: { angle: -15 }
         },
         scaleY: {
-            // Set y-axis scaling
-            'min-value': 0, // Start scale at 0
-            'max-value': Math.max(...religionData.map(item => item.Total)) * 1.1, // Set max as the highest value increased by 10%
-            'step': Math.max(...religionData.map(item => item.Total)) / 10 // Set steps dynamically or choose a fixed value
+            'min-value': 0,
+            'max-value': Math.max(...religionData.map(item => item.Total)) * 1.1,
+            'step': Math.max(...religionData.map(item => item.Total)) / 10
         },
         plot: {
-            animation: {
-                effect: 3,
-                method: 5,
-                sequence: 1,
-                speed: 800
-            },
-            tooltip: {
-                text: '%t: %v'
-            }
+            animation: { effect: 3, method: 5, sequence: 1, speed: 800 },
+            tooltip: { text: '%t: %v' }
         },
         series: chartData
     };
 
-    // Render the chart
+    var chartContainerId = countryName.toLowerCase() + '-religion-chart';
+
     zingchart.render({
-        id: countryName.toLowerCase() + '-religion-chart', // Specific ID for the religion chart
+        id: chartContainerId,
         data: config,
-        height: 400,
+        height: '500px',
         width: '100%'
     });
+
+    window.addEventListener('resize', function () {
+        zingchart.exec(chartContainerId, 'resize', {
+            width: document.getElementById(chartContainerId).clientWidth,
+            height: document.getElementById(chartContainerId).clientHeight || 500
+        });
+    });
 }
-
-
-
 function loadOccupationChart(countryName, occupationReports) {
-    // Check if occupation data is available
     if (!occupationReports || !occupationReports.length || !occupationReports[0].data) {
         console.warn('No occupation data available for', countryName);
         return;
     }
 
-    // Extracting the first report's data
     var occupationData = occupationReports[0].data;
-
-    // Prepare data for the pie chart
     var chartData = occupationData.map(function (item) {
-        return {
-            values: [item.Total],
-            text: item.Occupation
-        };
+        return { values: [item.Total], text: item.Occupation };
     });
-    var title = countryName;
-    title = title.charAt(0).toUpperCase() + title.slice(1);
-    // ZingChart configuration for pie chart
+    var title = countryName.charAt(0).toUpperCase() + countryName.slice(1);
+
     var config = {
         type: 'pie',
         title: {
@@ -94,34 +73,36 @@ function loadOccupationChart(countryName, occupationReports) {
         plot: {
             valueBox: [
                 {
-                    text: '%t\n%npv%', // Shows the text and percentage value of each segment
-                    placement: 'out', // Place labels outside the chart
+                    text: '%t\n%npv%',
+                    placement: 'out',
                     fontColor: '#333',
                     fontSize: '12px',
                     fontWeight: 'bold'
                 }
             ],
-            tooltip: {
-                text: '%t: %v (%npv%)' // Detailed tooltip showing name, value, and percentage
-            },
-            animation: {
-                effect: 3, // Specifies the animation effect
-                method: 5, // Specifies the animation method
-                sequence: 1, // Order of animation
-                speed: 800 // Speed in milliseconds
-            }
+            tooltip: { text: '%t: %v (%npv%)' },
+            animation: { effect: 3, method: 5, sequence: 1, speed: 800 }
         },
         series: chartData
     };
 
-    // Render the chart
+    var chartContainerId = countryName.toLowerCase() + '-occupation-chart';
+
     zingchart.render({
-        id: countryName.toLowerCase() + '-occupation-chart', // Element ID to render the chart
+        id: chartContainerId,
         data: config,
-        height: 400,
+        height: '500px',
         width: '100%'
     });
+
+    window.addEventListener('resize', function () {
+        zingchart.exec(chartContainerId, 'resize', {
+            width: document.getElementById(chartContainerId).clientWidth,
+            height: document.getElementById(chartContainerId).clientHeight || 500
+        });
+    });
 }
+
 
 function loadPopulation(countryName, populations) {
     // Dynamically generate the chart container ID based on the country name.
