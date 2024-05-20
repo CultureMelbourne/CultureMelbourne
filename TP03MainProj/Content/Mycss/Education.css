@@ -116,7 +116,9 @@
     #education-content h2 {
         font-size: 1.5rem; /* Adjust font size */
     }
-
+    .overlay-btn span {
+        font-size: 1rem; /* Adjust button font size */
+    }
     .book {
         width: 20%; /* Adjust width */
         padding-top: 30%; /* Adjust padding-top to maintain aspect ratio */
@@ -125,22 +127,48 @@
     .overlay-btn span {
         font-size: 1rem; /* Adjust button font size */
     }
-}
 
-@media (max-width: 768px) {
     #education-content {
         height: auto; /* 自适应高度 */
         max-height: 70vh; /* 限制最大高度 */
         overflow-y: auto; /* 启用垂直方向的溢出滚动 */
         width: 75%; /* 在小屏幕下设置更小的宽度 */
+        position: absolute;
+        top: 50%; /* Center vertically */
+        left: 45%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset to truly center the element */
+        margin: 0; /* Remove default margin */
+        padding: 20px; /* Add padding if needed */
+        box-sizing: border-box; /* Ensure padding is included in the width and height */
+    }
+
+}
+
+@media (min-width: 1201px) {
+    .overlay-btn span {
+        font-size: 1.25rem; /* Adjust button font size for larger screens */
+    }
+}
+
+@media (min-width: 1300px) {
+    .overlay-btn span {
+        font-size: 1.25rem; /* Adjust button font size for larger screens */
+    }
+}
+@media (max-width: 768px) {
+    #education-content {
+        height: auto; /* 自适应高度 */
+        max-height: 80vh; /* 限制最大高度 */
+        overflow-y: auto; /* 启用垂直方向的溢出滚动 */
+        width: 75%; /* 在小屏幕下设置更小的宽度 */
         position: relative;
-        top: 50%;
-        left: 50%;
+        top: 40%;
+        left: 40%;
         transform: translate(-50%, -50%);
     }
 
     .overlay-btn span {
-        font-size: 26px;
+        font-size: 26px; /* Adjust font size for smaller screens */
     }
 }
 
