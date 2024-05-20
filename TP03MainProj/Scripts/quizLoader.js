@@ -227,7 +227,7 @@
     function showFinalMessage(score, highScore) {
         // Update and show the score display
         $('#finalScore').text(score); // Display the final score
-        $('#scoreDisplay').show().hide().fadeIn(1); // Show the score display section with animation
+        $('#scoreDisplay').show().hide().fadeIn(1000); // Show the score display section with animation
 
         // Animate the final score value
         $({ countNum: 0 }).animate({ countNum: score }, {
@@ -247,47 +247,44 @@
             cheerSound.volume = 1.0; // Ensure volume is at max
             cheerSound.play();
 
-            // 声音逐渐淡出
-            setTimeout(function () {
-                var fadeOutInterval = setInterval(function () {
-                    if (cheerSound.volume > 0.05) {
-                        cheerSound.volume -= 0.05;
-                    } else {
-                        cheerSound.volume = 0;
-                        cheerSound.pause();
-                        clearInterval(fadeOutInterval);
-                    }
-                }, 100); // 每100ms降低一次音量
-            }, 2000); // 2秒后开始淡出
-
             // 播放喝彩动画
             $('#cheerAnimation').fadeIn(500, function () {
                 setTimeout(function () {
-                    $('#cheerAnimation').fadeOut(500);
-                }, 1000);
+                    var fadeOutInterval = setInterval(function () {
+                        if (cheerSound.volume > 0.05) {
+                            cheerSound.volume -= 0.05;
+                            $('#cheerAnimation').css('opacity', cheerSound.volume); // 同步调整动画透明度
+                        } else {
+                            cheerSound.volume = 0;
+                            cheerSound.pause();
+                            clearInterval(fadeOutInterval);
+                            $('#cheerAnimation').fadeOut(500); // 动画完全淡出
+                        }
+                    }, 100); // 每100ms降低一次音量和透明度
+                }, 2000); // 2秒后开始淡出
             });
         }
 
         let message;
         if (score > highScore) {
             message = 'Great job! New high score!';
-           
         } else if (score > 0) {
             message = 'Nice try! Maybe review some more and try again?';
         } else {
             message = 'Seems like you could learn some more about this culture!';
         }
+
+        // 使用 Bootstrap 模态框显示消息
         $('#messageModalBody').text(message);
         var messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
         messageModal.show();
-        console.log(score);
-        console.log(highScore);
 
         // Show the high score in the display if needed
         $('#highScoreValue').text(highScore);
-        $('#highScoreDisplay').show().hide().fadeIn(1); // Show the high score display with animation
-        $('#restartQuizButton').show().hide().fadeIn(1); // Ensure the restart button is shown with animation
+        $('#highScoreDisplay').show().hide().fadeIn(1000); // Show the high score display with animation
+        $('#restartQuizButton').show().hide().fadeIn(1000); // Ensure the restart button is shown with animation
     }
+
 
     function updateHighScore(currentScore) {
         if (currentScore > highScore) {
