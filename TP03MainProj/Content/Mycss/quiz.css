@@ -1,27 +1,22 @@
-﻿@keyframes slideDown {
-    0% {
-        bottom: -100%;
-    }
-
-    100% {
-        bottom: 0;
-    }
-}
-
-#quizQuestions .option-text {
+﻿#quizQuestions .option-text {
     overflow-wrap: break-word;
     hyphens: auto;
 }
 
 
 
-.cheer {
-    animation: slideDown 2s forwards;
-    background-size: 500px auto; /* 确保背景图片覆盖整个容器的宽度 */
-    background-position: center; /* 将背景图片居中 */
-    width: 500px; /* 使容器宽度为 100% */
-    height: auto; /* 使容器高度为 100% */
+
+@keyframes slideDown {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 0;
+    }
 }
+
+
 
 .form-check-label {
     margin-left: 5px;

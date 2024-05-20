@@ -63,6 +63,11 @@ function loadOccupationChart(countryName, occupationReports) {
     });
     var title = countryName.charAt(0).toUpperCase() + countryName.slice(1);
 
+    // 检测屏幕宽度
+    var isMobile = window.innerWidth <= 768;
+    var chartSize = isMobile ? 300 : '100%';
+    var chartHeight = isMobile ? 300 : '500px';
+
     var config = {
         type: 'pie',
         title: {
@@ -74,7 +79,7 @@ function loadOccupationChart(countryName, occupationReports) {
             valueBox: [
                 {
                     text: '%t\n%npv%',
-                    placement: 'out',
+                    placement: isMobile ? 'in' : 'out', // 在手机屏幕上将标签显示在区块内部
                     fontColor: '#333',
                     fontSize: '12px',
                     fontWeight: 'bold'
@@ -83,7 +88,10 @@ function loadOccupationChart(countryName, occupationReports) {
             tooltip: { text: '%t: %v (%npv%)' },
             animation: { effect: 3, method: 5, sequence: 1, speed: 800 }
         },
-        series: chartData
+        series: chartData,
+        scale: {
+            sizeFactor: isMobile ? 1 : 0.8 // 调整缩放比例
+        }
     };
 
     var chartContainerId = countryName.toLowerCase() + '-occupation-chart';
@@ -91,17 +99,44 @@ function loadOccupationChart(countryName, occupationReports) {
     zingchart.render({
         id: chartContainerId,
         data: config,
-        height: '500px',
-        width: '100%'
+        height: chartHeight,
+        width: chartSize
     });
 
     window.addEventListener('resize', function () {
-        zingchart.exec(chartContainerId, 'resize', {
-            width: document.getElementById(chartContainerId).clientWidth,
-            height: document.getElementById(chartContainerId).clientHeight || 500
-        });
+        var newIsMobile = window.innerWidth <= 768;
+        var newChartSize = newIsMobile ? 300 : '100%';
+        var newChartHeight = newIsMobile ? 300 : '500px';
+
+        if (newIsMobile !== isMobile) {
+            isMobile = newIsMobile;
+            zingchart.exec(chartContainerId, 'modify', {
+                update: false,
+                data: {
+                    width: newChartSize,
+                    height: newChartHeight,
+                    plot: {
+                        valueBox: [
+                            {
+                                placement: isMobile ? 'in' : 'out'
+                            }
+                        ]
+                    },
+                    scale: {
+                        sizeFactor: isMobile ? 1 : 0.8
+                    }
+                }
+            });
+        } else {
+            zingchart.exec(chartContainerId, 'resize', {
+                width: newChartSize,
+                height: newChartHeight
+            });
+        }
     });
 }
+
+
 
 
 function loadPopulation(countryName, populations) {

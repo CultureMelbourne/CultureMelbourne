@@ -5,6 +5,23 @@
 
 }
 
+<!-- 模态框结构 -->
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLabel">Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="messageModalBody">
+                <!-- 消息内容将被插入这里 -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary  " data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -97,12 +114,13 @@
                     <button id="prevQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Previous</button>
                     <button id="nextQuestion" class="btn btn-primary text-white culture-btn w-25 px-2 px-sm-3 px-md-4" style="display: none;">Next</button>
                 </div>
-                @*<audio id="cheerSound" src="path/to/cheer.mp3" preload="auto"></audio>*@
+                <audio id="cheerSound" src="@Url.Content("~/Content/Images/Quiz/soud.mp3")" preload="auto"></audio>
 
                 <!-- 喝彩动画 -->
-                @*<div id="cheerAnimation" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;">
-                    <div class="cheer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('@Url.Content("~/Content/Images/Quiz/cheer1.gif")') repeat; background-size: cover; background-position: center;"></div>
-                </div>*@
+                <div id="cheerAnimation" style=" display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;">
+                    <div class="cheer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('@Url.Content("~/Content/Images/Quiz/cheer_1.gif")') repeat;  background-position: center; animation: slideDown 2s forwards;"></div>
+                    <div class="cheer" style="position: absolute; top: 100px; left: 100px; width: 100%; height: 100%; background: url('@Url.Content("~/Content/Images/Quiz/cheer_1.gif")') repeat;  background-position: center; animation: slideDown 2s forwards;"></div>
+                </div>
 
             </div>
         </div>
@@ -157,7 +175,11 @@
 
 </section>
 
+@section Styles{
+    @Styles.Render("~/bundles/quizstyle")
 
+
+}
 
 @section Scripts {
     <!-- Global Variables for passing data to custom calender script -->
@@ -174,7 +196,6 @@
     @Scripts.Render("~/bundles/fullcalendar")
     <script src="~/Scripts/quizLoader.js"></script>
 
-    @Styles.Render("~/bundles/quizstyle")
 
 
 

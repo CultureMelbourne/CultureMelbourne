@@ -135,7 +135,6 @@
 
     function optionClicked() {
         let isCorrect = $(this).data('correct');
-        let questionIndex = $(this).closest('.question').index();
         let questionElem = $(this).closest('.question');
         let correctAnswerLabel = questionElem.find('input[data-correct="true"]').parent('label');
         let correctAnswer = correctAnswerLabel.text();
@@ -148,10 +147,16 @@
                 $(this).closest('label').addClass('list-group-item-success').removeClass('list-group-item-action');
             } else {
                 $(this).closest('label').addClass('list-group-item-danger').removeClass('list-group-item-action');
-                alert('Incorrect！The answer is: ' + correctAnswer);
+
+                // 使用 Bootstrap 模态框显示消息
+                const messageHtml = `<span class="text-danger fw-bold fs-4">Incorrect!</span>  The answer is:  <span class="fw-bold fs-4">${correctAnswer}</span> `;
+                $('#messageModalBody').html(messageHtml);
+                var messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                messageModal.show();
             }
         }
     }
+
 
     function handleSubmit(event) {
         event.preventDefault(); // Prevent the default form submission
@@ -222,7 +227,7 @@
     function showFinalMessage(score, highScore) {
         // Update and show the score display
         $('#finalScore').text(score); // Display the final score
-        $('#scoreDisplay').show().hide().fadeIn(1000); // Show the score display section with animation
+        $('#scoreDisplay').show().hide().fadeIn(1); // Show the score display section with animation
 
         // Animate the final score value
         $({ countNum: 0 }).animate({ countNum: score }, {
@@ -236,30 +241,59 @@
             }
         });
 
-        // 播放喝彩声音
-        //cheerSound.play();
+        // If the score is a high score, play cheer sound and animation
+        if (score >= highScore) {
+            var cheerSound = document.getElementById('cheerSound');
+            cheerSound.volume = 1.0; // Ensure volume is at max
+            cheerSound.play();
 
-        
-        cheerAnimation.fadeIn(500, function () {
+            // 声音逐渐淡出
             setTimeout(function () {
-                cheerAnimation.fadeOut(500);
-            }, 1000); 
-        });
+                var fadeOutInterval = setInterval(function () {
+                    if (cheerSound.volume > 0.05) {
+                        cheerSound.volume -= 0.05;
+                    } else {
+                        cheerSound.volume = 0;
+                        cheerSound.pause();
+                        clearInterval(fadeOutInterval);
+                    }
+                }, 100); // 每100ms降低一次音量
+            }, 2000); // 2秒后开始淡出
+
+            // 播放喝彩动画
+            $('#cheerAnimation').fadeIn(500, function () {
+                setTimeout(function () {
+                    $('#cheerAnimation').fadeOut(500);
+                }, 1000);
+            });
+        }
 
         let message;
         if (score > highScore) {
-            highScore = score;
             message = 'Great job! New high score!';
+           
         } else if (score > 0) {
             message = 'Nice try! Maybe review some more and try again?';
         } else {
             message = 'Seems like you could learn some more about this culture!';
         }
-        alert(message);
+        $('#messageModalBody').text(message);
+        var messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+        messageModal.show();
+        console.log(score);
+        console.log(highScore);
 
         // Show the high score in the display if needed
-        highScoreValue.text(highScore);
-        highScoreDisplay.show().hide().fadeIn(1000); // Show the high score display with animation
-        restartQuizButton.show().hide().fadeIn(1000); // Ensure the restart button is shown with animation
+        $('#highScoreValue').text(highScore);
+        $('#highScoreDisplay').show().hide().fadeIn(1); // Show the high score display with animation
+        $('#restartQuizButton').show().hide().fadeIn(1); // Ensure the restart button is shown with animation
     }
+
+    function updateHighScore(currentScore) {
+        if (currentScore > highScore) {
+            highScore = currentScore;
+            $('#highScoreValue').text(highScore);
+        }
+    }
+
 });

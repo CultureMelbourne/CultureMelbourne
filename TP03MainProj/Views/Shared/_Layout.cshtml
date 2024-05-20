@@ -54,9 +54,9 @@
 
             </div>
             <ul class="nav flex-column flex-md-row col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a class="nav-link pe-5 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "Index")" href="@Url.Action("Index", "Home")">Home</a></li>
-                <li><a class="nav-link pe-5 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" href="@Url.Action("Index", "Education")">Culture Education</a></li>
-                <li><a class="nav-link  text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a></li>
+                <li><a class="nav-link pe-5 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "Index")" target="_blank" href="@Url.Action("Index", "Home")">Home</a></li>
+                <li><a class="nav-link pe-5 text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Education", "Index", "Education", "DiverseCultures")" target="_blank" href="@Url.Action("Index", "Education")">Culture Education</a></li>
+                <li><a class="nav-link  text-white fs-5 link-dark @NavigationHelper.IsActive(ViewContext, "Home", "CulturalEvents")" target="_blank" href="@Url.Action("Index", "Home")#cultural-events">Culture Events</a></li>
             </ul>
         </div>
 
@@ -98,8 +98,8 @@
                     <h5 class="text-white fw-bold">Culture Melbourne</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Home")" class=" nav-link text-white p-0 ">Home</a></li>
-                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")" class=" nav-link  text-white p-0 ">Education</a></li>
-                        <li class="nav-item  text-white mb-2"><a href="#cultural-events" class="nav-link  p-0 text-white ">Culture Events</a></li>
+                        <li class="nav-item  text-white mb-2"><a href="@Url.Action("Index", "Education")"target="_blank" class=" nav-link  text-white p-0 ">Education</a></li>
+                        <li class="nav-item  text-white mb-2"><a href="#cultural-events" target="_blank" class="nav-link  p-0 text-white ">Culture Events</a></li>
                     </ul>
                 </div>
 

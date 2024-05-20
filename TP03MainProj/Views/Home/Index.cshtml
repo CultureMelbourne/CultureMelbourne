@@ -17,7 +17,7 @@
                                     <h1 class="display-2 fw-bold">Explore <span class="text-warning">East Asian</span> Culture</h1>
                                     <hr>
                                     <p class="slider-teaser fs-6 fs-md-5 fs-lg-4">Dive into the rich history, arts, and traditions of East Asia and experience its unique charm.</p>
-                                    <a class="btn btn-primary fs-6 fs-md-5 fs-lg-4 h-auto" href="@Url.Action("Index", "Home")#footerbottom">Explore Culture</a>
+                                    <a class="btn btn-primary fs-6 fs-md-5 fs-lg-4 h-auto" href="@Url.Action("Index", "Home")#footerbottom">Explore Traditions</a>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                                     <h1 class="display-2 fw-bold">Our Stories</h1>
                                     <hr>
                                     <p class="slider-teaser fs-6 fs-md-5 fs-lg-4">Hear the stories of East Asian immigrants who have made their mark in Melbourne, adding color and diversity to our city.</p>
-                                    <a class="btn btn-primary fs-6 fs-md-5 fs-lg-4 h-auto" href="@Url.Action("Index", "Home")#footerbottom">Join Festivities</a>
+                                    <a class="btn btn-primary fs-6 fs-md-5 fs-lg-4 h-auto" href="@Url.Action("Index", "Education")">Learn Stories</a>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                     <h1 class="display-2 fw-bold">Building an Inclusive Community</h1>
                                     <hr>
                                     <p class="slider-teaser fs-6 fs-md-5 fs-lg-4">Learn how to recognize and oppose discrimination, striving together to create a more inclusive and understanding environment for East Asian immigrants.</p>
-                                    <a class="btn btn-primary fs-6 fs-md-5 fs-lg-4 h-auto" href="@Url.Action("Index", "Home")#footerbottom">Support Culture</a>
+                                    <a class="btn btn-primary fs-6 fs-md-5 fs-lg-4 h-auto" href="@Url.Action("Index", "Education")">Explore History</a>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                 {
                     var cultureName = System.IO.Path.GetFileNameWithoutExtension(culture);
                     <div class="col-lg-2 col-md-4 col-sm-6 text-center mb-4">
-                        <a href="@Url.Action("Index", "Events", new { culture = cultureName })" class="culture-btn">
+                        <a href="@Url.Action("Index", "Events", new { culture = cultureName })" target="_blank" class="culture-btn">
                             <div class="bg-color-2 shadow-lg rounded-4 border-bottom-5  border-5 bg-body overflow-hidden" style="width: 200px; height: 180px;">
                                 <img src="@Url.Content($"~/Content/Images/team/{culture}")" class="img-fluid rounded-4 border-bottom-5  " alt="@cultureName Culture" style="height: 100%; width: 100%; object-fit: cover;">
                             </div>
