@@ -21,8 +21,6 @@ h1 {
     line-height: 1.2;
 }
 
-
-
 footer .nav-item a:hover {
     text-decoration: underline;
 }
@@ -53,22 +51,16 @@ footer .nav-item a:hover {
     }
 
 .header_navbar-toggler {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 1050;
     background: none;
     border: none;
     font-size: 24px;
     color: white;
+    position: relative;
+    z-index: 1051; /* Ensure it remains on top */
 }
 
 .header_navbar-toggler-icon {
     font-size: 24px;
-}
-
-.header_navbar-toggler.hidden {
-    display: none;
 }
 
 .nav-link {
@@ -94,13 +86,30 @@ footer .nav-item a:hover {
 
 @media (max-width: 767px) {
     .custom-header {
-        height: 60px; /* 修改为你需要的高度 */
+        height: 70px; /* Modify to your desired height */
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Ensure space between elements */
+        position: relative;
     }
 
     .d-md-none {
         display: flex !important;
         justify-content: space-between;
+        align-items: center; /* Center items vertically */
         width: 100%;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 15px; /* Add desired margin to the right */
+    }
+
+    .logo-mobile {
+        width: 40px; /* Adjust the size as needed */
+        height: auto;
     }
 }
 
@@ -115,7 +124,6 @@ footer .nav-item a:hover {
         flex-direction: row;
         align-items: center;
         padding-top: 0;
-        
     }
 
     .header_navbar-toggler {

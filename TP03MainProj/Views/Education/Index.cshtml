@@ -29,7 +29,7 @@
                 <div class="container text-center">
                     <h2 class="display-5 fw-bold mt-3 mb-2">Embark on a Journey of Cultural Discovery</h2>
                     <nav class="nav justify-content-center align-items-center">
-                        <a class="nav-link text-dark" target="_blank" href="@Url.Action("Index", "Home")">Home</a>
+                        <a class="nav-link text-dark" href="@Url.Action("Index", "Home")">Home</a>
                         <span class="text-dark mx-2 d-flex fw-bold">></span>
                         <a class="nav-link text-warning fw-bold"  href="#">Education Center</a>
                     </nav>
@@ -38,7 +38,7 @@
                         @foreach (var country in new[] { "China", "Japan", "Korea", "Philipines", "Vietnam" })
                         {
                             <div class="col-6 col-md-4 col-lg-3 col-xl-2 book rounded" style="background-image: url('@Url.Content($"~/Content/Customer/images/team/{country}.jpg")');">
-                                <a href="@Url.Action("DiverseCultures", "Education", new { country = country.ToLower() })"target="_blank" class="overlay-btn w-100 h-100 d-flex align-items-center justify-content-center" style="text-decoration: none;">
+                                <a href="@Url.Action("DiverseCultures", "Education", new { country = country.ToLower() })" class="overlay-btn w-100 h-100 d-flex align-items-center justify-content-center" style="text-decoration: none;">
                                     <span class="fw-bold fs-3">@country</span>
                                 </a>
                             </div>
