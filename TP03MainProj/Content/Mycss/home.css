@@ -84,3 +84,26 @@
             max-height: 400px;
         }
     }
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+    .col-12.p-5 {
+        padding: 20px; /* 调整为较小的内边距 */
+    }
+
+    .mission-statement {
+        font-size: 1.25rem; /* 调整字体大小 */
+        line-height: 1.4; /* 增加行间距 */
+    }
+}
+
+/* Smaller than 426px */
+@media (max-width: 426px) {
+    .col-12.p-5 {
+        padding: 10px; /* 进一步减少内边距 */
+    }
+
+    .mission-statement {
+        font-size: 1.1rem; /* 根据需要进一步减小字体大小 */
+        line-height: 1.3; /* 适当调整行间距 */
+    }
+}
