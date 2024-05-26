@@ -1368,6 +1368,7 @@
     <Content Include="Content\Images\events\Ati-Atihan Festival.webp" />
     <Content Include="Content\Images\events\2024 Moon Festival.webp" />
     <None Include="Properties\PublishProfiles\cultmelboune - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CultureMelbourne - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\index.global.js" />
     <Content Include="Scripts\index.global.min.js" />
