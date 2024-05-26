@@ -1202,7 +1202,7 @@
     <Content Include="Content\Customer\images\timeline\Korean\1991.png" />
     <Content Include="Content\Customer\images\timeline\Korean\2010.png" />
     <Content Include="Content\Customer\images\timeline\Korean\2016.jpg" />
-    <Content Include="Content\Customer\images\timeline\Korean\下载.jpeg" />
+    <Content Include="Content\Customer\images\timeline\Korean\Family.jpeg" />
     <Content Include="Content\Customer\images\timeline\Phili\1950.jpg" />
     <Content Include="Content\Customer\images\timeline\Phili\1970.jpg" />
     <Content Include="Content\Customer\images\timeline\Phili\2016.jpg" />
@@ -1329,7 +1329,7 @@
     <Content Include="Content\DataSource\calendar_data.csv" />
     <Content Include="Content\DataSource\melbourne_events.csv" />
     <Content Include="Content\Customer\images\mig\p2.webp" />
-    <Content Include="Content\Customer\images\timeline\Chinese\1970反歧视代表人物.webp" />
+    <Content Include="Content\Customer\images\timeline\Chinese\1970 men.webp" />
     <Content Include="Content\Customer\images\timeline\Chinese\2.webp" />
     <Content Include="Content\Customer\images\timeline\Chinese\2024.webp" />
     <Content Include="Content\Customer\images\timeline\vietna\1975.webp" />
